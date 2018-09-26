@@ -1,4 +1,7 @@
-<?php include ("")?>
+<?php
+    include "../../config.php";
+    include ABSPATH.'header.php';
+?>
 <!-- Div conteúdo central -->
 <div class="content-wrapper">
 
@@ -117,4 +120,4 @@
     <!-- /.content -->
 
 </div>
-<?php include ("../../header.php")?>
+<?php include ABSPATH."/footer.php"?>
