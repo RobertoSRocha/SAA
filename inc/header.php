@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL; ?>/pages/usuario/cadastro.php">
+                    <a href="<?php echo BASEURL; ?>pages/usuario/cadastro.php">
                         <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
                     </a>
                 </li>
