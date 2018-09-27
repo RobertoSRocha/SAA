@@ -1,7 +1,8 @@
-<?php
-    include "../../config.php";
-    include ABSPATH.'header.php';
-?>
+<?php require_once '../../config.php'; ?>
+
+
+<?php include(HEADER_TEMPLATE); ?>
+
 <!-- Div conteúdo central -->
 <div class="content-wrapper">
 
@@ -19,7 +20,7 @@
 
                 </section>
                 <ol class="breadcrumb">
-                    <li><a href="../../index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
+                    <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
                     <li><i class="fa fa-users"></i>
                         <small> Listagem de Usuário</small>
                     </li>
@@ -32,7 +33,7 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-tools pull-right">
-                                <a href="editar.html">
+                                <a href="#">
                                     <button type="button" class="btn btn-block btn-primary">Cadastrar Usuário
                                     </button>
                                 </a>
@@ -120,4 +121,4 @@
     <!-- /.content -->
 
 </div>
-<?php include ABSPATH."/footer.php"?>
+<?php include FOOTER_TEMPLATE ?>

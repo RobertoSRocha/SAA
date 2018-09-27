@@ -1,6 +1,11 @@
-<?php include ("header.php") ?>
+<?php require_once 'config.php'; ?>
 
-<!-- Div conteúdo central -->
+
+<?php include(HEADER_TEMPLATE); ?>
+
+
+
+    <!-- Div conteúdo central -->
 <div class="content-wrapper">
 
     <!-- Main conteudoCentral -->
@@ -11,4 +16,4 @@
 </div>
 <!-- /.content-wrapper -->
 
-<?php include ("footer.php");
+<?php include(FOOTER_TEMPLATE); ?>
