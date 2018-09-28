@@ -1,9 +1,5 @@
 <?php require_once 'config.php'; ?>
-
-
 <?php include(HEADER_TEMPLATE); ?>
-
-
 
     <!-- Div conteúdo central -->
 <div class="content-wrapper">
