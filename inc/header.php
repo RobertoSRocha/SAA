@@ -94,18 +94,33 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <ul class="sidebar-menu" data-widget="tree">
+                
                 <li class="header">MENU DE NAVEGAÇÃO</li>
+                <!-- GERENCIAR PATRIMÔNIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
                     </a>
                 </li>
+                <!-- GERENCIAR USUÁRIOS-->
                 <li>
                     <a href="<?php echo BASEURL; ?>pages/usuario/index.php">
                         <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
                     </a>
                 </li>
-
+                <!-- GERENCIAR LOCALIDADES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>#">
+                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
+                    </a>
+                </li>
+                <!-- GERENCIAR SETORES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>#">
+                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
+                    </a>
+                </li>
+                <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="glyphicon glyphicon-list-alt"></i>
@@ -120,6 +135,7 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Consultar empréstimo</a></li>
                     </ul>
                 </li>
+                <!-- FORMULÁRIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i> <span>Formulários</span>
