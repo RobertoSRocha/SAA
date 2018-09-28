@@ -110,13 +110,13 @@
                 </li>
                 <!-- GERENCIAR LOCALIDADES-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>#">
+                    <a href="#">
                         <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
                     </a>
                 </li>
                 <!-- GERENCIAR SETORES-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>#">
+                    <a href="#">
                         <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
                     </a>
                 </li>
