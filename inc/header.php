@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo BASEURL; ?>pages/usuario/cadastro.php">
+                    <a href="<?php echo BASEURL; ?>pages/usuario/index.php">
                         <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
                     </a>
                 </li>
@@ -136,3 +136,6 @@
             </ul>
         </section>
     </aside>
+    
+    <!-- Div conteúdo central -->
+    <div class="content-wrapper">

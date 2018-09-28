@@ -1,10 +1,21 @@
 <?php require_once '../../config.php'; ?>
 
+<!-- Diretório do Banco -->
+<?php require_once DBAPI; ?>
+
+<!-- Abrir conexão com o banco -->
+<?php $db = open_database();
+    /*if ($db) {
+        echo '<h1>Banco de Dados Conectado!</h1>';
+    } else {
+        echo '<h1>ERRO: Não foi possível Conectar!</h1>';
+    }*/ 
+?>
 
 <?php include(HEADER_TEMPLATE); ?>
 
 <!-- Div conteúdo central -->
-<div class="content-wrapper">
+
 
     <!-- Main conteudoCentral -->
     <section class="content">
@@ -49,6 +60,7 @@
                                         <th>Nome</th>
                                         <th>Matricula</th>
                                         <th>E-mail</th>
+                                        <th>Senha</th>
                                         <th>Permissão</th>
                                         <th>Ações</th>
                                     </tr>
@@ -120,5 +132,5 @@
     </section>
     <!-- /.content -->
 
-</div>
+
 <?php include FOOTER_TEMPLATE ?>
