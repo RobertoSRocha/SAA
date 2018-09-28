@@ -8,20 +8,20 @@ index();
 
 <section class="content-header">		
     <div class="row">			
-        <div class="col-sm-6 text-left">				
+        <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
-                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
+                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i> Página Inicial</a></li>
                 <li><i class="fa fa-users"></i>
                     <small> Listagem de Usuário</small>
                 </li>
             </ol>		
-        </div>			
-        <div class="breadcrumb text-right">		    	
-            <a class="btn btn-primary" href="#">
+        </div>
+        <div class="breadcrumb text-right">
+            <a class="btn btn-primary" href="cadastro.php">
                 <i class="fa fa-plus">
                 </i> Novo Usuário</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
-        </div>		
+        </div>
     </div>	
 </section>
 
@@ -62,10 +62,10 @@ index();
                                     <td><?php echo $usuario['email']; ?></td>			
                                     <td><?php echo $usuario['permissao']; ?></td>
                                     <td class="actions">				
-                                        <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                        <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
+                                        <a href="#?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+                                        <a href="#?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
                                         <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">
-                                            <i class="fa fa-trash"></i> Excluir	</a>			
+                                            <i class="fa fa-trash"></i> Excluir	</a>
                                     </td>		
                                 </tr>	
                                 <?php endforeach; ?>	
