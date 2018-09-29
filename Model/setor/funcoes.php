@@ -8,7 +8,7 @@
     $setor = null;
     
     /** *  Listagem de Clientes	 */
-    function index() {
+    function indexSetor() {
         global $setores;
         $setores = find_all('setor');
     }

@@ -8,7 +8,18 @@
     $patrimonio = null;
     
     /** *  Listagem de Clientes	 */
-    function index() {
+    function indexPatrimonio() {
         global $patrimonios;
         $patrimonios = find_all('patrimonio');
+    }
+
+    /** *  Cadastro de Patrimônios	 */
+    function addPatrimonio() {
+        if (!empty($_POST['patrimonio'])) {
+            $today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+            $patrimonio = $_POST['patrimonio'];
+            $patrimonio['modified'] = $patrimonio['created'] = $today->format("Y-m-d H:i:s");
+            save('patrimonio', $customer);
+            header('location: index.php');
+        }
     }

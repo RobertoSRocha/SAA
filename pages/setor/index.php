@@ -2,7 +2,7 @@
 <?php require_once DBAPI; ?>
 <?php
 require_once SETOR;
-index();
+indexSetor();
 ?>	
 <?php include(HEADER_TEMPLATE); ?>
 

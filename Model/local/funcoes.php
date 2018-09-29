@@ -8,7 +8,7 @@
     $local = null;
     
     /** *  Listagem de Clientes	 */
-    function index() {
+    function indexLocal() {
         global $locais;
         $locais = find_all('locais');
     }

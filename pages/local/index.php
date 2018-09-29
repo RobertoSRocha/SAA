@@ -2,7 +2,7 @@
 <?php require_once DBAPI; ?>
 <?php
 require_once LOCAL;
-index();
+indexLocal();
 ?>	
 <?php include(HEADER_TEMPLATE); ?>
 

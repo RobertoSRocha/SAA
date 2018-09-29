@@ -2,7 +2,7 @@
 <?php require_once DBAPI; ?>
 <?php
 require_once PATRIMONIO;
-index();
+indexPatrimonio();
 ?>	
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -14,10 +14,11 @@ index();
                 <li><i class="fa fa-bank"></i>
                     <small> Listagem de Patrimônios</small>
                 </li>
+                
             </ol>		
         </div>			
         <div class="breadcrumb text-right">		    	
-            <a class="btn btn-primary" href="#">
+            <a class="btn btn-primary" href="add.php">
                 <i class="fa fa-plus">
                 </i> Novo Patrimônio</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
@@ -43,6 +44,7 @@ index();
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                         <h3>Lista de patrimônios do sitema</h3>
+                        <hr />
                         <tr>
                             <th>id</th>
                             <th>Nome</th>
