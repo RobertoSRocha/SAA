@@ -27,10 +27,8 @@ function find($table = null, $id = null) {
     try {
         if ($id) {
             $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
-            echo $result = $database->query($sql);
-            if ($result->num_rows > 0) {
-                $found = $result->fetch_assoc();
-            }
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) { $found = $result->fetch_assoc();}
         } else {
             $sql = "SELECT * FROM " . $table;
             $result = $database->query($sql);

@@ -83,10 +83,14 @@
                             <label for="permissao">Emprestável</label></br>
                             <select class="form-control" id="permissao" 
                                     name="patrimonio['permissao']" required="">
-                                <option value="" ></option>
-                                <option value=0>Não</option>
-                                <option value=1>Sim</option>
-
+                                <!-- Mostra se o patrimônio é emprestável -->
+                                <?php if ($patrimonio['permissao'] == 1) : ?>	
+                                    <option value=1>Sim</option>
+                                    <option value=0>Não</option>
+                                <?php else : ?>				
+                                    <option value=0>Não</option>
+                                    <option value=1>Sim</option>
+                                <?php endif; ?>
                             </select>
                         </div>
                         

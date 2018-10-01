@@ -30,13 +30,18 @@
             if (isset($_POST['patrimonio'])) {
                 $patrimonio = $_POST['patrimonio'];
                 //$customer['modified'] = $now->format("Y-m-d H:i:s");
-                update('patrimonios', $id, $patrimonio);
+                update('patrimonio', $id, $patrimonio);
                 header('location: index.php');
             } else {
                 global $patrimonio;
-                $patrimonio = find('patrimonios', $id);
+                $patrimonio = find('patrimonio', $id);
             }
         } else {
             header('location: index.php');
         }
+    }
+    
+    function view($id = null) {	  
+        global $patrimonio;	  
+        $patrimonio = find('patrimonio', $id);	
     }
