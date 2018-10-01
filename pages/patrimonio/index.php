@@ -1,16 +1,20 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-require_once PATRIMONIO;
-indexPatrimonio();
-?>	
+    require_once PATRIMONIO;
+    indexPatrimonio();
+?>
+<?php
+    require_once SETOR;
+    indexSetor();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
     <div class="row">			
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
-                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
+                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-bank"></i>
                     <small> Listagem de Patrimônios</small>
                 </li>
@@ -46,11 +50,11 @@ indexPatrimonio();
                         <h3>Lista de patrimônios do sitema</h3>
                         <hr />
                         <tr>
-                            <th>id</th>
+                            
                             <th>Nome</th>
                             <th>Tombo</th>
                             <th>Especificação</th>
-                            <th>Permissão</th>
+                            <th>Emprestável</th>
                             <th>Setor responsável</th>
                             <th>Ações</th>
                         </tr>
@@ -59,15 +63,32 @@ indexPatrimonio();
                             <?php if ($patrimonios) : ?>	
                             <?php foreach ($patrimonios as $patrimonio) : ?>		
                                 <tr>			
-                                    <td><?php echo $patrimonio['id']; ?></td>			
+                                    			
                                     <td><?php echo $patrimonio['nome']; ?></td>			
                                     <td><?php echo $patrimonio['tombo']; ?></td>			
-                                    <td><?php echo $patrimonio['especificacao']; ?></td>			
-                                    <td><?php echo $patrimonio['permissao']; ?></td>
-                                    <td><?php echo $patrimonio['setor_id']; ?></td>
+                                    <td><?php echo $patrimonio['especificacao']; ?></td>
+                                    
+                                    <!-- Mostra se o patrimônio é emprestável -->
+                                    <?php if ($patrimonio['permissao'] == 1) : ?>	
+                                        <td>Sim</td>
+                                    <?php else : ?>				
+                                        <td>Não</td>		
+                                    <?php endif; ?>
+                                    
+                                    <!-- Mostra o setor responsável do patrimônio -->
+                                    <?php if ($setores) : ?>	
+                                        <?php foreach ($setores as $setor) : ?>
+                                            <?php if ($setor['id'] == $patrimonio['setor_id']) : ?>	
+                                                <td><?php echo $setor['nome']; ?></td>
+                                            <?php endif; ?>                            
+                                        <?php endforeach; ?>	
+                                    <?php else : ?>				
+                                        <td>Nenhum registro encontrado</td>		
+                                    <?php endif; ?>
+                                    
                                     <td class="actions">				
                                         <a href="#?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                        <a href="#?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
+                                        <a href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
                                         <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">
                                             <i class="fa fa-trash"></i> Excluir	</a>			
                                     </td>		
@@ -81,11 +102,11 @@ indexPatrimonio();
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>id</th>
+                                
                                 <th>Nome</th>
                                 <th>Tombo</th>
                                 <th>Especificação</th>
-                                <th>Permissão</th>
+                                <th>Emprestável</th>
                                 <th>Setor responsável</th>
                                 <th>Ações</th>
                             </tr>

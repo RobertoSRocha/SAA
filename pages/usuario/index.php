@@ -10,7 +10,7 @@ index();
     <div class="row">			
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
-                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
+                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-users"></i>
                     <small> Listagem de Usuário</small>
                 </li>
@@ -44,7 +44,7 @@ index();
                         <thead>
                         <h3>Lista de usuários do sitema</h3>
                         <tr>
-                            <th>id</th>
+                            
                             <th>Nome</th>
                             <th>Matricula</th>
                             <th>E-mail</th>
@@ -55,12 +55,17 @@ index();
                         <tbody>	
                             <?php if ($usuarios) : ?>	
                             <?php foreach ($usuarios as $usuario) : ?>		
-                                <tr>			
-                                    <td><?php echo $usuario['id']; ?></td>			
+                                <tr>						
                                     <td><?php echo $usuario['nome']; ?></td>			
                                     <td><?php echo $usuario['matricula']; ?></td>			
                                     <td><?php echo $usuario['email']; ?></td>			
-                                    <td><?php echo $usuario['permissao']; ?></td>
+                                    <?php if ($usuario['permissao'] == 1) : ?>	
+                                        <td><?php echo "Administrador"; ?></td>
+                                    <?php elseif ($usuario['permissao'] == 2) : ?>	
+                                        <td><?php echo "Operacional"; ?></td>
+                                    <?php else : ?>				
+                                        <td><?php echo "Comum"; ?></td>		
+                                    <?php endif; ?>
                                     <td class="actions">				
                                         <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
                                         <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
@@ -77,7 +82,7 @@ index();
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>id</th>
+                                
                                 <th>Nome</th>
                                 <th>Matricula</th>
                                 <th>E-mail</th>

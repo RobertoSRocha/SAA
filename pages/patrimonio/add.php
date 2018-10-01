@@ -42,28 +42,37 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action="add.php" method="post">
+                    <form action=add.php method="post">
                         <!-- area de campos do form -->
                         <center><h3>Preencha os campos abaixo para adicionar um patrimônio</h3></center>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
-                            <input type="text" class="form-control" name="patrimonio['nome']">	    
+                            <input type="text" class="form-control" id="nome" 
+                                   placeholder="Nome do patrimônio" 
+                                   name="patrimonio['nome']" required="">	    
                         </div>
+                        
                         <div class="form-group">	      
                             <label for="especificacao">Especificação </label>	      
-                            <textarea class="form-control" rows="3" name="patrimonio['especificacao']"></textarea>	    
+                            <textarea class="form-control" id="especificacao" 
+                                      placeholder="Especificação do patrimônio"
+                                      rows="3" name="patrimonio['especificacao']" required=""></textarea>	    
                         </div>
                         <div class="form-group">	      
                             <label for="tombo">Tombo </label>	      
-                            <input type="text" class="form-control" name="patrimonio['tombo']">	    
+                            <input type="text" class="form-control" id="tombo" 
+                                   placeholder="Tombo do patrimônio"
+                                   name="patrimonio['tombo']" required="">	    
                         </div>
                         <div class="form-group">
-                            <label for="permissao">Setor responsável </label>
-                            <select class="form-control" id="permissao" name="patrimonio['permissao']">
+                            <label for="setor_id">Setor responsável </label>
+                            <select class="form-control" id="setor_id" 
+                                    name="patrimonio['setor_id']" required="">
+                                <option value="" ></option>
                                 <?php if ($setores) : ?>	
                                     <?php foreach ($setores as $setor) : ?>					
-                                    <option><?php echo $setor['nome']; ?></option>			
+                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
                                     <?php endforeach; ?>	
                                 <?php else : ?>				
                                     <option>Nenhum registro encontrado</option>		
@@ -71,11 +80,21 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="permissao">Emprestável </label>
-                            <select class="form-control" id="permissao" name="patrimonio['permissao']">
-                                <option>Sim</option>
-                                <option>Não</option>
+                            <label for="permissao">Emprestável</label></br>
+                            <select class="form-control" id="permissao" 
+                                    name="patrimonio['permissao']" required="">
+                                <option value="" ></option>
+                                <option value=0>Não</option>
+                                <option value=1>Sim</option>
+
                             </select>
+                        </div>
+                        
+                        <div id="actions" class="row">	    
+                            <div class="col-md-12">	      
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>	      
+                                <a href="index.php" class="btn btn-default">Cancelar</a>	    
+                            </div>	  
                         </div>
                     </form>
                 </div>

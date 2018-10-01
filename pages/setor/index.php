@@ -10,7 +10,7 @@ indexSetor();
     <div class="row">			
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
-                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-dashboard"></i>Página Inicial</a></li>
+                <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-cubes"></i>
                     <small> Listagem de Setores</small>
                 </li>

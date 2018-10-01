@@ -16,10 +16,27 @@
     /** *  Cadastro de Patrimônios	 */
     function addPatrimonio() {
         if (!empty($_POST['patrimonio'])) {
-            $today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+            //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
             $patrimonio = $_POST['patrimonio'];
-            $patrimonio['modified'] = $patrimonio['created'] = $today->format("Y-m-d H:i:s");
-            save('patrimonio', $customer);
+            //$patrimonio['modified'] = $patrimonio['created'] = $today->format("Y-m-d H:i:s");
+            save('patrimonio', $patrimonio);
+            header('location: index.php');
+        }
+    }
+    
+    function editPatrimonio() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if (isset($_POST['patrimonio'])) {
+                $patrimonio = $_POST['patrimonio'];
+                //$customer['modified'] = $now->format("Y-m-d H:i:s");
+                update('patrimonios', $id, $patrimonio);
+                header('location: index.php');
+            } else {
+                global $patrimonio;
+                $patrimonio = find('patrimonios', $id);
+            }
+        } else {
             header('location: index.php');
         }
     }
