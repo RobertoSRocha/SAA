@@ -6,6 +6,9 @@
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
+<?php $senha = "mudar123";
+$criptografada = md5($senha) ?>
+
 <section class="content-header">		
     <div class="row">			
         <div class="col-sm-6 text-left">				
@@ -60,9 +63,10 @@
                                    placeholder="E-mail do usuário"
                                    name="usuario['email']" required="">	    
                         </div>
+                        <!--style="display:none;"-->
                         <div class="form-group" style="display:none;">	      
                             <label for="senha">Senha </label>	      
-                            <input type="text" class="form-control" id="email"
+                            <input type="text" class="form-control" id="senha"
                                    value="mudar123"
                                    name="usuario['senha']">	    
                         </div>
@@ -79,8 +83,10 @@
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>	      
-                                <a href="index.php" class="btn btn-default">Cancelar</a>	    
+                                <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-check"></i> Cadastrar</button>
+                                <a href="index.php" class="btn btn-default">
+                                    <i class="fa fa-close"></i> Cancelar</a>	    
                             </div>	  
                         </div>
                     </form>

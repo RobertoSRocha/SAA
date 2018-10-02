@@ -62,8 +62,10 @@
                         </dl>	
                         <div id="actions" class="row">		
                             <div class="col-md-12">		  
-                                <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">Editar</a>		  
-                                <a href="index.php" class="btn btn-default">Voltar</a>		
+                                <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">
+                                    <i class="fa fa-pencil"></i> Editar</a>
+                                <a href="index.php" class="btn btn-default">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
                             </div>	
                         </div>
 

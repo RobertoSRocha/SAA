@@ -94,7 +94,7 @@
                                 <?php endforeach; ?>	
                                 <?php else : ?>		
                                 <tr>			
-                                    <td colspan="6">Nenhum registro encontrado.</td>		
+                                    <td colspan="6">Nenhum patrimônio encontrado</td>		
                                 </tr>	
                                 <?php endif; ?>	
                         </tbody>

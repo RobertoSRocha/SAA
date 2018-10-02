@@ -15,9 +15,8 @@
     
     function addUsuario() {
         if (!empty($_POST['usuario'])) {
-            //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
             $usuario = $_POST['usuario'];
-            //$patrimonio['modified'] = $setor['created'] = $today->format("Y-m-d H:i:s");
+            //$usuario['senha'] = base64_encode($usuario['senha']);
             save('usuario', $usuario);
             header('location: index.php');
         }
