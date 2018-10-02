@@ -17,7 +17,7 @@ index();
             </ol>		
         </div>			
         <div class="breadcrumb text-right">		    	
-            <a class="btn btn-primary" href="#">
+            <a class="btn btn-primary" href="add.php">
                 <i class="fa fa-plus">
                 </i> Novo Usuário</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
@@ -60,16 +60,16 @@ index();
                                     <td><?php echo $usuario['matricula']; ?></td>			
                                     <td><?php echo $usuario['email']; ?></td>			
                                     <?php if ($usuario['permissao'] == 1) : ?>	
-                                        <td><?php echo "Administrador"; ?></td>
+                                        <td><?php echo "Nível 1 - Administrador"; ?></td>
                                     <?php elseif ($usuario['permissao'] == 2) : ?>	
-                                        <td><?php echo "Operacional"; ?></td>
+                                        <td><?php echo "Nível 2 - Operador"; ?></td>
                                     <?php else : ?>				
-                                        <td><?php echo "Comum"; ?></td>		
+                                        <td><?php echo "Nível 3 - Comum"; ?></td>		
                                     <?php endif; ?>
                                     <td class="actions">				
-                                        <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                        <a href="#?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
-                                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">
+                                        <a href="view.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
+                                        <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
+                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">
                                             <i class="fa fa-trash"></i> Excluir	</a>			
                                     </td>		
                                 </tr>	
@@ -102,4 +102,5 @@ index();
     <!-- /.row -->
 </section>
 
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

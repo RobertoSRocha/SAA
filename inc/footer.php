@@ -49,5 +49,7 @@
 <script src="<?php echo BASEURL; ?>dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo BASEURL; ?>dist/js/demo.js"></script>
+
+<script src="<?php echo BASEURL; ?>dist/js/main.js"></script>
 </body>
 </html>

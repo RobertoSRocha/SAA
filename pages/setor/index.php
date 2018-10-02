@@ -1,9 +1,20 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
+
 <?php
-require_once SETOR;
-indexSetor();
-?>	
+    require_once SETOR;
+    indexSetor();
+?>
+
+<?php
+    require_once LOCAL;
+    indexLocal();
+?>
+
+<?php
+    require_once USUARIO;
+    index();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -17,7 +28,7 @@ indexSetor();
             </ol>		
         </div>			
         <div class="breadcrumb text-right">		    	
-            <a class="btn btn-primary" href="#">
+            <a class="btn btn-primary" href="add.php">
                 <i class="fa fa-plus">
                 </i> Novo Setor</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
@@ -44,7 +55,6 @@ indexSetor();
                         <thead>
                         <h3>Lista de setores do sitema</h3>
                         <tr>
-                            <th>id</th>
                             <th>Nome</th>
                             <th>Número</th>
                             <th>Local pertencente</th>
@@ -56,15 +66,32 @@ indexSetor();
                             <?php if ($setores) : ?>	
                             <?php foreach ($setores as $setor) : ?>		
                                 <tr>			
-                                    <td><?php echo $setor['id']; ?></td>			
                                     <td><?php echo $setor['nome']; ?></td>			
-                                    <td><?php echo $setor['numero']; ?></td>			
-                                    <td><?php echo $setor['local_id']; ?></td>			
-                                    <td><?php echo $setor['usuario_id']; ?></td>
+                                    <td><?php echo $setor['numero']; ?></td>
+                                    <!-- Mostra o local responsável do setor -->
+                                    <?php if ($locais) : ?>	
+                                        <?php foreach ($locais as $local) : ?>
+                                            <?php if ($local['id'] == $setor['local_id']) : ?>	
+                                                <td><?php echo $local['nome']; ?></td>
+                                            <?php endif; ?>                            
+                                        <?php endforeach; ?>	
+                                    <?php else : ?>				
+                                        <td>Local não encontrado</td>		
+                                    <?php endif; ?>
+                                    <!-- Mostra o usuário responsável do setor -->
+                                    <?php if ($usuarios) : ?>	
+                                        <?php foreach ($usuarios as $usuario) : ?>
+                                            <?php if ($usuario['id'] == $setor['usuario_id']) : ?>	
+                                                <td><?php echo $usuario['nome']; ?></td>
+                                            <?php endif; ?>                            
+                                        <?php endforeach; ?>	
+                                    <?php else : ?>				
+                                        <td>Local não encontrado</td>		
+                                    <?php endif; ?>
                                     <td class="actions">				
-                                        <a href="#?id=<?php echo $setor['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                        <a href="#?id=<?php echo $setor['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
-                                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $setor['id']; ?>">
+                                        <a href="view.php?id=<?php echo $setor['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
+                                        <a href="edit.php?id=<?php echo $setor['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
+                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $setor['id']; ?>">
                                             <i class="fa fa-trash"></i> Excluir	</a>			
                                     </td>		
                                 </tr>	
@@ -77,7 +104,6 @@ indexSetor();
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>id</th>
                                 <th>Nome</th>
                                 <th>Número</th>
                                 <th>Local pertencente</th>
@@ -97,4 +123,5 @@ indexSetor();
     <!-- /.row -->
 </section>
 
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

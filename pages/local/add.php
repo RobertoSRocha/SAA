@@ -1,22 +1,19 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-    require_once USUARIO;
-    addUsuario();
+    require_once LOCAL;
+    addLocal();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
-
-<?php $senha = "mudar123";
-$criptografada = md5($senha) ?>
 
 <section class="content-header">		
     <div class="row">			
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-users"></i> Listagem de Usuários</a></li>
+                <li><a href="index.php"><i class="fa fa-cube"></i> Listagem de Localidades</a></li>
                 <li><i class="glyphicon glyphicon-plus-sign"></i>
-                    <small> Adicionar Usuário</small>
+                    <small> Adicionar Local</small>
                 </li>
             </ol>		
         </div>			
@@ -43,43 +40,31 @@ $criptografada = md5($senha) ?>
                 <div class="box-body">
                     <form action=add.php method="post">
                         <!-- area de campos do form -->
-                        <center><h3>Preencha os campos abaixo para adicionar um usuário</h3></center>
+                        <center><h3>Preencha os campos abaixo para adicionar um local</h3></center>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do usuário" 
-                                   name="usuario['nome']" required="">	    
+                                   placeholder="Nome do local" 
+                                   name="locais['nome']" required="">	    
                         </div>
                         <div class="form-group">	      
-                            <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
-                                   placeholder="Matrícula do usuário"
-                                   name="usuario['matricula']" required="">	    
+                            <label for="rua">Rua </label>	      
+                            <input type="text" class="form-control" id="rua" 
+                                   placeholder="Rua do local"
+                                   name="locais['rua']" required="">	    
                         </div>
                         <div class="form-group">	      
-                            <label for="email">E-mail </label>	      
-                            <input type="email" class="form-control" id="email" 
-                                   placeholder="E-mail do usuário"
-                                   name="usuario['email']" required="">	    
+                            <label for="Bairro">Bairro </label>	      
+                            <input type="text" class="form-control" id="Bairro" 
+                                   placeholder="Bairro do local"
+                                   name="locais['Bairro']" required="">	    
                         </div>
-                        <!--style="display:none;"-->
-                        <div class="form-group" style="display:none;">	      
-                            <label for="senha">Senha </label>	      
-                            <input type="text" class="form-control" id="senha"
-                                   value="mudar123"
-                                   name="usuario['senha']">	    
-                        </div>
-                        <div class="form-group">
-                            <label for="permissao">Permissão</label></br>
-                            <select class="form-control" id="permissao" 
-                                    name="usuario['permissao']" required="">
-                                <option value="" ></option>
-                                <option value=1>Nível 1 - Administrador</option>
-                                <option value=2>Nível 2 - Operador</option>
-                                <option value=3>Nível 3 - Comum</option>
-
-                            </select>
+                        <div class="form-group">	      
+                            <label for="numero">Número </label>	      
+                            <input type="text" class="form-control" id="numero" 
+                                   placeholder="Número do local"
+                                   name="locais['numero']" required="">	    
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

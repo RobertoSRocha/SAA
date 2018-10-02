@@ -81,22 +81,20 @@
                                             <?php if ($setor['id'] == $patrimonio['setor_id']) : ?>	
                                                 <td><?php echo $setor['nome']; ?></td>
                                             <?php endif; ?>                            
-                                        <?php endforeach; ?>	
-                                    <?php else : ?>				
-                                        <td>Nenhum registro encontrado</td>		
+                                        <?php endforeach; ?>		
                                     <?php endif; ?>
                                     
                                     <td class="actions">				
-                                        <a href="#?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
+                                        <a href="view.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
                                         <a href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
-                                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">
+                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">
                                             <i class="fa fa-trash"></i> Excluir	</a>			
                                     </td>		
                                 </tr>	
                                 <?php endforeach; ?>	
                                 <?php else : ?>		
                                 <tr>			
-                                    <td colspan="6">Nenhum registro encontrado.</td>		
+                                    <td colspan="6">Nenhum patrimônio encontrado</td>		
                                 </tr>	
                                 <?php endif; ?>	
                         </tbody>
@@ -123,4 +121,5 @@
     <!-- /.row -->
 </section>
 
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

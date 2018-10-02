@@ -17,7 +17,7 @@ indexLocal();
             </ol>		
         </div>			
         <div class="breadcrumb text-right">		    	
-            <a class="btn btn-primary" href="#">
+            <a class="btn btn-primary" href="add.php">
                 <i class="fa fa-plus">
                 </i> Nova Localidade</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
@@ -44,7 +44,6 @@ indexLocal();
                         <thead>
                         <h3>Lista de locais do sitema</h3>
                         <tr>
-                            <th>id</th>
                             <th>Nome</th>
                             <th>Rua</th>
                             <th>Bairro</th>
@@ -56,15 +55,14 @@ indexLocal();
                             <?php if ($locais) : ?>	
                             <?php foreach ($locais as $local) : ?>		
                                 <tr>			
-                                    <td><?php echo $local['id']; ?></td>			
                                     <td><?php echo $local['nome']; ?></td>			
                                     <td><?php echo $local['rua']; ?></td>			
                                     <td><?php echo $local['Bairro']; ?></td>			
                                     <td><?php echo $local['numero']; ?></td>
                                     <td class="actions">				
-                                        <a href="#?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                        <a href="#?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
-                                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $local['id']; ?>">
+                                        <a href="view.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
+                                        <a href="edit.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
+                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $local['id']; ?>">
                                             <i class="fa fa-trash"></i> Excluir	</a>			
                                     </td>		
                                 </tr>	
@@ -77,7 +75,6 @@ indexLocal();
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>id</th>
                                 <th>Nome</th>
                                 <th>Rua</th>
                                 <th>Bairro</th>
@@ -97,4 +94,5 @@ indexLocal();
     <!-- /.row -->
 </section>
 
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

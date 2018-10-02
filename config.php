@@ -33,17 +33,17 @@
     
     /** caminho para as funções do usuário **/
     if ( !defined('USUARIO') )		
-        define('USUARIO', ABSPATH . 'Model/usuario/funcoes.php');
+        define('USUARIO', ABSPATH . 'model/usuario/funcoes.php');
     
     /** caminho para as funções do patrimônio **/
     if ( !defined('PATRIMONIO') )		
-        define('PATRIMONIO', ABSPATH . 'Model/patrimonio/funcoes.php');
+        define('PATRIMONIO', ABSPATH . 'model/patrimonio/funcoes.php');
     
     /** caminho para as funções do setor **/
     if ( !defined('SETOR') )		
-        define('SETOR', ABSPATH . 'Model/setor/funcoes.php');
+        define('SETOR', ABSPATH . 'model/setor/funcoes.php');
     
     /** caminho para as funções do local **/
     if ( !defined('LOCAL') )		
-        define('LOCAL', ABSPATH . 'Model/local/funcoes.php');
+        define('LOCAL', ABSPATH . 'model/local/funcoes.php');
 
