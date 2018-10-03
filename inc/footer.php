@@ -4,7 +4,8 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2018 <a href="http://emcm.ufrn.br" target="_blank">Escola Multicampi de Ciências Médicas</a>.</strong> Todos os direitos reservados
+    <strong>Copyright &copy; 2018 <a href="http://emcm.ufrn.br" target="_blank">Escola Multicampi de Ciências
+            Médicas</a>.</strong> Todos os direitos reservados
 </footer>
 
 <div class="control-sidebar-bg"></div>
@@ -39,6 +40,8 @@
 <script src="<?php echo BASEURL; ?>bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo BASEURL; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Tabelas ordenadas -->
+<script src="<?php echo BASEURL; ?>bower_components/datatables/jquery.dataTables.js"></script>
 <!-- Slimscroll -->
 <script src="<?php echo BASEURL; ?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -51,5 +54,20 @@
 <script src="<?php echo BASEURL; ?>dist/js/demo.js"></script>
 
 <script src="<?php echo BASEURL; ?>dist/js/main.js"></script>
+
+<!--Pesquisa na Tabela-->
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+
+
 </body>
 </html>
