@@ -67,23 +67,34 @@
                             <label for="usuario_id">Usuário responsável </label>
                             <select class="form-control" id="usuario_id" 
                                     name="setor['usuario_id']" required="">
-                                <option value="" ></option>
                                 <?php if ($usuarios) : ?>	
                                     <?php foreach ($usuarios as $usuario) : ?>					
-                                    <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>			
-                                    <?php endforeach; ?>	
+                                    <?php if($usuario['id'] == $setor['usuario_id']){?>
+                                            <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>			
+                                    <?php } endforeach; ?>	
+                                <?php endif; ?>  
+                                <?php if ($usuarios) : ?>	
+                                    <?php foreach ($usuarios as $usuario) : ?>					
+                                    <?php if($usuario['id'] != $setor['usuario_id']){?>
+                                            <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>			
+                                    <?php } endforeach; ?>	
                                 <?php endif; ?>
+                                    
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="local_id">Localidade </label>
                             <select class="form-control" id="local_id" 
                                     name="setor['local_id']" required="">
-                                <option value="" ></option>
                                 <?php if ($locais) : ?>	
-                                    <?php foreach ($locais as $local) : ?>					
-                                    <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>			
-                                    <?php endforeach; ?>		
+                                    <?php foreach ($locais as $local) : ?>
+                                        <?php if($local['id'] == $setor['local_id']){?>
+                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>			
+                                    <?php } endforeach; ?>
+                                    <?php foreach ($locais as $local) : ?>
+                                        <?php if($local['id'] != $setor['local_id']){?>
+                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>			
+                                    <?php } endforeach; ?>
                                 <?php endif; ?>
                             </select>
                         </div>

@@ -55,9 +55,7 @@
                         <div class="form-group">	      
                             <label for="especificacao">Especificação </label>	      
                             <textarea class="form-control" id="especificacao"
-                                      rows="3" name="patrimonio['especificacao']" required="">
-                                          <?php echo $patrimonio['especificacao']; ?>
-                            </textarea>	    
+                                      rows="3" name="patrimonio['especificacao']" required=""><?php echo trim($patrimonio['especificacao']); ?></textarea>	    
                         </div>
                         <div class="form-group">	      
                             <label for="tombo">Tombo </label>	      
@@ -69,11 +67,15 @@
                             <label for="setor_id">Setor responsável </label>
                             <select class="form-control" id="setor_id" 
                                     name="patrimonio['setor_id']" required="">
-                                <option value="" ></option>
                                 <?php if ($setores) : ?>	
-                                    <?php foreach ($setores as $setor) : ?>					
-                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
-                                    <?php endforeach; ?>		
+                                    <?php foreach ($setores as $setor) : ?>
+                                        <?php if($setor['id'] == $patrimonio['setor_id']){?>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                    <?php } endforeach; ?>
+                                    <?php foreach ($setores as $setor) : ?>
+                                        <?php if($setor['id'] != $patrimonio['setor_id']){?>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                    <?php } endforeach; ?>
                                 <?php endif; ?>
                             </select>
                         </div>
