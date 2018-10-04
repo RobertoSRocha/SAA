@@ -22,9 +22,16 @@
     define('DB_HOST', 'localhost');
 
 
-    /** caminhos dos templates de header e footer **/
-    define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
+    /** caminhos dos templates de header do usuário administrador**/
+    define('HEADER_TEMPLATE', ABSPATH . 'inc/header_administrador.php');
+    
+    /** caminhos dos templates de header do usuário operador**/
+    define('HEADER_TEMPLATE_OPERACIONAL', ABSPATH . 'inc/header_operacional.php');
+    
+    /** caminhos dos templates de header do usuário comum**/
+    define('HEADER_TEMPLATE_PUBLIC', ABSPATH . 'inc/header_public.php');
 
+    /** caminhos dos templates de footer dos usuário**/
     define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');
 
     /** caminho do arquivo de banco de dados **/	
