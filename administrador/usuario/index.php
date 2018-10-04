@@ -52,7 +52,7 @@ index();
                             <th>Matricula</th>
                             <th>E-mail</th>
                             <th>Permissão</th>
-                            <th class="col-lg-2">Ações</th>
+                            <th>Ações</th>
                         </tr>
                         </thead>
                         <tbody>

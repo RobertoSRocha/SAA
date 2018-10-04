@@ -62,7 +62,7 @@
                             <th>Número</th>
                             <th>Local pertencente</th>
                             <th>Usuário responsável</th>
-                            <th class="col-lg-2">Ações</th>
+                            <th>Ações</th>
                         </tr>
                         </thead>
                         <tbody>	

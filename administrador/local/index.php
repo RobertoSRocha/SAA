@@ -51,7 +51,7 @@ indexLocal();
                             <th>Rua</th>
                             <th>Bairro</th>
                             <th>Número</th>
-                            <th class="col-lg-2">Ações</th>
+                            <th>Ações</th>
                         </tr>
                         </thead>
                         <tbody>	

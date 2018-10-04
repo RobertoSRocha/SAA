@@ -58,7 +58,7 @@
                             <th>Especificação</th>
                             <th>Emprestável</th>
                             <th>Setor responsável</th>
-                            <th class="col-lg-2">Ações</th>
+                            <th>Ações</th>
                         </tr>
                         </thead>
                         <tbody>	
