@@ -7,4 +7,4 @@
         header('Location: public/home/index.php');
     }
     */ 
-    header('Location: administrador/index.php');
+    header('Location: admin/index.php');

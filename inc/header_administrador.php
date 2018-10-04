@@ -45,7 +45,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo BASEURL; ?>administrador/index.php" class="logo">
+        <a href="<?php echo BASEURL; ?>admin/index.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>SAA</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -100,25 +100,25 @@
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- GERENCIAR PATRIMÔNIOS-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>administrador/patrimonio/index.php">
+                    <a href="<?php echo BASEURL; ?>admin/patrimonio/index.php">
                         <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
                     </a>
                 </li>
                 <!-- GERENCIAR USUÁRIOS-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>administrador/usuario/index.php">
+                    <a href="<?php echo BASEURL; ?>admin/usuario/index.php">
                         <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
                     </a>
                 </li>
                 <!-- GERENCIAR LOCALIDADES-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>administrador/local/index.php">
+                    <a href="<?php echo BASEURL; ?>admin/local/index.php">
                         <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
                     </a>
                 </li>
                 <!-- GERENCIAR SETORES-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>administrador/setor/index.php">
+                    <a href="<?php echo BASEURL; ?>admin/setor/index.php">
                         <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
                     </a>
                 </li>
