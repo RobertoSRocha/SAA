@@ -19,7 +19,7 @@
 
 <section class="content-header">		
     <div class="row">			
-        <div class="col-sm-6 text-left">				
+        <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-cubes"></i>
@@ -49,11 +49,14 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
+                <div class="box-header ">
+                    <center><h3>Listagem de setores do sitema</h3></center>
+                    <hr/>
+                </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
                         <thead>
-                        <h3>Lista de setores do sitema</h3>
                         <tr>
                             <th>Nome</th>
                             <th>Número</th>

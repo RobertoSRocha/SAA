@@ -6,7 +6,7 @@ index();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
-<section class="content-header">
+<section class="content-header" xmlns="http://www.w3.org/1999/html">
     <div class="row">
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
@@ -38,8 +38,9 @@ index();
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
-                    <h2 class="box-title">Lista de usuários do sitema</h2>
+                <div class="box-header ">
+                    <center><h3>Listagem de usuários do sitema</h3></center>
+                <hr />
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">

@@ -43,12 +43,14 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
+                <div class="box-header ">
+                    <center><h3>Listagem de patrimônios do sitema</h3></center>
+                    <hr/>
+                </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
                         <thead>
-                        <h3>Lista de patrimônios do sitema</h3>
-                        <hr />
                         <tr>
                             
                             <th>Nome</th>
