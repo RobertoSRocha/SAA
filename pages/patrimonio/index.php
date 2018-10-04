@@ -43,8 +43,8 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header ">
-                    <center><h3>Listagem de patrimônios do sitema</h3></center>
+                <div class="box-header text-center">
+                    <h3>Listagem de patrimônios do sitema</h3>
                     <hr/>
                 </div>
                 <!-- /.box-header -->
@@ -58,7 +58,7 @@
                             <th>Especificação</th>
                             <th>Emprestável</th>
                             <th>Setor responsável</th>
-                            <th>Ações</th>
+                            <th class="col-lg-2">Ações</th>
                         </tr>
                         </thead>
                         <tbody>	
@@ -89,8 +89,8 @@
                                             <?php endif; ?>                            
                                         <?php endforeach; ?>		
                                     <?php endif; ?>
-                                    
-                                    <td class="actions">				
+
+                                    <td class="actions text-center">
                                         <a href="view.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
                                         <a href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
                                         <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">

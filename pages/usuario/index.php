@@ -38,8 +38,8 @@ index();
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header ">
-                    <center><h3>Listagem de usuários do sitema</h3></center>
+                <div class="box-header text-center">
+                    <h3>Listagem de usuários do sitema</h3>
                 <hr />
                 </div>
                 <!-- /.box-header -->
@@ -52,7 +52,7 @@ index();
                             <th>Matricula</th>
                             <th>E-mail</th>
                             <th>Permissão</th>
-                            <th>Ações</th>
+                            <th class="col-lg-2">Ações</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -69,7 +69,7 @@ index();
                                     <?php else : ?>
                                         <td><?php echo "Nível 3 - Comum"; ?></td>
                                     <?php endif; ?>
-                                    <td class="actions">
+                                    <td class="actions text-center">
                                         <a href="view.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
                                         <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
                                         <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">

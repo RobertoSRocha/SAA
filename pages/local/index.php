@@ -38,8 +38,8 @@ indexLocal();
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header ">
-                    <center><h3>Listagem de locais do sitema</h3></center>
+                <div class="box-header text-center">
+                    <h3>Listagem de locais do sitema</h3>
                     <hr/>
                 </div>
                 <!-- /.box-header -->
@@ -51,18 +51,18 @@ indexLocal();
                             <th>Rua</th>
                             <th>Bairro</th>
                             <th>Número</th>
-                            <th >Ações</th>
+                            <th class="col-lg-2">Ações</th>
                         </tr>
                         </thead>
                         <tbody>	
                             <?php if ($locais) : ?>	
-                            <?php foreach ($locais as $local) : ?>		
-                                <tr>			
+                            <?php foreach ($locais as $local) : ?>
+                                    <tr>
                                     <td><?php echo $local['nome']; ?></td>			
                                     <td><?php echo $local['rua']; ?></td>			
                                     <td><?php echo $local['Bairro']; ?></td>			
                                     <td><?php echo $local['numero']; ?></td>
-                                    <td class="actions">				
+                                        <td class="actions text-center">
                                         <a href="view.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
                                         <a href="edit.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
                                         <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $local['id']; ?>">
