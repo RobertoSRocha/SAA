@@ -43,7 +43,7 @@ CREATE TABLE setor(
 CREATE TABLE patrimonio(
 	id INT AUTO_INCREMENT NOT NULL,
     tombo VARCHAR(50) NOT NULL,
-    especificacao VARCHAR(255) NOT NULL,
+    especificacao TEXT NOT NULL,
     nome VARCHAR(100)  NOT NULL,
    	permissao INT NOT NULL,
     setor_id INT NOT NULL,
