@@ -98,26 +98,8 @@
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- GERENCIAR PATRIMÔNIOS-->
                 <li>
-                    <a href="<?php echo BASEURL; ?>pages/patrimonio/index.php">
+                    <a href="<?php echo BASEURL; ?>operacional/patrimonio/index.php">
                         <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR USUÁRIOS-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>pages/usuario/index.php">
-                        <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR LOCALIDADES-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>pages/local/index.php">
-                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR SETORES-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>pages/setor/index.php">
-                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
                     </a>
                 </li>
                 <!-- EMPRÉSTIMOS-->
