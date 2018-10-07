@@ -2,6 +2,7 @@
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
+session_start();
 function open_database() {
     try {
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
