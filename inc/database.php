@@ -115,6 +115,10 @@ function remove($table = null, $id = null) {
             if ($result = $database->query($sql)) {
                 $_SESSION['message'] = "Registro Removido com Sucesso.";
                 $_SESSION['type'] = 'success';
+            }else{
+
+                $_SESSION['message'] = "Vixe.. Não foi possivel realizar a operação.";
+                $_SESSION['type'] = 'danger';
             }
         }
     } catch (Exception $e) {

@@ -22,9 +22,12 @@
     define('DB_HOST', 'localhost');
 
 
+    /** caminhos dos alertas de operacoes**/
+    define('ALERT_MSG', ABSPATH . 'inc/alert.php');
+
     /** caminhos dos templates de header do usuário administrador**/
     define('HEADER_TEMPLATE', ABSPATH . 'inc/header_administrador.php');
-    
+
     /** caminhos dos templates de header do usuário operador**/
     define('HEADER_TEMPLATE_OPERACIONAL', ABSPATH . 'inc/header_operacional.php');
     
