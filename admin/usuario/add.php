@@ -36,7 +36,7 @@ $criptografada = md5($senha) ?>
                 <div class="box-body">
                     <form action=add.php method="post">
                         <!-- area de campos do form -->
-                        <center><h3>Preencha os campos abaixo para adicionar um usuário</h3></center>
+                        <h3 class="text-center">Preencha os campos abaixo para adicionar um usuário</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      

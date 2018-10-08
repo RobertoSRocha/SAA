@@ -36,7 +36,7 @@
                 <div class="box-body">
                     <form action="edit.php?id=<?php echo $patrimonio['id']; ?>" method="post">
                         <!-- area de campos do form -->
-                        <center><h3>Edite nos campos abaixo as informações do patrimônio</h3></center>
+                        <h3 class="text-center">Edite nos campos abaixo as informações do patrimônio</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      

@@ -42,7 +42,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <center><h3>Informações do setor</h3></center>
+                    <h3 class="text-center">Informações do setor</h3>
                         <hr />
                         <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png" 
                                      class="img-rounded" alt="Cinque Terre"></center>

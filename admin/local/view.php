@@ -32,9 +32,9 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <center><h3>Informações do patrimônio</h3></center>
+                    <h3 class="text-center">Informações do patrimônio</h3>
                         <hr />
-                        <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png" 
+                        <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png"
                                      class="img-rounded" alt="Cinque Terre"></center>
                         <dl class="dl-horizontal">		
                             <dt>Nome:</dt>		

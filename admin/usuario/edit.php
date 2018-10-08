@@ -32,7 +32,7 @@
                 <div class="box-body">
                     <form action="edit.php?id=<?php echo $usuario['id']; ?>" method="post">
                         <!-- area de campos do form -->
-                        <center><h3>Edite nos campos abaixo as informações do usuário</h3></center>
+                        <h3 class="text-center">Edite nos campos abaixo as informações do usuário</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
