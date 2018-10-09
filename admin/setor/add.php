@@ -63,11 +63,17 @@
                             <select class="form-control" id="usuario_id" 
                                     name="setor['usuario_id']" required="">
                                 <option value="" ></option>
-                                <?php if ($usuarios) : ?>	
-                                    <?php foreach ($usuarios as $usuario) : ?>					
-                                    <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>			
-                                    <?php endforeach; ?>	
+
+                                <!--Verificar se o usuario é nivel 1 ou 2-->
+                                <?php if ($usuarios) : ?>
+                                    <?php foreach ($usuarios as $usuario) : ?>
+                                        <?php if ($usuario['permissao'] == 1 || $usuario['permissao'] == 2) : ?>
+                                            <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
                                 <?php endif; ?>
+
+
                             </select>
                         </div>
                         <div class="form-group">

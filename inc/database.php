@@ -117,7 +117,7 @@ function remove($table = null, $id = null) {
                 $_SESSION['type'] = 'success';
             }else{
 
-                $_SESSION['message'] = "Vixe.. Não foi possivel realizar a operação.";
+                $_SESSION['message'] = "Opa! Não foi possivel realizar a operação.";
                 $_SESSION['type'] = 'danger';
             }
         }
