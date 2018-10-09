@@ -45,7 +45,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo BASEURL; ?>index.php" class="logo">
+        <a href="<?php echo BASEURL; ?>operacional/index.php" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>SAA</b></span>
             <!-- logo for regular state and mobile devices -->
@@ -128,9 +128,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Formulário 01</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Formulário 02</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Formulário 03</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Alunos Residência</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
             </ul>

@@ -84,7 +84,7 @@
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
-                                <i class="fa fa-check"></i> Cadastrar</button>
+                                <i class="fa fa-file-pdf-o"></i> Cadastrar</button>
                                 <a href="index.php" class="btn btn-default">
                                     <i class="fa fa-close"></i> Cancelar</a>	    
                             </div>	  
