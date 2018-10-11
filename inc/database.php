@@ -72,10 +72,15 @@ function save($table = null, $data = null) {
     $columns = rtrim($columns, ',');	  
     $values = rtrim($values, ',');	  	  
     $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";		  
-    try {	    
-        $database->query($sql);		    
-        $_SESSION['message'] = 'Registro cadastrado com sucesso.';	    
-        $_SESSION['type'] = 'success';	  	  
+    try {
+        $database->query($sql);
+        if (($database->affected_rows) > 0) {
+            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+            $_SESSION['type'] = 'success';
+        } else {
+            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+            $_SESSION['type'] = 'warning';
+        }
     } 
     catch (Exception $e) { 	  	    
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';	    
@@ -97,8 +102,14 @@ function update($table = null, $id = 0, $data = null) {
     $sql .= " WHERE id=" . $id . ";";
     try {
         $database->query($sql);
-        $_SESSION['message'] = 'Registro atualizado com sucesso.';
-        $_SESSION['type'] = 'success';
+        //verifica se ouve alguma alteracão no banco
+        if (($database->affected_rows) > 0) {
+            $_SESSION['message'] = 'Registro atualizado com sucesso.';
+            $_SESSION['type'] = 'success';
+        }else{
+            $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
+            $_SESSION['type'] = 'danger';
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
         $_SESSION['type'] = 'danger';
@@ -117,7 +128,7 @@ function remove($table = null, $id = null) {
                 $_SESSION['type'] = 'success';
             }else{
 
-                $_SESSION['message'] = "Opa! Não foi possivel realizar a operação.";
+                $_SESSION['message'] = "Viiixe! Não foi possivel realizar a operação. Verifique se esse registro está sendo referenciado em outro local";
                 $_SESSION['type'] = 'danger';
             }
         }
