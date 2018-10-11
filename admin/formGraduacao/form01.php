@@ -38,13 +38,13 @@
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
+                                   placeholder="Nome do requisitante" 
                                    name="formGraduacao01['nome']" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
                             <input type="text" class="form-control" id="matricula" 
-                                   placeholder="Matrícula do usuário"
+                                   placeholder="Matrícula do requisitante"
                                    name="formGraduacao01['matricula']" required="">	    
                         </div>
                         <div class="form-group">

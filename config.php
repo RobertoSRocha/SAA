@@ -42,6 +42,10 @@
         define('DBAPI', ABSPATH . 'inc/database.php');
     
     /** caminho para as funções do usuário **/
+    if ( !defined('LOGIN') )		
+        define('LOGIN', ABSPATH . 'model/login/funcoes.php');
+    
+    /** caminho para as funções do usuário **/
     if ( !defined('USUARIO') )		
         define('USUARIO', ABSPATH . 'model/usuario/funcoes.php');
     
