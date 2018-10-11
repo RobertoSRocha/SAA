@@ -14,24 +14,27 @@
     }
     
     function verificaUsuario() {
-        if (!empty($_POST['usuario'])) {
-            $usuario = $_POST['usuario'];
-            //$usuario['senha'] = base64_encode($usuario['senha']);
-            save('usuario', $usuario);
-            if($usuario/*usuario administrador*/){
+        $matricula = (isset($_POST['matricula'])) ? $_POST['matricula'] : '';
+        $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
+        if (/*login($matricula, $senha)*/ $matricula/* usuario existir na base de dados */) {
+            if ($matricula/* usuario administrador */) {
+                //echo '1 - ' . $matricula;
+                //echo '1 - ' . $senha;
+                header('location: ../admin/index.php');
+            } elseif ($matricula/* usuario operacional */) {
+                //echo '2 - ' . $matricula;
+                header('location: ../operacional/index.php');
+            } else {
+                /* usuario comum: não tem permissão para logar */
+                //echo '3 - ' . $matricula;
                 header('location: ../admin/index.php');
             }
-            elseif($usuario/*usuario operacional*/) {
-                header('location: ../operacional/index.php');
-            }
-            else{
-                /*usuario comum*/
-                header('location: index.php');
-            }
+        } else {
+            /* usuario não encontrado */
         }
     }
-    
-    function editUsuario() {
+
+function editUsuario() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             if (isset($_POST['usuario'])) {

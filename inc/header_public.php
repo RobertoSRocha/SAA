@@ -42,7 +42,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <?php include('login/modal.php'); ?>
+    <?php include('modal.php'); ?>
     <header class="main-header">
         <!-- Logo -->
         <a href="<?php echo BASEURL; ?>public/index.php" class="logo">

@@ -69,5 +69,17 @@ CREATE TABLE emprestimo(
     FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id)
     
     )ENGINE = InnoDB;
+
+CREATE TABLE formGraduacao(
+	id INT AUTO_INCREMENT NOT NULL,
+    usuario_id INT NOT NULL,
+    data_requerimento DATE NOT NULL,
+    tipo_requisicao VARCHAR(100)  NOT NULL,
+   	
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    
+    )ENGINE = InnoDB;
     
 
