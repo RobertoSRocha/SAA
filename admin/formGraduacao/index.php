@@ -50,7 +50,7 @@
                     <div class="icon">
                         <i class="fa fa-money"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="form02.php" class="small-box-footer">
                         Requisitar <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="icon">
                         <i class="ion ion-document"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="form03.php" class="small-box-footer">
                         Requisitar <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -84,7 +84,7 @@
                     <div class="icon">
                         <i class="ion ion-document-text"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
+                    <a href="form04.php" class="small-box-footer">
                         Requisitar <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
