@@ -74,7 +74,29 @@
                                 <option value=alagoas>Alagoas - AL</option>
                                 <option value=amapa>Amapá - AP</option>
                                 <option value=amazonas>Amazonas - AM</option>
-
+                                <option value=bahia>Bahia - BA</option>
+                                <option value=ceara>Ceará - CE</option>
+                                <option value=distrito_federal>Distrito Federal - DF</option>
+                                <option value=espirito_santo>Espírito Santo - ES</option>
+                                <option value=goias>Goiás - GO</option>
+                                <option value=maranhao>Maranhão - MA</option>
+                                <option value=mato_grosso>Mato Grosso - MT</option>
+                                <option value=mato_grosso_sul>Mato Grosso do Sul - MS</option>
+                                <option value=minas_gerais>Minas Gerais - MG</option>
+                                <option value=para>Pará - PA</option>
+                                <option value=paraiba>Paraíba - PB</option>
+                                <option value=parana>Paraná - PR</option>
+                                <option value=pernambuco>Pernambuco - PE</option>
+                                <option value=piaui>Piauí - PI</option>
+                                <option value=rio_de_janeiro>Rio de Janeiro - RJ</option>
+                                <option value=rio_grande_norte>Rio Grande do Norte - RN</option>
+                                <option value=rio_grande_sul>Rio Grande do Sul - RS</option>
+                                <option value=rondonia>Rondônia - RO</option>
+                                <option value=roraima>Roraima - RR</option>
+                                <option value=santa_catarina>Santa Catarina - SC</option>
+                                <option value=sao_paulo>São Paulo - SP</option>
+                                <option value=sergipe>Sergipe - SE</option>
+                                <option value=tocantins>Tocantins - TO</option>
                             </select>
                         </div>
                         <div id="actions" class="row">	    
