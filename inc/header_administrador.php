@@ -33,9 +33,9 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-<!--    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -96,40 +96,16 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <ul class="sidebar-menu" data-widget="tree">
-                
+
                 <li class="header">MENU DE NAVEGAÇÃO</li>
-                <!-- GERENCIAR PATRIMÔNIOS-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>admin/patrimonio/index.php">
-                        <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR USUÁRIOS-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>admin/usuario/index.php">
-                        <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR LOCALIDADES-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>admin/local/index.php">
-                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
-                    </a>
-                </li>
-                <!-- GERENCIAR SETORES-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>admin/setor/index.php">
-                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
-                    </a>
-                </li>
+
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="glyphicon glyphicon-list-alt"></i>
                         <span>Empréstimos</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="#"><i class="fa fa-circle-o"></i> Realizar empréstimo</a></li>
@@ -137,13 +113,14 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Consultar empréstimo</a></li>
                     </ul>
                 </li>
+
                 <!-- FORMULÁRIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i> <span>Formulários</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?php echo BASEURL; ?>admin/formGraduacao/index.php"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
@@ -151,9 +128,37 @@
                         <li><a href="<?php echo BASEURL; ?>admin/formProfessor/index.php"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
+
+                <!-- GERENCIAR LOCALIDADES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>admin/local/index.php">
+                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
+                    </a>
+                </li>
+
+                <!-- GERENCIAR PATRIMÔNIOS-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>admin/patrimonio/index.php">
+                        <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
+                    </a>
+                </li>
+
+                <!-- GERENCIAR SETORES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>admin/setor/index.php">
+                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
+                    </a>
+                </li>
+
+                <!-- GERENCIAR USUÁRIOS-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>admin/usuario/index.php">
+                        <i class="fa fa-users"></i><span>Gerenciar Usuários</span>
+                    </a>
+                </li>
             </ul>
         </section>
     </aside>
-    
+
     <!-- Div conteúdo central -->
     <div class="content-wrapper">

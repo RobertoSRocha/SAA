@@ -98,12 +98,6 @@
             <ul class="sidebar-menu" data-widget="tree">
                 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
-                <!-- GERENCIAR PATRIMÔNIOS-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>operacional/patrimonio/index.php">
-                        <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
-                    </a>
-                </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">
@@ -133,6 +127,14 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
+
+                <!-- GERENCIAR PATRIMÔNIOS-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>operacional/patrimonio/index.php">
+                        <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
+                    </a>
+                </li>
+
             </ul>
         </section>
     </aside>
