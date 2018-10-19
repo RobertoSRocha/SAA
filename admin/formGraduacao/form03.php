@@ -13,7 +13,7 @@
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><a href="index.php"><i class="fa fa-edit"></i> Listagem dos formulários</a></li>
                 <li><i class="ion ion-android-document"></i>
-                    <small> Exercícios domiciliares evento</small>
+                    <small> Exercícios Domiciliares - Evento</small>
                 </li>
             </ol>		
         </div>			
@@ -59,6 +59,24 @@
                                    placeholder="Coordenador do módulo"
                                    name="formGraduacao03['coordenador_modulo']" required="">	    
                         </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data Inicial do Pedido </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <span class="icon-place"></span>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data Final do Pedido </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <span class="icon-place"></span>
+                                </div>
+                        </div>
                         <div class="form-group">	      
                             <label for="evento">Evento </label>	      
                             <input type="text" class="form-control" id="evento" 
@@ -72,16 +90,57 @@
                                    name="formGraduacao03['cidade']" required="">	    
                         </div>
                         <div class="form-group">
-                            <label for="estado">Selecione um estado </label></br>
+                            <label for="estado">Estado </label></br>
                             <select class="form-control" id="estado" 
                                     name="formGraduacao03['estado']" required="">
                                 <option value="" ></option>
-                                <option value=coordenador>Acre - AC</option>
-                                <option value=professor>Alagoas - AL</option>
-                                <option value=diretor>Amapá - AP</option>
-                                <option value=secretario>Amazonas - AM</option>
+                                <option value=acre>Acre - AC</option>
+                                <option value=alagoas>Alagoas - AL</option>
+                                <option value=amapa>Amapá - AP</option>
+                                <option value=amazonas>Amazonas - AM</option>
+                                <option value=bahia>Bahia - BA</option>
+                                <option value=ceara>Ceará - CE</option>
+                                <option value=distrito_federal>Distrito Federal - DF</option>
+                                <option value=espirito_santo>Espírito Santo - ES</option>
+                                <option value=goias>Goiás - GO</option>
+                                <option value=maranhao>Maranhão - MA</option>
+                                <option value=mato_grosso>Mato Grosso - MT</option>
+                                <option value=mato_grosso_sul>Mato Grosso do Sul - MS</option>
+                                <option value=minas_gerais>Minas Gerais - MG</option>
+                                <option value=para>Pará - PA</option>
+                                <option value=paraiba>Paraíba - PB</option>
+                                <option value=parana>Paraná - PR</option>
+                                <option value=pernambuco>Pernambuco - PE</option>
+                                <option value=piaui>Piauí - PI</option>
+                                <option value=rio_de_janeiro>Rio de Janeiro - RJ</option>
+                                <option value=rio_grande_norte>Rio Grande do Norte - RN</option>
+                                <option value=rio_grande_sul>Rio Grande do Sul - RS</option>
+                                <option value=rondonia>Rondônia - RO</option>
+                                <option value=roraima>Roraima - RR</option>
+                                <option value=santa_catarina>Santa Catarina - SC</option>
+                                <option value=sao_paulo>São Paulo - SP</option>
+                                <option value=sergipe>Sergipe - SE</option>
+                                <option value=tocantins>Tocantins - TO</option>
 
                             </select>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data do Início do Evento </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <span class="icon-place"></span>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data do Término do Evento </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <span class="icon-place"></span>
+                                </div>
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

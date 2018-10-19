@@ -13,7 +13,7 @@
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><a href="index.php"><i class="fa fa-edit"></i> Listagem dos formulários</a></li>
                 <li><i class="ion ion-android-document"></i>
-                    <small> Exercícios domiciliares saúde</small>
+                    <small> Exercícios Domiciliares - Saúde</small>
                 </li>
             </ol>		
         </div>			
@@ -57,31 +57,25 @@
                             <label for="modulo">Coordenador do módulo </label>	      
                             <input type="text" class="form-control" id="coordenador_modulo" 
                                    placeholder="Coordenador do módulo"
-                                   name="formGraduacao04['coordenador_modulo']" required="">	    
-                        </div>
-                        <div class="form-group">	      
-                            <label for="evento">Evento </label>	      
-                            <input type="text" class="form-control" id="evento" 
-                                   placeholder="Nome do evento"
-                                   name="formGraduacao04['evento']" required="">	    
-                        </div>
-                        <div class="form-group">	      
-                            <label for="cidade">Cidade </label>	      
-                            <input type="text" class="form-control" id="cidade" 
-                                   placeholder="Nome da cidade"
-                                   name="formGraduacao04['cidade']" required="">	    
+                                   name="formGraduacao04['coordenador_modulo']" required="">
                         </div>
                         <div class="form-group">
-                            <label for="estado">Selecione um estado </label></br>
-                            <select class="form-control" id="estado" 
-                                    name="formGraduacao04['estado']" required="">
-                                <option value="" ></option>
-                                <option value=coordenador>Acre - AC</option>
-                                <option value=professor>Alagoas - AL</option>
-                                <option value=diretor>Amapá - AP</option>
-                                <option value=secretario>Amazonas - AM</option>
-
-                            </select>
+                                <label class="title">
+                                        <span class="required">Data Inicial do Pedido </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <span class="icon-place"></span>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data Final do Pedido </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <span class="icon-place"></span>
+                                </div>
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

@@ -54,7 +54,7 @@
                                    name="formGraduacao02['evento']" required="">	    
                         </div>
                         <div class="form-group">	      
-                            <label for="titulo_trabalho">Título do trabalho </label>	      
+                            <label for="titulo_trabalho">Título </label>	      
                             <input type="text" class="form-control" id="titulo_trabalho" 
                                    placeholder="Título do trabalho"
                                    name="formGraduacao02['titulo_trabalho']" required="">	    
@@ -66,7 +66,7 @@
                                    name="formGraduacao02['cidade']" required="">	    
                         </div>
                         <div class="form-group">
-                            <label for="estado">Selecione um estado </label></br>
+                            <label for="estado">Estado </label></br>
                             <select class="form-control" id="estado" 
                                     name="formGraduacao02['estado']" required="">
                                 <option value="" ></option>
@@ -98,6 +98,24 @@
                                 <option value=sergipe>Sergipe - SE</option>
                                 <option value=tocantins>Tocantins - TO</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data do Início do Evento </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <span class="icon-place"></span>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="title">
+                                        <span class="required">Data do Término do Evento </span>
+                                </label>
+                                <div class="item-cont">
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <span class="icon-place"></span>
+                                </div>
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

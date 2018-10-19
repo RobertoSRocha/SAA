@@ -108,9 +108,9 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Realizar empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Devolver empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar empréstimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar Empréstimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Devolver Empréstimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Realizar Empréstimo</a></li>
                     </ul>
                 </li>
 

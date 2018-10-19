@@ -55,7 +55,7 @@
                                 <option value=coordenador>Ao Coordenador do módulo</option>
                                 <option value=professor>Ao professor</option>
                                 <option value=diretor>Ao diretor</option>
-                                <option value=secretario>Ao secretario</option>
+                                <option value=secretario>Ao secretário</option>
 
                             </select>
                         </div>
@@ -68,8 +68,8 @@
                         <div class="form-group">	      
                             <label for="requerimento">Requerimento </label>	      
                             <textarea class="form-control" id="requerimento" 
-                                      placeholder="Vem requerer"
-                                      rows="3" name="formGraduacao01['requerimento']" required=""></textarea>	    
+                                      placeholder="Descreva os motivos"
+                                      rows="7" name="formGraduacao01['requerimento']" required=""></textarea>	    
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
