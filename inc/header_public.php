@@ -100,9 +100,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Alunos Residência</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Professores</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/formGraduacao/index.php"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/formResidencia/index.php"><i class="fa fa-circle-o"></i> Alunos Residência</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/formProfessor/index.php"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
             </ul>
