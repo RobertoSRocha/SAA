@@ -141,14 +141,28 @@
                         <li><a href="<?php echo BASEURL; ?>operacional/formProfessor/index.php"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
-
+                
+                <!-- GERENCIAR LOCALIDADES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>operacional/local/index.php">
+                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
+                    </a>
+                </li>
+                
                 <!-- GERENCIAR PATRIMÔNIOS-->
                 <li>
                     <a href="<?php echo BASEURL; ?>operacional/patrimonio/index.php">
                         <i class="fa fa-bank"></i><span>Gerenciar Patrimônios</span>
                     </a>
                 </li>
-
+                
+                <!-- GERENCIAR SETORES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>operacional/setor/index.php">
+                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
+                    </a>
+                </li>
+                
             </ul>
         </section>
     </aside>
