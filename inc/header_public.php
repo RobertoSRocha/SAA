@@ -42,7 +42,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    <?php include('modal.php'); ?>
+    <?php include(TELALOGIN); ?>
     <header class="main-header">
         <!-- Logo -->
         <a href="<?php echo BASEURL; ?>public/index.php" class="logo">
@@ -78,6 +78,19 @@
             <ul class="sidebar-menu" data-widget="tree">
                 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
+                <!-- ACHADOS E PERDIDOS -->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <span>Achados e perdidos</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens</a></li>
+                    </ul>
+                </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">

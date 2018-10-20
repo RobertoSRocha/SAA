@@ -21,7 +21,6 @@
     /** nome do host do MySQL */ 
     define('DB_HOST', 'localhost');
 
-
     /** caminhos dos alertas de operacoes**/
     define('ALERT_MSG', ABSPATH . 'inc/alert.php');
 
@@ -60,4 +59,8 @@
     /** caminho para as funções do local **/
     if ( !defined('LOCAL') )		
         define('LOCAL', ABSPATH . 'model/local/funcoes.php');
+    
+    /** caminho para as funções do local **/
+    if ( !defined('TELALOGIN') )		
+        define('TELALOGIN', ABSPATH . 'public/login/modal.php');
 
