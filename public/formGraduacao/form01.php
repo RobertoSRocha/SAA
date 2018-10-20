@@ -4,7 +4,7 @@
     require_once LOCAL;
     addLocal();
 ?>
-<?php include(HEADER_TEMPLATE); ?>
+<?php include(HEADER_TEMPLATE_PUBLIC); ?>
 
 <section class="content-header">		
     <div class="row">			
