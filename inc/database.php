@@ -117,70 +117,56 @@ function update($table = null, $id = 0, $data = null) {
     close_database($database);
 }
 
-/*function login($matricula, $senha) {
+function login($table, $matricula, $senha) {
     $database = open_database();
     $found = null;
     try {
-        global $_SG;
-        $cS = ($_SG['caseSensitive']) ? 'BINARY' : '';
-        $sql = "SELECT * FROM `" . $_SG['usuario'] . "` WHERE " . $cS . " `matricula` = '" . $matricula . "' AND " . $cS . " `senha` = '" . $senha . "' LIMIT 1";
-        $query = mysql_query($sql);
-        
-        $resultado = mysql_fetch_assoc($query);
-        if (empty($resultado)) {
-            // Nenhum registro foi encontrado => o usuário é inválido
-            //$_SESSION['message'] = $e->GetMessage();
-            //$_SESSION['type'] = 'danger'; //usuario ou senha invalidos
-            close_database($database);
-            $found = false;
-        } else {
-            // Definimos dois valores na sessão com os dados do usuário
-            $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
-            $_SESSION['usuarioNome'] = $resultado['nome']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
-            // Verifica a opção se sempre validar o login
-            if ($_SG['validaSempre'] == true) {
-                // Definimos dois valores na sessão com os dados do login
-                $_SESSION['usuarioLogin'] = $matricula;
-                $_SESSION['usuarioSenha'] = $senha;
+        if($matricula != null && $senha != null){
+            $sql = "SELECT * FROM " . $table . " WHERE matricula =".$matricula. " AND senha='".$senha."'";
+            $result = $database->query($sql);
+            if ($result->num_rows == 1 /*usuario existe na base */) {
+                $row = $result->fetch_assoc();
+                if($row['permissao'] == 1 /*usuario administrador */){
+                    session_start();
+                    $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
+                    $_SESSION['type'] = 'success';
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['matricula'] = $matricula;
+                    $_SESSION['senha'] = $senha;
+                    $_SESSION['nome'] = $row['nome'];
+                    $_SESSION['permissao'] = $row['permissao'];
+                    $found = $row['permissao'];
+                }
+                elseif($row['permissao'] == 2 /*usuario operacional */){
+                    session_start();
+                    $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
+                    $_SESSION['type'] = 'success';
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['matricula'] = $matricula;
+                    $_SESSION['senha'] = $senha;
+                    $_SESSION['nome'] = $row['nome'];
+                    $_SESSION['permissao'] = $row['permissao'];
+                    $found = $row['permissao'];
+                }else /*usuario comum */{
+                    $_SESSION['message'] = "Você não tem permissão para logar no sistema";
+                    $_SESSION['type'] = 'danger';
+                    $found = $row['permissao'];
+                }
+            } else {
+                // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+                $_SESSION['message'] = "Viiixe, não foi possivel logar, usuário não encontrado ou dados inválidos";
+                $_SESSION['type'] = 'danger';
+                $found = 0;
             }
-            $found = true;
         }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
-        $found = false;
+        $found = 0;
     }
     close_database($database);
     return $found;
-}*/
-
-/*function validaUsuario($usuario, $senha) {
-  global $_SG;
-  $cS = ($_SG['caseSensitive']) ? 'BINARY' : '';
-  // Usa a função addslashes para escapar as aspas
-  $nusuario = addslashes($usuario);
-  $nsenha = addslashes($senha);
-  // Monta uma consulta SQL (query) para procurar um usuário
-  $sql = "SELECT `id`, `nome` FROM `".$_SG['tabela']."` WHERE ".$cS." `usuario` = '".$nusuario."' AND ".$cS." `senha` = '".$nsenha."' LIMIT 1";
-  $query = mysql_query($sql);
-  $resultado = mysql_fetch_assoc($query);
-  // Verifica se encontrou algum registro
-  if (empty($resultado)) {
-    // Nenhum registro foi encontrado => o usuário é inválido
-    return false;
-  } else {
-    // Definimos dois valores na sessão com os dados do usuário
-    $_SESSION['usuarioID'] = $resultado['id']; // Pega o valor da coluna 'id do registro encontrado no MySQL
-    $_SESSION['usuarioNome'] = $resultado['nome']; // Pega o valor da coluna 'nome' do registro encontrado no MySQL
-    // Verifica a opção se sempre validar o login
-    if ($_SG['validaSempre'] == true) {
-      // Definimos dois valores na sessão com os dados do login
-      $_SESSION['usuarioLogin'] = $usuario;
-      $_SESSION['usuarioSenha'] = $senha;
-    }
-    return true;
-  }
-}*/
+}
 
 function remove($table = null, $id = null) {
     $database = open_database();
