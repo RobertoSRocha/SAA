@@ -1,7 +1,7 @@
 <?php require_once '../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php require_once LOGIN; 
-    verificaUsuario();
+    fazerLogin();
 ?>
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
 <!-- Main conteudoCentral -->

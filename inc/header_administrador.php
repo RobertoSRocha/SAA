@@ -63,7 +63,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Artur Carlos</span>
+                            <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -71,7 +71,7 @@
                                 <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Artur - Administrador
+                                    <?php echo $_SESSION['nome'] ?> - Administrador
                                     <small>Departamento de Tecnologia da Informação</small>
                                 </p>
                             </li>
