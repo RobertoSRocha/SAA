@@ -1,5 +1,8 @@
 <?php require_once '../config.php'; ?>
 <?php require_once DBAPI; ?>
+<?php require_once LOGIN;
+    verificaLoginPublic();
+?>
 <?php require_once LOGIN; 
     fazerLogin();
 ?>

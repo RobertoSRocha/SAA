@@ -1,5 +1,9 @@
 <?php require_once '../../config.php'; ?>
-<?php require_once DBAPI; ?>	
+<?php require_once DBAPI; ?>
+<?php
+    require_once LOGIN2;
+    verificaLoginOperador();
+?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 <!-- Main conteudoCentral -->
 

@@ -3,6 +3,8 @@
 mysqli_report(MYSQLI_REPORT_STRICT);
 
 session_start();
+
+/** *  Inicia a conexão com o BD    */
 function open_database() {
     try {
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -13,6 +15,7 @@ function open_database() {
     }
 }
 
+/** *  Fecha a conexão com o BD	 */
 function close_database($conn) {
     try {
         mysqli_close($conn);
@@ -89,7 +92,8 @@ function save($table = null, $data = null) {
     } 		  
     close_database($database);	
  }
- 
+
+/** *  Atualiza um registro no BD   */ 
 function update($table = null, $id = 0, $data = null) {
     $database = open_database();
     $items = null;
@@ -117,6 +121,7 @@ function update($table = null, $id = 0, $data = null) {
     close_database($database);
 }
 
+/** *  Faz login no sistema */
 function login($table, $matricula, $senha) {
     $database = open_database();
     $found = null;
@@ -168,6 +173,7 @@ function login($table, $matricula, $senha) {
     return $found;
 }
 
+/** *  Remove um registro no BD	 */
 function remove($table = null, $id = null) {
     $database = open_database();
     try {

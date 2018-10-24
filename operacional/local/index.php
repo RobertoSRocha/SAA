@@ -1,6 +1,10 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
+    require_once LOGIN2;
+    verificaLoginOperador();
+?>
+<?php
 require_once LOCAL;
 indexLocal();
 ?>	

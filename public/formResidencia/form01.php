@@ -1,5 +1,6 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
+
 <?php
     require_once LOCAL;
     addLocal();

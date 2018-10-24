@@ -45,6 +45,10 @@
         define('LOGIN', ABSPATH . 'model/login/funcoes.php');
     
     /** caminho para as funções do usuário **/
+    if ( !defined('LOGIN2') )		
+        define('LOGIN2', ABSPATH . 'model/login/funcoesNivel2.php');
+    
+    /** caminho para as funções do usuário **/
     if ( !defined('USUARIO') )		
         define('USUARIO', ABSPATH . 'model/usuario/funcoes.php');
     

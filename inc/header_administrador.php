@@ -79,10 +79,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    <a href="<?php echo BASEURL; ?>admin/usuario/view.php?id=<?php echo $_SESSION['id']; ?>" class="btn btn-default btn-flat">Perfil</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sair</a>
+                                    <a href="<?php echo BASEURL;?>model/logout/funcoes.php" class="btn btn-default btn-flat">Sair</a>
                                 </div>
                             </li>
                         </ul>

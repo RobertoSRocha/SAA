@@ -2,7 +2,7 @@
 <?php require_once DBAPI; ?>
 <?php
     require_once LOGIN;
-    verificaLogin();
+    verificaLoginAdmin();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
     <!-- Main conteudoCentral -->

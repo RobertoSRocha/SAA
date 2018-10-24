@@ -4,6 +4,10 @@
     require_once LOCAL;
     addLocal();
 ?>
+<?php
+    require_once LOGIN2;
+    verificaLoginOperador();
+?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		

@@ -7,7 +7,7 @@
                 <h4 class="modal-title text-center" id="modalLabel">Digite suas credenciais para ter acesso ao sistema</h4>	      
             </div>	      
             <div class="modal-body">
-                <form class="modal-content animate" method="post" action="index.php">
+                <form class="modal-content animate" method="post" action="<?php echo BASEURL; ?>public/index.php">
                     <div class="user-header text-center">
                         <img src="<?php echo BASEURL; ?>dist/img/user.png" class="img-circle" alt="User Image" style="height: 30%; width: 30%;">
                     </div>

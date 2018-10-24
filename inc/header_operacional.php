@@ -63,7 +63,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Artur Carlos</span>
+                            <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -71,7 +71,7 @@
                                 <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Artur - Administrador
+                                    <?php echo $_SESSION['nome'] ?> - Operador
                                     <small>Departamento de Tecnologia da Informação</small>
                                 </p>
                             </li>
@@ -79,10 +79,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                    <a href="<?php echo BASEURL; ?>operacional/usuario/view.php?id=<?php echo $_SESSION['id']; ?>" class="btn btn-default btn-flat">Perfil</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sair</a>
+                                    <a href="<?php echo BASEURL;?>model/logout/funcoes.php" class="btn btn-default btn-flat">Sair</a>
                                 </div>
                             </li>
                         </ul>

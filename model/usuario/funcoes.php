@@ -49,3 +49,11 @@
         $usuario = remove('usuario', $id);
         header('location: index.php');
     }
+    
+    function verificaID(){
+       if (isset($_GET['id'])) {
+            if ($_GET['id'] != $_SESSION['id']) {
+                header('location: index.php');
+            } 
+        } 
+    }
