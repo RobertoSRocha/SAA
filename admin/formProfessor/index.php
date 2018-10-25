@@ -1,5 +1,9 @@
 <?php require_once '../../config.php'; ?>
-<?php require_once DBAPI; ?>	
+<?php require_once DBAPI; ?>
+<?php
+    require_once LOGIN2;
+    verificaLoginAdmin();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 <!-- Main conteudoCentral -->
     <section class="content">

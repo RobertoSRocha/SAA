@@ -4,6 +4,9 @@
     require_once LOCAL;
     addLocal();
 ?>
+<?php require_once LOGIN2; 
+    verificaLoginPublic();
+?>
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
 
 <section class="content-header">		
