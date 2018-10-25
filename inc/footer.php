@@ -87,6 +87,14 @@
     })
 </script>
 
+<!--Tempo das messagens de aletas-->
+<script>
+    window.setTimeout(function(){
+        $("#alertas").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 3000);
+</script>
 
 </body>
 </html>

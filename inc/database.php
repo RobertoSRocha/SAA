@@ -112,7 +112,7 @@ function update($table = null, $id = 0, $data = null) {
             $_SESSION['type'] = 'success';
         }else{
             $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
-            $_SESSION['type'] = 'danger';
+            $_SESSION['type'] = 'warning';
         }
     } catch (Exception $e) {
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
@@ -132,7 +132,7 @@ function login($table, $matricula, $senha) {
             if ($result->num_rows == 1 /*usuario existe na base */) {
                 $row = $result->fetch_assoc();
                 if($row['permissao'] == 1 /*usuario administrador */){
-                    session_start();
+
                     $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
@@ -143,7 +143,7 @@ function login($table, $matricula, $senha) {
                     $found = $row['permissao'];
                 }
                 elseif($row['permissao'] == 2 /*usuario operacional */){
-                    session_start();
+
                     $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
