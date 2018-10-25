@@ -81,5 +81,9 @@ CREATE TABLE formGraduacao(
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
     
     )ENGINE = InnoDB;
+
+insert into usuario(nome, matricula, email, senha, permissao)
+  VALUE ('admin','1','admin@admin','admin','1'),
+  ('operacional','2','operacional@operacional','operacional','2');
     
 
