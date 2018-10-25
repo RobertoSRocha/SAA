@@ -7,6 +7,7 @@
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
     <!-- Main conteudoCentral -->
     <section class="content">
+        <?php include(ALERT_MSG); ?>
         <img src="../dist/img/saa.png" class="img-responsive" alt="User Image">
     </section>
     <!-- /.content -->
