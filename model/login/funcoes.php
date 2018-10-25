@@ -60,4 +60,13 @@
             } 
         }
     }
+    
+    function verificarSenha(){
+        if (isset($_SESSION['id'])) {
+            if ($_SESSION['senha']=="mudar123") {
+               // Chama Modal de senha
+                //header("Location: ".BASEURL."operacional/patrimonio/index.php");
+            } 
+        }
+    }
 

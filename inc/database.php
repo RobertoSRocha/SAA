@@ -139,6 +139,7 @@ function login($table, $matricula, $senha) {
                     $_SESSION['matricula'] = $matricula;
                     $_SESSION['senha'] = $senha;
                     $_SESSION['nome'] = $row['nome'];
+                    $_SESSION['email'] = $row['email'];
                     $_SESSION['permissao'] = $row['permissao'];
                     $found = $row['permissao'];
                 }
@@ -150,6 +151,7 @@ function login($table, $matricula, $senha) {
                     $_SESSION['matricula'] = $matricula;
                     $_SESSION['senha'] = $senha;
                     $_SESSION['nome'] = $row['nome'];
+                    $_SESSION['email'] = $row['email'];
                     $_SESSION['permissao'] = $row['permissao'];
                     $found = $row['permissao'];
                 }else /*usuario comum */{
@@ -193,4 +195,30 @@ function remove($table = null, $id = null) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
     } close_database($database);
+}
+
+function updateSenha($table, $id, $senha){
+    $database = open_database();
+    try {
+        if($id != null && $senha != null){
+            md5($senha);
+            $sql = "UPDATE " . $table. " SET senha='" .$senha. "' WHERE id=".$id;
+            $database->query($sql);
+            //verifica se ouve alguma alteracão no banco
+            if (($database->affected_rows) > 0) {
+                $_SESSION['message'] = 'Senha atualizada com sucesso.';
+                $_SESSION['type'] = 'success';
+            } else {
+                $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
+                $_SESSION['type'] = 'warning';
+            }
+        }else{
+            $_SESSION['message'] = "Viiixe, não foi possivel mudar a senha";
+            $_SESSION['type'] = 'danger';
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
 }

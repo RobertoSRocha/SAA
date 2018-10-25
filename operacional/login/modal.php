@@ -7,22 +7,29 @@
                 <h4 class="modal-title text-center" id="modalLabel">Digite suas credenciais para ter acesso ao sistema</h4>	      
             </div>	      
             <div class="modal-body">
-                <form class="modal-content animate" method="post" action="<?php echo BASEURL; ?>public/index.php">
+                <form class="modal-content animate" method="post" action="<?php echo BASEURL; ?>operacional/index.php">
                     <div class="user-header text-center">
                         <img src="<?php echo BASEURL; ?>dist/img/senha.png" class="img-circle" alt="User Image" style="height: 30%; width: 30%;">
                     </div>
                     <div class="form-group">
-                        <label for="matricula"><b>Matrícula</b></label>
-                        <input type="number" class="form-control" placeholder="Digite sua matrícula" 
-                               id="matricula" name="matricula" required="">
-
                         <label for="senha"><b>Senha</b></label>
                         <input type="password" class="form-control" placeholder="Digite sua senha" 
                                id="senha" name="senha" required="">
+
+                        <!-- <label for="senha2"><b>Confirme sua senha</b></label>
+                        <input type="password" class="form-control" placeholder="Digite sua senha novamente" 
+                               id="senha2" name="senha2" required="">-->
+                        
+                        <div class="form-group" style="display:none;">	      
+                            <input type="number" class="form-control" id="id"
+                                   value="<?php echo $_SESSION[id]; ?>"
+                                   name="id">	    
+                        </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-sign-in"></i> Login</button>
+                                    <i class="fa fa-sign-in"></i> Cadastrar senha</button>
                         <a id="cancel" class="btn btn-default" data-dismiss="modal">
                             <i class="fa fa-close"></i> Cancelar</a>	      
                     </div>
@@ -32,6 +39,3 @@
         </div>	  
     </div>
 </div>
-
-	  
-    	
