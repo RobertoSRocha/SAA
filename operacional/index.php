@@ -3,9 +3,9 @@
 <?php
     require_once LOGIN;
     verificaLoginOperador();
-    verificarSenha();
 ?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
+    <?php //include(MODAL_LOGIN); ?>
     <!-- Main conteudoCentral -->
     <section class="content">
         <?php include(ALERT_MSG); ?>
