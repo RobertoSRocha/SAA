@@ -67,7 +67,3 @@
     /** caminho para a tela de login **/
     if ( !defined('TELALOGIN') )		
         define('TELALOGIN', ABSPATH . 'public/login/modal.php');
-    
-    /** caminho para a modal de mudar senha **/
-    if ( !defined('MODAL_LOGIN') )		
-        define('MODAL_LOGIN', ABSPATH . 'inc/modal_login.php');
