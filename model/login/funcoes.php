@@ -84,7 +84,7 @@
         if(isset($_POST['id']) && isset($_POST['senha']) && isset($_POST['senha2'])){
             $id = (isset($_POST['id'])) ? $_POST['id'] : '';
             $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
-            if ($result = updateSenha('usuario', $id, $senha)/* usuario existir na base de dados */) {
+            if ($result = updateSenhaLogin('usuario', $id, $senha)/* usuario existir na base de dados */) {
                 if ($result == 1/* usuario administrador */) {
                     header("Location: ".BASEURL."admin/index.php");
                 } elseif ($result == 2/* usuario operacional */) {
