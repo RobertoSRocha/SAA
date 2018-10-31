@@ -16,9 +16,6 @@
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><i class="fa fa-users"></i>
-                    <small> Listagem de Usuários</small>
-                </li>
                 <li><i class="glyphicon glyphicon-eye-open"></i>
                     <small> Visualizar usuário</small>
                 </li>

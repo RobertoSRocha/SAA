@@ -44,6 +44,10 @@
             // Redireciona o visitante de volta pro login
             header("Location: ".BASEURL."public/index.php");
         }
+        
+        if (isset($_SESSION['id']) && $_SESSION['senha'] == "mudar123"){
+            header("Location: ".BASEURL."operacional/login/mudar_senha.php");
+        }
     }
     
     function verificaLoginPublic(){
@@ -57,6 +61,22 @@
             }else{
                 // Redireciona para o operacional
                 header("Location: ".BASEURL."operacional/index.php");
+            } 
+        }
+    }
+    
+    function atualizarSenha(){
+        if(isset($_POST['id']) && isset($_POST['senha'])){
+            $id = (isset($_POST['id'])) ? $_POST['id'] : '';
+            $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
+            if ($result = updateSenha('usuario', $id, $senha)/* usuario existir na base de dados */) {
+                if ($result == 1/* usuario administrador */) {
+                    header('location: ../admin/index.php');
+                } elseif ($result == 2/* usuario operacional */) {
+                    header('location: ../operacional/index.php');
+                } else {
+                    header('location: index.php');
+                }
             } 
         }
     }
