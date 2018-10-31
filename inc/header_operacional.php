@@ -142,13 +142,6 @@
                     </ul>
                 </li>
                 
-                <!-- GERENCIAR LOCALIDADES-->
-                <li>
-                    <a href="<?php echo BASEURL; ?>operacional/local/index.php">
-                        <i class="fa fa-cube"></i><span>Gerenciar Localidades</span>
-                    </a>
-                </li>
-                
                 <!-- GERENCIAR PATRIMÔNIOS-->
                 <li>
                     <a href="<?php echo BASEURL; ?>operacional/patrimonio/index.php">
@@ -156,10 +149,17 @@
                     </a>
                 </li>
                 
+                <!-- GERENCIAR LOCALIDADES-->
+                <li>
+                    <a href="<?php echo BASEURL; ?>operacional/local/index.php">
+                        <i class="fa fa-cube"></i><span>Visualizar Localidades</span>
+                    </a>
+                </li>
+                
                 <!-- GERENCIAR SETORES-->
                 <li>
                     <a href="<?php echo BASEURL; ?>operacional/setor/index.php">
-                        <i class="fa fa-cubes"></i><span>Gerenciar Setores</span>
+                        <i class="fa fa-cubes"></i><span>Visualizar Setores</span>
                     </a>
                 </li>
                 

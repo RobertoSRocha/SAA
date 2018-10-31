@@ -32,7 +32,10 @@
             // Redireciona o visitante de volta pro login
             header("Location: ".BASEURL."public/index.php");
             exit();
-
+        }
+        if (isset($_SESSION['id']) && $_SESSION['senha'] == md5("mudar123")){
+            header("Location: ".BASEURL."admin/login/mudar_senha.php");
+            exit();
         }
     }
     
@@ -49,6 +52,10 @@
             header("Location: ".BASEURL."public/index.php");
             exit();
 
+        }
+        if (isset($_SESSION['id']) && $_SESSION['senha'] == md5("mudar123")){
+            header("Location: ".BASEURL."operacional/login/mudar_senha.php");
+            exit();
         }
     }
     
@@ -71,11 +78,20 @@
         }
     }
     
-    function verificarSenha(){
-        if (isset($_SESSION['id'])) {
-            if ($_SESSION['senha']=="mudar123") {
-               // Chama Modal de senha
-                //header("Location: ".BASEURL."operacional/patrimonio/index.php");
+    
+    
+    function atualizarSenha(){
+        if(isset($_POST['id']) && isset($_POST['senha']) && isset($_POST['senha2'])){
+            $id = (isset($_POST['id'])) ? $_POST['id'] : '';
+            $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
+            if ($result = updateSenha('usuario', $id, $senha)/* usuario existir na base de dados */) {
+                if ($result == 1/* usuario administrador */) {
+                    header("Location: ".BASEURL."admin/index.php");
+                } elseif ($result == 2/* usuario operacional */) {
+                    header("Location: ".BASEURL."operacional/index.php");
+                } else {
+                    header("Location: ".BASEURL."index.php");
+                }
             } 
         }
     }
