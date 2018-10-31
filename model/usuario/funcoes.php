@@ -58,6 +58,8 @@
         } 
     }
     
-    function redefinirSenha(){
-        
+    function redefinirSenha($id = null){
+        global $usuario;
+        $usuario = updateSenha('usuario', $id, 'mudar123');
+        header('location: index.php');
     }

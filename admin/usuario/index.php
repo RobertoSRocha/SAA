@@ -5,8 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-require_once USUARIO;
-index();
+    require_once USUARIO;
+    index();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
