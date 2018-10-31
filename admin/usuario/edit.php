@@ -80,9 +80,13 @@
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Salvar</button>
-                                <a href=# class="btn btn-warning"><i class="fa fa-pencil"></i> Redefinir senha</a>
-                                <a href="index.php" class="btn btn-default">
-                                    <i class="fa fa-close"></i> Cancelar</a>	    
+                                <?php if ($_SESSION['id'] == $usuario['id']) : ?>
+                                    <a href=# class="btn btn-warning"><i class="fa fa-pencil"></i> Alterar senha</a>
+                                <?php else : ?>
+                                    <a href=# class="btn btn-warning" data-toggle="modal" data-target="#resetar-senha" data-customer="<?php echo $usuario['id']; ?>">
+                                            <i class="fa fa-pencil"></i> Redefinir senha</a>
+                                <?php endif; ?>
+                                <a href="index.php" class="btn btn-default"><i class="fa fa-close"></i> Cancelar</a>	    
                             </div>	  
                         </div>
                     </form>
@@ -97,6 +101,7 @@
     <!-- /.row -->
 </section>
 
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>
 
 

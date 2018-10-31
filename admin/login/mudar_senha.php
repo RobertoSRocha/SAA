@@ -48,8 +48,6 @@
             <!-- /.login-logo -->
             <div class="login-box-body">
                 <p class="login-box-msg">Mude sua senha para ter acessoa ao sistema</p>
-                <!--<form action="troca_senha.php" method="POST" id="FormSenha" 
-                name="FormSenha" onsubmit="return validarSenha();">-->
                 <form action="mudar_senha.php" method="post" name="form_senha">
                     <div class="form-group" style="display:none;">	      
                             <input type="number" class="form-control" id="id"
