@@ -1,5 +1,5 @@
 <?php
-    require_once('../config.php');
+    require_once(ABSPATH.'config.php');
     require_once(DBAPI);
     
     function fazerLogin() {
@@ -9,10 +9,13 @@
             if ($result = login('usuario', $matricula, $senha)/* usuario existir na base de dados */) {
                 if ($result == 1/* usuario administrador */) {
                     header('location: ../admin/index.php');
+                    exit();
                 } elseif ($result == 2/* usuario operacional */) {
                     header('location: ../operacional/index.php');
+                    exit();
                 } else {
                     header('location: index.php');
+                    exit();
                 }
             } 
         }
@@ -22,13 +25,14 @@
         // A sessão precisa ser iniciada em cada página diferente
         if (!isset($_SESSION))
             session_start();
-
         // Verifica se não há a variável da sessão que identifica o usuário e sua permissao de admin
         if (!isset($_SESSION['id']) || ($_SESSION['permissao']!=1)) {
             // Destrói a sessão por segurança
             session_destroy();
             // Redireciona o visitante de volta pro login
             header("Location: ".BASEURL."public/index.php");
+            exit();
+
         }
     }
     
@@ -43,6 +47,8 @@
             session_destroy();
             // Redireciona o visitante de volta pro login
             header("Location: ".BASEURL."public/index.php");
+            exit();
+
         }
     }
     
@@ -53,10 +59,14 @@
             session_start();
             if ($_SESSION['permissao']==1) {
                // Redireciona para o admin
-                header("Location: ".BASEURL."admin/index.php"); 
+                header("Location: ".BASEURL."admin/index.php");
+                exit();
+
             }else{
                 // Redireciona para o operacional
                 header("Location: ".BASEURL."operacional/index.php");
+                exit();
+
             } 
         }
     }
