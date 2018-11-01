@@ -19,6 +19,7 @@
             //$usuario['senha'] = base64_encode($usuario['senha']);
             save('usuario', $usuario);
             header('location: index.php');
+            exit();
         }
     }
     
@@ -30,12 +31,14 @@
                 //$customer['modified'] = $now->format("Y-m-d H:i:s");
                 update('usuario', $id, $usuario);
                 header('location: index.php');
+                exit();
             } else {
                 global $usuario;
                 $usuario = find('usuario', $id);
             }
         } else {
             header('location: index.php');
+            exit();
         }
     }
     
@@ -48,12 +51,16 @@
         global $usuario;
         $usuario = remove('usuario', $id);
         header('location: index.php');
+        exit();
     }
     
     function verificaID(){
        if (isset($_GET['id'])) {
             if ($_GET['id'] != $_SESSION['id']) {
+                $_SESSION['message'] = "Eiita gaiatinho, tu não pode realizar esse tipo de operação!";
+                $_SESSION['type'] = 'warning';
                 header('location: index.php');
+                exit();
             } 
         } 
     }
