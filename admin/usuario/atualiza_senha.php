@@ -7,6 +7,7 @@
 <?php
     require_once USUARIO;
     atualizarSenha();
+    verificaID();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
