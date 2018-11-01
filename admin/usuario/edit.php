@@ -81,7 +81,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Salvar</button>
                                 <?php if ($_SESSION['id'] == $usuario['id']) : ?>
-                                    <a href=# class="btn btn-warning"><i class="fa fa-pencil"></i> Alterar senha</a>
+                                    <a href="atualiza_senha.php?id=<?php echo $usuario['id']; ?>" class="btn btn-warning">
+                                        <i class="fa fa-pencil"></i> Alterar senha</a>
                                 <?php else : ?>
                                     <a href=# class="btn btn-warning" data-toggle="modal" data-target="#resetar-senha" data-customer="<?php echo $usuario['id']; ?>">
                                             <i class="fa fa-pencil"></i> Redefinir senha</a>

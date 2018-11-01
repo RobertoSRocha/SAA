@@ -63,3 +63,29 @@
         $usuario = updateSenha('usuario', $id, 'mudar123');
         header('location: index.php');
     }
+    
+    function atualizarSenha() {
+        if (isset($_POST['id']) && isset($_POST['senha']) && isset($_POST['senha2']) && isset($_POST['senha_atual'])) {
+            $senha_atual = (isset($_POST['senha_atual'])) ? $_POST['senha_atual'] : '';
+            if (md5($senha_atual) === $_SESSION['senha']) {
+                $id = (isset($_POST['id'])) ? $_POST['id'] : '';
+                $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
+                if ($result = updateSenhaLogin('usuario', $id, $senha)/* usuario existir na base de dados */) {
+                    if ($result == 1/* usuario administrador */) {
+                        header("Location: " . BASEURL . "admin/index.php");
+                        exit();
+                    } elseif ($result == 2/* usuario operacional */) {
+                        header("Location: " . BASEURL . "operacional/index.php");
+                        exit();
+                    } else {
+                        header("Location: " . BASEURL . "index.php");
+                        exit();
+                    }
+                }
+            }
+            else{
+                $_SESSION['message'] = "Viiixe, você informou sua senha atual errada";
+                $_SESSION['type'] = 'warning';
+            }
+        }
+    }

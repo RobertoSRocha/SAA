@@ -50,7 +50,7 @@
                 <p class="login-box-msg">Mude sua senha para ter acessoa ao sistema</p>
                 <form action="mudar_senha.php" method="post" name="form_senha">
                     <div class="form-group" style="display:none;">	      
-                            <input type="number" class="form-control" id="id"
+                        <input class="form-control" id="id"
                                    value="<?php echo $_SESSION['id']; ?>"
                                    name="id">	    
                     </div>
