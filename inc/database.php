@@ -127,6 +127,7 @@ function login($table, $matricula, $senha) {
     $found = null;
     try {
         if($matricula != null && $senha != null){
+            $senha = md5($senha);
             $sql = "SELECT * FROM " . $table . " WHERE matricula =".$matricula. " AND senha='".$senha."'";
             $result = $database->query($sql);
             if ($result->num_rows == 1 /*usuario existe na base */) {
@@ -199,15 +200,47 @@ function remove($table = null, $id = null) {
 
 function updateSenha($table, $id, $senha){
     $database = open_database();
+    $found = null;
     try {
         if($id != null && $senha != null){
-            md5($senha);
+            $senha = md5($senha);
             $sql = "UPDATE " . $table. " SET senha='" .$senha. "' WHERE id=".$id;
             $database->query($sql);
             //verifica se ouve alguma alteracão no banco
             if (($database->affected_rows) > 0) {
+                $_SESSION['message'] = 'Senha redefinida com sucesso.';
+                $_SESSION['type'] = 'success';
+                $found = $_SESSION['permissao'];
+            } else {
+                $_SESSION['message'] = 'O usuário já está com a senha padrão.';
+                $_SESSION['type'] = 'warning';
+            }
+        }else{
+            $_SESSION['message'] = "Viiixe, não foi possivel mudar a senha";
+            $_SESSION['type'] = 'danger';
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+function updateSenhaLogin($table, $id, $senha){
+    $database = open_database();
+    $found = null;
+    try {
+        if($id != null && $senha != null){
+            $senha = md5($senha);
+            $sql = "UPDATE " . $table. " SET senha='" .$senha. "' WHERE id=".$id;
+            $database->query($sql);
+            //verifica se ouve alguma alteracão no banco
+            if (($database->affected_rows) > 0) {
+                $_SESSION['senha'] = $senha;
                 $_SESSION['message'] = 'Senha atualizada com sucesso.';
                 $_SESSION['type'] = 'success';
+                $found = $_SESSION['permissao'];
             } else {
                 $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
                 $_SESSION['type'] = 'warning';
@@ -221,4 +254,5 @@ function updateSenha($table, $id, $senha){
         $_SESSION['type'] = 'danger';
     }
     close_database($database);
+    return $found;
 }

@@ -83,7 +83,8 @@
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Salvar</button>
-                                <a href=# class="btn btn-warning"><i class="fa fa-pencil"></i> Redefinir senha</a>
+                                <a href="atualiza_senha.php?id=<?php echo $usuario['id']; ?>" class="btn btn-warning">
+                                    <i class="fa fa-pencil"></i> Alterar senha</a>
                                 <a href="<?php echo BASEURL; ?>index.php" class="btn btn-default">
                                     <i class="fa fa-close"></i> Cancelar</a>	    
                             </div>	  

@@ -64,7 +64,7 @@ $criptografada = md5($senha) ?>
                         <div class="form-group" style="display:none;">	      
                             <label for="senha">Senha </label>	      
                             <input type="text" class="form-control" id="senha"
-                                   value="mudar123"
+                                   value="<?php echo $criptografada; ?>"
                                    name="usuario['senha']">	    
                         </div>
                         <div class="form-group">

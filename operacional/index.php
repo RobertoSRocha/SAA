@@ -3,7 +3,6 @@
 <?php
     require_once LOGIN;
     verificaLoginOperador();
-    verificarSenha();
 ?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
     <!-- Main conteudoCentral -->

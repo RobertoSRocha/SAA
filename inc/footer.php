@@ -96,5 +96,30 @@
     }, 3000);
 </script>
 
+<script>
+            function validarSenha(){
+               var senha = form_senha.senha.value;
+               var senha2 = form_senha.senha2.value;
+               if(senha === "mudar123"){
+                   alert("Vixeee, você não poderá usar a senha padrão como sua senha.\nPor favor, digite uma senha diferente");
+                   return false;
+               }else if(senha === ""){
+                   alert("Vixeee, sem digitar você nos complica.\nPor favor, digite sua senha");
+                   return false;
+               }else if(senha.length < 5){
+                   alert("Vixeee, sua senha deve conter no mínimo 6 caracteres.\nPor favor, digite uma senha diferente");
+                   return false;
+               }else{
+                   if(senha !== senha2){
+                        alert("Vixeee, as senhas não conferem!\nDigite as senhas iguais");
+                        return false;
+                   }
+                   else{
+                       return true;
+                   }
+               }
+            }
+</script>
+
 </body>
 </html>

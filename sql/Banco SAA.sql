@@ -83,7 +83,7 @@ CREATE TABLE formGraduacao(
     )ENGINE = InnoDB;
 
 insert into usuario(nome, matricula, email, senha, permissao)
-  VALUE ('admin','1','admin@admin','admin','1'),
-  ('operacional','2','operacional@operacional','operacional','2');
+  VALUE ('admin','1','admin@admin','14d777febb71c53630e9e843bedbd4d8','1'),
+  ('operacional','2','operacional@operacional','14d777febb71c53630e9e843bedbd4d8','2');
     
 
