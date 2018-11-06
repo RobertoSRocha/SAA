@@ -43,7 +43,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="example3" class="table table-bordered table-hover">
                         <thead>
                         <tr>
 
@@ -84,12 +84,11 @@
                         </tbody>
                         <tfoot>
                             <tr>
-
-                                <th>Nome</th>
-                                <th>Matricula</th>
-                                <th>E-mail</th>
-                                <th>Permissão</th>
-                                <th>Ações</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>
