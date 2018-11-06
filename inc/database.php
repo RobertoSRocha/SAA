@@ -134,7 +134,9 @@ function login($table, $matricula, $senha) {
                 $row = $result->fetch_assoc();
                 if($row['permissao'] == 1 /*usuario administrador */){
 
-                    $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
+                    $nome = explode(" ", $row['nome']);
+
+                    $_SESSION['message'] = "Bem Vindo(a) ".$nome[0];
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['matricula'] = $matricula;
@@ -146,7 +148,9 @@ function login($table, $matricula, $senha) {
                 }
                 elseif($row['permissao'] == 2 /*usuario operacional */){
 
-                    $_SESSION['message'] = "Logado com sucesso! Seja bem vindo ao SAA";
+                    $nome = explode(" ", $row['nome']);
+
+                    $_SESSION['message'] = "Bem Vindo(a) ".$nome[0];
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['matricula'] = $matricula;
