@@ -52,7 +52,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="tab_setor" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>Nome</th>
@@ -103,11 +103,11 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Nome</th>
-                                <th>Número</th>
-                                <th>Local pertencente</th>
-                                <th>Usuário responsável</th>
-                                <th>Ações</th>
+                                <th></th>
+                                <th style="background: #F4F4F4">FILTRAR</th>
+                                <th style="background: #F4F4F4">Local pertencente</th>
+                                <th style="background: #F4F4F4">Usuário responsável</th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>

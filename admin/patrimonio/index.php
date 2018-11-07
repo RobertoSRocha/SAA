@@ -48,7 +48,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="tab_patrimonio" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             
@@ -105,13 +105,12 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                
-                                <th>Nome</th>
-                                <th>Tombo</th>
-                                <th>Especificação</th>
-                                <th>Emprestável</th>
-                                <th>Setor responsável</th>
-                                <th>Ações</th>
+                                <th></th>
+                                <th></th>
+                                <th style="background: #F4F4F4">FILTRAR</th>
+                                <th style="background: #F4F4F4">Emprestável</th>
+                                <th style="background: #F4F4F4">Setor responsável</th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>

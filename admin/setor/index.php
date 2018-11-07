@@ -54,7 +54,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="tab_setor" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>Nome</th>
@@ -107,7 +107,7 @@
                         <tfoot>
                             <tr>
                                 <th></th>
-                                <th style="background: #F4F4F4">FILTAR:</th>
+                                <th style="background: #F4F4F4">FILTRAR:</th>
                                 <th style="background: #F4F4F4"></th>
                                 <th style="background: #F4F4F4"></th>
                                 <th></th>
