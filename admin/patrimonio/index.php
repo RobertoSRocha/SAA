@@ -52,7 +52,7 @@
                         <thead>
                         <tr>
                             
-                            <th>Nome</th>
+                            <th  data-placement="top" title="Ordenar por emprestimos">Nome</th>
                             <th>Tombo</th>
                             <th>Especificação</th>
                             <th>Emprestável</th>
@@ -108,7 +108,7 @@
                                 <th>FILTROS</th>
                                 <th></th>
                                 <th></th>
-                                <th>Emprestável</th>
+                                <th data-placement="top" title="Ordenar por emprestimos">Emprestável</th>
                                 <th>Setor responsável</th>
                                 <th></th>
                             </tr>

@@ -102,13 +102,13 @@
                                 <?php endif; ?>	
                         </tbody>
                         <tfoot>
-                            <tr>
+                        <tr style="background: #F4F4F4">
                                 
+                                <th>FILTROS</th>
                                 <th></th>
                                 <th></th>
-                                <th style="background: #F4F4F4">FILTRAR</th>
-                                <th style="background: #F4F4F4">Emprestável</th>
-                                <th style="background: #F4F4F4">Setor responsável</th>
+                                <th>Emprestável</th>
+                                <th>Setor responsável</th>
                                 <th></th>
                             </tr>
                         </tfoot>
