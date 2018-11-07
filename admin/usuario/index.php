@@ -85,11 +85,11 @@
 
 
                             <tfoot>
-                                <tr>
-                                    <th ></th>
+                                <tr style="background: #F4F4F4">
+                                    <th >FILTROS</th>
                                     <th></th>
-                                    <th style="background: #F4F4F4">FILTRAR:</th>
-                                    <th style="background: #F4F4F4; text-align: center"></th>
+                                    <th></th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </tfoot>

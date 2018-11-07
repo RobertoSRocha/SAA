@@ -105,11 +105,11 @@
                                 <?php endif; ?>	
                         </tbody>
                         <tfoot>
-                            <tr>
+                            <tr style="background: #F4F4F4">
+                                <th>FILTROS</th>
                                 <th></th>
-                                <th style="background: #F4F4F4">FILTRAR:</th>
-                                <th style="background: #F4F4F4"></th>
-                                <th style="background: #F4F4F4"></th>
+                                <th></th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </tfoot>
