@@ -82,15 +82,17 @@
                                 </tr>
                                 <?php endif; ?>
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
+
+
+                            <tfoot>
+                                <tr>
+                                    <th ></th>
+                                    <th></th>
+                                    <th style="background: #F4F4F4">FILTAR:</th>
+                                    <th style="background: #F4F4F4; text-align: center"></th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
                     </table>
 
                 </div>

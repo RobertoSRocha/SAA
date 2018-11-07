@@ -106,11 +106,11 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Nome</th>
-                                <th>Número</th>
-                                <th>Local pertencente</th>
-                                <th>Usuário responsável</th>
-                                <th>Ações</th>
+                                <th></th>
+                                <th style="background: #F4F4F4">FILTAR:</th>
+                                <th style="background: #F4F4F4"></th>
+                                <th style="background: #F4F4F4"></th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>

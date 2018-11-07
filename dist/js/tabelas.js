@@ -3,7 +3,7 @@ $(function () {
     $('#example1').DataTable({
 
         "initComplete": function () {
-            this.api().columns([0,1,2,3]).every( function () {
+            this.api().columns([2,3]).every( function () {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
@@ -106,10 +106,10 @@ $(function () {
 })
 
 $(function () {
-    $('#example3').DataTable({
+$("#example3").DataTable({
 
         "initComplete": function () {
-            this.api().columns([0]).every( function () {
+            this.api().columns([3]).every( function () {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
@@ -130,8 +130,7 @@ $(function () {
         },
 
         "scrollY":"490px",
-        "sScrollX": "100%",
-        "sScrollXInner": "1050px",
+
         "bScrollCollapse": true,
         "scrollCollapse": true,
 
