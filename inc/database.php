@@ -136,7 +136,7 @@ function login($table, $matricula, $senha) {
 
                     $nome = explode(" ", $row['nome']);
 
-                    $_SESSION['message'] = "Bem Vindo(a) ".$nome[0];
+                    $_SESSION['message'] = "Bem Vindo(a): ".$nome[0];
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['matricula'] = $matricula;
@@ -150,7 +150,7 @@ function login($table, $matricula, $senha) {
 
                     $nome = explode(" ", $row['nome']);
 
-                    $_SESSION['message'] = "Bem Vindo(a) ".$nome[0];
+                    $_SESSION['message'] = "Bem Vindo(a): ".$nome[0];
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['matricula'] = $matricula;
