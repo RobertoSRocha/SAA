@@ -9,7 +9,7 @@
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-edit"></i>
-                    <small> Listagem dos formulários</small>
+                    <small> Listagem dos Formulários</small>
                 </li>
             </ol>		
         </div>				
@@ -84,7 +84,7 @@
                     <div class="icon">
                         <i class="ion ion-document-text"></i>
                     </div>
-                    <a href="form04.php" class="small-box-footer">
+                    <a target="_blank" href="pdfse.php" class="small-box-footer">
                         Requisitar <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>

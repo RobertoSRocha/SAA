@@ -46,10 +46,10 @@ indexLocal();
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Rua</th>
-                            <th>Bairro</th>
-                            <th>Número</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Rua</th>
+                            <th title="Ordenar Tabela">Bairro</th>
+                            <th title="Ordenar Tabela">Número</th>
                             <th>Ações</th>
                         </tr>
                         </thead>

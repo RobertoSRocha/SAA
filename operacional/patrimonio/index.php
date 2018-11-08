@@ -46,15 +46,15 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="tab_patrimonio" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             
-                            <th>Nome</th>
-                            <th>Tombo</th>
-                            <th>Especificação</th>
-                            <th>Emprestável</th>
-                            <th>Setor responsável</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Tombo</th>
+                            <th title="Ordenar Tabela">Especificação</th>
+                            <th title="Ordenar Tabela">Emprestável</th>
+                            <th title="Ordenar Tabela">Setor responsável</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
@@ -102,14 +102,14 @@
                                 <?php endif; ?>	
                         </tbody>
                         <tfoot>
-                            <tr>
+                        <tr style="background: #F4F4F4">
                                 
-                                <th>Nome</th>
-                                <th>Tombo</th>
-                                <th>Especificação</th>
-                                <th>Emprestável</th>
-                                <th>Setor responsável</th>
-                                <th>Ações</th>
+                                <th>FILTROS</th>
+                                <th></th>
+                                <th></th>
+                                <th title="Filtrar Emprestável">Emprestável</th>
+                                <th title="Filtrar setor responsável">Setor responsável</th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>

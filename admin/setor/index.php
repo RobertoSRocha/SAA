@@ -54,13 +54,13 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table id="tab_setor" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Número</th>
-                            <th>Local pertencente</th>
-                            <th>Usuário responsável</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Número</th>
+                            <th title="Ordenar Tabela">Local pertencente</th>
+                            <th title="Ordenar Tabela">Usuário responsável</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
@@ -105,12 +105,12 @@
                                 <?php endif; ?>	
                         </tbody>
                         <tfoot>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Número</th>
-                                <th>Local pertencente</th>
-                                <th>Usuário responsável</th>
-                                <th>Ações</th>
+                            <tr style="background: #F4F4F4">
+                                <th>FILTROS</th>
+                                <th></th>
+                                <th title="Filtrar local"></th>
+                                <th title="Filtrar usuário responsável"></th>
+                                <th></th>
                             </tr>
                         </tfoot>
                     </table>
