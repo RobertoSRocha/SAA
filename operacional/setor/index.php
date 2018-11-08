@@ -55,10 +55,10 @@
                     <table id="tab_setor" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Número</th>
-                            <th>Local pertencente</th>
-                            <th>Usuário responsável</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Número</th>
+                            <th title="Ordenar Tabela">Local pertencente</th>
+                            <th title="Ordenar Tabela">Usuário responsável</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
@@ -105,8 +105,8 @@
                         <tr style="background: #F4F4F4">
                                 <th>FILTROS</th>
                                 <th></th>
-                                <th>Local pertencente</th>
-                                <th>Usuário responsável</th>
+                                <th title="Filtrar Local">Local pertencente</th>
+                                <th title="Filtrar Usuário responsável" >Usuário responsável</th>
                                 <th></th>
                             </tr>
                         </tfoot>
