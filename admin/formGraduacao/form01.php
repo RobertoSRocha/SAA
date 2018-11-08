@@ -15,9 +15,9 @@
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-edit"></i> Listagem dos formulários</a></li>
+                <li><a href="index.php"><i class="fa fa-edit"></i> Listagem dos Formulários</a></li>
                 <li><i class="ion ion-android-document"></i>
-                    <small> Requerimentos gerais</small>
+                    <small> Requerimentos Gerais</small>
                 </li>
             </ol>		
         </div>			
@@ -35,7 +35,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action=add.php method="post">
+                    <form target="_blank" action=pdfrg.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
@@ -64,7 +64,7 @@
                             </select>
                         </div>
                         <div class="form-group">	      
-                            <label for="nome_destinatario">Nome do destinatario</label>	      
+                            <label for="nome_destinatario">Nome do Destinatário</label>	      
                             <input type="text" class="form-control" id="nome_destinatario" 
                                    placeholder="Nome do destinatario" 
                                    name="formGraduacao01['nome_destinatario']" required="">	    

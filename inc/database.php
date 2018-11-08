@@ -62,6 +62,8 @@ function find_all($table) {
 
 /** *  Insere um registro no BD	 */ 
 function save($table = null, $data = null) { 
+    //$name = $_FILES["usuario['img']"]["name"];
+    //$temp = $_FILES["usuario['img']"]["tmp_name"];
     $database = open_database();
     $columns = null;
     $values = null;    
@@ -90,8 +92,13 @@ function save($table = null, $data = null) {
         $_SESSION['type'] = 'danger';	  
         
     } 		  
-    close_database($database);	
+    close_database($database);
+    //$name = $_FILES["usuario['img']"]["name"];
+    //$temp = $_FILES["usuario['img']"]["tmp_name"];
+    //move_uploaded_file($temp,"../imagens/".$name);
  }
+ 
+ 
 
 /** *  Atualiza um registro no BD   */ 
 function update($table = null, $id = 0, $data = null) {

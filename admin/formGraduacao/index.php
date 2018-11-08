@@ -13,7 +13,7 @@
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-edit"></i>
-                    <small> Listagem dos formulários</small>
+                    <small> Listagem dos Formulários</small>
                 </li>
             </ol>		
         </div>				
@@ -32,7 +32,7 @@
                     <div class="inner">
                         <h3>Form 01</h3>
 
-                        <p>Requerimentos gerais</p>
+                        <p>Requerimentos Gerais</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-document"></i>
@@ -49,7 +49,7 @@
                     <div class="inner">
                         <h3>Form 02</h3>
 
-                        <p>Auxílio financeiro</p>
+                        <p>Auxílio Financeiro</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-money"></i>
@@ -66,7 +66,7 @@
                     <div class="inner">
                         <h3>Form 03</h3>
 
-                        <p>Exercícios domiciliares evento</p>
+                        <p>Exercícios Domiciliares - Evento</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-document"></i>
@@ -83,7 +83,7 @@
                     <div class="inner">
                         <h3>Form 04</h3>
 
-                        <p>Exercícios domiciliares saúde</p>
+                        <p>Exercícios Domiciliares - Saúde</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-document-text"></i>

@@ -9,7 +9,7 @@
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
                 <li><i class="fa fa-edit"></i>
-                    <small> Listagem dos formulários</small>
+                    <small> Listagem dos Formulários</small>
                 </li>
             </ol>		
         </div>				

@@ -21,7 +21,6 @@ indexLocal();
             </ol>		
         </div>
         <div class="breadcrumb text-right">		    	
-            <button class="btn btn-primary" disabled=""><i class="fa fa-plus"></i> Nova Localidade</button>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
         </div>		
     </div>	
@@ -60,9 +59,7 @@ indexLocal();
                                     <td><?php echo $local['Bairro']; ?></td>			
                                     <td><?php echo $local['numero']; ?></td>
                                         <td class="actions text-center">
-                                            <a href="view.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
-                                            <button class="btn btn-sm btn-warning" disabled=""><i class="fa fa-pencil"></i> Editar</button>				
-                                            <button class="btn btn-sm btn-danger" disabled=""><i class="fa fa-trash"></i> Excluir</button>			
+                                            <a href="view.php?id=<?php echo $local['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>			
                                         </td>
                                     </tr>	
                                 <?php endforeach; ?>	

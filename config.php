@@ -32,6 +32,9 @@
     
     /** caminhos dos templates de header do usuário comum**/
     define('HEADER_TEMPLATE_PUBLIC', ABSPATH . 'inc/header_public.php');
+    
+    /** caminhos dos templates de header do usuário comum**/
+    define('HEADER_TEMPLATE_LOGOUT', ABSPATH . 'inc/header_logout.php');
 
     /** caminhos dos templates de footer dos usuário**/
     define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');
