@@ -51,8 +51,7 @@
                             <dd><?php echo $local['numero']; ?></dd>	
                         </dl>	
                         <div id="actions" class="row">		
-                            <div class="col-md-12">		  
-                                <button class="btn btn-primary" disabled=""><i class="fa fa-pencil"></i> Editar</button>
+                            <div class="col-md-12">
                                 <a href="index.php" class="btn btn-default">
                                     <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
                             </div>	

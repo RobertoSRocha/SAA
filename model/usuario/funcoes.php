@@ -16,8 +16,10 @@
     function addUsuario() {
         if (!empty($_POST['usuario'])) {
             $usuario = $_POST['usuario'];
+            $usuario2 = $_POST['usuario[img]'];
             //$usuario['senha'] = base64_encode($usuario['senha']);
             save('usuario', $usuario);
+            //saveIMG($usuario2);
             header('location: index.php');
             exit();
         }

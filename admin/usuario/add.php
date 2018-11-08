@@ -81,7 +81,7 @@ $criptografada = md5($senha) ?>
                         <!--<div class="form-group">	      
                             <label for="imagem">Foto do usuário </label>	      
                             <input type="file"  id="img"
-                                   name="usuario['img']" required="">	    
+                                   name="usuario['img']">	    
                         </div>-->
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

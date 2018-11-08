@@ -62,8 +62,6 @@ function find_all($table) {
 
 /** *  Insere um registro no BD	 */ 
 function save($table = null, $data = null) { 
-    //$name = $_FILES["usuario['img']"]["name"];
-    //$temp = $_FILES["usuario['img']"]["tmp_name"];
     $database = open_database();
     $columns = null;
     $values = null;    
@@ -93,12 +91,13 @@ function save($table = null, $data = null) {
         
     } 		  
     close_database($database);
-    //$name = $_FILES["usuario['img']"]["name"];
-    //$temp = $_FILES["usuario['img']"]["tmp_name"];
-    //move_uploaded_file($temp,"../imagens/".$name);
  }
  
- 
+ function saveIMG($conteudo){
+    $name = $_FILES["usuario['img']"]["name"];
+    $temp = $_FILES["usuario['img']"]["tmp_name"];
+    move_uploaded_file($temp,"../imagens/".$name);
+ }
 
 /** *  Atualiza um registro no BD   */ 
 function update($table = null, $id = 0, $data = null) {
@@ -143,7 +142,7 @@ function login($table, $matricula, $senha) {
 
                     $nome = explode(" ", $row['nome']);
 
-                    $_SESSION['message'] = "Bem Vindo(a): ".$nome[0];
+                    $_SESSION['message'] = "Bem Vindo(a) ".$nome[0];
                     $_SESSION['type'] = 'success';
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['matricula'] = $matricula;
@@ -249,7 +248,7 @@ function updateSenhaLogin($table, $id, $senha){
             //verifica se ouve alguma alteracão no banco
             if (($database->affected_rows) > 0) {
                 $_SESSION['senha'] = $senha;
-                $_SESSION['message'] = 'Senha atualizada com sucesso.';
+                $_SESSION['message'] = 'Senha atualizada com sucesso. Bem vindo ao sistema!';
                 $_SESSION['type'] = 'success';
                 $found = $_SESSION['permissao'];
             } else {
