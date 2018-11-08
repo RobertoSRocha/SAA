@@ -52,11 +52,11 @@
                         <thead>
                         <tr>
                             
-                            <th  data-placement="top" title="Ordenar por emprestimos">Nome</th>
-                            <th>Tombo</th>
-                            <th>Especificação</th>
-                            <th>Emprestável</th>
-                            <th>Setor responsável</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Tombo</th>
+                            <th title="Ordenar Tabela">Especificação</th>
+                            <th title="Ordenar Tabela">Emprestável</th>
+                            <th title="Ordenar Tabela">Setor responsável</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
@@ -108,8 +108,8 @@
                                 <th>FILTROS</th>
                                 <th></th>
                                 <th></th>
-                                <th data-placement="top" title="Ordenar por emprestimos">Emprestável</th>
-                                <th>Setor responsável</th>
+                                <th title="Filtrar Emprestável">Emprestável</th>
+                                <th title="Filtrar Setor responsável">Setor responsável</th>
                                 <th></th>
                             </tr>
                         </tfoot>

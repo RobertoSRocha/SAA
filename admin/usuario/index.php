@@ -47,10 +47,10 @@
                         <thead>
                         <tr>
 
-                            <th>Nome</th>
-                            <th>Matricula</th>
-                            <th>E-mail</th>
-                            <th>Permissão</th>
+                            <th title="Ordenar Tabela">Nome</th>
+                            <th title="Ordenar Tabela">Matricula</th>
+                            <th title="Ordenar Tabela">E-mail</th>
+                            <th title="Ordenar Tabela">Permissão</th>
                             <th>Ações</th>
                         </tr>
                         </thead>
@@ -89,8 +89,8 @@
                                     <th >FILTROS</th>
                                     <th></th>
                                     <th></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th title="Filtrar por permissão"></th>
+                                    <th ></th>
                                 </tr>
                             </tfoot>
                     </table>
