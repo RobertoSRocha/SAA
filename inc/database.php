@@ -74,20 +74,21 @@ function save($table = null, $data = null)
     }
 
 
+    if (isset($_FILES['img'])) {
+        //pega a extensao do arquivo
+        $extensao = strtolower(substr($_FILES['img']['name'], -4));
+        $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
+        $columns .= 'img';
+        $values .= "'$novo_nome',";
+    }
+
     // remove a ultima virgula
     $columns = rtrim($columns, ',');
     $values = rtrim($values, ',');
 
-    //pega a extensao do arquivo
-    $extensao = strtolower(substr($_FILES["usuario['img']"]['name'], -4));
-    $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
-
-
     $value['img'] = $novo_nome;
 
-
     $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
-
 
     try {
             $database->query($sql);
@@ -100,7 +101,7 @@ function save($table = null, $data = null)
             $_SESSION['message'] = $columns.'----'.$values.'<br>';
             $_SESSION['type'] = 'success';
         } else {
-            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+            $_SESSION['message'] = $columns.'----'.$values;
             $_SESSION['type'] = 'warning';
         }
     } 
