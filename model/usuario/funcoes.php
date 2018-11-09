@@ -17,9 +17,10 @@ function index()
 function addUsuario()
 {
     if (!empty($_POST['usuario'])) {
-        $usuario = $_POST['usuario'];
-        $usuario2 = $_POST['usuario[img]'];
-        //$usuario['senha'] = base64_encode($usuario['senha']);
+
+
+            $usuario = $_POST['usuario'];
+
         save('usuario', $usuario);
         //saveIMG($usuario2);
         header('location: index.php');
@@ -35,9 +36,9 @@ function addImagem()
     if (isset($_FILES['arquivo'])) {
         $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //pega a extensao do arquivo
         $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
-        $diretorio = '../../    imagens/'; //define o diretorio para onde enviaremos o arquivo
+        $diretorio = '../../imagens/'; //define o diretorio para onde enviaremos o arquivo
         move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
-        $sql_code = "INSERT INTO usuario (nome,permissao,matricula,email,img ) VALUES('aaaaaaa', '1', '1111111111111','a@a','$novo_nome')";
+        $sql_code = "INSERT INTO usuario (nome,permissao,matricula,email,img ) VALUES('aaaaaaa', '1', '0','a@a','$novo_nome')";
         if ($mysqli->query($sql_code))
             $msg = "Arquivo enviado com sucesso!";
         else

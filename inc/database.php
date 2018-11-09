@@ -61,51 +61,43 @@ function find_all($table) {
 }
 
 /** *  Insere um registro no BD	 */ 
-function save($table = null, $data = null) { 
+function save($table = null, $data = null)
+{
     $database = open_database();
 
-    $mysqli = open_database();
-
-    if (isset($_FILES['arquivo'])) {
-        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //pega a extensao do arquivo
-        $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
-        $diretorio = '../../    imagens/'; //define o diretorio para onde enviaremos o arquivo
-        move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
-        $sql_code = "INSERT INTO usuario (nome,permissao,matricula,email,img ) VALUES('aaaaaaa', '1', '1111111111111','a@a','$novo_nome')";
-        if ($mysqli->query($sql_code))
-            $msg = "Arquivo enviado com sucesso!";
-        else
-            $msg = "Falha ao enviar arquivo.";
+    $columns = null;
+    $values = null;
+    //print_r($data);		  
+    foreach ($data as $key => $value) {
+        $columns .= trim($key, "'") . ",";
+        $values .= "'$value',";
     }
 
-    close_database($mysqli);
 
-    $columns = null;
-    $values = null;    
-    //print_r($data);		  
-    foreach ($data as $key => $value) {	    
-        $columns .= trim($key, "'") . ",";	    
-        $values .= "'$value',";
-    }		  
-
-    // remove a ultima virgula	  
-    $columns = rtrim($columns, ',');	  
+    // remove a ultima virgula
+    $columns = rtrim($columns, ',');
     $values = rtrim($values, ',');
 
-    $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";		  
-    try {
-        if(isset($_FILES['arquivo'])) {
-            $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //pega a extensao do arquivo
-            $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
-            $diretorio = BASEURL."imagens"; //define o diretorio para onde enviaremos o arquivo
-            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
+    //pega a extensao do arquivo
+    $extensao = strtolower(substr($_FILES["usuario['img']"]['name'], -4));
+    $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
 
-            $addImg = "INSERT INTO".$table."img VALUES".$diretorio.$novo_nome;
-            $database->query($addImg);
-        }
-        $database->query($sql);
+
+    $value['img'] = $novo_nome;
+
+
+    $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
+
+
+    try {
+            $database->query($sql);
         if (($database->affected_rows) > 0) {
-            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+            if (isset($_FILES['img'])) {
+                $diretorio = '../../imagens/'; //define o diretorio para onde enviaremos o arquivo
+                move_uploaded_file($_FILES['img']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
+
+            }
+            $_SESSION['message'] = $columns.'----'.$values.'<br>';
             $_SESSION['type'] = 'success';
         } else {
             $_SESSION['message'] = 'Registro já cadastrado no sistema';

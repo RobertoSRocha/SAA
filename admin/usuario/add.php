@@ -38,7 +38,7 @@ $criptografada = md5($senha) ?>
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action=add.php method="post">
+                    <form action=add.php method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para adicionar um usuário</h3>
                         <hr />	      
@@ -78,11 +78,10 @@ $criptografada = md5($senha) ?>
 
                             </select>
                         </div>
-                        <!--<div class="form-group">	      
-                            <label for="imagem">Foto do usuário </label>	      
-                            <input type="file"  id="img"
-                                   name="usuario['img']">	    
-                        </div>-->
+                       <div class="form-group">
+                            <label for="imagem">Foto do usuário </label>
+                               Arquivo: <input type="file" name="usuario['img']">
+                        </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
