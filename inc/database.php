@@ -86,8 +86,6 @@ function save($table = null, $data = null)
     $columns = rtrim($columns, ',');
     $values = rtrim($values, ',');
 
-    $value['img'] = $novo_nome;
-
     $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
 
     try {
@@ -95,10 +93,9 @@ function save($table = null, $data = null)
         if (($database->affected_rows) > 0) {
             if (isset($_FILES['img'])) {
                 $diretorio = '../../imagens/'; //define o diretorio para onde enviaremos o arquivo
-                move_uploaded_file($_FILES['img']['tmp_name'], $diretorio . $novo_nome); //efetua o upload
-
+                move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$table.'/'. $novo_nome); //efetua o upload
             }
-            $_SESSION['message'] = $columns.'----'.$values.'<br>';
+            $_SESSION['message'] = $columns.'----'.$table.'<br>';
             $_SESSION['type'] = 'success';
         } else {
             $_SESSION['message'] = $columns.'----'.$values;
