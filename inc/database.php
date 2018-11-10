@@ -74,7 +74,7 @@ function save($table = null, $data = null)
     }
 
     //Verifica se o arquivo foi enviado
-    if (isset($_FILES['img'])) {
+    if (is_uploaded_file($_FILES['img']['tmp_name'])) {
         //pega a extensao do arquivo
         $extensao = strtolower(substr($_FILES['img']['name'], -4));
         $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
@@ -110,12 +110,6 @@ function save($table = null, $data = null)
         
     } 		  
     close_database($database);
- }
- 
- function saveIMG($conteudo){
-    $name = $_FILES["usuario['img']"]["name"];
-    $temp = $_FILES["usuario['img']"]["tmp_name"];
-    move_uploaded_file($temp,"../imagens/".$name);
  }
 
 /** *  Atualiza um registro no BD   */ 
