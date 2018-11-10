@@ -35,7 +35,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action=add.php method="post">
+                    <form action=add.php method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para adicionar um local</h3>
                         <hr />	      
@@ -63,6 +63,13 @@
                                    placeholder="Número do local"
                                    name="locais['numero']" required="">	    
                         </div>
+
+                        <div class="form-group">
+                            <label for="imagem">Foto do Local </label>
+                            Arquivo: <input type="file" name='img'>
+
+                        </div>
+
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">

@@ -73,7 +73,7 @@ function save($table = null, $data = null)
         $values .= "'$value',";
     }
 
-
+    //Verifica se o arquivo foi enviado
     if (isset($_FILES['img'])) {
         //pega a extensao do arquivo
         $extensao = strtolower(substr($_FILES['img']['name'], -4));
@@ -90,15 +90,17 @@ function save($table = null, $data = null)
 
     try {
             $database->query($sql);
-        if (($database->affected_rows) > 0) {
+        if (($database->affected_rows) > 0){
+
+            //move a tofo para pasta
             if (isset($_FILES['img'])) {
                 $diretorio = '../../imagens/'; //define o diretorio para onde enviaremos o arquivo
                 move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$table.'/'. $novo_nome); //efetua o upload
             }
-            $_SESSION['message'] = $columns.'----'.$table.'<br>';
+            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
             $_SESSION['type'] = 'success';
         } else {
-            $_SESSION['message'] = $columns.'----'.$values;
+            $_SESSION['message'] = 'Registro já cadastrado no sistema';
             $_SESSION['type'] = 'warning';
         }
     } 
