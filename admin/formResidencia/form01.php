@@ -43,15 +43,15 @@
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
                                    placeholder="Nome do requisitante" 
-                                   name="formResidencia01['nome']" required="">	    
+                                   name="nome" required="">	    
                         </div>
                         <div class="form-group">
                             <label for="area_atuacao">Área de Atuação</label></br>
                             <select class="form-control" id="area_atuacao" 
-                                    name="formResidencia01['area_atuacao']" required="">
-                                <option value="" ></option>
-                                <option value=coordenador>Saúde Materno-Infantil</option>
-                                <option value=professor>Atenção Básica</option>
+                                    name="area_atuacao" required="">
+                                <option value="true" ></option>
+                                <option value=saude_materno_infantil>Saúde Materno-Infantil</option>
+                                <option value=atencao_basica>Atenção Básica</option>
 
                             </select>
                         </div>
@@ -59,20 +59,20 @@
                             <label for="matricula">Matrícula </label>	      
                             <input type="text" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
-                                   name="formResidencia01['matricula']" required="">	    
+                                   name="matricula" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="motivo">Motivos </label>	      
                             <textarea class="form-control" id="motivo" 
                                       placeholder="Descreva os motivos"
-                                      rows="7" name="formResidencia01['motivo']" required=""></textarea>	    
+                                      rows="7" name="motivo" required=""></textarea>	    
                         </div>
                         <div class="form-group">
                                 <label class="title">
                                         <span class="required">Data do Início do Evento </span>
                                 </label>
                                 <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data1" required="required" placeholder="Data de Início"/>
                                         <span class="icon-place"></span>
                                 </div>
                         </div>
@@ -81,7 +81,7 @@
                                         <span class="required">Data do Término do Evento </span>
                                 </label>
                                 <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data2" required="required" placeholder="Data de Término"/>
                                         <span class="icon-place"></span>
                                 </div>
                         </div>
