@@ -1,11 +1,14 @@
 <?php
     require_once '../../config.php';
-    logout();
-    function logout(){
+    logout(isset($_GET["id"]));
+    function logout($acao){
         session_start(); // Inicia a sessão
         session_destroy(); // Destrói a sessão limpando todos os valores salvos
-        header("Location: ".BASEURL."public/logout/modal.php");
-        //header("Location: ".BASEURL."public/index.php");
+        if($acao == 'sair' ){
+            header("Location: ".BASEURL."public/logout/modal.php");
+        }else{
+            header("Location: ".BASEURL."public/logout/tempo_sessao.php");
+        }
     }
     
 

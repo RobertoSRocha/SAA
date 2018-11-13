@@ -30,13 +30,6 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <!--    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -71,8 +64,9 @@
                                 <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    <?php echo $_SESSION['nome'] ?> - Administrador
-                                    <small>Departamento de Tecnologia da Informação</small>
+                                    <?php echo $_SESSION['nome'] ?>
+                                    Administrador
+                                    <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small>
                                 </p>
                             </li>
 
@@ -82,7 +76,7 @@
                                     <a href="<?php echo BASEURL; ?>admin/usuario/view.php?id=<?php echo $_SESSION['id']; ?>" class="btn btn-default btn-flat">Perfil</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="<?php echo BASEURL;?>model/logout/funcoes.php" class="btn btn-default btn-flat">Sair</a>
+                                    <a href="<?php echo BASEURL;?>model/logout/funcoes.php?id=sair" class="btn btn-default btn-flat">Sair</a>
                                 </div>
                             </li>
                         </ul>
