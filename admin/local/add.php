@@ -66,7 +66,7 @@
 
                         <div class="form-group">
                             <label for="imagem">Foto do Local </label>
-                            Arquivo: <input type="file" name='img'>
+                           <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
 
                         </div>
 

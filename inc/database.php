@@ -1,6 +1,4 @@
 <?php
-require_once '../../config.php';
-
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
@@ -205,9 +203,9 @@ function login($table, $matricula, $senha) {
 function remove($table = null, $id = null) {
     $database = open_database();
 
-    //Recupera o valor da imagem
-    $img = mysqli_fetch_array($database->query("SELECT img FROM " . $table . " WHERE id = " . $id));
-    $img = $img[0];
+    $img = recupera_img($table, $id);
+
+    //diretorio da imagem
     $dir_img = ABSPATH . 'imagens/' . $table . '/' . $img;
 
     try {
@@ -290,4 +288,15 @@ function updateSenhaLogin($table, $id, $senha){
     }
     close_database($database);
     return $found;
+}
+
+function recupera_img($table = null, $id = null){
+
+    $database = open_database();
+    //Recupera o valor da imagem
+    $img = mysqli_fetch_array($database->query("SELECT img FROM " . $table . " WHERE id = " . $id));
+    $img = $img[0];
+    close_database($database);
+    return $img;
+
 }
