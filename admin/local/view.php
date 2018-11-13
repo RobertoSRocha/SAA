@@ -38,7 +38,7 @@
                 <div class="box-body">
                     <h3 class="text-center">Informações do patrimônio</h3>
                         <hr />
-                        <center><img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>" width="400" height="300"
+                        <center><img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>" width="500" height="400"
                                      class="img-rounded" alt="Cinque Terre"></center>
                         <dl class="dl-horizontal">		
                             <dt>Nome:</dt>		

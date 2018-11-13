@@ -16,13 +16,15 @@ CREATE TABLE usuario(
     )ENGINE = InnoDB;
 
 CREATE TABLE locais(
-	id INT AUTO_INCREMENT NOT NULL,
-    rua VARCHAR(255) NOT NULL,
-    numero int NOT NULL,
-    Bairro VARCHAR(100)  NOT NULL,
-   	nome VARCHAR(255)  NOT NULL,
+  id     INT AUTO_INCREMENT NOT NULL,
+  rua    VARCHAR(255) NOT NULL,
+  numero int NOT NULL,
+  Bairro VARCHAR(100)  NOT NULL,
+  nome   VARCHAR(255)  NOT NULL,
+  img    VARCHAR(255) DEFAULT NULL,
 
-    PRIMARY KEY (id)
+
+  PRIMARY KEY (id)
     
     )ENGINE = InnoDB;
     
@@ -33,8 +35,10 @@ CREATE TABLE setor(
     numero int,
     nome VARCHAR(100)  NOT NULL,
    	usuario_id INT NOT NULL,
+    img VARCHAR(255) DEFAULT NULL,
 
-    PRIMARY KEY (id),
+
+  PRIMARY KEY (id),
     FOREIGN KEY (usuario_id) REFERENCES usuario(id),
     FOREIGN KEY (local_id) REFERENCES locais(id)
     
@@ -48,8 +52,10 @@ CREATE TABLE patrimonio(
     nome VARCHAR(100)  NOT NULL,
    	permissao INT NOT NULL,
     setor_id INT NOT NULL,
+    img VARCHAR(255) DEFAULT NULL,
 
-    PRIMARY KEY (id),
+
+  PRIMARY KEY (id),
     FOREIGN KEY (setor_id) REFERENCES setor(id)
     
     )ENGINE = InnoDB;

@@ -60,7 +60,7 @@ function find_all($table) {
     return find($table);
 }
 
-/** *  Insere um registro no BD	 */ 
+/** *  Insere um registro no BD     */
 function save($table = null, $data = null)
 {
     $database = open_database();
@@ -202,19 +202,29 @@ function login($table, $matricula, $senha) {
 /** *  Remove um registro no BD	 */
 function remove($table = null, $id = null) {
     $database = open_database();
+
+    $img = recupera_img($table, $id);
+
+    //diretorio da imagem
+    $dir_img = ABSPATH . 'imagens/' . $table . '/' . $img;
+
     try {
         if ($id) {
             $sql = "DELETE FROM " . $table . " WHERE id = " . $id;
             $result = $database->query($sql);
+
             if ($result = $database->query($sql)) {
-                $_SESSION['message'] = "Registro Removido com Sucesso.";
+                unlink($dir_img);
+
+                $_SESSION['message'] = "Registro Removido com Sucesso";
                 $_SESSION['type'] = 'success';
-            }else{
+            }
+        } else {
 
                 $_SESSION['message'] = "Viiixe! Não foi possivel realizar a operação. Verifique se esse registro está sendo referenciado em outro local";
                 $_SESSION['type'] = 'danger';
             }
-        }
+
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -278,4 +288,15 @@ function updateSenhaLogin($table, $id, $senha){
     }
     close_database($database);
     return $found;
+}
+
+function recupera_img($table = null, $id = null){
+
+    $database = open_database();
+    //Recupera o valor da imagem
+    $img = mysqli_fetch_array($database->query("SELECT img FROM " . $table . " WHERE id = " . $id));
+    $img = $img[0];
+    close_database($database);
+    return $img;
+
 }
