@@ -1,0 +1,26 @@
+img.center_img {
+
+    display: block;
+
+    margin-left: auto;
+
+    margin-right: auto
+}
+
+img.view_img{
+    width: auto;
+    min-height: auto;
+    min-width: auto;
+    max-width:600px;
+    max-height:500px;
+    height: auto;
+}
+
+img.view_img_1{
+    width: auto;
+    min-height: auto;
+    min-width: auto;
+    max-width:300px;
+    max-height:250px;
+    height: auto;
+}
