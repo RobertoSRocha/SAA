@@ -34,7 +34,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action="edit.php?id=<?php echo $local['id']; ?>" method="post">
+                    <form action="edit.php?id=<?php echo $local['id']; ?>" method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Edite nos campos abaixo as informações do local</h3>
                         <hr />	      
@@ -70,7 +70,6 @@
                             <?php }else{?>
                                 <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
                                      class="img-rounded view_img_1" alt="Cinque Terre"/>
-
                             <?php }?>
                         </div>
 
