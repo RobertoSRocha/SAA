@@ -234,17 +234,17 @@ function remove($table = null, $id = null)
 
     $img = recupera_img($table, $id);
 
-    //diretorio da imagem
-    $dir_img = ABSPATH . 'imagens/' . $table . '/' . $img;
-
     try {
         if ($id) {
             $sql = "DELETE FROM " . $table . " WHERE id = " . $id;
             $result = $database->query($sql);
-
             if ($result = $database->query($sql)) {
-                unlink($dir_img);
-
+                if ($img != null) {
+                    //diretorio da imagem
+                    $dir_img = ABSPATH . 'imagens/' . $table . '/' . $img;
+                    //exclui a imagem
+                    unlink($dir_img);
+                }
                 $_SESSION['message'] = "Registro Removido com Sucesso";
                 $_SESSION['type'] = 'success';
             }
