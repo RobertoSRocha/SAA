@@ -65,13 +65,11 @@
 
                         <div class="form-group">
                             <?php if ($local['img']!= null){?>
-                                <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>" width="400"
-                                     height="300"
-                                     class="img-rounded" alt="Cinque Terre"/>
+                                <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>"
+                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
                             <?php }else{?>
-                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="400"
-                                     height="300"
-                                     class="img-rounded" alt="Cinque Terre"/>
+                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
+                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
 
                             <?php }?>
                         </div>
