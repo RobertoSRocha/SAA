@@ -247,11 +247,11 @@ function remove($table = null, $id = null)
                 }
                 $_SESSION['message'] = "Registro Removido com Sucesso";
                 $_SESSION['type'] = 'success';
-            }
-        } else {
+            } else {
 
-            $_SESSION['message'] = "Viiixe! Não foi possivel realizar a operação. Verifique se esse registro está sendo referenciado em outro local";
-            $_SESSION['type'] = 'danger';
+                $_SESSION['message'] = "Viiixe! Não foi possivel realizar a operação. Verifique se esse registro está sendo referenciado em outro local";
+                $_SESSION['type'] = 'danger';
+            }
         }
 
     } catch (Exception $e) {
