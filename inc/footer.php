@@ -62,8 +62,8 @@
     <script>
         var tempo = new Number();
         // Tempo em segundos
-        //tempo = 1500;
-        tempo = 5;
+        tempo = 1800;
+        //tempo = 5;
         function startCountdown(){
             // Se o tempo não for zerado
             if((tempo - 1) >= 0){

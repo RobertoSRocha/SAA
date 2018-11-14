@@ -64,8 +64,7 @@
                                 <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    <?php echo $_SESSION['nome'] ?>
-                                    Operador
+                                    <?php echo $_SESSION['nome'] ?><br>Operador
                                     <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small>
                                 </p>
                             </li>
