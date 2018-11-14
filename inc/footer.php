@@ -57,6 +57,53 @@
 
 <script src="<?php echo BASEURL; ?>dist/js/tabelas.js"></script>
 
+<!-- Tempo de sessão -->
+<?php if(isset($_SESSION['id'])): ?>
+    <script>
+        var tempo = new Number();
+        // Tempo em segundos
+        //tempo = 1500;
+        tempo = 5;
+        function startCountdown(){
+            // Se o tempo não for zerado
+            if((tempo - 1) >= 0){
+
+                    // Pega a parte inteira dos minutos
+                    var min = parseInt(tempo/60);
+                    // Calcula os segundos restantes
+                    var seg = tempo%60;
+
+                    // Formata o número menor que dez, ex: 08, 07, ...
+                    if(min < 10){
+                            min = "0"+min;
+                            min = min.substr(0, 2);
+                    }
+                    if(seg <=9){
+                            seg = "0"+seg;
+                    }
+
+                    // Cria a variável para formatar no estilo hora/cronômetro
+                    horaImprimivel = '00:' + min + ':' + seg;
+                    //JQuery pra setar o valor
+                    $("#cronometro").html(horaImprimivel);
+
+                    // Define que a função será executada novamente em 1000ms = 1 segundo
+                    setTimeout('startCountdown()',1000);
+
+                    // diminui o tempo
+                    tempo--;
+
+            // Quando o contador chegar a zero faz esta ação
+            }else {
+                    window.open('<?php echo BASEURL;?>model/logout/funcoes.php', '_self');
+
+            }
+        }
+    // Chama a função ao carregar a tela
+    startCountdown();
+    </script>
+<?php endif; ?>
+
 <!--Tempo das messagens de aletas-->
 <script>
     window.setTimeout(function(){
@@ -67,29 +114,31 @@
 </script>
 
 <script>
-            function validarSenha(){
-               var senha = form_senha.senha.value;
-               var senha2 = form_senha.senha2.value;
-               if(senha === "mudar123"){
-                   alert("Vixeee, você não poderá usar a senha padrão como sua senha.\nPor favor, digite uma senha diferente");
-                   return false;
-               }else if(senha === ""){
-                   alert("Vixeee, sem digitar você nos complica.\nPor favor, digite sua senha");
-                   return false;
-               }else if(senha.length < 5){
-                   alert("Vixeee, sua senha deve conter no mínimo 6 caracteres.\nPor favor, digite uma senha diferente");
-                   return false;
-               }else{
-                   if(senha !== senha2){
-                        alert("Vixeee, as senhas não conferem!\nDigite as senhas iguais");
-                        return false;
-                   }
-                   else{
-                       return true;
-                   }
-               }
-            }
+    function validarSenha(){
+       var senha = form_senha.senha.value;
+       var senha2 = form_senha.senha2.value;
+       if(senha === "mudar123"){
+           alert("Vixeee, você não poderá usar a senha padrão como sua senha.\nPor favor, digite uma senha diferente");
+           return false;
+       }else if(senha === ""){
+           alert("Vixeee, sem digitar você nos complica.\nPor favor, digite sua senha");
+           return false;
+       }else if(senha.length < 5){
+           alert("Vixeee, sua senha deve conter no mínimo 6 caracteres.\nPor favor, digite uma senha diferente");
+           return false;
+       }else{
+           if(senha !== senha2){
+                alert("Vixeee, as senhas não conferem!\nDigite as senhas iguais");
+                return false;
+           }
+           else{
+               return true;
+           }
+       }
+    }
 </script>
+
+
 
 </body>
 </html>

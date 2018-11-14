@@ -38,7 +38,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header text-center">
-                    <h3>Listagem de usuários do sitema</h3>
+                    <h3>Listagem de usuários do sistema</h3>
                 <hr />
                 </div>
                 <!-- /.box-header -->
