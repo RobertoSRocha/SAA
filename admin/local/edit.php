@@ -62,13 +62,33 @@
                                    value="<?php echo $local['numero']; ?>"
                                    name="locais['numero']" required="">	    
                         </div>
-                        <div id="actions" class="row">	    
-                            <div class="col-md-12">	      
+
+                        <div class="form-group">
+                            <label for="imagem">Altera Imagem</label>
+                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
+                        </div>
+
+                        <div class="form-group">
+                            <?php if ($local['img']!= null){?>
+                                <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>" width="400"
+                                     height="300"
+                                     class="img-rounded" alt="Cinque Terre"/>
+                            <?php }else{?>
+                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="400"
+                                     height="300"
+                                     class="img-rounded" alt="Cinque Terre"/>
+
+                            <?php }?>
+                        </div>
+
+
+                        <div id="actions" class="row">
+                            <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Salvar</button>
                                 <a href="index.php" class="btn btn-default">
-                                    <i class="fa fa-close"></i> Cancelar</a>	    
-                            </div>	  
+                                    <i class="fa fa-close"></i> Cancelar</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -83,5 +103,3 @@
 </section>
 
 <?php include(FOOTER_TEMPLATE); ?>
-
-
