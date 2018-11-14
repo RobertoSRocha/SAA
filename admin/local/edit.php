@@ -64,11 +64,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="imagem">Altera Imagem</label>
-                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
-                        </div>
-
-                        <div class="form-group">
                             <?php if ($local['img']!= null){?>
                                 <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>" width="400"
                                      height="300"
@@ -79,6 +74,11 @@
                                      class="img-rounded" alt="Cinque Terre"/>
 
                             <?php }?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imagem">Altera Imagem</label>
+                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
                         </div>
 
 

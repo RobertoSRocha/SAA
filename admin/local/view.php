@@ -42,12 +42,12 @@
 
                         <!--Verifica se a imagem está cadastrada-->
                         <?php if ($local['img'] != null) { ?>
-                            <center><img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>"
+                            <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>"
                                          width="500" height="400"
-                                         class="img-rounded" alt="Cinque Terre"/></center>
+                                         class="img-rounded center_img" alt="Cinque Terre"/>
                         <?php } else { ?>
-                            <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
-                                         class="img-rounded" alt="Cinque Terre"/></center>
+                            <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
+                                         class="img-rounded center_img" alt="Cinque Terre"/>
 
                         <?php } ?>
                     </div>
