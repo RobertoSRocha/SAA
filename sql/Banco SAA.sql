@@ -89,6 +89,22 @@ CREATE TABLE formulario(
     
     )ENGINE = InnoDB;
 
+CREATE TABLE achados_e_perdidos(
+
+	id INT AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(100)  NOT NULL,
+    descricao TEXT NOT NULL,
+    img VARCHAR(255) DEFAULT NULL,
+    data_achado DATE NOT NULL,
+    id_setor INT NOT NULL,
+    id_local INT NOT NULL,
+    status INT NOT NULL,
+    nome_pessoa_entregou VARCHAR(255) DEFAULT NULL,
+    documento_pessoa_entregou INT NOT NULL,
+    PRIMARY KEY (id)
+    
+    )ENGINE = InnoDB;
+
 insert into usuario(nome, matricula, email, senha, permissao)
   VALUE ('admin','1','admin@admin','14d777febb71c53630e9e843bedbd4d8','1'),
   ('operacional','2','operacional@operacional','14d777febb71c53630e9e843bedbd4d8','2');

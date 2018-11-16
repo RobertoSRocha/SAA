@@ -62,8 +62,7 @@
     <script>
         var tempo = new Number();
         // Tempo em segundos
-        //tempo = 1500;
-        tempo = 1200;
+        tempo = 1800;
         function startCountdown(){
             // Se o tempo não for zerado
             if((tempo - 1) >= 0){
@@ -138,7 +137,21 @@
     }
 </script>
 
-
+<!--<script type="text/javascript">
+    $(document).ready(function() {
+        $('#id_local').change(function(e) {
+            $('#id_setor').empty();
+            var id = $(this).val();
+            $.post('call_cidades.php', {id:id}, function(data){
+                var cmb = '<option value="">Setor onde o item foi encontrado </option>';
+                $.each(data, function (index, value){
+                    cmb = cmb + '<option value="' + value.cidadeid + '">' + value.cidade + '</option>';;
+                });
+                $('#id_setor').html(cmb);
+            }, 'json');
+        });
+    });
+</script>-->
 
 </body>
 </html>

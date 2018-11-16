@@ -86,7 +86,7 @@
                                 <?php } ?>
                                 <p>
                                     <?php echo $_SESSION['nome'] ?>
-                                    Administrador
+                                    <br>Administrador
                                     <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small>
                                 </p>
                             </li>
@@ -114,18 +114,10 @@
 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
-                <li class="treeview">
-                    <a href="#">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <span>Achados e perdidos</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                <li>
+                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php">
+                        <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Cadastrar itens</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens</a></li>
-                    </ul>
                 </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">

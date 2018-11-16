@@ -88,7 +88,7 @@
                                 <?php } ?>
                                 <p>
                                     <?php echo $_SESSION['nome'] ?>
-                                    Operador
+                                    <br>Operador
                                     <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small>
                                 </p>
                             </li>
