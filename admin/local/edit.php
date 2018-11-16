@@ -78,7 +78,6 @@
                             <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
                         </div>
 
-
                         <div id="actions" class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">
