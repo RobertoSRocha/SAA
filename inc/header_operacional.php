@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/font-awesome/css/font-awesome.min.css">
+
+    <!--formatacao imagens-->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>dist/css/imagens/imagens.css">
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
