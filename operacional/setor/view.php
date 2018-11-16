@@ -48,9 +48,18 @@
                 <div class="box-body">
                     <h3 class="text-center">Informações do setor</h3>
                         <hr />
-                        <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png" 
-                                     class="img-rounded" alt="Cinque Terre"></center>
-                        <dl class="dl-horizontal">		
+
+                    <!--Verifica se a imagem está cadastrada-->
+                    <?php if ($setor['img'] != null) { ?>
+                        <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $setor['img']; ?>"
+                             class="img-rounded center_img view_img" alt="Cinque Terre"/>
+                    <?php } else { ?>
+                        <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
+                             class="img-rounded center_img" alt="Cinque Terre"/>
+
+                    <?php } ?>
+
+                    <dl class="dl-horizontal">
                             <dt>Nome:</dt>		
                             <dd><?php echo $setor['nome']; ?></dd>	
                             <dt>Número:</dt>		

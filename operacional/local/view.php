@@ -37,9 +37,18 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <h3 class="text-center">Informações do patrimônio</h3>
-                        <hr />
-                        <center><img src="<?php echo BASEURL; ?>dist/img/semFoto.png"
-                                     class="img-rounded" alt="Cinque Terre"></center>
+                    <hr/>
+
+                    <!--Verifica se a imagem está cadastrada-->
+                    <?php if ($local['img'] != null) { ?>
+                        <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $local['img']; ?>"
+                             class="img-rounded center_img view_img" alt="Cinque Terre"/>
+                    <?php } else { ?>
+                        <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
+                             class="img-rounded center_img" alt="Cinque Terre"/>
+
+                    <?php } ?>
+
                         <dl class="dl-horizontal">		
                             <dt>Nome:</dt>		
                             <dd><?php echo $local['nome']; ?></dd>	

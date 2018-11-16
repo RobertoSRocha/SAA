@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="imagem">Altera Imagem</label>
+                            <label for="imagem">Alterar Imagem</label>
                             <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
                         </div>
 

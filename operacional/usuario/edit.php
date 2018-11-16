@@ -37,7 +37,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action="edit.php?id=<?php echo $usuario['id']; ?>" method="post">
+                    <form action="edit.php?id=<?php echo $usuario['id']; ?>" method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Edite nos campos abaixo as informações do usuário</h3>
                         <hr />	      
@@ -79,6 +79,22 @@
                                 <?php endif; ?>
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <?php if ($usuario['img']!= null){?>
+                                <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $usuario['img']; ?>"
+                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
+                            <?php }else{?>
+                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
+                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
+                            <?php }?>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="imagem">Alterar Imagem</label>
+                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
+                        </div>
+
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
