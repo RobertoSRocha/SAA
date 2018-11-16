@@ -67,8 +67,8 @@
                                 <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
                                      class="user-image" alt="User Image">
                             <?php } else { ?>
-                                <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
-                                     class="user-image" alt="User Image">
+                                <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="user-image" alt="User Image">
+
                             <?php } ?> <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
 
                         </a>
@@ -83,8 +83,8 @@
                                     <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
                                          class="img-circle" alt="User Image">
                                 <?php } else { ?>
-                                    <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
-                                         class="img-circle" alt="User Image">
+                                    <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
+
                                 <?php } ?>
                                 <p>
                                     <?php echo $_SESSION['nome'] ?>
