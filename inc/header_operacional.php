@@ -59,14 +59,33 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
+
+                            <!--Recupera imagem do usuário-->
+                            <?php $imagem = recupera_img('usuario', $_SESSION['id']) ?>
+                            <!--Verifica se a imagem está disponivel-->
+                            <?php if ($imagem != null) { ?>
+                                <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
+                                     class="user-image" alt="User Image">
+                            <?php } else { ?>
+                                <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
+                                     class="user-image" alt="User Image">
+                            <?php } ?> <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
+
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
-                            <li class="user-header">
-                                <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="img-circle" alt="User Image">
 
+                            <li class="user-header">
+                                <!--Recupera imagem do usuário-->
+                                <?php $imagem = recupera_img('usuario', $_SESSION['id']) ?>
+                                <!--Verifica se a imagem está disponivel-->
+                                <?php if ($imagem != null) { ?>
+                                    <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
+                                         class="user-image" alt="User Image">
+                                <?php } else { ?>
+                                    <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
+                                         class="user-image" alt="User Image">
+                                <?php } ?>
                                 <p>
                                     <?php echo $_SESSION['nome'] ?>
                                     Operador
