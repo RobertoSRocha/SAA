@@ -81,10 +81,10 @@
                                 <!--Verifica se a imagem está disponivel-->
                                 <?php if ($imagem != null) { ?>
                                     <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
-                                         class="user-image" alt="User Image">
+                                         class="img-circle" alt="User Image">
                                 <?php } else { ?>
                                     <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
-                                         class="user-image" alt="User Image">
+                                         class="img-circle" alt="User Image">
                                 <?php } ?>
                                 <p>
                                     <?php echo $_SESSION['nome'] ?>
