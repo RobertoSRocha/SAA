@@ -63,7 +63,7 @@
         var tempo = new Number();
         // Tempo em segundos
         //tempo = 1500;
-        tempo = 500;
+        tempo = 1200;
         function startCountdown(){
             // Se o tempo não for zerado
             if((tempo - 1) >= 0){
