@@ -100,7 +100,7 @@ CREATE TABLE achados_e_perdidos(
     id_local INT NOT NULL,
     status INT NOT NULL,
     nome_pessoa_entregou VARCHAR(255) DEFAULT NULL,
-    documento_pessoa_entregou INT NOT NULL,
+    documento_pessoa_entregou INT NOT DEFAULT NULL,
     PRIMARY KEY (id)
     
     )ENGINE = InnoDB;

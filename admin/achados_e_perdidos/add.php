@@ -88,8 +88,8 @@
                                         <span class="required">Data que o item foi encontrado </span>
                                 </label>
                                 <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="achados_e_perdidos['date']" id="date" 
-                                               required="required" placeholder="Data que o item foi encontrado"/>
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="achados_e_perdidos['data_achado']" id="data_achado" 
+                                               required="required"/>
                                         <span class="icon-place"></span>
                                 </div>
                         </div>
