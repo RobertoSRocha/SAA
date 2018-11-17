@@ -116,18 +116,10 @@
                 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
-                <li class="treeview">
+                <li>
                     <a href="#">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <span>Achados e perdidos</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                        <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Cadastrar itens</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens</a></li>
-                    </ul>
                 </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
