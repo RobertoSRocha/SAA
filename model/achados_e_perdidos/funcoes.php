@@ -28,7 +28,7 @@
             if (isset($_POST['achados_e_perdidos'])) {
                 $item = $_POST['achados_e_perdidos'];
                 //$customer['modified'] = $now->format("Y-m-d H:i:s");
-                update('usuario', $id, $item);
+                update('achados_e_perdidos', $id, $item);
                 header('location: index.php');
                 exit();
             } else {

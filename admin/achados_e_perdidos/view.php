@@ -1,12 +1,20 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-require_once LOGIN2;
-verificaLoginAdmin();
+    require_once LOGIN2;
+    verificaLoginAdmin();
 ?>
 <?php
-require_once USUARIO;
-viewUsuario($_GET['id']);
+    require_once ACHADOS_E_PERDIDOS;
+    viewAchados_e_Perdidos($_GET['id']);
+?>
+<?php
+    require_once SETOR;
+    indexSetor();
+?>
+<?php
+    require_once LOCAL;
+    indexLocal();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -15,9 +23,9 @@ viewUsuario($_GET['id']);
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-users"></i> Listagem de Usuários</a></li>
+                <li><a href="index.php"><i class="fa fa-search"></i> Listagem de Itens perdidos</a></li>
                 <li><i class="glyphicon glyphicon-eye-open"></i>
-                    <small> Visualizar usuário</small>
+                    <small> Visualizar Item perdido</small>
                 </li>
 
             </ol>
@@ -35,12 +43,12 @@ viewUsuario($_GET['id']);
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <h3 class="text-center">Informações do usuário</h3>
+                    <h3 class="text-center">Informações do item perdido</h3>
                     <hr/>
                     <div class="form-group">
                         <!--Verifica se a imagem está cadastrada-->
-                        <?php if ($usuario['img'] != null) { ?>
-                            <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $usuario['img']; ?>"
+                        <?php if ($item['img'] != null) { ?>
+                            <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"
                                  class="img-rounded center_img view_img" alt="Cinque Terre"/>
                         <?php } else { ?>
                             <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
@@ -50,24 +58,44 @@ viewUsuario($_GET['id']);
                     </div>
                     <dl class="dl-horizontal">
                         <dt>Nome:</dt>
-                        <dd><?php echo $usuario['nome']; ?></dd>
-                        <dt>Matrícula:</dt>
-                        <dd><?php echo $usuario['matricula']; ?></dd>
-                        <dt>E-mail:</dt>
-                        <dd><?php echo $usuario['email']; ?></dd>
-                        <dt>Número:</dt>
-                        <!-- Mostra a nível do usuário -->
-                        <?php if ($usuario['permissao'] == 1) : ?>
-                            <dd>Nível 1 - Administrador</dd>
-                        <?php elseif ($usuario['permissao'] == 2) : ?>
-                            <dd>Nível 2 - Operacional</dd>
+                        <dd><?php echo $item['nome']; ?></dd>
+                        <dt>Descrição:</dt>
+                        <dd><?php echo $item['descricao']; ?></dd>
+                        <dt>Status:</dt>
+                        <!-- Mostra o status do item -->
+                        <?php if ($item['status'] == 1) : ?>
+                            <dd>Item perdido</dd>
                         <?php else : ?>
-                            <dd>Nível 3 - Comum</dd>
+                            <dd>Item devolvido</dd>
+                        <?php endif; ?>
+                        
+                        <dt>Local onde o item foi encontrado:</dt>
+                        <!-- Mostra o local onde o item foi encontrado -->
+                        <?php if ($locais) : ?>
+                            <?php foreach ($locais as $local) : ?>
+                                <?php if ($local['id'] == $item['id_local']) : ?>
+                                    <dd><?php echo $local['nome']; ?></dd>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <dd>Local não encontrado</dd>
+                        <?php endif; ?>
+                            
+                        <dt>Setor onde o item foi encontrado:</dt>
+                        <!-- Mostra o setor onde o item foi encontrado -->
+                        <?php if ($setores) : ?>
+                            <?php foreach ($setores as $setor) : ?>
+                                <?php if ($setor['id'] == $item['id_setor']) : ?>
+                                    <dd><?php echo $setor['nome']; ?></dd>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <dd>Setor não encontrado</dd>
                         <?php endif; ?>
                     </dl>
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">
+                            <a href="edit.php?id=<?php echo $item['id']; ?>" class="btn btn-primary">
                                 <i class="fa fa-pencil"></i> Editar</a>
                             <a href="index.php" class="btn btn-default">
                                 <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>

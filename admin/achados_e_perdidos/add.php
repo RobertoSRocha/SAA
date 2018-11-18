@@ -6,11 +6,12 @@
 ?>
 <?php
     require_once ACHADOS_E_PERDIDOS;
-    addAchados_e_Perdidos();
+    addAchados_e_Perdidos(); 
 ?>
 <?php
     require_once SETOR;
     indexSetor();
+    indexSetores();
 ?>
 <?php
     require_once LOCAL;
@@ -43,7 +44,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action=add.php method="post">
+                    <form action=add.php method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para adicionar um item perdido</h3>
                         <hr />	      
@@ -51,7 +52,8 @@
                             <label for="nome">Nome do Item Perdido </label>	      
                             <input type="text" class="form-control" id="nome" 
                                    placeholder="Nome do item perdido" 
-                                   name="achados_e_perdidos['nome']" required="">	    
+                                   name="achados_e_perdidos['nome']" required=""
+                                   maxlength="100">	    
                         </div>
                         <div class="form-group">	      
                             <label for="descricao">Descrição do Item Perdido </label>	      
@@ -75,12 +77,8 @@
                             <label for="id_setor">Setor onde o item foi encontrado </label>
                             <select class="form-control" id="id_setor" 
                                     name="achados_e_perdidos['id_setor']" required="">
-                                <option value="" ></option>
-                                <?php if ($setores) : ?>	
-                                    <?php foreach ($setores as $setor) : ?>					
-                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
-                                    <?php endforeach; ?>		
-                                <?php endif; ?>
+                                <option value="" >selecione</option>
+                                
                             </select>
                         </div>
                         <div class="form-group">
@@ -98,6 +96,11 @@
                             <input type="number" class="form-control" id="status"
                                    value="1"
                                    name="achados_e_perdidos['status']">	    
+                        </div>
+                        <div class="form-group">
+                            <label for="imagem">Foto do Item </label>
+                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
+
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      

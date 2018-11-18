@@ -4,9 +4,9 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
-<?php require_once USUARIO;
+<?php require_once ACHADOS_E_PERDIDOS;
     if (isset($_GET['id'])) {
-        deleteUsuario($_GET['id']);
+        deleteAchados_e_Perdidos($_GET['id']);
     } else {
         die("ERRO: ID não definido.");
     } 

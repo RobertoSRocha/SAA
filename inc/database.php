@@ -333,3 +333,26 @@ function recupera_img($table = null, $id = null)
     return $img;
 
 }
+
+/* Pesquisa um setor pelo ID de um local */
+function findSetor($table = null, $idLocal = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if($idLocal != NULL){
+            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal;
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_assoc();
+                $_SESSION['message'] = 'true';
+                $_SESSION['type'] = 'success';
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}

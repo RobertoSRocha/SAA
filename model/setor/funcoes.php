@@ -13,6 +13,34 @@
         $setores = find_all('setor');
     }
     
+    if(isset($_GET['search'])){
+        indexSetores(); 
+    }
+    function indexSetores() {
+        $local = isset($_GET['search']);
+        global $setores;
+        $setores = findSetor('setor', $local);
+        //return $itens;
+        /*while(null !== ($item = mysqli_fetch_assoc($itens)))($itens as $item){
+            echo "<option value='".$item['id']."'>".$item['nome']."</option>";
+        }*/
+        /*for ($i = 0; $i < count($itens); $i++) {
+            // devolvendo a linha HTML para o javascript e montar no append
+            echo "<option value='" . $itens[$i]['id'] . "' >" . $itens[$i]['nome'] . "</option>";
+        }*/
+        if($setores){
+            foreach ($setores as $setor):
+                echo "<option value='" . $setor['id'] . "' >" . $setor['nome'] . "</option>";
+            endforeach;
+        }
+        /*if($itens){
+            foreach ($itens as $item => $value):
+                echo "<option value='" . $value['id'] . "' >" . $value['nome'] . "</option>";
+            endforeach;
+        }*/
+            
+    }
+    
     function addSetor() {
         if (!empty($_POST['setor'])) {
             //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));

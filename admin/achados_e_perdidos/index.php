@@ -43,30 +43,52 @@
     <?php include(ALERT_MSG); ?>
     <!-- Mostra o setor responsável do patrimônio -->
     <div class="row">
+        <div class="col-xs-12">
         <?php if ($itens) : ?>
             <?php foreach ($itens as $item) : ?>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="#">
-                        <div class="info-box">
-                            <?php if ($item['img'] != null) { ?>
-                                <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"
-                                     class="info-box-icon"/>
-                            <?php } else { ?>
-                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" class="info-box-icon"/>
-                            <?php } ?>
-                            <!--<img src="<?php echo BASEURL; ?>dist/img/semFoto.png" class="info-box-icon">-->
-                            <div class="info-box-content">
-                                <span class="info-box-number"><font color = "black"><?php echo $item['nome']; ?></span>
-                                <span>Encontrado no dia: <strong><?php echo $item['data_achado']; ?></strong></span>
-                                <span> na(o) 
+                
+                <div class="col-sm-12 col-md-6">
+                <div class="box box-solid">
+                    <div class="box-body">
+                        
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="view.php?id=<?php echo $item['id']; ?>" class="ad-click-event">
+                                    <?php if ($item['img'] != null) { ?>
+                                        <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"
+                                             alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
+                                         <?php } else { ?>
+                                        <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" 
+                                             alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
+                                    <?php } ?>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <div class="clearfix">
+                                    <p class="pull-right">
+                                        <a href="view.php?id=<?php echo $item['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+                                    </p>
+                                    <h4 style="margin-top: 0"><strong><?php echo $item['nome']; ?></strong></h4>
+                                </div>
+                                <div class="clearfix">
+                                    <p class="pull-right">
+                                        <a href="edit.php?id=<?php echo $item['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+                                    </p>
+                                    <h4 style="margin-top: 0">Encontrado no dia: <strong><?php echo date('d/m/Y', strtotime($item['data_achado'])); ?></h4>
+                                </div>
+                                <div class="clearfix">    
+                                    <p class="pull-right">
+                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $item['id']; ?>">
+                                            <i class="fa fa-trash"></i></a>
+                                    </p>
+                                    <h5 style="margin-top: 0">Encontrado na(o) 
                                     <?php if ($setores) : ?>	
                                         <?php foreach ($setores as $setor) : ?>
                                             <?php if ($setor['id'] == $item['id_setor']) : ?>	
                                                 <strong><?php echo $setor['nome']; ?></strong>
                                             <?php endif; ?>                            
                                         <?php endforeach; ?>		
-                                    <?php endif; ?> 
-                                    da(o) 
+                                    <?php endif; ?>da(o) 
                                     <?php if ($locais) : ?>	
                                         <?php foreach ($locais as $local) : ?>
                                             <?php if ($local['id'] == $item['id_local']) : ?>	
@@ -74,13 +96,15 @@
                                             <?php endif; ?>                            
                                         <?php endforeach; ?>		
                                     <?php endif; ?>
-                                </span>
+                                    </h5>
+                                    
+                                </div>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
-                    </a>
-                    <!-- /.info-box -->
+                    </div>
                 </div>
+            </div>
+            
             <?php endforeach; ?>
         <?php else : ?>
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -89,6 +113,9 @@
             
         <?php endif; ?>
         <!-- /.col -->
+        </div>
+        
     </div>                     
 </section>
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

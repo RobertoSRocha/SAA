@@ -80,7 +80,7 @@ $criptografada = md5($senha) ?>
                         </div>
 
                         <div class="form-group">
-                            <label for="imagem">Foto do Local </label>
+                            <label for="imagem">Foto do Usuário </label>
                             <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
 
                         </div>

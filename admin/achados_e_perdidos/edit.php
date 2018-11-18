@@ -5,8 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once USUARIO;
-    editUsuario();
+    require_once ACHADOS_E_PERDIDOS;
+    editAchados_e_Perdidos();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -34,52 +34,39 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action="edit.php?id=<?php echo $usuario['id']; ?>" method="post" enctype="multipart/form-data">
+                    <form action="edit.php?id=<?php echo $item['id']; ?>" method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
-                        <h3 class="text-center">Edite nos campos abaixo as informações do usuário</h3>
+                        <h3 class="text-center">Edite nos campos abaixo as informações do item</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome"
-                                   value="<?php echo $usuario['nome']; ?>"
-                                   name="usuario['nome']" required="">	    
+                                   value="<?php echo $item['nome']; ?>"
+                                   name="achados_e_perdidos['nome']" required="">	    
                         </div>
                         <div class="form-group">	      
-                            <label for="matricula">Matrícula </label>	      
-                            <input type="number" class="form-control" id="matricula" 
-                                   value="<?php echo $usuario['matricula']; ?>"
-                                   name="usuario['matricula']" required="">	    
-                        </div>
-                        <div class="form-group">	      
-                            <label for="email">E-mail </label>	      
-                            <input type="text" class="form-control" id="email" 
-                                   value="<?php echo $usuario['email']; ?>"
-                                   name="usuario['email']" required="">	    
+                            <label for="descricao">Descrição </label>	      
+                            <textarea class="form-control" id="descricao"
+                                      rows="3" name="achados_e_perdidos['descricao']" required=""><?php echo trim($item['descricao']); ?></textarea>	    
                         </div>
                         <div class="form-group">
-                            <label for="permissao">Permissão</label></br>
-                            <select class="form-control" id="permissao" 
-                                    name="usuario['permissao']" required="">
+                            <label for="status">Status</label></br>
+                            <select class="form-control" id="status" 
+                                    name="achados_e_perdidos['status']" required="">
                                 <!-- Mostra permissão do usuário -->
-                                <?php if ($usuario['permissao'] == 1) : ?>	
-                                    <option value=1>Nível 1 - Administrador</option>
-                                    <option value=2>Nível 2 - Operador</option>
-                                    <option value=0>Nível 3 - Comum</option>
-                                <?php elseif ($usuario['permissao'] == 2) : ?>	
-                                    <option value=2>Nível 2 - Operador</option>
-                                    <option value=1>Nível 1 - Administrador</option>
-                                    <option value=0>Nível 3 - Comum</option>
+                                <?php if ($item['status'] == 1) : ?>	
+                                    <option value=1>Item perdido</option>
+                                    <option value=0>Item devolvido</option>
                                 <?php else : ?>				
-                                    <option value=0>Nível 3 - Comum</option>
-                                    <option value=1>Nível 1 - Administrador</option>
-                                    <option value=2>Nível 2 - Operador</option>
+                                    <option value=0>Item devolvido</option>
+                                    <option value=1>Item perdido</option>
                                 <?php endif; ?>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <?php if ($usuario['img']!= null){?>
-                                <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $usuario['img']; ?>"
+                            <?php if ($item['img']!= null){?>
+                                <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"
                                      class="img-rounded view_img_1" alt="Cinque Terre"/>
                             <?php }else{?>
                                 <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
@@ -96,13 +83,6 @@
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Salvar</button>
-                                <?php if ($_SESSION['id'] == $usuario['id']) : ?>
-                                    <a href="atualiza_senha.php?id=<?php echo $usuario['id']; ?>" class="btn btn-warning">
-                                        <i class="fa fa-pencil"></i> Alterar senha</a>
-                                <?php else : ?>
-                                    <a href=# class="btn btn-warning" data-toggle="modal" data-target="#resetar-senha" data-customer="<?php echo $usuario['id']; ?>">
-                                            <i class="fa fa-pencil"></i> Redefinir senha</a>
-                                <?php endif; ?>
                                 <a href="index.php" class="btn btn-default"><i class="fa fa-close"></i> Cancelar</a>	    
                             </div>	  
                         </div>
