@@ -51,8 +51,9 @@
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label></br>
-                            <select class="form-control" id="status" 
-                                    name="achados_e_perdidos['status']" required="">
+                            <select class="form-control" 
+                                    name="achados_e_perdidos['status']" required="" 
+                                    id="status" onchange="optionCheck()">
                                 <!-- Mostra permissão do usuário -->
                                 <?php if ($item['status'] == 1) : ?>	
                                     <option value=1>Item perdido</option>
@@ -63,7 +64,24 @@
                                 <?php endif; ?>
                             </select>
                         </div>
-
+                        <div class="form-group" id="nome_pessoa_entregou" style="visibility:hidden;">	      
+                            <label for="nome_pessoa_entregou">Nome da pessoa que recebeu o item </label>	      
+                            <input type="text" class="form-control"
+                                   value="<?php echo $item['nome_pessoa_entregou']; ?>"
+                                   name="achados_e_perdidos['nome_pessoa_entregou']">	    
+                        </div>
+                        <div class="form-group" id="documento_pessoa_entregou" style="visibility:hidden;">	      
+                            <label for="documento_pessoa_entregou">Documento da pessoa que recebeu o item </label>	      
+                            <input type="text" class="form-control"
+                                   value="<?php echo $item['documento_pessoa_entregou']; ?>"
+                                   name="achados_e_perdidos['documento_pessoa_entregou']">	    
+                        </div>
+                        <div class="form-group" id="telefone" style="visibility:hidden;">	      
+                            <label for="telefone">Telefone da pessoa que recebeu o item </label>	      
+                            <input type="text" class="form-control"
+                                   value="<?php echo $item['telefone']; ?>"
+                                   name="achados_e_perdidos['telefone']">	    
+                        </div>
                         <div class="form-group">
                             <?php if ($item['img']!= null){?>
                                 <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"

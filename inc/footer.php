@@ -166,6 +166,21 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+    function optionCheck(){
+        var option = document.getElementById("status").value;
+        if(option == 1){
+            document.getElementById("nome_pessoa_entregou").style.visibility ="hidden";
+            document.getElementById("documento_pessoa_entregou").style.visibility ="hidden";
+            document.getElementById("telefone").style.visibility ="hidden";
+        }else{
+            document.getElementById("nome_pessoa_entregou").style.visibility ="visible";
+            document.getElementById("documento_pessoa_entregou").style.visibility ="visible";
+            document.getElementById("telefone").style.visibility ="visible";
+        }
+    }
+</script>
+
 <!--<script type="text/javascript">
     $(document).ready(function() {
         $('#id_local').change(function(e) {

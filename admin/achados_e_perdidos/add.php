@@ -11,7 +11,7 @@
 <?php
     require_once SETOR;
     indexSetor();
-    indexSetores();
+    //indexSetores();
 ?>
 <?php
     require_once LOCAL;
@@ -77,10 +77,22 @@
                             <label for="id_setor">Setor onde o item foi encontrado </label>
                             <select class="form-control" id="id_setor" 
                                     name="achados_e_perdidos['id_setor']" required="">
+                                <option value="" ></option>
+                                <?php if ($setores) : ?>	
+                                    <?php foreach ($setores as $setor) : ?>					
+                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                    <?php endforeach; ?>		
+                                <?php endif; ?>
+                            </select>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="id_setor">Setor onde o item foi encontrado </label>
+                            <select class="form-control" id="id_setor" 
+                                    name="achados_e_perdidos['id_setor']" required="">
                                 <option value="" >selecione</option>
                                 
                             </select>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                                 <label class="title">
                                         <span class="required">Data que o item foi encontrado </span>

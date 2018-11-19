@@ -24,13 +24,13 @@
         /*while(null !== ($item = mysqli_fetch_assoc($itens)))($itens as $item){
             echo "<option value='".$item['id']."'>".$item['nome']."</option>";
         }*/
-        /*for ($i = 0; $i < count($itens); $i++) {
+        /*for ($i = 0; $i < count($setores[0]); $i++) {
             // devolvendo a linha HTML para o javascript e montar no append
-            echo "<option value='" . $itens[$i]['id'] . "' >" . $itens[$i]['nome'] . "</option>";
+            echo "<option value='" . $setores[$i]['id'] . "' >" . $setores[$i]['nome'] . "</option>";
         }*/
         if($setores){
             foreach ($setores as $setor):
-                echo "<option value='" . $setor['id'] . "' >" . $setor['nome'] . "</option>";
+                echo "<option value='" . $setor . "' >" . $setor. "</option>";
             endforeach;
         }
         /*if($itens){
