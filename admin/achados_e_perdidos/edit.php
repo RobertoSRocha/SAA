@@ -74,7 +74,15 @@
                             <label for="documento_pessoa_entregou">Documento da pessoa que recebeu o item </label>	      
                             <input type="text" class="form-control"
                                    value="<?php echo $item['documento_pessoa_entregou']; ?>"
-                                   name="achados_e_perdidos['documento_pessoa_entregou']">	    
+                                   name="achados_e_perdidos['documento_pessoa_entregou']">
+                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio1" value="MATRICULA">
+                            <label class="form-check-label" for="inlineRadio1">MATRICULA</label>
+                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio2" value="RG">
+                            <label class="form-check-label" for="inlineRadio2">RG</label>
+                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio3" value="CPF">
+                            <label class="form-check-label" for="inlineRadio3">CPF</label>
+                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio4" value="CNH">
+                            <label class="form-check-label" for="inlineRadio4">CNH</label>
                         </div>
                         <div class="form-group" id="telefone" style="visibility:hidden;">	      
                             <label for="telefone">Telefone da pessoa que recebeu o item </label>	      

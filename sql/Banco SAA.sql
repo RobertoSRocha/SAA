@@ -102,6 +102,7 @@ CREATE TABLE achados_e_perdidos(
     nome_pessoa_entregou VARCHAR(255) DEFAULT NULL,
     documento_pessoa_entregou VARCHAR(255) DEFAULT NULL,
     telefone VARCHAR(255) DEFAULT NULL,
+    tipo_documento VARCHAR(255) DEFAULT NULL,
     PRIMARY KEY (id)
     
     )ENGINE = InnoDB;
