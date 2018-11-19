@@ -71,8 +71,13 @@
                                     <td class="actions text-center">
                                         <a href="view.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
                                         <a href="edit.php?id=<?php echo $usuario['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">
-                                            <i class="fa fa-trash"></i> Excluir	</a>
+                                        <?php if($_SESSION['id'] != $usuario['id']): ?>
+                                            <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $usuario['id']; ?>">
+                                                <i class="fa fa-trash"></i> Excluir </a>
+                                        <?php else: ?>
+                                        <button href=# class="btn btn-sm btn-danger" title="você não pode se excluir" data-toggle="modal" data-target="#delete-modal" disabled="" data-customer="<?php echo $usuario['id']; ?>">
+                                                    <i class="fa fa-trash"></i> Excluir </button>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

@@ -56,6 +56,11 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li class="dropdown user user-menu">
+                        <div class="text-center text-bold ">
+                            <br><span>Tempo de sessão: <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small></span>
+                        </div>
+                    </li>
+                    <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
                             <!--Recupera imagem do usuário-->
@@ -110,7 +115,7 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-            <div class="user-panel">
+            <!--<div class="user-panel">
                 <div class="pull-left image">
                     <img src="<?php echo BASEURL; ?>dist/img/relogio.png">
                 </div>
@@ -118,7 +123,7 @@
                     Tempo de sessão:
                     <center><small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small></center>
                 </div>
-            </div>
+            </div>-->
             <ul class="sidebar-menu" data-widget="tree">
 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
