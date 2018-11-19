@@ -44,13 +44,25 @@
     <!-- Mostra o setor responsável do patrimônio -->
     <div class="row">
         <div class="col-xs-12">
+            <div class="col-sm-12 col-md-6">
+                <div class="dataTables_length" id="example1_length">
+                    <label>Filtro: 
+                        <select name="example1_length" aria-controls="example1" class="form-control input-sm" title="selecionar ordenação de itens">
+                            <option value="10">Itens perdidos</option>
+                            <option value="25">Itens devolvidos</option>
+                            <option value="25">Todos os itens</option>
+                        </select>
+                    </label>
+                </div>  
+            </div>
+        </div>
+        <div class="col-xs-12">
         <?php if ($itens) : ?>
             <?php foreach ($itens as $item) : ?>
                 
                 <div class="col-sm-12 col-md-6">
                 <div class="box box-solid">
                     <div class="box-body">
-                        
                         <div class="media">
                             <div class="media-left">
                                 <a href="view.php?id=<?php echo $item['id']; ?>" class="ad-click-event">

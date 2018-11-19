@@ -83,6 +83,8 @@
                             <label class="form-check-label" for="inlineRadio3">CPF</label>
                             <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio4" value="CNH">
                             <label class="form-check-label" for="inlineRadio4">CNH</label>
+                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio5" value="OUTRO">
+                            <label class="form-check-label" for="inlineRadio5">OUTRO</label>
                         </div>
                         <div class="form-group" id="telefone" style="visibility:hidden;">	      
                             <label for="telefone">Telefone da pessoa que recebeu o item </label>	      
