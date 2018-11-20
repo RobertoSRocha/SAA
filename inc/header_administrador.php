@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,9 +55,9 @@
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown user user-menu">
-                        <div class="text-center text-bold ">
-                            <br><span>Tempo de sessão: <small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small></span>
+                    <li>
+                        <div style="margin-top:20px">
+                            <h6 class="label-primary"><b>Tempo de sessão: <span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
                         </div>
                     </li>
                     <li class="dropdown user user-menu">
