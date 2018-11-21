@@ -334,6 +334,18 @@ function recupera_img($table = null, $id = null)
 
 }
 
+function recupera_nome($table = null, $id = null)
+{
+
+    $database = open_database();
+    //Recupera o valor da imagem
+    $img = mysqli_fetch_array($database->query("SELECT nome FROM " . $table . " WHERE id = " . $id));
+    $img = $img[0];
+    close_database($database);
+    return $img;
+
+}
+
 /* Pesquisa um setor pelo ID de um local */
 function findSetor($table = null, $idLocal = null)
 {

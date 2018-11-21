@@ -77,8 +77,16 @@
                             <?php } else { ?>
                                 <img src="<?php echo BASEURL; ?>dist/img/iconousuario.jpg" class="user-image" alt="User Image">
 
-                            <?php } ?> <span class="hidden-xs"><?php echo $_SESSION['nome'] ?></span>
+                            <?php } ?>
 
+                            <span class="hidden-xs">
+                                <?php
+                                /*Recupera nome do usuario*/
+                                $user = recupera_nome('usuario',$_SESSION['id']);
+                                /*Mostra o primeiro nome*/
+                                $nome = explode(" ", $user);
+                                echo $nome[0] ?>
+                            </span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -95,7 +103,7 @@
 
                                 <?php } ?>
                                 <p>
-                                    <?php echo $_SESSION['nome'] ?>
+                                    <?php echo $user ?>
                                     <br>Operador
                                     <small>Departamento de Tecnologia</small>
                                 </p>
