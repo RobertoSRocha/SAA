@@ -62,7 +62,7 @@
                     </li>
                     <li>
                         <div style="margin-top:20px">
-                            <h6 class="label-primary"><b>Tempo de sessão: <span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
+                            <h6 class="label-primary"><b><span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
                         </div>
                     </li>
                     <li class="dropdown user user-menu">
