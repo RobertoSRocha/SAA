@@ -125,7 +125,8 @@
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
                 <li>
-                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php">
+<!--                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php"></a>-->
+                    <a href="#">
                         <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
                 </li>
