@@ -5,12 +5,12 @@
     verificaLoginOperador();
 ?>
 <?php
-require_once PATRIMONIO;
-addPatrimonio();
+    require_once PATRIMONIO;
+    addPatrimonio();
 ?>
 <?php
-require_once SETOR;
-indexSetor();
+    require_once SETOR;
+    indexSetor_operacional();
 ?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
     <section class="content-header">

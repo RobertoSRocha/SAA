@@ -41,7 +41,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header text-center">
-                    <h3>Listagem de patrimônios do sitema</h3>
+                    <h3>Listagem de patrimônios do sistema</h3>
                     <hr/>
                 </div>
                 <!-- /.box-header -->
@@ -88,10 +88,16 @@
                                     <?php endif; ?>
 
                                     <td class="actions text-center">
-                                        <a href="view.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				
+                                        <a href="view.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+                                    <?php if (!index_operacional($patrimonio['setor_id'])) : ?>    
+                                        <button href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning" disabled=""><i class="fa fa-pencil"></i> Editar</button>				
+                                        <button href=# class="btn btn-sm btn-danger" disabled="" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">
+                                            <i class="fa fa-trash"></i> Excluir	</button>
+                                    <?php else : ?>
                                         <a href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>				
                                         <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $patrimonio['id']; ?>">
-                                            <i class="fa fa-trash"></i> Excluir	</a>			
+                                            <i class="fa fa-trash"></i> Excluir	</a>
+                                    <?php endif; ?>
                                     </td>		
                                 </tr>	
                                 <?php endforeach; ?>	

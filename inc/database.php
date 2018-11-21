@@ -58,6 +58,50 @@ function find($table = null, $id = null)
     return $found;
 }
 
+/* Pesquisa um Registro pelo ID em uma Tabela */
+function find_operacional($table1 = null, $table2 = null, $id)
+{
+    $database = open_database();
+    $found = FALSE;
+    try {
+        if ($_SESSION['id'] != NULL) {
+            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] .")";
+            //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = TRUE;
+            }
+        } 
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+/* Pesquisa um setor pelo ID do usuário */
+function find_setor_operacional($table1 = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($_SESSION['id'] != NULL) {
+            $sql = "SELECT * FROM " . $table1 . " WHERE usuario_id = " . $_SESSION['id'];
+            //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } 
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
 /* Pesquisa Todos os Registros de uma Tabela */
 function find_all($table)
 {

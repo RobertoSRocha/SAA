@@ -82,8 +82,13 @@ indexSetor();
                     </dl>
                     <div id="actions" class="row">
                         <div class="col-md-12">
+                            <?php if (!index_operacional($patrimonio['setor_id'])) : ?>
+                            <button href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-primary" disabled="">
+                                <i class="fa fa-pencil"></i> Editar</button>
+                        <?php else : ?>
                             <a href="edit.php?id=<?php echo $patrimonio['id']; ?>" class="btn btn-primary">
                                 <i class="fa fa-pencil"></i> Editar</a>
+                        <?php endif; ?>
                             <a href="index.php" class="btn btn-default">
                                 <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
                         </div>

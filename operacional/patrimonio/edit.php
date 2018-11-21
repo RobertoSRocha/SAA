@@ -1,16 +1,16 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-require_once LOGIN2;
-verificaLoginOperador();
+    require_once LOGIN2;
+    verificaLoginOperador();
 ?>
 <?php
-require_once PATRIMONIO;
-editPatrimonio();
+    require_once PATRIMONIO;
+    editPatrimonio();
 ?>
 <?php
-require_once SETOR;
-indexSetor();
+    require_once SETOR;
+    indexSetor_operacional();
 ?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 

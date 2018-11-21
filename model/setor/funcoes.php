@@ -7,10 +7,16 @@
     /* guardará um único cliente, para os casos de inserção e atualização (CREATE e UPDATE) */
     $setor = null;
     
-    /** *  Listagem de Clientes	 */
+    /** *  Listagem de Setores	 */
     function indexSetor() {
         global $setores;
         $setores = find_all('setor');
+    }
+    
+    /** *  Listagem de Setores que o usuário é responsável	 */
+    function indexSetor_operacional() {
+        global $setores;
+        $setores = find_setor_operacional('setor');
     }
     
     if(isset($_GET['search'])){

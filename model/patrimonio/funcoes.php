@@ -12,6 +12,11 @@
         global $patrimonios;
         $patrimonios = find_all('patrimonio');
     }
+    
+    /** *  Listagem de Patrimônios do setor do usuário logado	 */
+    function index_operacional($id){
+        return find_operacional('patrimonio', 'setor', $id);
+    }
 
     /** *  Cadastro de Patrimônios	 */
     function addPatrimonio() {
