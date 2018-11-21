@@ -56,8 +56,13 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li>
+                        <div style="margin-right: 10px; margin-top:-6px;">
+                            <h3 class="label-primary"><i class="ion ion-clock" title="tempo de sessão"></i></h3>
+                        </div>
+                    </li>
+                    <li>
                         <div style="margin-top:20px">
-                            <h6 class="label-primary"><b>Tempo de sessão: <span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
+                            <h6 class="label-primary"><b><span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
                         </div>
                     </li>
                     <li class="dropdown user user-menu">
@@ -115,15 +120,6 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-            <!--<div class="user-panel">
-                <div class="pull-left image">
-                    <img src="<?php echo BASEURL; ?>dist/img/relogio.png">
-                </div>
-                <div class="pull-left info">
-                    Tempo de sessão:
-                    <center><small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small></center>
-                </div>
-            </div>-->
             <ul class="sidebar-menu" data-widget="tree">
                 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
