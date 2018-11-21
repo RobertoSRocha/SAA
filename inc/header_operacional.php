@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/font-awesome/css/font-awesome.min.css">
-
     <!--formatacao imagens-->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>dist/css/imagens/imagens.css">
-
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
@@ -54,9 +52,14 @@
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
-
+            
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <div style="margin-top:20px">
+                            <h6 class="label-primary"><b>Tempo de sessão: <span title="tempo de sessão" id="cronometro" onload="startCountdown();"> </span></b></h6>
+                        </div>
+                    </li>
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
@@ -112,7 +115,7 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-            <div class="user-panel">
+            <!--<div class="user-panel">
                 <div class="pull-left image">
                     <img src="<?php echo BASEURL; ?>dist/img/relogio.png">
                 </div>
@@ -120,7 +123,7 @@
                     Tempo de sessão:
                     <center><small title="tempo de sessão" id="cronometro" onload="startCountdown();"> </small></center>
                 </div>
-            </div>
+            </div>-->
             <ul class="sidebar-menu" data-widget="tree">
                 
                 <li class="header">MENU DE NAVEGAÇÃO</li>
