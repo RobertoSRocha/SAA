@@ -1,0 +1,7 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options -Indexes
+ErrorDocument 404 http://localhost/SAA
+ErrorDocument 403 http://localhost/SAA
+order deny,allow
