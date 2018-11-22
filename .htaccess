@@ -2,6 +2,6 @@
 deny from all
 </Files>
 Options -Indexes
-ErrorDocument 404 http://localhost/SAA
-ErrorDocument 403 http://localhost/SAA
+ErrorDocument 403 http://localhost/SAA/erros/403.php
+ErrorDocument 404 http://localhost/SAA/erros/404.php
 order deny,allow

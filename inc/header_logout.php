@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv=refresh content=2;URL="<?php echo BASEURL; ?>public/index.php" />
+    <meta http-equiv=refresh content=3;URL="<?php echo BASEURL; ?>public/index.php" />
     <title>SAA-EMCM</title>
     <!-- Ícone da aba do navegador -->
     <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png" />
@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/font-awesome/css/font-awesome.min.css">
+    <!--formatacao imagens-->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>dist/css/imagens/imagens.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
