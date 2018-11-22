@@ -51,7 +51,7 @@
 
                     <!--Verifica se a imagem está cadastrada-->
                     <?php if ($setor['img'] != null) { ?>
-                        <img src="<?php echo BASEURL; ?>imagens/locais/<?php echo $setor['img']; ?>"
+                        <img src="<?php echo BASEURL; ?>imagens/setor/<?php echo $setor['img']; ?>"
                              class="img-rounded center_img view_img" alt="Cinque Terre"/>
                     <?php } else { ?>
                         <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" width="500" height="400"
@@ -61,7 +61,7 @@
 
                     <dl class="dl-horizontal">
                             <dt>Nome:</dt>		
-                            <dd><?php echo $setor['nome']; ?></dd>	
+                            <dd><?php echo $setor['nome']; ?></dd>
                             <dt>Número:</dt>		
                             <dd><?php echo $setor['numero']; ?></dd>	
                             <dt>usuário responsável:</dt>		
