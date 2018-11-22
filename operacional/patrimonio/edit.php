@@ -7,6 +7,7 @@
 <?php
     require_once PATRIMONIO;
     editPatrimonio();
+    verifica_editPatrimonio($patrimonio['id']);
 ?>
 <?php
     require_once SETOR;
