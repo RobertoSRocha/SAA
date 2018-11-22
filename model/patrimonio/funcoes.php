@@ -31,7 +31,7 @@
     
     function verifica_editPatrimonio($id){
         if(!find_edit_operacional('patrimonio', 'setor', $id)){
-            header('location: erro.php');
+            header("Location: " . BASEURL . "erros/erro.php");
         }
     }
     
