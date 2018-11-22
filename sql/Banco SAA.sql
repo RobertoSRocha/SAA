@@ -32,7 +32,7 @@ CREATE TABLE locais(
 CREATE TABLE setor(
 	id INT AUTO_INCREMENT NOT NULL,
     local_id INT NOT NULL,
-    numero int,
+    numero VARCHAR(10)  NOT NULL,
     nome VARCHAR(100)  NOT NULL,
    	usuario_id INT NOT NULL,
     img VARCHAR(255) DEFAULT NULL,

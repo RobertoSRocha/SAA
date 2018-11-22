@@ -87,9 +87,7 @@ function verificaID()
 {
     if (isset($_GET['id'])) {
         if ($_GET['id'] != $_SESSION['id']) {
-            $_SESSION['message'] = "Eiita gaiatinho, tu não pode realizar esse tipo de operação!";
-            $_SESSION['type'] = 'warning';
-            header('location: index.php');
+            header('location: erro.php');
             exit();
         }
     }

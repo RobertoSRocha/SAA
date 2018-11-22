@@ -29,6 +29,12 @@
         }
     }
     
+    function verifica_editPatrimonio($id){
+        if(!find_edit_operacional('patrimonio', 'setor', $id)){
+            header('location: erro.php');
+        }
+    }
+    
     function editPatrimonio() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
