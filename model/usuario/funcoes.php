@@ -87,7 +87,7 @@ function verificaID()
 {
     if (isset($_GET['id'])) {
         if ($_GET['id'] != $_SESSION['id']) {
-            header('location: erro.php');
+            header("Location: " . BASEURL . "erros/erro.php");
             exit();
         }
     }
