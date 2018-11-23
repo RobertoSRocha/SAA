@@ -33,13 +33,13 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
+            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome DESC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
             }
         } else {
-            $sql = "SELECT * FROM " . $table;
+            $sql = "SELECT * FROM " . $table . " ORDER BY nome DESC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
@@ -109,11 +109,35 @@ function find_setor_operacional($table1 = null)
     $found = null;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT * FROM " . $table1 . " WHERE usuario_id = " . $_SESSION['id'];
+            $sql = "SELECT * FROM " . $table1 . " WHERE usuario_id = " . $_SESSION['id'] . " ORDER BY nome ASC";;
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } 
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+/* Pesquisa se o usuário é responsável por algum setor */
+function find_exist_setor_usuario($table = null)
+{
+    $database = open_database();
+    $found = FALSE;
+    try {
+        if ($_SESSION['id'] != NULL) {
+            $sql = "SELECT id FROM " . $table . " WHERE usuario_id = " . $_SESSION['id'];
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = TRUE;
+            }else{
+                $_SESSION['message'] = 'Você não tem permissão para cadastrar um patrimônio, pois não é responsável por nenhum setor.';
+                $_SESSION['type'] = 'danger';
             }
         } 
     } catch (Exception $e) {
@@ -419,7 +443,7 @@ function findSetor($table = null, $idLocal = null)
     $found = null;
     try {
         if($idLocal != NULL){
-            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal;
+            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome DESC";;
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();

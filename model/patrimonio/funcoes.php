@@ -35,6 +35,12 @@
         }
     }
     
+    function verifica_exist_setor(){
+        if(!find_exist_setor_usuario('setor')){
+            header("Location: index.php");
+        }
+    }
+    
     function editPatrimonio() {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];

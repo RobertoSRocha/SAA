@@ -7,6 +7,7 @@
 <?php
     require_once PATRIMONIO;
     addPatrimonio();
+    verifica_exist_setor();
 ?>
 <?php
     require_once SETOR;
