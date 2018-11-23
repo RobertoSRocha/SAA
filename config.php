@@ -52,7 +52,7 @@
         define('LOGIN2', ABSPATH . 'model/login/funcoesNivel2.php');
     
     /** caminho para as funções do usuário **/
-    if ( !defined('USUARIO') )		
+    if ( !defined('USUARIO') )
         define('USUARIO', ABSPATH . 'model/usuario/funcoes.php');
     
     /** caminho para as funções do patrimônio **/
@@ -66,6 +66,10 @@
     /** caminho para as funções do local **/
     if ( !defined('LOCAL') )		
         define('LOCAL', ABSPATH . 'model/local/funcoes.php');
+
+    /** caminho para as funções das imagens **/
+    if ( !defined('IMAGENS') )
+        define('IMAGENS', ABSPATH . 'model/imagens/funcoes.php');
     
     /** caminho para as funções do local **/
     if ( !defined('TELALOGIN') )		

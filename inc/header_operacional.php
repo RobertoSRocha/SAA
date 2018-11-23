@@ -71,7 +71,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
                             <!--Recupera imagem do usuário-->
-                            <?php $imagem = recupera_img('usuario', $_SESSION['id']) ?>
+                            <?php require_once IMAGENS;
+                                $imagem = nome_foto_usuario($_SESSION['id']) ?>
+
                             <!--Verifica se a imagem está disponivel-->
                             <?php if ($imagem != null) { ?>
                                 <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
@@ -84,7 +86,7 @@
                             <span class="hidden-xs">
                                 <?php
                                 /*Recupera nome do usuario*/
-                                $user = recupera_nome('usuario',$_SESSION['id']);
+                                $user = nome_usuario($_SESSION['id']);
                                 /*Mostra o primeiro nome*/
                                 $nome = explode(" ", $user);
                                 echo $nome[0] ?>
@@ -95,7 +97,7 @@
 
                             <li class="user-header">
                                 <!--Recupera imagem do usuário-->
-                                <?php $imagem = recupera_img('usuario', $_SESSION['id']) ?>
+                                <?php $imagem = nome_foto_usuario($_SESSION['id']) ?>
                                 <!--Verifica se a imagem está disponivel-->
                                 <?php if ($imagem != null) { ?>
                                     <img src="<?php echo BASEURL; ?>imagens/usuario/<?php echo $imagem ?>"
