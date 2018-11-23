@@ -33,13 +33,13 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome DESC";
+            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
             }
         } else {
-            $sql = "SELECT * FROM " . $table . " ORDER BY nome DESC";
+            $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
@@ -443,7 +443,7 @@ function findSetor($table = null, $idLocal = null)
     $found = null;
     try {
         if($idLocal != NULL){
-            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome DESC";;
+            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome ASC";;
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
