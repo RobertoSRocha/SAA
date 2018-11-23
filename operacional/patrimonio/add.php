@@ -13,6 +13,9 @@
     require_once SETOR;
     indexSetor_operacional();
 ?>
+<?php
+    require_once LOCAL;
+?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
     <section class="content-header">
         <div class="row">
@@ -67,7 +70,7 @@
                                     <option value=""></option>
                                     <?php if ($setores) : ?>
                                         <?php foreach ($setores as $setor) : ?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>

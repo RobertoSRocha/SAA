@@ -69,9 +69,9 @@
                                 <!--Usuario Cadastrado no Setor-->
                                 <?php if ($usuarios) : ?>
                                     <?php foreach ($usuarios as $usuario) : ?>
-                                    <?php if($usuario['id'] == $setor['usuario_id']){?>
-                                            <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>
-                                    <?php } endforeach; ?>
+                                        <?php if($usuario['id'] == $setor['usuario_id']){?>
+                                            <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?> - <?php echo $usuario['matricula'];?></option>
+                                        <?php } endforeach; ?>
                                 <?php endif; ?>
 
                                 <!--Lista usuarios niveis 1 e 2-->
@@ -79,8 +79,7 @@
                                     foreach ($usuarios as $usuario) :
                                         if ($usuario['id'] != $setor['usuario_id']) {
                                             if ($usuario['permissao'] == 1 || $usuario['permissao'] == 2) : ?>
-
-                                                <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?></option>
+                                                <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?> - <?php echo $usuario['matricula'];?></option>
                                             <?php endif;
                                         } endforeach;
                                 endif; ?>
