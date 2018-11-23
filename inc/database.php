@@ -58,6 +58,24 @@ function find($table = null, $id = null)
     return $found;
 }
 
+function find_nome($table, $local_id){
+    $database = open_database();
+    $found = null;
+    try {
+        if ($local_id) {
+            //$sql = "SELECT nome FROM " . $table . " WHERE id = " . $local_id;
+            //$result = $database->query($sql);
+            $result = mysqli_fetch_array($database->query("SELECT nome FROM " . $table . " WHERE id = " . $local_id));
+            $found = $result[0];
+        } 
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
 /* Pesquisa um Registro pelo ID do setor em uma Tabela */
 function find_operacional($table1 = null, $table2 = null, $id)
 {

@@ -13,6 +13,11 @@
         $locais = find_all('locais');
     }
     
+    /** *  Pega nome do local através do setor	 */
+    function nome_setor_local($local_id){
+        return find_nome('locais', $local_id);
+    }
+    
     function addLocal() {
         if (!empty($_POST['locais'])) {
             //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
