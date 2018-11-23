@@ -18,7 +18,7 @@ CREATE TABLE usuario(
 CREATE TABLE locais(
   id     INT AUTO_INCREMENT NOT NULL,
   rua    VARCHAR(255) NOT NULL,
-  numero int NOT NULL,
+  numero VARCHAR(10)  NOT NULL,
   Bairro VARCHAR(100)  NOT NULL,
   nome   VARCHAR(255)  NOT NULL,
   img    VARCHAR(255) DEFAULT NULL,
