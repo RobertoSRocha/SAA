@@ -8,7 +8,7 @@ CREATE TABLE usuario(
     nome VARCHAR(100)  NOT NULL,
     img VARCHAR(255) DEFAULT NULL,
     matricula VARCHAR(25) UNIQUE NOT NULL,
-    email VARCHAR(100)  NOT NULL,
+    email VARCHAR(100) DEFAULT NULL,
     senha VARCHAR(255)  NOT NULL,
     permissao int  NOT NULL,
     PRIMARY KEY (id)
