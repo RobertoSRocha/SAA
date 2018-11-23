@@ -12,6 +12,9 @@
     require_once SETOR;
     indexSetor();
 ?>
+<?php
+    require_once LOCAL;
+?>
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -67,11 +70,11 @@
                                 <?php if ($setores) : ?>	
                                     <?php foreach ($setores as $setor) : ?>
                                         <?php if($setor['id'] == $patrimonio['setor_id']){?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
                                     <?php } endforeach; ?>
                                     <?php foreach ($setores as $setor) : ?>
                                         <?php if($setor['id'] != $patrimonio['setor_id']){?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
                                     <?php } endforeach; ?>
                                 <?php endif; ?>
                             </select>
