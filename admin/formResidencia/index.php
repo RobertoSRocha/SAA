@@ -88,7 +88,7 @@
                     <div class="icon">
                         <i class="ion ion-document-text"></i>
                     </div>
-                    <a href="form04.php" class="small-box-footer">
+                    <a href="<?php echo BASEURL; ?>dist/pdf/teste.pdf" class="small-box-footer" target="blank">
                         Requisitar <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>

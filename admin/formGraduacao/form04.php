@@ -42,7 +42,7 @@
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
+                                   placeholder="Nome do usuário" 
                                    name="nome" required="">	    
                         </div>
                         <div class="form-group">	      

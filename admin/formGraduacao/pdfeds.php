@@ -1,5 +1,7 @@
 <?php
+require_once('../../config.php');
 require('./fpdf/fpdf.php');
+require_once FORMULARIO;
 
 class PDF extends FPDF
 {
@@ -23,7 +25,7 @@ $data2 = @$_POST['data2'];
 $dataf1 = date('d/m/Y', strtotime($data1));
 $dataf2 = date('d/m/Y', strtotime($data2));
 
-
+add_form("Graduacao","form04",$matricula);
 
 // Instanciation of inherited class
 $pdf = new PDF();

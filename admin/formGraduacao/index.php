@@ -79,19 +79,21 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-red">
-                    <div class="inner">
-                        <h3>Form 04</h3>
+                <a href="form04.php" title="Exercícios Domiciliares - Saúde" class="small-box-footer">
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>Form 04</h3>
 
-                        <p>Exercícios Domiciliares - Saúde</p>
+                            <p>Exercícios Domiciliares - Saúde</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-document-text"></i>
+                        </div>
+
+                        <span class="small-box-footer">Requisitar<i class="fa fa-arrow-circle-right"></i></span>
+
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-document-text"></i>
-                    </div>
-                    <a href="form04.php" class="small-box-footer">
-                        Requisitar <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
+                </a>
             </div>
             <!-- ./col -->
         </div>

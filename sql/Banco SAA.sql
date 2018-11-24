@@ -79,13 +79,13 @@ CREATE TABLE emprestimo(
 
 CREATE TABLE formulario(
 	id INT AUTO_INCREMENT NOT NULL,
-    /*usuario_id INT NOT NULL,*/
+    usuario_id INT NOT NULL,
     data_requerimento DATE NOT NULL,
     tipo_requisicao VARCHAR(100)  NOT NULL,
     tipo_formulario VARCHAR(100) NOT NULL,
    	
-    PRIMARY KEY (id)
-   /* FOREIGN KEY (usuario_id) REFERENCES usuario(id)*/
+    PRIMARY KEY (id),
+   FOREIGN KEY (usuario_id) REFERENCES usuario(id)
     
     )ENGINE = InnoDB;
 

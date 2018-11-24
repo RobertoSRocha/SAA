@@ -223,6 +223,31 @@ function save($table = null, $data = null)
     close_database($database);
 }
 
+/** *  Salva informações do formulário    */
+function saveForm($tipo_req, $tipo_form, $usuario_matricula)
+{
+    $database = open_database();
+    
+    
+    $sql = "INSERT INTO formulario(data_requerimento, usuario_id, tipo_requisicao, tipo_formulario)
+            VALUES (NOW() , " . $usuario_matricula . ", '" . $tipo_req . "', '" . $tipo_form . "')";
+    try {
+        $database->query($sql);
+        if (($database->affected_rows) > 0) {
+            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+            $_SESSION['type'] = 'success';
+        } else {
+            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+            $_SESSION['type'] = 'warning';
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+
+    }
+    close_database($database);
+}
+
 /** *  Atualiza um registro no BD   */
 function update($table = null, $id = 0, $data = null)
 {
