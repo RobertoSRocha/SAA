@@ -56,20 +56,37 @@
                                    value="<?php echo $usuario['email']; ?>"
                                    name="usuario['email']" required="">	    
                         </div>
+
+
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label></br>
+                            <select class="form-control" id="categoria"
+                                    name="usuario['categoria']" required="">
+                                <!-- Mostra permissão do usuário -->
+                                <option value="<?php echo $usuario['categoria']; ?>"><?php echo $usuario['categoria']; ?></option>
+                                <option value="" ></option>
+                                <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                <option value="PROFESSOR">PROFESSOR</option>
+                                <option value="SERVIDOR">SERVIDOR</option>
+                            </select>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="permissao">Permissão</label></br>
-                            <select class="form-control" id="permissao" 
+                            <select class="form-control" id="permissao"
                                     name="usuario['permissao']" required="">
                                 <!-- Mostra permissão do usuário -->
-                                <?php if ($usuario['permissao'] == 1) : ?>	
+                                <?php if ($usuario['permissao'] == 1) : ?>
                                     <option value=1>Nível 1 - Administrador</option>
                                     <option value=2>Nível 2 - Operador</option>
                                     <option value=0>Nível 3 - Comum</option>
-                                <?php elseif ($usuario['permissao'] == 2) : ?>	
+                                <?php elseif ($usuario['permissao'] == 2) : ?>
                                     <option value=2>Nível 2 - Operador</option>
                                     <option value=1>Nível 1 - Administrador</option>
                                     <option value=0>Nível 3 - Comum</option>
-                                <?php else : ?>				
+                                <?php else : ?>
                                     <option value=0>Nível 3 - Comum</option>
                                     <option value=1>Nível 1 - Administrador</option>
                                     <option value=2>Nível 2 - Operador</option>

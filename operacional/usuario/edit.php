@@ -59,6 +59,16 @@
                                    value="<?php echo $usuario['email']; ?>"
                                    name="usuario['email']" required="">	    
                         </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label></br>
+                            <select class="form-control" id="categoria"
+                                    name="usuario['categoria']" disabled="">
+                                <!-- Mostra permissão do usuário -->
+                                <option value="<?php echo $usuario['categoria']; ?>"><?php echo $usuario['categoria']; ?></option>
+                                                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="permissao">Permissão</label></br>
                             <select class="form-control" id="permissao" 

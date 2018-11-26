@@ -150,7 +150,7 @@ $(function () {
 $("#tab_usuario").DataTable({
 
         "initComplete": function () {
-            this.api().columns([3]).every( function () {
+            this.api().columns([3,4]).every( function () {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )

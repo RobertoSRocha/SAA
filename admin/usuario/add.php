@@ -58,7 +58,7 @@ $criptografada = md5($senha) ?>
                             <label for="email">E-mail </label>	      
                             <input type="email" class="form-control" id="email" 
                                    placeholder="E-mail do usuário"
-                                   name="usuario['email']" required="">	    
+                                   name="usuario['email']">
                         </div>
                         <!--style="display:none;"-->
                         <div class="form-group" style="display:none;">	      
@@ -67,6 +67,20 @@ $criptografada = md5($senha) ?>
                                    value="<?php echo $criptografada; ?>"
                                    name="usuario['senha']">	    
                         </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label></br>
+                            <select class="form-control" id="categoria"
+                                    name="usuario['categoria']" required="">
+                                <option value="" ></option>
+                                <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                <option value="PROFESSOR">PROFESSOR</option>
+                                <option value="SERVIDOR">SERVIDOR</option>
+
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="permissao">Permissão</label></br>
                             <select class="form-control" id="permissao" 

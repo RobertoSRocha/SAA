@@ -50,6 +50,7 @@
                             <th title="Ordenar Tabela">Nome</th>
                             <th title="Ordenar Tabela">Matricula</th>
                             <th title="Ordenar Tabela">E-mail</th>
+                            <th title="Ordenar Tabela">Categoria</th>
                             <th title="Ordenar Tabela">Permissão</th>
                             <th>Ações</th>
                         </tr>
@@ -61,6 +62,7 @@
                                     <td><?php echo $usuario['nome']; ?></td>
                                     <td><?php echo $usuario['matricula']; ?></td>
                                     <td><?php echo $usuario['email']; ?></td>
+                                    <td><?php echo $usuario['categoria']; ?></td>
                                     <?php if ($usuario['permissao'] == 1) : ?>
                                         <td><?php echo "Nível 1 - Administrador"; ?></td>
                                     <?php elseif ($usuario['permissao'] == 2) : ?>
@@ -94,6 +96,7 @@
                                     <th >FILTROS</th>
                                     <th></th>
                                     <th></th>
+                                    <th title="Filtrar por categoria"></th>
                                     <th title="Filtrar por permissão"></th>
                                     <th ></th>
                                 </tr>

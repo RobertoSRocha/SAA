@@ -10,6 +10,7 @@ CREATE TABLE usuario(
     matricula VARCHAR(25) UNIQUE NOT NULL,
     email VARCHAR(100) DEFAULT NULL,
     senha VARCHAR(255)  NOT NULL,
+    categoria VARCHAR(25) NOT NULL,
     permissao int  NOT NULL,
     PRIMARY KEY (id)
     

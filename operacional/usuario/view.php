@@ -58,7 +58,9 @@ verificaLoginOperador();
                         <dd><?php echo $usuario['matricula']; ?></dd>
                         <dt>E-mail:</dt>
                         <dd><?php echo $usuario['email']; ?></dd>
-                        <dt>Número:</dt>
+                        <dt>Categoria:</dt>
+                        <dd><?php echo $usuario['categoria']; ?></dd>
+                        <dt>Permissão:</dt>
                         <!-- Mostra a nível do usuário -->
                         <?php if ($usuario['permissao'] == 1) : ?>
                             <dd>Nível 1 - Administrador</dd>
