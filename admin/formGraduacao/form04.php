@@ -4,10 +4,7 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
-<?php
-    require_once LOCAL;
-    addLocal();
-?>
+
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -42,12 +39,12 @@
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
+                                   placeholder="Nome do requisitante" 
                                    name="nome" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do usuário"
                                    name="matricula" required="">	    
                         </div>

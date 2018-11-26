@@ -13,14 +13,35 @@ function Header()
     $this->Ln(20);
 }
 
-
+}
+function LoadData($file)
+{
+    // Read file lines
+    $lines = file($file);
+    $data = array();
+    foreach($lines as $line)
+        $data[] = explode(';',trim($line));
+    return $data;
 }
 
-// Instanciation of inherited class
+// Simple table
+function BasicTable($header, $data)
+{
+    // Header
+    foreach($header as $col)
+        $this->Cell(40,7,$col,1);
+    $this->Ln();
+    // Data
+    foreach($data as $row)
+    {
+        foreach($row as $col)
+            $this->Cell(40,6,$col,1);
+        $this->Ln();
+    }
+}
 $pdf = new PDF();
-$pdf->AliasNbPages();
+$pdf->SetFont('Arial','',14);
 $pdf->AddPage();
-$pdf->SetFont('Times','',12);
 
 $pdf->Output();
 ?>

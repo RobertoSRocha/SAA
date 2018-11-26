@@ -4,10 +4,7 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
-<?php
-    require_once LOCAL;
-    addLocal();
-?>
+
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -50,14 +47,14 @@
                             <select class="form-control" id="area_atuacao" 
                                     name="area_atuacao" required="">
                                 <option value="true" ></option>
-                                <option value=saude_materno_infantil>Saúde Materno-Infantil</option>
-                                <option value=atencao_basica>Atenção Básica</option>
+                                <option value="Saúde Materno-Infantil">Saúde Materno-Infantil</option>
+                                <option value="Atencão Básica">Atenção Básica</option>
 
                             </select>
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
                                    name="matricula" required="">	    
                         </div>

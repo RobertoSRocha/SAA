@@ -38,16 +38,16 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',14);
 $pdf->SetXY(30,70);
 $pdf->SetMargins(15,15,15);
-$pdf->MultiCell(190,10,utf8_decode("Senhor(a) Coordenador(a) $coordenador_modulo ,\n"),'C');
+$pdf->MultiCell(190,10,utf8_decode("Senhor(a) Coordenador(a), $coordenador_modulo.\n"),'C');
 
 $pdf->MultiCell(0,10,utf8_decode("$nome, matrícula $matricula, aluno(a) vinculado(a) a esta universidade ".
-        "no curso de Medicina, vem requerer execução de exercícios domiciliares no módulo de $modulo ,".
-        "de $dataf1 a $dataf2 em virtude de participação no $evento, a ser realizado em $cidade/$estado ,".
-        "de xx a xx ,conforme comprovante de inscrição anexo.\n"),'C');
-$pdf->MultiCell(0,10,utf8_decode("Nestes termos, pede deferimento."));
-$pdf->SetXY(90,230);
+        "no curso de Medicina, vem requerer execução de exercícios domiciliares no módulo de $modulo, ".
+        "de $dataf1 a $dataf2 em virtude de participação no evento $evento, a ser realizado em $cidade/$estado, ".
+        "de $dataf3 a $dataf4, conforme comprovante de inscrição anexo.\n"),'C');
+$pdf->MultiCell(0,10,utf8_decode("           Nestes termos, pede deferimento."));
+$pdf->SetXY(90,240);
 $pdf->Cell(0,0,utf8_decode("Caicó/RN,____de__________________de______"));
-$pdf->SetXY(45,250);
+$pdf->SetXY(40,260);
 $pdf->MultiCell(0,8,"__________________________________________________",'C');
 $pdf->Cell(0,5,utf8_decode("$nome"),0,1,'C');
 

@@ -36,12 +36,12 @@ $pdf->MultiCell(190,10,utf8_decode("Senhor(a) Coordenador(a),\n"),'C');
 
 $pdf->MultiCell(0,10,utf8_decode("$nome, matrícula $matricula, aluno(a) vinculado(a) a esta universidade ".
         "no curso de Medicina, vem requerer auxílio financeiro em virtude de participação como ".
-        "apresentador(a) do evento $evento, conforme aprovação de trabalho científico de título $titulo.\n"),'C');
-$pdf->MultiCell(0,10, utf8_decode("O evento será realizado em $cidade/$estado, de $dataf1  a  $dataf2 ."));
-$pdf->MultiCell(0,10,utf8_decode("Nestes termos, pede deferimento."));
-$pdf->SetXY(90,230);
+        "apresentador(a) do evento $evento, conforme aprovação de trabalho científico de título $titulo.".
+" O evento será realizado em $cidade/$estado, de $dataf1  a  $dataf2 ."),'C');
+$pdf->MultiCell(0,10,utf8_decode("            Nestes termos, pede deferimento."));
+$pdf->SetXY(90,240);
 $pdf->Cell(0,0,utf8_decode("Caicó/RN,____de__________________de______"));
-$pdf->SetXY(45,250);
+$pdf->SetXY(40,260);
 $pdf->MultiCell(0,8,"__________________________________________________",'C');
 $pdf->Cell(0,5,utf8_decode("$nome"),0,1,'C');
 
