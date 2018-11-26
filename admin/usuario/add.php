@@ -57,7 +57,7 @@ $criptografada = md5($senha) ?>
                         <div class="form-group">	      
                             <label for="email">E-mail </label>	      
                             <input type="email" class="form-control" id="email" 
-                                   placeholder="E-mail do usuário"
+                                   placeholder="E-mail do usuário" required=""
                                    name="usuario['email']">
                         </div>
                         <!--style="display:none;"-->

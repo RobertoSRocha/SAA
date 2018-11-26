@@ -64,7 +64,6 @@
                                     name="usuario['categoria']" required="">
                                 <!-- Mostra permissão do usuário -->
                                 <option value="<?php echo $usuario['categoria']; ?>"><?php echo $usuario['categoria']; ?></option>
-                                <option value="" ></option>
                                 <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
                                 <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
                                 <option value="PROFESSOR">PROFESSOR</option>
