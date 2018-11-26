@@ -167,7 +167,6 @@
                     <ul class="treeview-menu">
                         <li><a href="<?php echo BASEURL; ?>operacional/formGraduacao/index.php"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
                         <li><a href="<?php echo BASEURL; ?>operacional/formResidencia/index.php"><i class="fa fa-circle-o"></i> Alunos Residência</a></li>
-                        <li><a href="<?php echo BASEURL; ?>operacional/formProfessor/index.php"><i class="fa fa-circle-o"></i> Professores</a></li>
                     </ul>
                 </li>
                 
