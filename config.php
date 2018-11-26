@@ -83,6 +83,10 @@
     if ( !defined('FORMULARIO_RESIDENCIA') )		
         define('FORMULARIO_RESIDENCIA', ABSPATH . 'model/formResidencia/funcoes.php');
     
+    /** caminho para as funções dos formularios **/
+    if ( !defined('PDF') )		
+        define('PDF', ABSPATH . 'dist/fpdf/fpdf.php');
+    
     /** caminho para as funções dos achados e perdidos **/
     if ( !defined('ACHADOS_E_PERDIDOS') )		
         define('ACHADOS_E_PERDIDOS', ABSPATH . 'model/achados_e_perdidos/funcoes.php');

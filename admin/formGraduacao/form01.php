@@ -4,6 +4,10 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
+<?php
+    require_once FORMULARIO_GRADUACAO;
+    form01();
+?>
 
 
 <?php include(HEADER_TEMPLATE); ?>
@@ -33,7 +37,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfrg.php method="post">
+                    <form target="_blank" action=form01.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
