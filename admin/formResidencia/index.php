@@ -4,6 +4,10 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
+<?php
+    require_once FORMULARIO_RESIDENCIA;
+    form04();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 <!-- Main conteudoCentral -->
 
@@ -85,7 +89,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <a target="_blank" href="<?php echo BASEURL; ?>dist/pdf/Formulario_Solicitacao_Estagio_Opcional.pdf" class="small-box-footer">
+                <a target="_blank" action="form04.php" href="<?php echo BASEURL; ?>dist/pdf/Formulario_Solicitacao_Estagio_Opcional.pdf" class="small-box-footer">
                     <div class="small-box bg-green-active">
                         <div class="inner">
                             <h3>Form 04</h3>

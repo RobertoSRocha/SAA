@@ -8,6 +8,10 @@
     require_once LOGIN2;
     verificaLoginOperador();
 ?>
+<?php
+    require_once FORMULARIO_GRADUACAO;
+    form01();
+?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		
@@ -35,7 +39,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfaa.php method="post">
+                    <form target="_blank" action=form01.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
@@ -57,7 +61,7 @@
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
                                    name="formResidencia01['matricula']" required="">	    
                         </div>

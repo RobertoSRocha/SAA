@@ -53,7 +53,7 @@
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
                                    name="formResidencia02['matricula']" required="">	    
                         </div>

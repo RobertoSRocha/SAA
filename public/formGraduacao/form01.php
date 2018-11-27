@@ -1,12 +1,15 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-    require_once LOCAL;
-    addLocal();
+    require_once LOGIN2;
+    verificaLoginAdmin();
 ?>
-<?php require_once LOGIN2; 
-    verificaLoginPublic();
+<?php
+    require_once FORMULARIO_GRADUACAO;
+    form01();
 ?>
+
+
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
 
 <section class="content-header">		
@@ -34,7 +37,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfrg.php method="post">
+                    <form target="_blank" action=form01.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
@@ -42,23 +45,23 @@
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
                                    placeholder="Nome do requisitante" 
-                                   name="formGraduacao01['nome']" required="">	    
+                                   name="nome" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
-                                   name="formGraduacao01['matricula']" required="">	    
+                                   name="matricula" required="">	    
                         </div>
                         <div class="form-group">
                             <label for="destinatario">Destinatário</label></br>
                             <select class="form-control" id="destinatario" 
-                                    name="formGraduacao01['destinatario']" required="">
+                                    name="destinatario" required="">
                                 <option value="" ></option>
-                                <option value=coordenador>Ao Coordenador do Módulo</option>
-                                <option value=professor>Ao professor</option>
-                                <option value=diretor>Ao diretor</option>
-                                <option value=secretario>Ao secretário</option>
+                                <option value="Coordenador">Ao Coordenador do Módulo</option>
+                                <option value="Professor">Ao Professor</option>
+                                <option value="Diretor">Ao Diretor</option>
+                                <option value="Secretário">Ao Secretário</option>
 
                             </select>
                         </div>
@@ -66,13 +69,13 @@
                             <label for="nome_destinatario">Nome do Destinatário</label>	      
                             <input type="text" class="form-control" id="nome_destinatario" 
                                    placeholder="Nome do destinatario" 
-                                   name="formGraduacao01['nome_destinatario']" required="">	    
+                                   name="nome_destinatario" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="requerimento">Requerimento </label>	      
                             <textarea class="form-control" id="requerimento" 
-                                      placeholder="Descreva os motivos"
-                                      rows="7" name="formGraduacao01['requerimento']" required=""></textarea>	    
+                                      placeholder="Descreva o tipo de requerimento"
+                                      rows="7" name="requerimento" required=""></textarea>	    
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
