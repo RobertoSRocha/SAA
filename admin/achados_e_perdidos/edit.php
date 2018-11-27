@@ -23,9 +23,9 @@
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-users"></i> Listagem de Usuários</a></li>
+                <li><a href="index.php"><i class="fa fa-users"></i> Listagem de Itens perdidos</a></li>
                 <li><i class="glyphicon glyphicon-pencil"></i>
-                    <small> Editar Usuário</small>
+                    <small> Editar Itens perdidos</small>
                 </li>
             </ol>		
         </div>			

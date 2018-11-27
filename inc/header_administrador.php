@@ -151,9 +151,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar Empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Devolver Empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Realizar Empréstimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens emprest�veis</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
                     </ul>
                 </li>
 

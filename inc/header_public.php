@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAA-EMCM</title>
-    <!-- √çcone da aba do navegador -->
+    <!-- √?cone da aba do navegador -->
     <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -89,10 +89,10 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar empr√©stimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens emprest·veis</a></li>
                     </ul>
                 </li>
-                <!-- FORMUL√ÅRIOS-->
+                <!-- FORMUL√?RIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i> <span>Formul√°rios</span>

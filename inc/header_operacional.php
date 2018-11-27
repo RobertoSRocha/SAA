@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAA-EMCM</title>
-    <!-- Ícone da aba do navegador -->
+    <!-- �?cone da aba do navegador -->
     <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -151,12 +151,11 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar Empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Devolver Empréstimo</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Realizar Empréstimo</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Consultar itens emprest�veis</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
                     </ul>
                 </li>
-                <!-- FORMULÁRIOS-->
+                <!-- FORMUL�?RIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i> <span>Formulários</span>
