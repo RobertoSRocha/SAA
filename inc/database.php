@@ -172,6 +172,13 @@ function find_all($table)
     return find($table);
 }
 
+
+/* Pesquisa Todos os Registros de uma Tabela */
+function find_all_setores($table, $id)
+{
+    return findSetor($table, $id);
+}
+
 /** *  Insere um registro no BD     */
 function save($table = null, $data = null)
 {
@@ -455,18 +462,27 @@ function recupera_nome($table = null, $id = null)
 }
 
 /* Pesquisa um setor pelo ID de um local */
-function findSetor($table = null, $idLocal = null)
+function findSetor($table = null, $id = null)
 {
     $database = open_database();
     $found = null;
     try {
-        if($idLocal != NULL){
-            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome ASC";;
+        if ($id) {
+            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $id . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
-                $found = $result->fetch_assoc();
-                $_SESSION['message'] = 'true';
-                $_SESSION['type'] = 'success';
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+                /* Metodo alternativo
+                 * $found = array();
+                 * while ($row = $result->fetch_assoc()) {
+                 * array_push($found, $row);
+                 * } */
             }
         }
     } catch (Exception $e) {
@@ -475,4 +491,6 @@ function findSetor($table = null, $idLocal = null)
     }
     close_database($database);
     return $found;
+
+
 }

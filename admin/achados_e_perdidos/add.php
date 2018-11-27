@@ -11,7 +11,7 @@
 <?php
     require_once SETOR;
     indexSetor();
-    //indexSetores();
+    indexSetores();
 ?>
 <?php
     require_once LOCAL;
