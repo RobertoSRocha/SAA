@@ -32,7 +32,7 @@
         <div class="breadcrumb text-right">		    	
             <a class="btn btn-primary" href="add.php">
                 <i class="fa fa-plus">
-                </i> Novo Item</a>		    	
+                </i> Novo Item Perdido</a>		    	
             <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>		    
         </div>		
     </div>	

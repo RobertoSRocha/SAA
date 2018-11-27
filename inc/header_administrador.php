@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAA-EMCM</title>
-    <!-- √çcone da aba do navegador -->
+    <!-- √?cone da aba do navegador -->
     <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -138,7 +138,7 @@
                 <!-- ACHADOS E PERDIDOS -->
                 <li>
 <!--                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php"></a>-->
-                    <a href="#">
+                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php">
                         <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
                 </li>
@@ -157,7 +157,7 @@
                     </ul>
                 </li>
 
-                <!-- FORMUL√ÅRIOS-->
+                <!-- FORMUL√?RIOS-->
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-edit"></i> <span>Formul√°rios</span>
@@ -192,7 +192,7 @@
                     </a>
                 </li>
 
-                <!-- GERENCIAR USU√ÅRIOS-->
+                <!-- GERENCIAR USU√?RIOS-->
                 <li>
                     <a href="<?php echo BASEURL; ?>admin/usuario/index.php">
                         <i class="fa fa-users"></i><span>Gerenciar Usu√°rios</span>
