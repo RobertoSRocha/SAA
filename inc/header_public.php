@@ -10,6 +10,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--formatacao imagens-->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>dist/css/imagens/imagens.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -75,7 +77,7 @@
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
                 <li>
-                    <a href="#">
+                    <a href="<?php echo BASEURL; ?>public/achados_e_perdidos/index.php">
                         <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
                 </li>
