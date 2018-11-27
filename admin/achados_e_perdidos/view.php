@@ -68,25 +68,13 @@
                         <?php else : ?>
                             <dd>Item devolvido</dd>
                         <?php endif; ?>
-                        
-                        <dt>Local onde o item foi encontrado:</dt>
-                        <!-- Mostra o local onde o item foi encontrado -->
-                        <?php if ($locais) : ?>
-                            <?php foreach ($locais as $local) : ?>
-                                <?php if ($local['id'] == $item['id_local']) : ?>
-                                    <dd><?php echo $local['nome']; ?></dd>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        <?php else : ?>
-                            <dd>Local não encontrado</dd>
-                        <?php endif; ?>
                             
                         <dt>Setor onde o item foi encontrado:</dt>
                         <!-- Mostra o setor onde o item foi encontrado -->
                         <?php if ($setores) : ?>
                             <?php foreach ($setores as $setor) : ?>
                                 <?php if ($setor['id'] == $item['id_setor']) : ?>
-                                    <dd><?php echo $setor['nome']; ?></dd>
+                                    <dd><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></dd>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else : ?>

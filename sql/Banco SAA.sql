@@ -98,7 +98,6 @@ CREATE TABLE achados_e_perdidos(
     img VARCHAR(255) DEFAULT NULL,
     data_achado DATE NOT NULL,
     id_setor INT NOT NULL,
-    id_local INT NOT NULL,
     status INT NOT NULL,
     nome_pessoa_entregou VARCHAR(255) DEFAULT NULL,
     documento_pessoa_entregou VARCHAR(255) DEFAULT NULL,

@@ -11,7 +11,6 @@
 <?php
     require_once SETOR;
     indexSetor();
-    //indexSetores();
 ?>
 <?php
     require_once LOCAL;
@@ -62,37 +61,17 @@
                                       rows="3" name="achados_e_perdidos['descricao']" required=""></textarea>	    
                         </div>
                         <div class="form-group">
-                            <label for="id_local">Local onde o item foi encontrado </label>
-                            <select class="form-control" id="id_local" 
-                                    name="achados_e_perdidos['id_local']" required="">
-                                <option value="" ></option>
-                                <?php if ($locais) : ?>	
-                                    <?php foreach ($locais as $local) : ?>					
-                                    <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>			
-                                    <?php endforeach; ?>		
-                                <?php endif; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="id_setor">Setor onde o item foi encontrado </label>
                             <select class="form-control" id="id_setor" 
                                     name="achados_e_perdidos['id_setor']" required="">
                                 <option value="" ></option>
                                 <?php if ($setores) : ?>	
                                     <?php foreach ($setores as $setor) : ?>					
-                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>			
+                                    <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
                                     <?php endforeach; ?>		
                                 <?php endif; ?>
                             </select>
                         </div>
-                        <!--<div class="form-group">
-                            <label for="id_setor">Setor onde o item foi encontrado </label>
-                            <select class="form-control" id="id_setor" 
-                                    name="achados_e_perdidos['id_setor']" required="">
-                                <option value="" >selecione</option>
-                                
-                            </select>
-                        </div>-->
                         <div class="form-group">
                                 <label class="title">
                                         <span class="required">Data que o item foi encontrado </span>

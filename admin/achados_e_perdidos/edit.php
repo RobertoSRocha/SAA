@@ -8,6 +8,14 @@
     require_once ACHADOS_E_PERDIDOS;
     editAchados_e_Perdidos();
 ?>
+<?php
+    require_once SETOR;
+    indexSetor();
+?>
+<?php
+    require_once LOCAL;
+    indexLocal();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -48,6 +56,22 @@
                             <label for="descricao">Descrição </label>	      
                             <textarea class="form-control" id="descricao"
                                       rows="3" name="achados_e_perdidos['descricao']" required=""><?php echo trim($item['descricao']); ?></textarea>	    
+                        </div>
+                        <div class="form-group">
+                            <label for="id_setor">Setor onde o item foi encontrado </label>
+                            <select class="form-control" id="id_setor" 
+                                    name="achados_e_perdidos['id_setor']" required="">
+                                <?php if ($setores) : ?>	
+                                    <?php foreach ($setores as $setor) : ?>
+                                        <?php if($setor['id'] == $achados_e_perdidos['id_setor']){?>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
+                                    <?php } endforeach; ?>
+                                    <?php foreach ($setores as $setor) : ?>
+                                        <?php if($setor['id'] != $achados_e_perdidos['id_setor']){?>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
+                                    <?php } endforeach; ?>
+                                <?php endif; ?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label></br>
