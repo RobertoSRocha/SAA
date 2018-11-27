@@ -62,12 +62,38 @@
                             <label for="categoria">Categoria</label></br>
                             <select class="form-control" id="categoria"
                                     name="usuario['categoria']" required="">
-                                <!-- Mostra permissão do usuário -->
-                                <option value="<?php echo $usuario['categoria']; ?>"><?php echo $usuario['categoria']; ?></option>
-                                <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
-                                <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
-                                <option value="PROFESSOR">PROFESSOR</option>
-                                <option value="SERVIDOR">SERVIDOR</option>
+                                <!-- Mostra categoria do usu�rio -->
+                                <?php if ($usuario['categoria'] == "ALUNO - GRADUAÇÃO") : ?>
+                                    <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                    <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                    <option value="PROFESSOR">PROFESSOR</option>
+                                    <option value="SERVIDOR">SERVIDOR</option>
+                                    <option value="BOLSISTA">BOLSISTA</option>
+                                <?php elseif ($usuario['categoria'] == "ALUNO - RESIDENTE") : ?>
+                                    <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                    <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                    <option value="PROFESSOR">PROFESSOR</option>
+                                    <option value="SERVIDOR">SERVIDOR</option>
+                                    <option value="BOLSISTA">BOLSISTA</option>
+                                <?php elseif ($usuario['categoria'] == "PROFESSOR") : ?>
+                                    <option value="PROFESSOR">PROFESSOR</option>
+                                    <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                    <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                    <option value="SERVIDOR">SERVIDOR</option>
+                                    <option value="BOLSISTA">BOLSISTA</option>
+                                <?php elseif ($usuario['categoria'] == "BOLSISTA") : ?>
+                                    <option value="BOLSISTA">BOLSISTA</option>
+                                    <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                    <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                    <option value="PROFESSOR">PROFESSOR</option>
+                                    <option value="BOLSISTA">BOLSISTA</option>
+                                <?php else : ?>
+                                    <option value="SERVIDOR">SERVIDOR</option>
+                                    <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
+                                    <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                    <option value="PROFESSOR">PROFESSOR</option>
+                                    <option value="SERVIDOR">SERVIDOR</option>
+                                <?php endif; ?>
                             </select>
                         </div>
 
@@ -76,7 +102,7 @@
                             <label for="permissao">Permissão</label></br>
                             <select class="form-control" id="permissao"
                                     name="usuario['permissao']" required="">
-                                <!-- Mostra permissão do usuário -->
+                                <!-- Mostra permiss�o do usu�rio -->
                                 <?php if ($usuario['permissao'] == 1) : ?>
                                     <option value=1>Nível 1 - Administrador</option>
                                     <option value=2>Nível 2 - Operador</option>
