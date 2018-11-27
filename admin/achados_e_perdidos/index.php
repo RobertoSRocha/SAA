@@ -115,7 +115,7 @@
                 <?php endforeach; ?>
             <?php else : ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <strong>N„o h· itens perdidos</strong>
+                    <strong>N√£o h√° itens perdidos</strong>
                 </div>
 
             <?php endif; ?>
