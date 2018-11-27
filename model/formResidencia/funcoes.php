@@ -5,17 +5,15 @@
     
     $formulario = null;
     
-   class PDF extends FPDF
-    {
-    // Page header
-    function Header()
-    {
-        // Logo
-        $this->Image('../../dist/img/cabecalho2.png',30,10,150,'C');
-        // Arial bold 15
-        $this->SetFont('Arial','B',15);
-        $this->Ln(20);
-    }
+   class PDF extends FPDF {
+        function Header() {
+            // Logo
+            $this->Image("../../dist/img/cabecalho1.png", 30, 10, 150);
+            // Arial bold 15
+            $this->SetFont('Arial', 'B', 15);
+            $this->Ln(20);
+        }
+
     }
     
     //função de adicionar as info do formulario no banco
@@ -69,7 +67,7 @@
         }
     }
     function form02(){
-        if(!empty($_POST['nome']) && !empty($_POST['area_atuacao']) && !empty($_POST['matricula']) && !empty($_POST['motivo']) && !empty($_POST['data1']) && !empty($_POST['data2']) && !empty($_POST['radio'])){
+        if(!empty($_POST['nome']) && !empty($_POST['area_atuacao']) && !empty($_POST['matricula']) && !empty($_POST['evento']) && !empty($_POST['data1']) && !empty($_POST['data2']) && !empty($_POST['radio'])){
             $nome = @$_POST['nome'];
             $area_atuacao = @$_POST['area_atuacao'];
             $matricula = @$_POST['matricula'];
@@ -157,9 +155,5 @@
             $pdf->Output();
         }
     }
-    function form04(){
-        $matricula = @$_POST['matricula'];
-        //adicionar no banco
-        add_form("Residência","form04",$matricula);
-    }
+    
 

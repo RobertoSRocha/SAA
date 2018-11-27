@@ -1,15 +1,9 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-    require_once LOGIN2;
-    verificaLoginAdmin();
-?>
-<?php
     require_once FORMULARIO_GRADUACAO;
     form01();
 ?>
-
-
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
 
 <section class="content-header">		

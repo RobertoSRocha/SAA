@@ -91,7 +91,7 @@
         }   
     }
     function form03() {
-        if(!empty($_POST['nome']) && !empty($_POST['matricula']) && !empty($_POST['modulo']) && !empty($_POST['coordenador_moduo']) && !empty($_POST['data1']) && !empty($_POST['data2']) && 
+        if(!empty($_POST['nome']) && !empty($_POST['matricula']) && !empty($_POST['modulo']) && !empty($_POST['coordenador_modulo']) && !empty($_POST['data1']) && !empty($_POST['data2']) && 
                 !empty($_POST['evento']) && !empty($_POST['cidade']) && !empty($_POST['estado']) && !empty($_POST['data3']) && !empty($_POST['data4'])){
             $nome = @$_POST['nome'];
             $matricula = @$_POST['matricula'];
@@ -135,7 +135,7 @@
         }
     }
     function form04() {
-        if(!empty($_POST['nome']) && !empty($_POST['matricula']) && !empty($_POST['modulo']) && !empty($_POST['coordenador_moduo']) && !empty($_POST['data1']) && !empty($_POST['data2'])){
+        if(!empty($_POST['nome']) && !empty($_POST['matricula']) && !empty($_POST['modulo']) && !empty($_POST['coordenador_modulo']) && !empty($_POST['data1']) && !empty($_POST['data2'])){
             $nome = @$_POST['nome'];
             $matricula = @$_POST['matricula'];
             $modulo = @$_POST['modulo'];

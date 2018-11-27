@@ -2,13 +2,12 @@
 <?php require_once DBAPI; ?>
 <?php
     require_once LOGIN2;
-    verificaLoginAdmin();
+    verificaLoginOperador();
 ?>
 <?php
     require_once FORMULARIO_GRADUACAO;
     form03();
 ?>
-
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		
@@ -27,8 +26,6 @@
         </div>		
     </div>	
 </section>
-
-
 
 <section class="content">
     <div class="row">

@@ -8,7 +8,6 @@
     require_once FORMULARIO_GRADUACAO;
     form02();
 ?>
-
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		

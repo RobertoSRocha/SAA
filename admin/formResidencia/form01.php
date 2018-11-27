@@ -8,7 +8,6 @@
     require_once FORMULARIO_RESIDENCIA;
     form01();
 ?>
-
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -27,8 +26,6 @@
         </div>		
     </div>	
 </section>
-
-
 
 <section class="content">
     <div class="row">
@@ -68,22 +65,22 @@
                                       rows="7" name="motivo" required=""></textarea>	    
                         </div>
                         <div class="form-group">
-                                <label class="title">
-                                        <span class="required">Data do Início do Evento </span>
-                                </label>
-                                <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data1" required="required" placeholder="Data de Início"/>
-                                        <span class="icon-place"></span>
-                                </div>
+                            <label class="title">
+                                <span class="required">Data do Início do Evento </span>
+                            </label>
+                            <div class="item-cont">
+                                <input class="large" data-format="dd-mm-aaaa" type="date" name="data1" required="required" placeholder="Data de Início"/>
+                                <span class="icon-place"></span>
+                            </div>
                         </div>
                         <div class="form-group">
-                                <label class="title">
-                                        <span class="required">Data do Término do Evento </span>
-                                </label>
-                                <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data2" required="required" placeholder="Data de Término"/>
-                                        <span class="icon-place"></span>
-                                </div>
+                            <label class="title">
+                                <span class="required">Data do Término do Evento </span>
+                            </label>
+                            <div class="item-cont">
+                                <input class="large" data-format="dd-mm-aaaa" type="date" name="data2" required="required" placeholder="Data de Término"/>
+                                <span class="icon-place"></span>
+                            </div>
                         </div>
                         <div class="element-radio">
                             <label class="title">
@@ -107,14 +104,15 @@
                                     </span>
                                 </label>
                             </div>
-                                    
-                        <div id="actions" class="row">	    
-                            <div class="col-md-12">	      
-                                <button type="submit" class="btn btn-primary">
-                                <i class="fa fa-file-pdf-o"></i> Gerar PDF para requisição</button>
-                                <a href="index.php" class="btn btn-default">
-                                    <i class="fa fa-close"></i> Cancelar</a>	    
-                            </div>	  
+
+                            <div id="actions" class="row">	    
+                                <div class="col-md-12">	      
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-file-pdf-o"></i> Gerar PDF para requisição</button>
+                                    <a href="index.php" class="btn btn-default">
+                                        <i class="fa fa-close"></i> Cancelar</a>	    
+                                </div>	  
+                            </div>
                         </div>
                     </form>
                 </div>

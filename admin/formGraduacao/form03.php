@@ -8,7 +8,6 @@
     require_once FORMULARIO_GRADUACAO;
     form03();
 ?>
-
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -27,8 +26,6 @@
         </div>		
     </div>	
 </section>
-
-
 
 <section class="content">
     <div class="row">
