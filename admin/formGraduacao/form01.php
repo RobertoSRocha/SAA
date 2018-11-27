@@ -5,12 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once LOCAL;
-    addLocal();
-?>
-<?php
-    require_once FORMULARIO;
-    addForm();
+    require_once FORMULARIO_GRADUACAO;
+    form01();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -39,7 +35,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfrg.php method="post">
+                    <form target="_blank" action=form01.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
@@ -51,7 +47,7 @@
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do requisitante"
                                    name="matricula" required="">	    
                         </div>
@@ -60,10 +56,10 @@
                             <select class="form-control" id="destinatario" 
                                     name="destinatario" required="">
                                 <option value="" ></option>
-                                <option value=coordenador>Ao Coordenador do módulo</option>
-                                <option value=professor>Ao professor</option>
-                                <option value=diretor>Ao diretor</option>
-                                <option value=secretario>Ao secretário</option>
+                                <option value="Coordenador">Ao Coordenador do Módulo</option>
+                                <option value="Professor">Ao Professor</option>
+                                <option value="Diretor">Ao Diretor</option>
+                                <option value="Secretário">Ao Secretário</option>
 
                             </select>
                         </div>
@@ -76,7 +72,7 @@
                         <div class="form-group">	      
                             <label for="requerimento">Requerimento </label>	      
                             <textarea class="form-control" id="requerimento" 
-                                      placeholder="Descreva os motivos"
+                                      placeholder="Descreva o tipo de requerimento"
                                       rows="7" name="requerimento" required=""></textarea>	    
                         </div>
                         <div id="actions" class="row">	    

@@ -76,8 +76,16 @@
         define('TELALOGIN', ABSPATH . 'public/login/modal.php');
     
     /** caminho para as funções dos formularios **/
-    if ( !defined('FORMULARIO') )		
-        define('FORMULARIO', ABSPATH . 'model/formulario/funcoes.php');
+    if ( !defined('FORMULARIO_GRADUACAO') )		
+        define('FORMULARIO_GRADUACAO', ABSPATH . 'model/formGraduacao/funcoes.php');
+    
+    /** caminho para as funções dos formularios **/
+    if ( !defined('FORMULARIO_RESIDENCIA') )		
+        define('FORMULARIO_RESIDENCIA', ABSPATH . 'model/formResidencia/funcoes.php');
+    
+    /** caminho para as funções dos formularios **/
+    if ( !defined('PDF') )		
+        define('PDF', ABSPATH . 'dist/fpdf/fpdf.php');
     
     /** caminho para as funções dos achados e perdidos **/
     if ( !defined('ACHADOS_E_PERDIDOS') )		

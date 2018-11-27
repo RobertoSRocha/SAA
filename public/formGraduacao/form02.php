@@ -1,8 +1,8 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-    require_once LOCAL;
-    addLocal();
+    require_once FORMULARIO_GRADUACAO;
+    form02();
 ?>
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
 
@@ -31,72 +31,72 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfaf.php method="post">
+                    <form target="_blank" action=form02.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
-                                   name="formGraduacao02['nome']" required="">	    
+                                   placeholder="Nome do requisitante" 
+                                   name="nome" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do usuário"
-                                   name="formGraduacao02['matricula']" required="">	    
+                                   name="matricula" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="evento">Evento </label>	      
                             <input type="text" class="form-control" id="evento" 
                                    placeholder="Nome do evento"
-                                   name="formGraduacao02['evento']" required="">	    
+                                   name="evento" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="titulo_trabalho">Título </label>	      
                             <input type="text" class="form-control" id="titulo_trabalho" 
                                    placeholder="Título do trabalho"
-                                   name="formGraduacao02['titulo_trabalho']" required="">	    
+                                   name="titulo_trabalho" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="cidade">Cidade </label>	      
                             <input type="text" class="form-control" id="cidade" 
                                    placeholder="Nome da cidade"
-                                   name="formGraduacao02['cidade']" required="">	    
+                                   name="cidade" required="">	    
                         </div>
                         <div class="form-group">
                             <label for="estado">Estado </label></br>
                             <select class="form-control" id="estado" 
-                                    name="formGraduacao02['estado']" required="">
-                                <option value="" ></option>
-                                <option value=acre>Acre - AC</option>
-                                <option value=alagoas>Alagoas - AL</option>
-                                <option value=amapa>Amapá - AP</option>
-                                <option value=amazonas>Amazonas - AM</option>
-                                <option value=bahia>Bahia - BA</option>
-                                <option value=ceara>Ceará - CE</option>
-                                <option value=distrito_federal>Distrito Federal - DF</option>
-                                <option value=espirito_santo>Espírito Santo - ES</option>
-                                <option value=goias>Goiás - GO</option>
-                                <option value=maranhao>Maranhão - MA</option>
-                                <option value=mato_grosso>Mato Grosso - MT</option>
-                                <option value=mato_grosso_sul>Mato Grosso do Sul - MS</option>
-                                <option value=minas_gerais>Minas Gerais - MG</option>
-                                <option value=para>Pará - PA</option>
-                                <option value=paraiba>Paraíba - PB</option>
-                                <option value=parana>Paraná - PR</option>
-                                <option value=pernambuco>Pernambuco - PE</option>
-                                <option value=piaui>Piauí - PI</option>
-                                <option value=rio_de_janeiro>Rio de Janeiro - RJ</option>
-                                <option value=rio_grande_norte>Rio Grande do Norte - RN</option>
-                                <option value=rio_grande_sul>Rio Grande do Sul - RS</option>
-                                <option value=rondonia>Rondônia - RO</option>
-                                <option value=roraima>Roraima - RR</option>
-                                <option value=santa_catarina>Santa Catarina - SC</option>
-                                <option value=sao_paulo>São Paulo - SP</option>
-                                <option value=sergipe>Sergipe - SE</option>
-                                <option value=tocantins>Tocantins - TO</option>
+                                    name="estado" required="">
+                                <option value="true" ></option>
+                                <option value="AC">Acre - AC</option>
+                                <option value="AL">Alagoas - AL</option>
+                                <option value="AP">Amapá - AP</option>
+                                <option value="AM">Amazonas - AM</option>
+                                <option value="BA">Bahia - BA</option>
+                                <option value="CE">Ceará - CE</option>
+                                <option value="DF">Distrito Federal - DF</option>
+                                <option value="ES">Espírito Santo - ES</option>
+                                <option value="GO">Goiás - GO</option>
+                                <option value="MA">Maranhão - MA</option>
+                                <option value="MT">Mato Grosso - MT</option>
+                                <option value="MS">Mato Grosso do Sul - MS</option>
+                                <option value="MG">Minas Gerais - MG</option>
+                                <option value="PA">Pará - PA</option>
+                                <option value="PB">Paraíba - PB</option>
+                                <option value="PR">Paraná - PR</option>
+                                <option value="PE">Pernambuco - PE</option>
+                                <option value="PI">Piauí - PI</option>
+                                <option value="RJ">Rio de Janeiro - RJ</option>
+                                <option value="RN">Rio Grande do Norte - RN</option>
+                                <option value="RS">Rio Grande do Sul - RS</option>
+                                <option value="RO">Rondônia - RO</option>
+                                <option value="RR">Roraima - RR</option>
+                                <option value="SC">Santa Catarina - SC</option>
+                                <option value="SP">São Paulo - SP</option>
+                                <option value="SE">Sergipe - SE</option>
+                                <option value="TO">Tocantins - TO</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -104,7 +104,7 @@
                                         <span class="required">Data do Início do Evento </span>
                                 </label>
                                 <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date" required="required" placeholder="Data de Início"/>
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data1" required="required" placeholder="Data de Início"/>
                                         <span class="icon-place"></span>
                                 </div>
                         </div>
@@ -113,7 +113,7 @@
                                         <span class="required">Data do Término do Evento </span>
                                 </label>
                                 <div class="item-cont">
-                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="date1" required="required" placeholder="Data de Término"/>
+                                        <input class="large" data-format="dd-mm-aaaa" type="date" name="data2" required="required" placeholder="Data de Término"/>
                                         <span class="icon-place"></span>
                                 </div>
                         </div>

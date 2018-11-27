@@ -5,8 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once LOCAL;
-    addLocal();
+    require_once FORMULARIO_GRADUACAO;
+    form04();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -27,27 +27,25 @@
     </div>	
 </section>
 
-
-
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfeds.php method="post">
+                    <form target="_blank" action=form04.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
+                                   placeholder="Nome do requisitante" 
                                    name="nome" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do usuário"
                                    name="matricula" required="">	    
                         </div>

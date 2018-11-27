@@ -5,8 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once LOCAL;
-    addLocal();
+    require_once FORMULARIO_GRADUACAO;
+    form02();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -35,19 +35,19 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdfaf.php method="post">
+                    <form target="_blank" action=form02.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
                         <div class="form-group">	      
                             <label for="nome">Nome </label>	      
                             <input type="text" class="form-control" id="nome" 
-                                   placeholder="Nome do local" 
+                                   placeholder="Nome do requisitante" 
                                    name="nome" required="">	    
                         </div>
                         <div class="form-group">	      
                             <label for="matricula">Matrícula </label>	      
-                            <input type="text" class="form-control" id="matricula" 
+                            <input type="number" class="form-control" id="matricula" 
                                    placeholder="Matrícula do usuário"
                                    name="matricula" required="">	    
                         </div>
@@ -74,33 +74,33 @@
                             <select class="form-control" id="estado" 
                                     name="estado" required="">
                                 <option value="true" ></option>
-                                <option value=AC>Acre - AC</option>
-                                <option value=AL>Alagoas - AL</option>
-                                <option value=AP>Amapá - AP</option>
-                                <option value=AM>Amazonas - AM</option>
-                                <option value=BA>Bahia - BA</option>
-                                <option value=CE>Ceará - CE</option>
-                                <option value=DF>Distrito Federal - DF</option>
-                                <option value=ES>Espírito Santo - ES</option>
-                                <option value=GO>Goiás - GO</option>
-                                <option value=MA>Maranhão - MA</option>
-                                <option value=MT>Mato Grosso - MT</option>
-                                <option value=MS>Mato Grosso do Sul - MS</option>
-                                <option value=MG>Minas Gerais - MG</option>
-                                <option value=PA>Pará - PA</option>
-                                <option value=PB>Paraíba - PB</option>
-                                <option value=PR>Paraná - PR</option>
-                                <option value=PE>Pernambuco - PE</option>
-                                <option value=PI>Piauí - PI</option>
-                                <option value=RJ>Rio de Janeiro - RJ</option>
-                                <option value=RN>Rio Grande do Norte - RN</option>
-                                <option value=RS>Rio Grande do Sul - RS</option>
-                                <option value=RO>Rondônia - RO</option>
-                                <option value=RR>Roraima - RR</option>
-                                <option value=SC>Santa Catarina - SC</option>
-                                <option value=SP>São Paulo - SP</option>
-                                <option value=SE>Sergipe - SE</option>
-                                <option value=TO>Tocantins - TO</option>
+                                <option value="AC">Acre - AC</option>
+                                <option value="AL">Alagoas - AL</option>
+                                <option value="AP">Amapá - AP</option>
+                                <option value="AM">Amazonas - AM</option>
+                                <option value="BA">Bahia - BA</option>
+                                <option value="CE">Ceará - CE</option>
+                                <option value="DF">Distrito Federal - DF</option>
+                                <option value="ES">Espírito Santo - ES</option>
+                                <option value="GO">Goiás - GO</option>
+                                <option value="MA">Maranhão - MA</option>
+                                <option value="MT">Mato Grosso - MT</option>
+                                <option value="MS">Mato Grosso do Sul - MS</option>
+                                <option value="MG">Minas Gerais - MG</option>
+                                <option value="PA">Pará - PA</option>
+                                <option value="PB">Paraíba - PB</option>
+                                <option value="PR">Paraná - PR</option>
+                                <option value="PE">Pernambuco - PE</option>
+                                <option value="PI">Piauí - PI</option>
+                                <option value="RJ">Rio de Janeiro - RJ</option>
+                                <option value="RN">Rio Grande do Norte - RN</option>
+                                <option value="RS">Rio Grande do Sul - RS</option>
+                                <option value="RO">Rondônia - RO</option>
+                                <option value="RR">Roraima - RR</option>
+                                <option value="SC">Santa Catarina - SC</option>
+                                <option value="SP">São Paulo - SP</option>
+                                <option value="SE">Sergipe - SE</option>
+                                <option value="TO">Tocantins - TO</option>
                             </select>
                         </div>
                         <div class="form-group">

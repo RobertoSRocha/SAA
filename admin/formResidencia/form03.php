@@ -5,8 +5,8 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once LOCAL;
-    addLocal();
+    require_once FORMULARIO_RESIDENCIA;
+    form03();
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -27,15 +27,13 @@
     </div>	
 </section>
 
-
-
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form target="_blank" action=pdftp.php method="post">
+                    <form target="_blank" action=form03.php method="post">
                         <!-- area de campos do form -->
                         <h3 class="text-center">Preencha os campos abaixo para fazer seu requerimento</h3>
                         <hr />	      
@@ -50,8 +48,8 @@
                             <select class="form-control" id="area_atuacao" 
                                     name="area_atuacao" required="">
                                 <option value="" ></option>
-                                <option value=saude_materno_infantil>Saúde Materno-Infantil</option>
-                                <option value=atencao_basica>Atenção Básica</option>
+                                <option value="Saúde Materno-Infantil">Saúde Materno-Infantil</option>
+                                <option value="Atencão Básica">Atenção Básica</option>
 
                             </select>
                         </div>
