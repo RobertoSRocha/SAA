@@ -4,6 +4,10 @@
     require_once LOGIN2;
     verificaLoginOperador();
 ?>
+<?php
+    require_once FORMULARIO_RESIDENCIA;
+    form03();
+?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		
