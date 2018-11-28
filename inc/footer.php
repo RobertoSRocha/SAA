@@ -138,35 +138,6 @@
 </script>
 
 <script type="text/javascript">
-//quando o valor da combo de estado alterar ele vai executar essa linha
-    $('#id_loca').change(function () {
-        //armazenando o valor do codigo do estado
-        var valor = document.getElementById("id_local").value;
-        //alert(valor);
-		//chamada da controller e passando o ID estado via GET
-        $.get('<?php echo BASEURL;?>model/setor/funcoes.php?search=' + valor, function (data) {
-            alert('id do local: '+valor);
-		//procurando a tag OPTION com id da cidade e removendo 
-            $('#id_setor').find("option").remove();
-			//motando a combo da cidade
-            $('#id_setor').append(data);
-            
-        //});
-    });
-});
-</script>
-
-<script type="text/javascript">
-//quando o valor da combo de estado alterar ele vai executar essa linha
-$(document).ready(function(){
-    $('#id_loca').change(function () {
-        alert (50 + $('#id_local').val());
-        $('#id_setor').load('<?php echo BASEURL;?>model/setor/funcoes.php?search='+$('#id_local').val() );
-    });
-});
-</script>
-
-<script type="text/javascript">
     function optionCheck(){
         var option = document.getElementById("status").value;
         if(option == 1){
