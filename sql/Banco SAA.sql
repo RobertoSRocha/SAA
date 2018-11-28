@@ -62,18 +62,23 @@ CREATE TABLE patrimonio(
     )ENGINE = InnoDB;
     
 
-CREATE TABLE emprestimo(
-	user_realiza INT NOT NULL,
-	user_adiquire INT NOT NULL,
-    user_recebe INT NOT NULL,
+CREATE TABLE emprestimos(
+        id INT AUTO_INCREMENT NOT NULL,
+    user_realizou INT NOT NULL,
+    user_solicitou INT NOT NULL,
+    user_recebeu INT DEFAULT NULL,
+    user_entregou INT DEFAULT NULL,
     patrimonio_id INT NOT NULL,
-    status_empre VARCHAR(30) NOT NULL,
-    data_empre DATE NOT NULL,
-   	data_decol DATE NOT NULL,
+    img VARCHAR(255) DEFAULT NULL,
+    status_emprestimo VARCHAR(30) NOT NULL,
+    data_emprestimo DATE NOT NULL,
+    data_prazo_devolucao DATE NOT NULL,
+    data_devolucao DATE DEFAULT NULL,
 
-    FOREIGN KEY (user_realiza) REFERENCES usuario(id),
+    /*FOREIGN KEY (user_realiza) REFERENCES usuario(id),
 	FOREIGN KEY (user_adiquire) REFERENCES usuario(id),
-    FOREIGN KEY (user_recebe) REFERENCES usuario(id),
+    FOREIGN KEY (user_recebe) REFERENCES usuario(id),*/
+    PRIMARY KEY (id),
     FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id)
     
     )ENGINE = InnoDB;

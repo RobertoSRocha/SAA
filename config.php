@@ -90,4 +90,8 @@
     /** caminho para as funções dos achados e perdidos **/
     if ( !defined('ACHADOS_E_PERDIDOS') )		
         define('ACHADOS_E_PERDIDOS', ABSPATH . 'model/achados_e_perdidos/funcoes.php');
+    
+    /** caminho para as funções dos empréstimos **/
+    if ( !defined('EMPRESTIMOS') )		
+        define('EMPRESTIMOS', ABSPATH . 'model/emprestimos/funcoes.php');
 

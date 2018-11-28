@@ -33,21 +33,21 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id . " ORDER BY nome ASC";
+            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
             }
         } else {
-            $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
+            if($table == 'emprestimos'){
+                $sql = "SELECT * FROM " . $table;
+            }
+            else{
+                $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
+            }
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
-                /* Metodo alternativo
-                 * $found = array();
-                 * while ($row = $result->fetch_assoc()) {
-                 * array_push($found, $row);
-                 * } */
             }
         }
     } catch (Exception $e) {
