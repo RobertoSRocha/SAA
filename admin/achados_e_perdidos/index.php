@@ -47,14 +47,14 @@ indexLocal();
             <div class="col-sm-12 col-md-10">
                 <div class="dataTables_length">
 
-                    <form method="post"">
+                    <form method="post">
                         <div class="form-group">
                             <label class="col-form-label">Filtro:</label>
                             <select name="filtro"
                                     title="selecionar ordenação de itens" id="valor">
-                                <option value="0">Todos os itens</option>
-                                <option value="1">Itens devolvidos</option>
-                                <option value="2">Itens perdidos</option>
+                                <option value="">Todos os itens</option>
+                                <option value="0">Itens devolvidos</option>
+                                <option value="1">Itens perdidos</option>
                             </select>
                             <button type="submit" class="btn btn-primary btn-xs">Aplicar</button>
                         </div>

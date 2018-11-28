@@ -33,7 +33,7 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
+            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
@@ -58,7 +58,8 @@ function find($table = null, $id = null)
     return $found;
 }
 
-function find_nome($table, $local_id){
+function find_nome($table, $local_id)
+{
     $database = open_database();
     $found = null;
     try {
@@ -67,7 +68,7 @@ function find_nome($table, $local_id){
             //$result = $database->query($sql);
             $result = mysqli_fetch_array($database->query("SELECT nome FROM " . $table . " WHERE id = " . $local_id));
             $found = $result[0];
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -83,13 +84,13 @@ function find_operacional($table1 = null, $table2 = null, $id)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] .")";
+            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] . ")";
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = TRUE;
             }
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -105,13 +106,13 @@ function find_edit_operacional($table1 = null, $table2 = null, $id)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id,setor_id FROM " . $table1 . " WHERE id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] .")";
+            $sql = "SELECT id,setor_id FROM " . $table1 . " WHERE id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] . ")";
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = TRUE;
             }
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -133,7 +134,7 @@ function find_setor_operacional($table1 = null)
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
             }
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -153,11 +154,11 @@ function find_exist_setor_usuario($table = null)
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = TRUE;
-            }else{
+            } else {
                 $_SESSION['message'] = 'Você não tem permissão para cadastrar um patrimônio, pois não é responsável por nenhum setor.';
                 $_SESSION['type'] = 'danger';
             }
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -229,7 +230,7 @@ function saveForm($tipo_req, $tipo_form, $usuario_matricula)
     date_default_timezone_set('America/Sao_Paulo');
     $database = open_database();
     $sql = "INSERT INTO formulario(data_requerimento, usuario_id, tipo_requisicao, tipo_formulario) "
-            . "VALUES(NOW()," . $usuario_matricula . ",'" . $tipo_req . "','" . $tipo_form . "')";
+        . "VALUES(NOW()," . $usuario_matricula . ",'" . $tipo_req . "','" . $tipo_form . "')";
     try {
         $database->query($sql);
         if (($database->affected_rows) > 0) {
@@ -484,7 +485,7 @@ function findSetor($table = null, $idLocal = null)
     $database = open_database();
     $found = null;
     try {
-        if($idLocal != NULL){
+        if ($idLocal != NULL) {
             $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome ASC";;
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -501,15 +502,17 @@ function findSetor($table = null, $idLocal = null)
     return $found;
 }
 
-function find_all_achados($table, $status){
-    return find_filtros($table,$status);
+function find_all_achados($table, $status)
+{
+    return find_filtros($table, $status);
 }
 
-function find_filtros($table = null, $status = null){
+function find_filtros($table = null, $status = null)
+{
     $database = open_database();
     $found = null;
     try {
-        if ($status) {
+        if ($status != null) {
             $sql = "SELECT * FROM " . $table . " WHERE status = " . $status . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -520,11 +523,6 @@ function find_filtros($table = null, $status = null){
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
-                /* Metodo alternativo
-                 * $found = array();
-                 * while ($row = $result->fetch_assoc()) {
-                 * array_push($found, $row);
-                 * } */
             }
         }
     } catch (Exception $e) {
