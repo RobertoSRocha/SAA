@@ -5,8 +5,8 @@
     verificaLoginOperador();
 ?>
 <?php
-    require_once FORMULARIO_GRADUACAO;
-    form01();
+    require_once FORMULARIO_RESIDENCIA;
+    form03();
 ?>
 <?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
