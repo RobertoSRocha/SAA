@@ -31,7 +31,7 @@
                 <a href="form01.php" class="small-box-footer" title="Requerimentos Gerais">
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>Form 01</h3>
+                            <h3>Geral</h3>
 
                             <p>Requerimentos Gerais</p>
                         </div>
@@ -50,7 +50,7 @@
                 <a href="form02.php" class="small-box-footer" title="Auxílio Financeiro">
                     <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>Form 02</h3>
+                            <h3>Financeiro</h3>
 
                             <p>Auxílio Financeiro</p>
                         </div>
@@ -69,7 +69,7 @@
                 <a href="form03.php" class="small-box-footer" title="Exercícios Domiciliares - Evento">
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>Form 03</h3>
+                            <h3>Evento</h3>
 
                             <p>Exercícios Domiciliares - Evento</p>
                         </div>
@@ -88,7 +88,7 @@
                 <a href="form04.php" title="Exercícios Domiciliares - Saúde" class="small-box-footer">
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>Form 04</h3>
+                            <h3>Saúde</h3>
 
                             <p>Exercícios Domiciliares - Saúde</p>
                         </div>
