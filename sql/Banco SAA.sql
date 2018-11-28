@@ -35,7 +35,7 @@ CREATE TABLE setor(
     local_id INT NOT NULL,
     numero VARCHAR(10)  NOT NULL,
     nome VARCHAR(100)  NOT NULL,
-   	usuario_id INT NOT NULL,
+    usuario_id INT NOT NULL,
     img VARCHAR(255) DEFAULT NULL,
 
 
@@ -103,6 +103,8 @@ CREATE TABLE achados_e_perdidos(
     documento_pessoa_entregou VARCHAR(255) DEFAULT NULL,
     telefone VARCHAR(255) DEFAULT NULL,
     tipo_documento VARCHAR(255) DEFAULT NULL,
+
+    FOREIGN KEY (id_setor) REFERENCES setor(id),
     PRIMARY KEY (id)
     
     )ENGINE = InnoDB;

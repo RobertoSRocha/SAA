@@ -63,11 +63,11 @@
                                     name="achados_e_perdidos['id_setor']" required="">
                                 <?php if ($setores) : ?>	
                                     <?php foreach ($setores as $setor) : ?>
-                                        <?php if($setor['id'] == $achados_e_perdidos['id_setor']){?>
+                                        <?php if($setor['id'] == $item['id_setor']){?>
                                             <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
                                     <?php } endforeach; ?>
                                     <?php foreach ($setores as $setor) : ?>
-                                        <?php if($setor['id'] != $achados_e_perdidos['id_setor']){?>
+                                        <?php if($setor['id'] != $item['id_setor']){?>
                                             <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
                                     <?php } endforeach; ?>
                                 <?php endif; ?>
