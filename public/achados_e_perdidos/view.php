@@ -40,7 +40,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <h3 class="text-center">Informações do item perdido</h3>
+                    <h3 class="text-center">Informações do <?php echo status($item['status'])?></h3>
                     <hr/>
                     <div class="form-group">
                         <!--Verifica se a imagem está cadastrada-->
