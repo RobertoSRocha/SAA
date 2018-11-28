@@ -1,6 +1,5 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
-<?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 <?php
     require_once LOGIN2;
     verificaLoginOperador();
@@ -17,6 +16,7 @@
     require_once LOCAL;
     indexLocal();
 ?>
+<?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		
     <div class="row">			
