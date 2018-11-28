@@ -69,18 +69,17 @@ CREATE TABLE emprestimos(
     user_recebeu INT DEFAULT NULL,
     user_entregou INT DEFAULT NULL,
     patrimonio_id INT NOT NULL,
-    img VARCHAR(255) DEFAULT NULL,
-    status_emprestimo VARCHAR(30) NOT NULL,
+    status VARCHAR(30) NOT NULL,
     data_emprestimo DATE NOT NULL,
     data_prazo_devolucao DATE NOT NULL,
     data_devolucao DATE DEFAULT NULL,
 
     /*FOREIGN KEY (user_realiza) REFERENCES usuario(id),
 	FOREIGN KEY (user_adiquire) REFERENCES usuario(id),
-    FOREIGN KEY (user_recebe) REFERENCES usuario(id),*/
-    PRIMARY KEY (id),
-    FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id)
+    FOREIGN KEY (user_recebe) REFERENCES usuario(id),
+    FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id),*/
     
+    PRIMARY KEY (id)
     )ENGINE = InnoDB;
 
 CREATE TABLE formulario(

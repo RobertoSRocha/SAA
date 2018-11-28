@@ -14,6 +14,16 @@ function index()
     $usuarios = find_all('usuario');
 }
 
+/** *  Listagem usuário através da matrícula    */
+function verifica_user_matricula(){
+    $matricula = 0;
+    if(isset($_POST['matricula'])){
+        $matricula = $_POST['matricula'];
+    }
+    return find_user_matricula('usuario',$matricula);
+    exit();
+}
+
 function addUsuario()
 {
     if (!empty($_POST['usuario'])) {

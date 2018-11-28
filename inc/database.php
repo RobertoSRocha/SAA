@@ -234,10 +234,37 @@ function saveForm($tipo_req, $tipo_form, $usuario_matricula)
     try {
         $database->query($sql);
         if (($database->affected_rows) > 0) {
-            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+//            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+//            $_SESSION['type'] = 'success';
+        } else {
+//            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+//            $_SESSION['type'] = 'warning';
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+
+    }
+    close_database($database);
+}
+
+/** *  Salva informações dos emprestimos    */
+function save_emp($user_solicitou, $patrimonio_id, $status, $data_prazo_devolucao)
+{
+    $user_realizou = $_SESSION['id'];
+    //$data_emprestimo = NOW();
+    date_default_timezone_set('America/Sao_Paulo');
+    $database = open_database();
+    $sql = "INSERT INTO emprestimos(data_emprestimo, user_realizou, user_solicitou, patrimonio_id, status, data_prazo_devolucao) "
+        . "VALUES(NOW()," . $user_realizou . "," . $user_solicitou . "," . $patrimonio_id . ",'" . $status . "','" . $data_prazo_devolucao . "')";
+    try {
+        $database->query($sql);
+        if (($database->affected_rows) > 0) {
+            $_SESSION['message'] = 'Empréstimo realizado com sucesso.';
+            
             $_SESSION['type'] = 'success';
         } else {
-            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+            $_SESSION['message'] = 'Empréstimo não realizado!';
             $_SESSION['type'] = 'warning';
         }
     } catch (Exception $e) {
@@ -525,6 +552,31 @@ function find_filtros($table = null, $status = null)
                 $found = $result->fetch_all(MYSQLI_ASSOC);
             }
         }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+function find_user_matricula($table = null, $matricula = null)
+{
+    $database = open_database();
+    $found = FALSE;
+    try {
+        if ($matricula != null) {
+            $sql = "SELECT * FROM " . $table . " WHERE matricula = " . $matricula;
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $matricula;
+                $_SESSION['message'] = 'usuário informado encontrado! Preencha as informações abaixo para realizar o empréstimo.';
+                $_SESSION['type'] = 'success';
+            }else{
+                $_SESSION['message'] = 'usuário informado não existe!';
+                $_SESSION['type'] = 'warning';
+            }
+        } 
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';

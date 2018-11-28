@@ -57,6 +57,8 @@
 
 <script src="<?php echo BASEURL; ?>dist/js/tabelas.js"></script>
 
+<script src="<?php echo BASEURL; ?>dist/js/patrimonios.js"></script>
+
 <!-- Tempo de sessão -->
 <?php if(isset($_SESSION['id'])): ?>
     <script>

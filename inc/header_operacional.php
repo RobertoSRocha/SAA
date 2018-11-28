@@ -141,6 +141,12 @@
                         <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
                     </a>
                 </li>
+                <!-- AGENDA DA EMCM -->
+                <li>
+                    <a target="_blank" href="https://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                        <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
+                    </a>
+                </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">

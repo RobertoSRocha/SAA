@@ -19,7 +19,6 @@
     //função de adicionar as info do formulario no banco
     function add_form($tipo_req, $tipo_form, $usuario_matricula){
         saveForm($tipo_req, $tipo_form, $usuario_matricula);
-        //header('location: index.php');
     }
     
     function form01(){

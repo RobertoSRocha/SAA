@@ -49,18 +49,18 @@
                             <select name="filtro"
                                     title="selecionar ordenação de itens" id="valor">
                                 <?php if ($filtro == null) { ?>
-                                    <option value="">Todos os itens</option>
-                                    <option value="1">Itens perdidos</option>
-                                    <option value="0">Itens devolvidos</option>
+                                    <option value="">Todos os Patrimônios</option>
+                                    <option value="1">Patrimônios emprestados</option>
+                                    <option value="0">Patrimônios devolvidos</option>
                                 <?php } elseif ($filtro == 1) { ?>
-                                    <option value="1">Itens perdidos</option>
-                                    <option value="0">Itens devolvidos</option>
-                                    <option value="">Todos os itens</option>
+                                    <option value="1">Patrimônios emprestados</option>
+                                    <option value="0">Patrimônios devolvidos</option>
+                                    <option value="">Todos os Patrimônios</option>
 
                                 <?php } elseif ($filtro == 0) { ?>
-                                    <option value="0">Itens devolvidos</option>
-                                    <option value="1">Itens perdidos</option>
-                                    <option value="">Todos os itens</option>
+                                    <option value="0">Patrimônios devolvidos</option>
+                                    <option value="1">Patrimônios emprestados</option>
+                                    <option value="">Todos os Patrimônios</option>
 
                                 <?php } ?>
                             </select>
@@ -80,7 +80,7 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="view.php?id=<?php echo $item_emprestimos['id']; ?>" class="ad-click-event">
-                                            <?php if ($item_emprestimos['img'] != null) { ?>
+                                            <?php if ($item_emprestimos['data_devolucao'] != null) { ?>
                                                 <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item_emprestimos['img']; ?>"
                                                      alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
                                                  <?php } else { ?>
@@ -92,24 +92,27 @@
                                     <div class="media-body">
                                         <div class="clearfix">
                                             <p class="pull-right">
-                                                <a href="view.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-sm btn-success" 
+                                                <!-- view.php?id=<?php echo $item_emprestimos['id']; ?>-->
+                                                <a href="#" class="btn btn-sm btn-success" 
                                                    title="Visualizar item"><i class="fa fa-eye"></i></a>
                                             </p>
-                                            <h4 style="margin-top: 0"><strong><?php echo $item_emprestimos['user_realizou']; ?></strong></h4>
+                                            <h4 style="margin-top: 0"><strong><?php echo $item_emprestimos['status']; ?></strong></h4>
                                         </div>
                                         <div class="clearfix">
                                             <p class="pull-right">
-                                                <a href="edit.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-sm btn-warning" 
+                                                <!--edit.php?id=<?php echo $item_emprestimos['id']; ?>-->
+                                                <a href="" class="btn btn-sm btn-warning" 
                                                    title="Editar item"><i class="fa fa-pencil"></i></a>
                                             </p>
-                                            <h4 style="margin-top: 0">Encontrado no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['user_realizou'])); ?></h4>
+                                            <h4 style="margin-top: 0">Emprestado no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
                                         </div>
                                         <div class="clearfix">    
                                             <p class="pull-right">
-                                                <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $item_emprestimos['id']; ?>"
+                                                <!--#delete-modal-->
+                                                <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#" data-customer="<?php echo $item_emprestimos['id']; ?>"
                                                    title="Excluir item"><i class="fa fa-trash"></i></a>
                                             </p>
-                                            <h4 style="margin-top: 0"><strong><?php echo $item_emprestimos['user_realizou']; ?></strong></h4>
+                                            <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?></h4>
                                         </div>
                                     </div>
                                 </div>

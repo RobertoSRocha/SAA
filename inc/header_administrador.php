@@ -137,9 +137,14 @@
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
                 <li>
-<!--                    <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php"></a>-->
                     <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php">
                         <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
+                    </a>
+                </li>
+                <!-- AGENDA DA EMCM -->
+                <li>
+                    <a target="_blank" href="https://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                        <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
                     </a>
                 </li>
                 <!-- EMPRÉSTIMOS-->
@@ -151,8 +156,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo BASEURL; ?>admin/emprestimos/index.php"><i class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
-                        <li><a href="<?php echo BASEURL; ?>admin/emprestimos/consulta.php"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
+                        <li><a href="<?php echo BASEURL; ?>admin/emprestimos/consulta.php"><i class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
+                        <li><a href="<?php echo BASEURL; ?>admin/emprestimos/index.php"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
                     </ul>
                 </li>
 

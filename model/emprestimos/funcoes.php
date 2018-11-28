@@ -14,12 +14,47 @@
     }
     
     function add_emprestimos() {
-        if (!empty($_POST['emprestimos'])) {
+        if (!empty($_POST['user_solicitou']) && !empty($_POST['patrimonio']) && !empty($_POST['data_prazo_devolucao']) && !empty($_POST['nome']) 
+                && !empty($_POST['destinatario']) && !empty($_POST['matricula'])) {
+            
+            $user_solicitou = @$_POST['user_solicitou'];
+            $patrimonio_id = @$_POST['patrimonio'];
+            $data_prazo_devolucao = @$_POST['data_prazo_devolucao'];
+            $nome = @$_POST['nome'];
+            $destinatario = @$_POST['destinatario'];
+            $matricula = @$_POST['matricula'];
+            
+            /* Adicionar emprestimo no banco de dados */
+            save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao);
+            header('location: index.php');
+            exit();
+            
+        // Instanciation of inherited class
+            /*
+            $pdf = new PDF();
+            $pdf->AliasNbPages();
+            $pdf->AddPage();
+            $pdf->SetFont('Arial', '', 14);
+            $pdf->SetXY(30, 70);
+            $pdf->SetMargins(15, 15, 15);
+            $pdf->MultiCell(190, 10, utf8_decode("Senhor(a) $destinatario, $nome_destinatario .\n"), 'C');
+            $pdf->MultiCell(0, 10, utf8_decode("$nome, matrícula $matricula, aluno(a) vinculado(a) a esta universidade no curso de Medicina, vem requerer $requerimento"), 'C');
+            $pdf->SetXY(90, 240);
+            $pdf->Cell(0, 0, utf8_decode("Caicó/RN,____de__________________de______"));
+            $pdf->SetXY(40, 260);
+            $pdf->MultiCell(0, 8, "__________________________________________________", 'C');
+            $pdf->Cell(0, 5, utf8_decode("$nome"), 0, 1, 'C');
+
+            $pdf->Output();  */
+        }
+        
+        
+        /*if (!empty($_POST['emprestimos'])) {
             $item_emprestimos = $_POST['emprestimos'];
             save('emprestimos', $item_emprestimos);
             header('location: index.php');
             exit();
-        }
+        }*/
     }
     
     function edit_emprestimos() {
