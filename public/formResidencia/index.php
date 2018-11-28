@@ -27,7 +27,7 @@
                 <a href="form01.php" class="small-box-footer" title="Afastamento de Atividades">
                     <div class="small-box bg-orange-active">
                         <div class="inner">
-                            <h3>Form 01</h3>
+                            <h3>Afastamento</h3>
 
                             <p>Afastamento de Atividades</p>
                         </div>
@@ -46,7 +46,7 @@
                 <a href="form02.php" class="small-box-footer" title="Participação em Evento">
                     <div class="small-box bg-purple-active">
                         <div class="inner">
-                            <h3>Form 02</h3>
+                            <h3>Evento</h3>
 
                             <p>Participação em Evento</p>
                         </div>
@@ -65,7 +65,7 @@
                 <a href="form03.php" class="small-box-footer" title="Troca de Plantão">
                     <div class="small-box bg-aqua-active">
                         <div class="inner">
-                            <h3>Form 03</h3>
+                            <h3>Plantão</h3>
 
                             <p>Troca de Plantão</p>
                         </div>
@@ -81,10 +81,10 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <a target="_blank" href="<?php echo BASEURL; ?>dist/pdf/Formulario_Solicitacao_Estagio_Opcional.pdf" class="small-box-footer">
+                <a target="_blank" href="<?php echo BASEURL; ?>dist/pdf/Formulario_Solicitacao_Estagio_Opcional.pdf" class="small-box-footer" title="Solicitação de Estágio">
                     <div class="small-box bg-green-active">
                         <div class="inner">
-                            <h3>Form 04</h3>
+                            <h3>Estágio</h3>
 
                             <p>Solicitação de Estágio</p>
                         </div>

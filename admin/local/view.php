@@ -36,7 +36,7 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <h3 class="text-center">Informações do patrimônio</h3>
+                    <h3 class="text-center">Informações do local</h3>
                         <hr />
                     <div class="form-group">
 
