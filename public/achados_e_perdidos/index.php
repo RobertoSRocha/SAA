@@ -40,12 +40,29 @@ indexLocal();
 
                     <form method="post">
                         <div class="form-group">
+                            <!--Ordenar valor do select-->
+                            <?php $filtro = 1;
+                            if (isset($_POST['filtro'])) {
+                                $filtro = $_POST['filtro'];
+                            } ?>
                             <label class="col-form-label">Filtro:</label>
                             <select name="filtro"
                                     title="selecionar ordenação de itens" id="valor">
-                                <option value="">Todos os itens</option>
-                                <option value="0">Itens devolvidos</option>
-                                <option value="1">Itens perdidos</option>
+                                <?php if ($filtro == null) { ?>
+                                    <option value="">Todos os itens</option>
+                                    <option value="1">Itens perdidos</option>
+                                    <option value="0">Itens devolvidos</option>
+                                <?php } elseif ($filtro == 1) { ?>
+                                    <option value="1">Itens perdidos</option>
+                                    <option value="0">Itens devolvidos</option>
+                                    <option value="">Todos os itens</option>
+
+                                <?php } elseif ($filtro == 0) { ?>
+                                    <option value="0">Itens devolvidos</option>
+                                    <option value="1">Itens perdidos</option>
+                                    <option value="">Todos os itens</option>
+
+                                <?php } ?>
                             </select>
                             <button type="submit" class="btn btn-primary btn-xs">Aplicar</button>
                         </div>
@@ -73,7 +90,7 @@ indexLocal();
                                         <div class="media-body">
                                             <br>
                                             <div class="clearfix">
-                                                <h4 style="margin-top: 0"><strong><?php echo $item['nome']; ?></strong></h4>
+                                                <h4 style="margin-top: 0"><strong><?php echo $item['nome']; ?> - <?php echo status($item['status']); ?></strong></h4>
                                             </div>
                                             <div class="clearfix">
                                                 <h4 style="margin-top: 0">Encontrado no dia: <strong><?php echo date('d/m/Y', strtotime($item['data_achado'])); ?></h4>

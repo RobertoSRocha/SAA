@@ -10,7 +10,7 @@
     /** *  Listagem de Clientes	 */
     function indexAchados_e_Perdidos() {
         global $itens;
-        $status = 0;
+        $status = 1;
 
         if(isset($_POST['filtro'])){
             $status = $_POST['filtro'];
@@ -50,6 +50,17 @@
     function viewAchados_e_Perdidos($id = null) {
         global $item;
         $item = find('achados_e_perdidos', $id);
+    }
+
+    function status($status = null) {
+
+        if ($status == 0){
+            return "Item Devolvido";
+        }else{
+            return "Item Perdido";
+
+        }
+
     }
     
     function deleteAchados_e_Perdidos($id = null) {
