@@ -59,7 +59,7 @@ indexLocal();
                     <div class="col-sm-12 col-md-6">
                         <div class="box box-solid">
                             <div class="box-body">
-                                <a href="view.php?id=<?php echo $item['id']; ?>" class="ad-click-event" style="color:black">
+                                <a href="view.php?id=<?php echo $item['id']; ?>" class="ad-click-event" style="color:black" title="Visualizar mais informações do item">
                                     <div class="media">
                                         <div class="media-left">
                                             <?php if ($item['img'] != null) { ?>
