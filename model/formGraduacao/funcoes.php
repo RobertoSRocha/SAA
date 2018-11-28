@@ -31,7 +31,7 @@
             $requerimento = @$_POST['requerimento'];
             
             //adicionar no banco
-            add_form("Graduacao","form01",$matricula);
+            add_form("Graduacao","form01_Geral",$matricula);
             
         // Instanciation of inherited class
             $pdf = new PDF();
@@ -65,7 +65,7 @@
             $dataf2 = date('d/m/Y', strtotime($data2));
             
             //adicionar no banco
-            add_form("Graduacao","form02",$matricula);
+            add_form("Graduacao","form02_Financeiro",$matricula);
 
             // Instanciation of inherited class
             $pdf = new PDF();
@@ -110,7 +110,7 @@
             $dataf4 = date('d/m/Y', strtotime($data4));
             
             //adicionar no banco
-            add_form("Graduacao","form03",$matricula);
+            add_form("Graduacao","form03_Evento",$matricula);
             // Instanciation of inherited class
             $pdf = new PDF();
             $pdf->AliasNbPages();
@@ -146,7 +146,7 @@
             $dataf2 = date('d/m/Y', strtotime($data2));
 
             //adicionar no banco
-            add_form("Graduacao","form04",$matricula);
+            add_form("Graduacao","form04_Saude",$matricula);
 
             // Instanciation of inherited class
             $pdf = new PDF();

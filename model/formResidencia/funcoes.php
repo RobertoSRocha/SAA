@@ -35,7 +35,7 @@
             $radio = @$_POST['radio'];
             
             //adicionar no banco
-            add_form("Residencia","form01",$matricula);
+            add_form("Residencia","form01_Afastamento",$matricula);
 
             // Instanciation of inherited class
             $pdf = new PDF();
@@ -79,7 +79,7 @@
             $radio = @$_POST['radio'];
             
             //adicionar no banco
-            add_form("Residencia","form02",$matricula);
+            add_form("Residencia","form02_Evento",$matricula);
 
             // Instanciation of inherited class
             $pdf = new PDF();
@@ -123,7 +123,7 @@
             $dataf2 = date('d/m/Y', strtotime($data2));
             
             //adicionar no banco
-            add_form("Residencia","form03",$matricula);
+            add_form("Residencia","form03_Plantao",$matricula);
 
             // Instanciation of inherited class
             $pdf = new PDF();
