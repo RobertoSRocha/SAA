@@ -500,3 +500,37 @@ function findSetor($table = null, $idLocal = null)
     close_database($database);
     return $found;
 }
+
+function find_all_achados($table, $status){
+    return find_filtros($table,$status);
+}
+
+function find_filtros($table = null, $status = null){
+    $database = open_database();
+    $found = null;
+    try {
+        if ($status) {
+            $sql = "SELECT * FROM " . $table . " WHERE status = " . $status . " ORDER BY nome ASC";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+                /* Metodo alternativo
+                 * $found = array();
+                 * while ($row = $result->fetch_assoc()) {
+                 * array_push($found, $row);
+                 * } */
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}

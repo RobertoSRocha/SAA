@@ -10,7 +10,13 @@
     /** *  Listagem de Clientes	 */
     function indexAchados_e_Perdidos() {
         global $itens;
-        $itens = find_all('achados_e_perdidos');
+        $status = 0;
+
+        if(isset($_POST['filtro'])){
+            $status = $_POST['filtro'];
+
+        }
+        $itens = find_all_achados('achados_e_perdidos',$status);
     }
     
     function addAchados_e_Perdidos() {
