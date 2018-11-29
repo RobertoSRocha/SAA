@@ -10,7 +10,12 @@
     /** *  Listagem de Clientes	 */
     function index_emprestimos() {
         global $itens_emprestimos;
-        $itens_emprestimos = find_all('emprestimos');
+        $status = "emprestado";
+
+        if(isset($_POST['filtro'])){
+            $status = $_POST['filtro'];
+        }
+        $itens_emprestimos = find_all_emprestimos('emprestimos',$status);
     }
     
     function add_emprestimos() {

@@ -41,7 +41,7 @@
                     <form method="post">
                         <div class="form-group">
                             <!--Ordenar valor do select-->
-                            <?php $filtro = 1;
+                            <?php $filtro = "emprestado";
                             if (isset($_POST['filtro'])) {
                                 $filtro = $_POST['filtro'];
                             } ?>
@@ -50,16 +50,16 @@
                                     title="selecionar ordenação de itens" id="valor">
                                 <?php if ($filtro == null) { ?>
                                     <option value="">Todos os Patrimônios</option>
-                                    <option value="1">Patrimônios emprestados</option>
-                                    <option value="0">Patrimônios devolvidos</option>
-                                <?php } elseif ($filtro == 1) { ?>
-                                    <option value="1">Patrimônios emprestados</option>
-                                    <option value="0">Patrimônios devolvidos</option>
+                                    <option value="emprestado">Patrimônios emprestados</option>
+                                    <option value="devolvido">Patrimônios devolvidos</option>
+                                <?php } elseif ($filtro == "emprestado") { ?>
+                                    <option value="emprestado">Patrimônios emprestados</option>
+                                    <option value="devolvido">Patrimônios devolvidos</option>
                                     <option value="">Todos os Patrimônios</option>
 
-                                <?php } elseif ($filtro == 0) { ?>
-                                    <option value="0">Patrimônios devolvidos</option>
-                                    <option value="1">Patrimônios emprestados</option>
+                                <?php } elseif ($filtro == "devolvido") { ?>
+                                    <option value="devolvido">Patrimônios devolvidos</option>
+                                    <option value="emprestado">Patrimônios emprestados</option>
                                     <option value="">Todos os Patrimônios</option>
 
                                 <?php } ?>

@@ -513,7 +513,7 @@ function findSetor($table = null, $idLocal = null)
     $found = null;
     try {
         if ($idLocal != NULL) {
-            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome ASC";;
+            $sql = "SELECT * FROM " . $table . " WHERE local_id = " . $idLocal . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
@@ -547,6 +547,37 @@ function find_filtros($table = null, $status = null)
             }
         } else {
             $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+function find_all_emprestimos($table, $status)
+{
+    return find_emprestimos($table, $status);
+}
+
+function find_emprestimos($table = null, $status = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($status != null) {
+            $sql = "SELECT * FROM " . $table . " WHERE status ='" . $status . "'";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table;
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
