@@ -74,12 +74,8 @@ CREATE TABLE emprestimos(
     data_emprestimo DATE NOT NULL,
     data_prazo_devolucao DATE NOT NULL,
     data_devolucao DATE DEFAULT NULL,
-
-    /*
-	FOREIGN KEY (user_entregou) REFERENCES usuario(id),
-        FOREIGN KEY (user_recebeu) REFERENCES usuario(id),
-    */
-
+    FOREIGN KEY (user_entregou) REFERENCES usuario(id),
+    FOREIGN KEY (user_recebeu) REFERENCES usuario(id),
     FOREIGN KEY (user_realizou) REFERENCES usuario(id),
     FOREIGN KEY (user_solicitou) REFERENCES usuario(id),
     FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id),

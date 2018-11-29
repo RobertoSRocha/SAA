@@ -14,6 +14,10 @@ function index()
     $usuarios = find_all('usuario');
 }
 
+function index_nome_user($id){
+    return find_nome('usuario',$id);
+}
+
 /** *  Listagem usuário através da matrícula    */
 function verifica_user_matricula(){
     $matricula = 0;

@@ -12,6 +12,9 @@
     require_once PATRIMONIO;
     indexPatrimonio();
 ?>
+<?php
+    require_once USUARIO;
+?>
 <?php include(HEADER_TEMPLATE); ?>
 <section class="content-header">		
     <div class="row">			
@@ -112,7 +115,7 @@
                                                             <a href="#" class="btn btn-sm btn-warning" 
                                                                title="Devolver item"><i class="fa fa-repeat"></i></a>
                                                         </p>
-                                                        <h4 style="margin-top: 0">Emprestado no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
+                                                        <h4 style="margin-top: 0">Emprestado para <strong><?php echo index_nome_user($item_emprestimos['user_solicitou']); ?></strong> no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
                                                     </div>
                                                     <div class="clearfix">    
                                                         <p class="pull-right">

@@ -58,15 +58,15 @@ function find($table = null, $id = null)
     return $found;
 }
 
-function find_nome($table, $local_id)
+function find_nome($table, $id)
 {
     $database = open_database();
     $found = null;
     try {
-        if ($local_id) {
+        if ($id) {
             //$sql = "SELECT nome FROM " . $table . " WHERE id = " . $local_id;
             //$result = $database->query($sql);
-            $result = mysqli_fetch_array($database->query("SELECT nome FROM " . $table . " WHERE id = " . $local_id));
+            $result = mysqli_fetch_array($database->query("SELECT nome FROM " . $table . " WHERE id = " . $id));
             $found = $result[0];
         }
     } catch (Exception $e) {
