@@ -14,6 +14,10 @@
     $USER = verifica_user_matricula();
     index();
 ?>
+<?php
+    require_once PATRIMONIO;
+    indexPatrimonio();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 
 <section class="content-header">		
@@ -95,12 +99,19 @@
                                     </div>
                             <?php } endforeach; ?>
                         <?php endif; ?>
-                        <div class="form-group">	      
-                            <label for="patrimonio">Patrimonio </label>	      
-                            <input type="text" class="form-control" id="patrimonio" 
-                                   placeholder="Digite o tombo do patrimonio" 
-                                   name="patrimonio" required=""
-                                   maxlength="100">	    
+                        <div class="form-group">
+                            <label for="patrimonio_id">Patrimonio </label>
+                            <select class="form-control" id="patrimonio_id" 
+                                    name="patrimonio_id" required="">
+                                <option value="" ></option>
+                                <?php if ($patrimonios) : ?>	
+                                    <?php foreach ($patrimonios as $patrimonio) : ?>
+                                        <?php if ($patrimonio['permissao'] == 1 && ($patrimonio['status'] == NULL || $patrimonio['status'] == "disponivel")) : ?>
+                                            <option value="<?php echo $patrimonio['id']; ?>"><?php echo $patrimonio['nome'];?> - <?php echo $patrimonio['tombo'];?></option>
+                                        <?php endif; ?>                            
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </select>
                         </div>
                         <div class="form-group">
                                 <label class="title">

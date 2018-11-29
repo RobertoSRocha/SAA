@@ -8,6 +8,10 @@
     require_once EMPRESTIMOS;
     index_emprestimos();
 ?>
+<?php
+    require_once PATRIMONIO;
+    indexPatrimonio();
+?>
 <?php include(HEADER_TEMPLATE); ?>
 <section class="content-header">		
     <div class="row">			
@@ -78,43 +82,50 @@
                         <div class="box box-solid">
                             <div class="box-body">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <a href="view.php?id=<?php echo $item_emprestimos['id']; ?>" class="ad-click-event">
-                                            <?php if ($item_emprestimos['data_devolucao'] != null) { ?>
-                                                <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item_emprestimos['img']; ?>"
-                                                     alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
-                                                 <?php } else { ?>
-                                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" 
-                                                     alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
-                                                 <?php } ?>
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="clearfix">
-                                            <p class="pull-right">
-                                                <!-- view.php?id=<?php echo $item_emprestimos['id']; ?>-->
-                                                <a href="#" class="btn btn-sm btn-success" 
-                                                   title="Visualizar item"><i class="fa fa-eye"></i></a>
-                                            </p>
-                                            <h4 style="margin-top: 0"><strong><?php echo $item_emprestimos['status']; ?></strong></h4>
-                                        </div>
-                                        <div class="clearfix">
-                                            <p class="pull-right">
-                                                <!--edit.php?id=<?php echo $item_emprestimos['id']; ?>-->
-                                                <a href="" class="btn btn-sm btn-warning" 
-                                                   title="Editar item"><i class="fa fa-pencil"></i></a>
-                                            </p>
-                                            <h4 style="margin-top: 0">Emprestado no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
-                                        </div>
-                                        <div class="clearfix">    
-                                            <p class="pull-right">
-                                                <!--#delete-modal-->
-                                                <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#" data-customer="<?php echo $item_emprestimos['id']; ?>"
-                                                   title="Excluir item"><i class="fa fa-trash"></i></a>
-                                            </p>
-                                            <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?></h4>
-                                        </div>
-                                    </div>
+                                    <?php if ($patrimonios) : ?>	
+                                        <?php foreach ($patrimonios as $patrimonio) : ?>
+                                            <?php if ($patrimonio['id'] == $item_emprestimos['patrimonio_id']) : ?>   
+                                                <div class="media-left">
+                                                    <a href="#" class="ad-click-event">
+                                                        <?php if ($patrimonio['img'] != null) { ?>
+                                                            <img src="<?php echo BASEURL; ?>imagens/patrimonio/<?php echo $patrimonio['img']; ?>"
+                                                                 alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
+                                                             <?php } else { ?>
+                                                            <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" 
+                                                                 alt="Now UI Kit" class="media-object view_img_achados_e_perdidos"/>
+                                                             <?php } ?>
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="clearfix">
+                                                        <p class="pull-right">
+                                                            <!-- view.php?id=<?php echo $item_emprestimos['id']; ?>-->
+                                                            <a href="#" class="btn btn-sm btn-success" 
+                                                               title="Visualizar item"><i class="fa fa-eye"></i></a>
+                                                        </p>
+                                                        <h4 style="margin-top: 0"><strong><?php echo $patrimonio['nome']; ?> - <?php echo $patrimonio['tombo']; ?></strong></h4>
+                                                    </div>
+
+                                                    <div class="clearfix">
+                                                        <p class="pull-right">
+                                                            <!--devolucao.php?id=<?php echo $item_emprestimos['id']; ?>-->
+                                                            <a href="#" class="btn btn-sm btn-warning" 
+                                                               title="Devolver item"><i class="fa fa-repeat"></i></a>
+                                                        </p>
+                                                        <h4 style="margin-top: 0">Emprestado no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
+                                                    </div>
+                                                    <div class="clearfix">    
+                                                        <p class="pull-right">
+                                                            <!--#delete-modal-->
+                                                            <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#" data-customer="<?php echo $item_emprestimos['id']; ?>"
+                                                               title="Excluir item"><i class="fa fa-trash"></i></a>
+                                                        </p>
+                                                        <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?></h4>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>                            
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +133,7 @@
                 <?php endforeach; ?>
             <?php else : ?>
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <strong>Não há itens emprestados</strong>
+                    <strong>Não há itens</strong>
                 </div>
 
             <?php endif; ?>

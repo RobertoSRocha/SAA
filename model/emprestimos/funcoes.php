@@ -19,18 +19,22 @@
     }
     
     function add_emprestimos() {
-        if (!empty($_POST['user_solicitou']) && !empty($_POST['patrimonio']) && !empty($_POST['data_prazo_devolucao']) && !empty($_POST['nome']) 
+        if (!empty($_POST['user_solicitou']) && !empty($_POST['patrimonio_id']) && !empty($_POST['data_prazo_devolucao']) && !empty($_POST['nome']) 
                 && !empty($_POST['destinatario']) && !empty($_POST['matricula'])) {
             
             $user_solicitou = @$_POST['user_solicitou'];
-            $patrimonio_id = @$_POST['patrimonio'];
+            $patrimonio_id = @$_POST['patrimonio_id'];
             $data_prazo_devolucao = @$_POST['data_prazo_devolucao'];
             $nome = @$_POST['nome'];
             $destinatario = @$_POST['destinatario'];
             $matricula = @$_POST['matricula'];
             
             /* Adicionar emprestimo no banco de dados */
-            save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao);
+            if(save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao)){
+                /* Se adicionou, edita o status do patrimônio */
+                update_status('patrimonio', $patrimonio_id, 'indisponivel');
+            }
+            
             header('location: index.php');
             exit();
             

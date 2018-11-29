@@ -87,7 +87,7 @@
                         <select class="form-control" id="permissao"
                                 name="patrimonio['permissao']" required="">
                             <!-- Mostra se o patrimônio é emprestável -->
-                            <?php if ($setor['permissao'] == 1) : ?>
+                            <?php if ($patrimonio['permissao'] == 1) : ?>
                                 <option value=1>Sim</option>
                                 <option value=0>Não</option>
                             <?php else : ?>

@@ -88,7 +88,7 @@
                                             <?php endif; ?>                            
                                         <?php endforeach; ?>	
                                     <?php else : ?>				
-                                        <td>Local não encontrado</td>		
+                                        <td>Usuário não encontrado</td>		
                                     <?php endif; ?>
                                     <td class="actions text-center">
                                         <a href="view.php?id=<?php echo $setor['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>				

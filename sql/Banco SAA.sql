@@ -51,7 +51,8 @@ CREATE TABLE patrimonio(
     tombo VARCHAR(50) UNIQUE NOT NULL,
     especificacao TEXT NOT NULL,
     nome VARCHAR(100)  NOT NULL,
-   	permissao INT NOT NULL,
+    status VARCHAR(30) DEFAULT NULL,
+    permissao INT NOT NULL,
     setor_id INT NOT NULL,
     img VARCHAR(255) DEFAULT NULL,
 
@@ -74,11 +75,14 @@ CREATE TABLE emprestimos(
     data_prazo_devolucao DATE NOT NULL,
     data_devolucao DATE DEFAULT NULL,
 
-    /*FOREIGN KEY (user_realiza) REFERENCES usuario(id),
-	FOREIGN KEY (user_adiquire) REFERENCES usuario(id),
-    FOREIGN KEY (user_recebe) REFERENCES usuario(id),
-    FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id),*/
-    
+    /*
+	FOREIGN KEY (user_entregou) REFERENCES usuario(id),
+        FOREIGN KEY (user_recebeu) REFERENCES usuario(id),
+    */
+
+    FOREIGN KEY (user_realizou) REFERENCES usuario(id),
+    FOREIGN KEY (user_solicitou) REFERENCES usuario(id),
+    FOREIGN KEY (patrimonio_id) REFERENCES patrimonio(id),
     PRIMARY KEY (id)
     )ENGINE = InnoDB;
 

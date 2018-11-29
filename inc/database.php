@@ -251,6 +251,7 @@ function saveForm($tipo_req, $tipo_form, $usuario_matricula)
 /** *  Salva informações dos emprestimos    */
 function save_emp($user_solicitou, $patrimonio_id, $status, $data_prazo_devolucao)
 {
+    $found = FALSE;
     $user_realizou = $_SESSION['id'];
     //$data_emprestimo = NOW();
     date_default_timezone_set('America/Sao_Paulo');
@@ -261,8 +262,8 @@ function save_emp($user_solicitou, $patrimonio_id, $status, $data_prazo_devoluca
         $database->query($sql);
         if (($database->affected_rows) > 0) {
             $_SESSION['message'] = 'Empréstimo realizado com sucesso.';
-            
             $_SESSION['type'] = 'success';
+            $found = TRUE;
         } else {
             $_SESSION['message'] = 'Empréstimo não realizado!';
             $_SESSION['type'] = 'warning';
@@ -273,6 +274,7 @@ function save_emp($user_solicitou, $patrimonio_id, $status, $data_prazo_devoluca
 
     }
     close_database($database);
+    return $found;
 }
 
 /** *  Atualiza um registro no BD   */
@@ -321,6 +323,22 @@ function update($table = null, $id = 0, $data = null)
             $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
             $_SESSION['type'] = 'warning';
         }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+}
+
+/** *  Atualiza um registro no BD   */
+function update_status($table = null, $id = null, $status = null)
+{
+    $database = open_database();
+    $sql = "UPDATE " . $table . " SET status = '" . $status . "' WHERE id = " . $id;
+    try {
+        $database->query($sql);
+        if (($database->affected_rows) > 0) {
+        } 
     } catch (Exception $e) {
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
         $_SESSION['type'] = 'danger';
