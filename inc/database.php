@@ -58,6 +58,25 @@ function find($table = null, $id = null)
     return $found;
 }
 
+function find_data_prazo_emprestimo($table, $id)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            //$sql = "SELECT nome FROM " . $table . " WHERE id = " . $local_id;
+            //$result = $database->query($sql);
+            $result = mysqli_fetch_array($database->query("SELECT data_prazo_devolucao FROM " . $table . " WHERE id = " . $id));
+            $found = $result[0];
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
 function find_nome($table, $id)
 {
     $database = open_database();

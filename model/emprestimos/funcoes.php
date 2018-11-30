@@ -85,7 +85,30 @@
         }
     }
     
-    function view_emprestimos($id = null) {
+    function verifica_atraso($id) {
+    $teste = 0;
+    $data_atual = date('d-M-y');
+    $data_prazo = find_data_prazo_emprestimo('emprestimos', $id);
+    $data1 = new DateTime($data_prazo); //prazo
+    $data2 = new DateTime($data_atual); //data atual
+    
+    $intervalo = $data1->diff($data2);
+    if ($intervalo->d > 0 || $intervalo->m > 0 || $intervalo->y > 0) {
+        //return "atrasado" . $teste . "dias";
+        if($intervalo->y > 0){
+            return "atrasado: {$intervalo->y} ano(s), {$intervalo->m} mes(es) e {$intervalo->d} dia(s)";
+        }else if($intervalo->m > 0){
+            return "atrasado: {$intervalo->m} mes(es) e {$intervalo->d} dia(s)";
+        }else{
+            return "atrasado: {$intervalo->d} dia(s)";
+        }
+        
+    } else {
+        return "não está atrasado";
+    }
+}
+
+function view_emprestimos($id = null) {
         global $item_emprestimos;
         $item_emprestimos = find('emprestimos', $id);
     }

@@ -123,7 +123,7 @@
                                                             <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#" data-customer="<?php echo $item_emprestimos['id']; ?>"
                                                                title="Excluir item"><i class="fa fa-trash"></i></a>
                                                         </p>
-                                                        <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?></h4>
+                                                        <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?> - <?php echo verifica_atraso($item_emprestimos['id']);?></h4>
                                                     </div>
                                                 </div>
                                             <?php endif; ?>                            
