@@ -4,9 +4,9 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
-<?php require_once LOCAL;
+<?php require_once EMPRESTIMOS;
     if (isset($_GET['id'])) {
-        deleteLocal($_GET['id']);
+        delete_emprestimos($_GET['id']);
     } else {
         die("ERRO: ID não definido.");
     } 

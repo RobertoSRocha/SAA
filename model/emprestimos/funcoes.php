@@ -86,24 +86,24 @@
     }
     
     function verifica_atraso($id) {
-    $teste = 0;
+
     $data_atual = date('d-M-y');
     $data_prazo = find_data_prazo_emprestimo('emprestimos', $id);
-    $data1 = new DateTime($data_prazo); //prazo
-    $data2 = new DateTime($data_atual); //data atual
+// Usa a função strtotime() e pega o timestamp das duas datas:
+    $time_atual = strtotime($data_atual);
+    $time_prazo = strtotime($data_prazo);
+// Calcula a diferença de segundos entre as duas datas:
+    $diferenca = $time_prazo - $time_atual; // 19522800 segundos
+// Calcula a diferença de dias
+    $dias = (int) floor($diferenca / (60 * 60 * 24)); // 225 dias
     
-    $intervalo = $data1->diff($data2);
-    if ($intervalo->d > 0 || $intervalo->m > 0 || $intervalo->y > 0) {
-        //return "atrasado" . $teste . "dias";
-        if($intervalo->y > 0){
-            return "atrasado: {$intervalo->y} ano(s), {$intervalo->m} mes(es) e {$intervalo->d} dia(s)";
-        }else if($intervalo->m > 0){
-            return "atrasado: {$intervalo->m} mes(es) e {$intervalo->d} dia(s)";
+    if($dias < 0){
+        if($dias == -1){
+            return "atrasado: ".-$dias." dia";
         }else{
-            return "atrasado: {$intervalo->d} dia(s)";
+           return "atrasado: ".-$dias." dias"; 
         }
-        
-    } else {
+    }else{
         return "não está atrasado";
     }
 }
