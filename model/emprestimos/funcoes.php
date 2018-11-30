@@ -96,3 +96,27 @@
         header('location: index.php');
         exit();
     }
+
+
+function filtro()
+{
+    if(isset($_GET['nome'])){
+        $nome = $_GET['nome'];
+        echo $nome;
+    }
+    if(isset($_GET['tombo'])){
+        $tombo = $_GET['tombo'];
+        echo $tombo;
+
+    }
+
+    if(isset($_GET['local'])){
+       $local = $_GET['local'];
+        echo $local;
+    }
+
+    if(isset($_GET['setor'])){
+       $setor = $_GET['setor'];
+       echo $setor;
+    }
+}

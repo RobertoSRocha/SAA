@@ -6,6 +6,11 @@
     verificaLoginAdmin();
 ?>
 
+<?php
+require_once EMPRESTIMOS;
+filtro();
+?>
+
 
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -41,48 +46,43 @@
                 <!-- /.box-header -->
                 <div class="box-body">
 
-                    <form>
+                    <form method="get" action="consulta.php">
                         <div class="form-group  ">
 
-                            <input class="CheckboxNome" type="checkbox" value="idProduto" name="checkboxvar"/>
-                            <label>Nome</label>
-                            <input class="CaixaNome" name="inputquant" type="text"/>
+                            <label for="nome"> Nome</label>
+
+                            <input class="CaixaNome" name="nome" type="text"/>
 
 
                         </div>
                         <div class="form-group">
-
-                            <input class="CheckboxTombo" type="checkbox" value="idProduto" name="checkboxvar"/>
-                            <label>Tombo</label>
-
-                            <input class="CaixaTombo" name="inputquant" type="text"/>
-
-
+                            <label> Tombo </label>
+                            <input class="CaixaTombo" name="tombo" type="text"/>
                         </div>
 
                         <div class="form-group">
-                            <input class="CheckboxSetor" type="checkbox" value="idProduto" name="checkboxvar"/>
-                            <label>Local: </label>
-                            <select class="filtro" id="setor">
-                                <option></option>
-                                <option>EMCM</option>
-                                <option>CLINICA</option>
-                                <option>Hospital do Serido</option>
+                            <label> Local: </label>
+
+                            <select class="filtro" id="local" name="local">
+                                <option value=""></option>
+                                <option value="2">EMCM</option>
+                                <option value="3">CLINICA</option>
+                                <option value="4">Hospital do Serido</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <input class="CheckboxSetor" type="checkbox" value="idProduto" name="checkboxvar"/>
-                            <label>Setor: </label>
-                            <select class="filtro" id="setor">
-                                <option></option>
+                            <label> Setor: </label>
+                            <select class="filtro" id="setor" name="setor">
+                                <option value=""></option>
                                 <option>TI</option>
                                 <option>Biblioteca</option>
                             </select>
-
                         </div>
 
-
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i> Pesquisar
+                        </button>
                     </form>
                 </div>
 
@@ -91,24 +91,3 @@
     </div>
 </section>
 <?php include(FOOTER_TEMPLATE); ?>
-
-
-<script>
-    $(function () {
-        $(".CaixaNome").keyup(function () {
-            if ($(this).val().length > 0) {
-                $(this).parent().parent().find(".CheckboxNome").prop("checked", true);
-            } else {
-                $(this).parent().parent().find(".CheckboxNome").prop("checked", false);
-            }
-        });
-
-        $(".CaixaTombo").keyup(function () {
-            if ($(this).val().length > 0) {
-                $(this).parent().parent().find(".CheckboxTombo").prop("checked", true);
-            } else {
-                $(this).parent().parent().find(".CheckboxTombo").prop("checked", false);
-            }
-        });
-    });
-</script>
