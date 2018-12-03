@@ -7,7 +7,7 @@ verificaLoginAdmin();
 ?>
 <?php
 require_once PATRIMONIO;
-indexPatrimonio();
+//indexPatrimonio();
 
 ?>
 <?php
@@ -121,12 +121,12 @@ filtro();
                         </thead>
                         <tbody>
                         <?php if ($itens_emprestimos) : ?>
-                            <?php if ($patrimonios) : ?>
-                                <?php foreach ($patrimonios as $patrimonio) : ?>
+                                <?php foreach ($itens_emprestimos as $patrimonio) : ?>
                                     <tr>
                                         <td><?php echo $patrimonio['nome']; ?></td>
                                         <td><?php echo $patrimonio['tombo']; ?></td>
                                         <td><?php echo $patrimonio['especificacao']; ?></td>
+
                                         <td>
                                             <?php if ($setores) : ?>
                                                 <?php foreach ($setores as $setor) : ?>
@@ -150,8 +150,7 @@ filtro();
                                                class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
                                         </td>
                                     </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+                            <?php endforeach; ?>
 
 
                         <?php else : ?>

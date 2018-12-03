@@ -611,20 +611,19 @@ function find_emprestimos_filtro($table = null, $filtro = null)
 {
     $database = open_database();
     $found = null;
+
+    //permissao do patrimonio emprestavel
+    $permissao = 1;
     try {
         if ($filtro != null) {
+            // $sql = "SELECT * FROM " . $table . " WHERE permissao = '" . $permissao . "'";
             $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro);
             $result = $database->query($sql);
-            print_r($sql);
 
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
-            }
-        } else {
-            $sql = "SELECT * FROM " . $table . " WHERE permissao = '0'";
-            $result = $database->query($sql);
-            if ($result->num_rows > 0) {
-                $found = $result->fetch_all(MYSQLI_ASSOC);
+                print_r($sql);
+
             }
         }
     } catch (Exception $e) {
