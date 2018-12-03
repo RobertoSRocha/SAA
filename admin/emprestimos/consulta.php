@@ -65,8 +65,7 @@ filtro();
 
                             <label for="nome"> Nome</label>
 
-                            <input class="CaixaNome" name="nome" type="text"/>
-
+                            <input name="nome" type="text"/>
 
                         </div>
                         <div class="form-group">
@@ -82,7 +81,7 @@ filtro();
                                 <?php if ($locais) : ?>
                                     <?php foreach ($locais as $local) : ?>
                                         <?php if ($local['id']) : ?>
-                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>
+                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome'];  ?></option>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
 
@@ -126,7 +125,7 @@ filtro();
                             <th title="Ordenar Tabela">Especificação</th>
                             <th title="Ordenar Tabela">Setor</th>
                             <th title="Ordenar Tabela">Local</th>
-                            <th>Ações</th>
+                            <th>Visualizar</th>
                         </tr>
                         </thead>
                         <tbody>

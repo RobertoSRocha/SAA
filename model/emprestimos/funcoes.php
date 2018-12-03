@@ -125,11 +125,12 @@ function filtro()
 {
     global $itens_emprestimos;
 
+    $like = "%";
     $filtro = array();
     if(isset($_GET['nome'])){
         if (($_GET['nome'])) {
-            $nome = $_GET['nome'];
-            $filtro[] = "nome='{$nome}'";
+            $nome = $like . "" . $_GET['nome'] . "" . $like;
+            $filtro[] = "nome LIKE '{$nome}'";
             //echo $nome;
         }
     }
@@ -141,14 +142,14 @@ function filtro()
         }
     }
 
-    if (isset($_GET['local'])) {
+   /* if (isset($_GET['local'])) {
         if (($_GET['local'])) {
             $local = $_GET['local'];
             $filtro[] = "local_id='{$local}'";
 
             //echo $local;
         }
-    }
+    }*/
 
     if(isset($_GET['setor'])){
         if (($_GET['setor'])) {
@@ -158,7 +159,9 @@ function filtro()
         }
     }
 
-    //print_r($filtro);
-    $itens_emprestimos = emprestimos_filtro('patrimonio', $filtro);
+    if((sizeof($filtro)) > 0){
+        $itens_emprestimos = emprestimos_filtro('patrimonio', $filtro);
+    }
+
 
 }
