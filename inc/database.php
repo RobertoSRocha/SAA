@@ -602,6 +602,40 @@ function find_all_emprestimos($table, $status)
     return find_emprestimos($table, $status);
 }
 
+function emprestimos_filtro($table, $filtro)
+{
+    return find_emprestimos_filtro($table, $filtro);
+}
+
+function find_emprestimos_filtro($table = null, $filtro = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($filtro != null) {
+            $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro);
+            $result = $database->query($sql);
+            print_r($sql);
+
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table . " WHERE permissao = '0'";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
+
 function find_emprestimos($table = null, $status = null)
 {
     $database = open_database();
@@ -625,6 +659,7 @@ function find_emprestimos($table = null, $status = null)
         $_SESSION['type'] = 'danger';
     }
     close_database($database);
+
     return $found;
 }
 

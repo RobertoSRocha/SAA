@@ -6,8 +6,8 @@
     $itens_emprestimos = null;
     /* guardará um único cliente, para os casos de inserção e atualização (CREATE e UPDATE) */
     $item_emprestimos = null;
-    
-    /** *  Listagem de Clientes	 */
+
+/** *  Listagem de itens_emprestimos     */
     function index_emprestimos() {
         global $itens_emprestimos;
         $status = "emprestado";
@@ -123,23 +123,42 @@ function view_emprestimos($id = null) {
 
 function filtro()
 {
+    global $itens_emprestimos;
+
+    $filtro = array();
     if(isset($_GET['nome'])){
-        $nome = $_GET['nome'];
-        echo $nome;
+        if (($_GET['nome'])) {
+            $nome = $_GET['nome'];
+            $filtro[] = "nome='{$nome}'";
+            //echo $nome;
+        }
     }
     if(isset($_GET['tombo'])){
-        $tombo = $_GET['tombo'];
-        echo $tombo;
-
+        if (($_GET['tombo'])) {
+            $tombo = $_GET['tombo'];
+            $filtro[] = "tombo='{$tombo}'";
+            // echo $tombo;
+        }
     }
 
-    if(isset($_GET['local'])){
-       $local = $_GET['local'];
-        echo $local;
+    if (isset($_GET['local'])) {
+        if (($_GET['local'])) {
+            $local = $_GET['local'];
+            $filtro[] = "local_id='{$local}'";
+
+            //echo $local;
+        }
     }
 
     if(isset($_GET['setor'])){
-       $setor = $_GET['setor'];
-       echo $setor;
+        if (($_GET['setor'])) {
+            $setor = $_GET['setor'];
+            $filtro[] = "setor_id='{$setor}'";
+            //echo $setor;
+        }
     }
+
+    //print_r($filtro);
+    $itens_emprestimos = emprestimos_filtro('patrimonio', $filtro);
+
 }

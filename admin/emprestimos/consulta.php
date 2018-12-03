@@ -8,7 +8,18 @@ verificaLoginAdmin();
 <?php
 require_once PATRIMONIO;
 indexPatrimonio();
+
 ?>
+<?php
+require_once LOCAL;
+indexLocal();
+?>
+
+<?php
+require_once SETOR;
+indexSetor();
+?>
+
 <?php
 require_once EMPRESTIMOS;
 filtro();
@@ -92,15 +103,14 @@ filtro();
 
                 <div class="box text-center">
                     <hr/>
-                    <h3>Listagem de usuários do sistema</h3>
+                    <h3>Listagem de itens encontrado</h3>
                     <hr/>
                 </div>
                 <div class="box-body">
 
-                    <table id="tab_usuario" class="table table-bordered table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-
                             <th title="Ordenar Tabela">Nome</th>
                             <th title="Ordenar Tabela">Tombo</th>
                             <th title="Ordenar Tabela">Especificação</th>
@@ -110,16 +120,40 @@ filtro();
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if ($patrimonios) : ?>
-                            <?php foreach ($patrimonios as $patrimonio) : ?>
-                                <tr>
-                                    <td><?php echo $patrimonio['nome']; ?></td>
-                                    <td><?php echo $patrimonio['tombo']; ?></td>
-                                    <td><?php echo $patrimonio['especificacao']; ?></td>
-                                    <td><?php echo $patrimonio['setor_id']; ?></td>
+                        <?php if ($itens_emprestimos) : ?>
+                            <?php if ($patrimonios) : ?>
+                                <?php foreach ($patrimonios as $patrimonio) : ?>
+                                    <tr>
+                                        <td><?php echo $patrimonio['nome']; ?></td>
+                                        <td><?php echo $patrimonio['tombo']; ?></td>
+                                        <td><?php echo $patrimonio['especificacao']; ?></td>
+                                        <td>
+                                            <?php if ($setores) : ?>
+                                                <?php foreach ($setores as $setor) : ?>
+                                                    <?php if ($setor['id'] == $patrimonio['setor_id']) : ?>
+                                                        <dd><?php echo $setor['nome']; ?></dd>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($locais) : ?>
+                                                <?php foreach ($locais as $local) : ?>
+                                                    <?php if ($local['id'] == $setor['local_id']) : ?>
+                                                        <dd><?php echo $local['nome']; ?></dd>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
 
-                                </tr>
-                            <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td><a href="viewconsulta.php?id=<?php echo $patrimonio['id']; ?>"
+                                               class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+
+
                         <?php else : ?>
                             <tr>
                                 <td colspan="6">Nenhum registro encontrado.</td>
