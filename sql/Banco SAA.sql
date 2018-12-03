@@ -113,8 +113,8 @@ CREATE TABLE achados_e_perdidos(
     
     )ENGINE = InnoDB;
 
-insert into usuario(nome, matricula, email, senha, permissao)
-  VALUE ('admin','1','admin@admin','14d777febb71c53630e9e843bedbd4d8','1'),
-  ('operacional','2','operacional@operacional','14d777febb71c53630e9e843bedbd4d8','2');
+insert into usuario(nome, matricula, email, senha, permissao, categoria)
+  VALUE ('admin','1','admin@admin','14d777febb71c53630e9e843bedbd4d8','1','SERVIDOR'),
+  ('operacional','2','operacional@operacional','14d777febb71c53630e9e843bedbd4d8','2','SERVIDOR');
     
 
