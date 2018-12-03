@@ -622,9 +622,9 @@ function find_emprestimos_filtro($table = null, $filtro = null)
 
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
-                print_r($sql);
-
             }
+            print_r($sql);
+
         }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();

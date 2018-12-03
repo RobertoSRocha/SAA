@@ -79,9 +79,14 @@ filtro();
 
                             <select class="filtro" id="local" name="local">
                                 <option value=""></option>
-                                <option value="2">EMCM</option>
-                                <option value="3">CLINICA</option>
-                                <option value="4">Hospital do Serido</option>
+                                <?php if ($locais) : ?>
+                                    <?php foreach ($locais as $local) : ?>
+                                        <?php if ($local['id']) : ?>
+                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome']; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+
+                                <?php endif; ?>
                             </select>
                         </div>
 
@@ -89,8 +94,13 @@ filtro();
                             <label> Setor: </label>
                             <select class="filtro" id="setor" name="setor">
                                 <option value=""></option>
-                                <option>TI</option>
-                                <option>Biblioteca</option>
+                                <?php if ($setores) : ?>
+                                    <?php foreach ($setores as $setor) : ?>
+                                        <?php if ($setor['id']): ?>
+                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                         </div>
 
