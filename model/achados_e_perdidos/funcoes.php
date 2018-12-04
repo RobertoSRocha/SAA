@@ -10,13 +10,29 @@
     /** *  Listagem de Clientes	 */
     function indexAchados_e_Perdidos() {
         global $itens;
-        $status = 1;
 
-        if(isset($_POST['filtro'])){
-            $status = $_POST['filtro'];
+        $like = "%";
+        $filtro = array();
 
+        if (isset($_GET['nome'])) {
+            if (($_GET['nome'])) {
+                $nome = $like . "" . $_GET['nome'] . "" . $like;
+                $filtro[] = "nome LIKE '{$nome}'";
+            }
         }
-        $itens = find_all_achados('achados_e_perdidos',$status);
+
+        if (isset($_GET['filtro'])) {
+            if (($_GET['filtro']) == '0') {
+                $status = $_GET['filtro'];
+                $filtro[] = "status='{$status}'";
+            } elseif ($_GET['filtro'] == 1) {
+                $status = $_GET['filtro'];
+                $filtro[] = "status='{$status}'";
+            }
+        }
+
+        print_r($filtro);
+        $itens = find_all_achados('achados_e_perdidos', $filtro);
     }
     
     function addAchados_e_Perdidos() {

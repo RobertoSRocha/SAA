@@ -592,13 +592,16 @@ function find_all_achados($table, $status)
     return find_filtros($table, $status);
 }
 
-function find_filtros($table = null, $status = null)
+function find_filtros($table = null, $filtro = null)
 {
     $database = open_database();
     $found = null;
+    print_r(implode($filtro));
     try {
-        if ($status != null) {
-            $sql = "SELECT * FROM " . $table . " WHERE status = " . $status . " ORDER BY nome ASC";
+        if ($filtro != null) {
+            $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro) . " ORDER BY nome ASC";
+
+            //$sql = "SELECT * FROM " . $table . " WHERE status = " . $status . " ORDER BY nome ASC";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
