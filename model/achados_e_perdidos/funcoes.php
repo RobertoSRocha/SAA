@@ -13,8 +13,12 @@
 
         $like = "%";
         $filtro = array();
+        //mostra primeiro os itens perdidos
+        $status = 1;
+        $filtro[] = "status='{$status}'";
 
         if (isset($_GET['nome'])) {
+            $filtro = array();
             if (($_GET['nome'])) {
                 $nome = $like . "" . $_GET['nome'] . "" . $like;
                 $filtro[] = "nome LIKE '{$nome}'";
@@ -22,6 +26,7 @@
         }
 
         if (isset($_GET['filtro'])) {
+
             if (($_GET['filtro']) == '0') {
                 $status = $_GET['filtro'];
                 $filtro[] = "status='{$status}'";
@@ -31,7 +36,6 @@
             }
         }
 
-        print_r($filtro);
         $itens = find_all_achados('achados_e_perdidos', $filtro);
     }
     

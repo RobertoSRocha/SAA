@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="nome"> Nome</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input class="form-control" name="nome" type="text"/>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 $filtro = $_GET['filtro'];
                             } ?>
                             <label class="col-sm-2 control-label">Filtro</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
 
                                 <select name="filtro" class="form-control"
                                         title="selecionar ordenação de itens" id="valor">
