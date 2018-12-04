@@ -33,7 +33,11 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
+            if($table == 'emprestimos'){
+                $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
+            }else{
+                $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
+            }
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();

@@ -102,8 +102,7 @@
                                                 <div class="media-body">
                                                     <div class="clearfix">
                                                         <p class="pull-right">
-                                                            <!-- view.php?id=<?php echo $item_emprestimos['id']; ?>-->
-                                                            <a href="#" class="btn btn-sm btn-success" 
+                                                            <a href="view.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-sm btn-success" 
                                                                title="Visualizar item"><i class="fa fa-eye"></i></a>
                                                         </p>
                                                         <h4 style="margin-top: 0"><strong><?php echo $patrimonio['nome']; ?> - <?php echo $patrimonio['tombo']; ?></strong></h4>
@@ -111,9 +110,13 @@
 
                                                     <div class="clearfix">
                                                         <p class="pull-right">
-                                                            <!--devolucao.php?id=<?php echo $item_emprestimos['id']; ?>-->
-                                                            <a href="#" class="btn btn-sm btn-warning" 
-                                                               title="Devolver item"><i class="fa fa-repeat"></i></a>
+                                                            <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
+                                                                <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-sm btn-warning" 
+                                                                   accesskey=""title="Devolver item"><i class="fa fa-repeat"></i></a>
+                                                            <?php } else { ?>
+                                                                <button disabled="" href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-sm btn-warning" 
+                                                                    accesskey=""title="Devolver item"><i class="fa fa-repeat"></i></button>
+                                                            <?php } ?>
                                                         </p>
                                                         <h4 style="margin-top: 0">Emprestado para <strong><?php echo index_nome_user($item_emprestimos['user_solicitou']); ?></strong> no dia: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_emprestimo'])); ?></h4>
                                                     </div>

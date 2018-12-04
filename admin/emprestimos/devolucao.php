@@ -5,16 +5,15 @@
     verificaLoginAdmin();
 ?>
 <?php
-    require_once ACHADOS_E_PERDIDOS;
-    editAchados_e_Perdidos();
+    require_once EMPRESTIMOS;
+    edit_emprestimos();
 ?>
 <?php
-    require_once SETOR;
-    indexSetor();
+    require_once PATRIMONIO;
+    indexPatrimonio();
 ?>
 <?php
-    require_once LOCAL;
-    indexLocal();
+    require_once USUARIO;
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -23,9 +22,9 @@
         <div class="col-sm-6 text-left">				
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-users"></i> Listagem de Itens perdidos</a></li>
+                <li><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i> Listagem de Itens Emprestados</a></li>
                 <li><i class="glyphicon glyphicon-pencil"></i>
-                    <small> Editar Itens perdidos</small>
+                    <small> Devolver empréstimo</small>
                 </li>
             </ol>		
         </div>			
@@ -42,95 +41,46 @@
             <div class="box">
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form action="edit.php?id=<?php echo $item['id']; ?>" method="post" enctype="multipart/form-data">
+                    <form action="edit.php?id=<?php echo $item_emprestimos['id']; ?>" method="post" enctype="multipart/form-data">
                         <!-- area de campos do form -->
-                        <h3 class="text-center">Edite nos campos abaixo as informações do item</h3>
-                        <hr />	      
+                        <h3 class="text-center">Edite nos campos para devolver o item</h3>
+                        <hr />
+                        <?php if ($patrimonios) : ?>	
+                        <?php foreach ($patrimonios as $patrimonio) : ?>
+                        <?php if ($patrimonio['id'] == $item_emprestimos['patrimonio_id']) : ?>
                         <div class="form-group">	      
-                            <label for="nome">Nome </label>	      
+                            <label for="nome">Nome - Tombo </label>	      
                             <input type="text" class="form-control" id="nome"
-                                   value="<?php echo $item['nome']; ?>"
-                                   name="achados_e_perdidos['nome']" required="">	    
+                                   value="<?php echo $patrimonio['nome']; ?> - <?php echo $patrimonio['tombo']; ?>"
+                                   name="achados_e_perdidos['nome']" disabled="">	    
                         </div>
-                        <div class="form-group">	      
-                            <label for="descricao">Descrição </label>	      
-                            <textarea class="form-control" id="descricao"
-                                      rows="3" name="achados_e_perdidos['descricao']" required=""><?php echo trim($item['descricao']); ?></textarea>	    
-                        </div>
+                        <?php endif; ?>                            
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                         <div class="form-group">
-                            <label for="id_setor">Setor onde o item foi encontrado </label>
-                            <select class="form-control" id="id_setor" 
-                                    name="achados_e_perdidos['id_setor']" required="">
-                                <?php if ($setores) : ?>	
-                                    <?php foreach ($setores as $setor) : ?>
-                                        <?php if($setor['id'] == $achados_e_perdidos['id_setor']){?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
-                                    <?php } endforeach; ?>
-                                    <?php foreach ($setores as $setor) : ?>
-                                        <?php if($setor['id'] != $achados_e_perdidos['id_setor']){?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?> - <?php echo $nome_setor = (nome_setor_local($setor['local_id'])); ?></option>			
-                                    <?php } endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                            <input class="form-check-input" type="radio" name="FlgPontua" value="Sim" checked>
+                            <label class="form-check-label" for="inlineRadio2">Outro usuário devolveu</label>
+                            <input type="radio" name="FlgPontua" value="Nao">
+                            <label class="form-check-label" for="inlineRadio1">O mesmo usuário devolveu</label>
                         </div>
-                        <div class="form-group">
-                            <label for="status">Status</label></br>
-                            <select class="form-control" 
-                                    name="achados_e_perdidos['status']" required="" 
-                                    id="status" onchange="optionCheck()">
-                                <!-- Mostra permissão do usuário -->
-                                <?php if ($item['status'] == 1) : ?>	
-                                    <option value=1>Item perdido</option>
-                                    <option value=0>Item devolvido</option>
-                                <?php else : ?>				
-                                    <option value=0>Item devolvido</option>
-                                    <option value=1>Item perdido</option>
-                                <?php endif; ?>
-                            </select>
+                        <div class="camposExtras dataTables_length">
+                            <form method="post" action=add.php>
+                                <div class="form-group">
+                                    <label class="col-form-label">Matricula/SIAPE do usuário: </label>
+                                    <input type="number" id="matricula" 
+                                       placeholder="Matricula/SIAPE do usuário" 
+                                       name="matricula" required=""
+                                       >
+                                    <button type="submit" class="btn btn-primary btn-xs"><i class="fa fa-search">Pesquisar</i></button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group" id="nome_pessoa_entregou" style="visibility:hidden;">	      
-                            <label for="nome_pessoa_entregou">Nome da pessoa que recebeu o item </label>	      
-                            <input type="text" class="form-control"
-                                   value="<?php echo $item['nome_pessoa_entregou']; ?>"
-                                   name="achados_e_perdidos['nome_pessoa_entregou']">	    
+                        <div class="form-group" style="display:none;">	      
+                            <label for="status">Status </label>	      
+                            <input type="text" class="form-control" id="status"
+                                   value="devolvido"
+                                   name="emprestimos['status']">	    
                         </div>
-                        <div class="form-group" id="documento_pessoa_entregou" style="visibility:hidden;">	      
-                            <label for="documento_pessoa_entregou">Documento da pessoa que recebeu o item </label>	      
-                            <input type="text" class="form-control"
-                                   value="<?php echo $item['documento_pessoa_entregou']; ?>"
-                                   name="achados_e_perdidos['documento_pessoa_entregou']">
-                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio1" value="MATRICULA">
-                            <label class="form-check-label" for="inlineRadio1">MATRICULA</label>
-                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio2" value="RG">
-                            <label class="form-check-label" for="inlineRadio2">RG</label>
-                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio3" value="CPF">
-                            <label class="form-check-label" for="inlineRadio3">CPF</label>
-                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio4" value="CNH">
-                            <label class="form-check-label" for="inlineRadio4">CNH</label>
-                            <input class="form-check-input" type="radio" name="achados_e_perdidos['tipo_documento']" id="inlineRadio5" value="OUTRO">
-                            <label class="form-check-label" for="inlineRadio5">OUTRO</label>
-                        </div>
-                        <div class="form-group" id="telefone" style="visibility:hidden;">	      
-                            <label for="telefone">Telefone da pessoa que recebeu o item </label>	      
-                            <input type="text" class="form-control"
-                                   value="<?php echo $item['telefone']; ?>"
-                                   name="achados_e_perdidos['telefone']">	    
-                        </div>
-                        <div class="form-group">
-                            <?php if ($item['img']!= null){?>
-                                <img src="<?php echo BASEURL; ?>imagens/achados_e_perdidos/<?php echo $item['img']; ?>"
-                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
-                            <?php }else{?>
-                                <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
-                                     class="img-rounded view_img_1" alt="Cinque Terre"/>
-                            <?php }?>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="imagem">Alterar Imagem</label>
-                            <input type="file" accept="image/png, image/jpeg, image/jpg" name='img'>
-                        </div>
-
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
                                 <button type="submit" class="btn btn-primary">
