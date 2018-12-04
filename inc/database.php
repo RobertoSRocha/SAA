@@ -596,7 +596,6 @@ function find_filtros($table = null, $filtro = null)
 {
     $database = open_database();
     $found = null;
-    print_r(implode($filtro));
     try {
         if ($filtro != null) {
             $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro) . " ORDER BY nome ASC";
