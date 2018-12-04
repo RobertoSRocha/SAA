@@ -139,6 +139,27 @@
     }
 </script>
 
+<script>
+    function validarData(){
+       var data_prazo_devolucao = new Date(form_add_emprestimo.data_prazo_devolucao.value);
+       var data_atual = new Date();
+       var timeDiff = (data_prazo_devolucao.getTime() - data_atual.getTime());
+       var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+       if(diffDays <= 0){
+           alert("A data informada deve ser após a data atual");
+           return false;
+       }else{
+            return true;
+       }
+    }
+</script>
+
+<!--var date1 = new Date("7/11/2010");
+var date2 = new Date("12/12/2010");
+var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+alert(diffDays);-->
+
 <script type="text/javascript">
     function optionCheck(){
         var option = document.getElementById("status").value;

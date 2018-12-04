@@ -64,7 +64,7 @@
                         </form>
                     </div>
                     <?php if ($USER) : ?>
-                    <form action=add.php method="post" enctype="multipart/form-data">
+                    <form action=add.php method="post" enctype="multipart/form-data" name='form_add_emprestimo'>
                         <!-- area de campos do form -->
                         <?php if ($usuarios) : ?>	
                             <?php foreach ($usuarios as $usuario) : ?>
@@ -125,7 +125,7 @@
                         </div>
                         <div id="actions" class="row">	    
                             <div class="col-md-12">	      
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="return validarData();">
                                 <i class="fa fa-file-pdf-o"></i> Realizar empréstimo</button>
                                 <a href="index.php" class="btn btn-default">
                                     <i class="fa fa-close"></i> Cancelar</a>	    
