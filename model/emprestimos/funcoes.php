@@ -71,7 +71,8 @@
             $id = $_GET['id'];
             if (isset($_POST['emprestimos'])) {
                 $item_emprestimos = $_POST['emprestimos'];
-                //$customer['modified'] = $now->format("Y-m-d H:i:s");
+                $patrimonio_id = find_patrimonio_emprestimo('emprestimos', $id);
+                update_status('patrimonio',$patrimonio_id, 'disponivel');
                 update('emprestimos', $id, $item_emprestimos);
                 header('location: index.php');
                 exit();

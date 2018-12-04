@@ -128,7 +128,15 @@
                                                             data-customer="<?php echo $item_emprestimos['id']; ?>"
                                                             title="Excluir item"><i class="fa fa-trash"></i></a>
                                                         </p>
-                                                        <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?> - <?php echo verifica_atraso($item_emprestimos['id']);?></h4>
+                                                        <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
+                                                            <h4 style="margin-top: 0">Prazo de devolução: 
+                                                                <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?> - 
+                                                                    <?php echo verifica_atraso($item_emprestimos['id']);?></h4>
+                                                        <?php } else { ?>
+                                                            <h4 style="margin-top: 0">Prazo de devolução: 
+                                                                <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?> - Devolvido em:
+                                                                    <?php echo date('d/m/Y', strtotime($item_emprestimos['data_devolucao'])); ?></h4>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             <?php endif; ?>                            

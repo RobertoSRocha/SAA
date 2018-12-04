@@ -154,14 +154,28 @@
     }
 </script>
 
+<!-- 
+    1° código: executa a partir do clique
+    2° código: executa somente na primeira vez
+-->
 <script type="text/javascript">
     $('input[name="FlgPontua"]').change(function () {
     if ($('input[name="FlgPontua"]:checked').val() === "Sim") {
-        $('.camposExtras').show();
+        $('.mesmo_usuario').hide();
+        $('.outro_usuario').show();
     } else {
-        $('.camposExtras').hide();
+        $('.outro_usuario').hide();
+        $('.mesmo_usuario').show();
     }
-});
+    });
+    
+    if ($('input[name="FlgPontua"]:checked').val() === "Sim") {
+        $('.mesmo_usuario').hide();
+        $('.outro_usuario').show();
+    } else {
+        $('.outro_usuario').hide();
+        $('.mesmo_usuario').show();
+    }
 </script>
 
 <!--<script type="text/javascript">

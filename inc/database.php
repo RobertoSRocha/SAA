@@ -694,7 +694,7 @@ function find_user_matricula($table = null, $matricula = null)
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $matricula;
-                $_SESSION['message'] = 'Usuário informado encontrado! Preencha as informações abaixo para realizar o empréstimo.';
+                $_SESSION['message'] = 'Usuário informado encontrado!';
                 $_SESSION['type'] = 'success';
             }else{
                 $_SESSION['message'] = 'Usuário informado não existe!';
