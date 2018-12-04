@@ -119,9 +119,11 @@
                                                     </div>
                                                     <div class="clearfix">    
                                                         <p class="pull-right">
-                                                            <!--#delete-modal-->
-                                                            <a href=# class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $item_emprestimos['id']; ?>"
-                                                               title="Excluir item"><i class="fa fa-trash"></i></a>
+                                                            <!--#delete-modal-->  
+                                                            <a href=# class="btn btn-sm btn-danger" data-toggle="modal"
+                                                            data-target="#delete-modal"
+                                                            data-customer="<?php echo $item_emprestimos['id']; ?>"
+                                                            title="Excluir item"><i class="fa fa-trash"></i></a>
                                                         </p>
                                                         <h4 style="margin-top: 0">Prazo de devolução: <strong><?php echo date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao'])); ?> - <?php echo verifica_atraso($item_emprestimos['id']);?></h4>
                                                     </div>

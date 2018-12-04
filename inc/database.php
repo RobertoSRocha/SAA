@@ -96,6 +96,23 @@ function find_nome($table, $id)
     return $found;
 }
 
+function find_patrimonio_emprestimo($table, $id)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+            $result = mysqli_fetch_array($database->query("SELECT patrimonio_id FROM " . $table . " WHERE id = " . $id));
+            $found = $result[0];
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
 /* Pesquisa um Registro pelo ID do setor em uma Tabela */
 function find_operacional($table1 = null, $table2 = null, $id)
 {

@@ -113,12 +113,15 @@ function view_emprestimos($id = null) {
         $item_emprestimos = find('emprestimos', $id);
     }
     
-    function delete_emprestimos($id = null) {
-        global $item_emprestimos;
-        $item_emprestimos = remove('emprestimos', $id);
-        header('location: index.php');
-        exit();
-    }
+function delete_emprestimos($id = null) {
+    global $item_emprestimos;
+    $patrimonio_id = find_patrimonio_emprestimo('emprestimos', $id);
+    update_status('patrimonio',$patrimonio_id, 'disponivel');
+    $item_emprestimos = remove('emprestimos', $id);
+    echo $patrimonio_id;
+    header('location: index.php');
+    exit();
+}
 
 
 function filtro()
