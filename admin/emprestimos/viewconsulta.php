@@ -64,13 +64,13 @@ indexLocal();
                         <dd><?php echo $patrimonio['especificacao']; ?></dd>
                         <dt>Tombo:</dt>
                         <dd><?php echo $patrimonio['tombo']; ?></dd>
-                        <dt>Emprestável:</dt>
+                        <dt>Status:</dt>
 
                         <!-- Mostra se o patrimônio é emprestável -->
-                        <?php if ($patrimonio['permissao'] == 1) : ?>
-                            <dd>Sim</dd>
+                        <?php if ($patrimonio['especificacao'] == 'indisponivel') : ?>
+                            <dd>Indisponível para empréstimo</dd>
                         <?php else : ?>
-                            <dd>Não</dd>
+                            <dd>Disponivel para empréstimo</dd>
                         <?php endif; ?>
                         <dt>Setor responsável:</dt>
                         <!-- Mostra o setor responsável do patrimônio -->

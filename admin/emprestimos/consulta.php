@@ -118,6 +118,7 @@ $result = filtro();
                                     <th title="Ordenar Tabela">Especificação</th>
                                     <th title="Ordenar Tabela">Setor</th>
                                     <th title="Ordenar Tabela">Local</th>
+                                    <th title="Ordenar Tabela">Status</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </thead>
@@ -152,6 +153,12 @@ $result = filtro();
 
                                             <?php endif; ?>
                                         </td>
+
+                                        <td><?php if ($patrimonio['status'] == 'indisponivel'): echo "Indisponível para empréstimo";
+                                                else: echo "Disponivel para empréstimo";
+                                            endif; ?>
+                                        </td>
+
                                         <td><a href="viewconsulta.php?id=<?php echo $patrimonio['id']; ?>"
                                                class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
                                         </td>
@@ -173,6 +180,7 @@ $result = filtro();
                                     <th>Especificação</th>
                                     <th>Setor</th>
                                     <th>Local</th>
+                                    <th>Status</th>
                                     <th>Visualizar</th>
                                 </tr>
                                 </tfoot>

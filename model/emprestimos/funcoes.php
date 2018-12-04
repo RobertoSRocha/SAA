@@ -150,15 +150,6 @@ function filtro()
         }
     }
 
-   /* if (isset($_GET['local'])) {
-        if (($_GET['local'])) {
-            $local = $_GET['local'];
-            $filtro[] = "local_id='{$local}'";
-
-            $result = 1;
-        }
-    }*/
-
     if(isset($_GET['setor'])){
         if (($_GET['setor'])) {
             $setor = $_GET['setor'];
