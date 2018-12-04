@@ -70,7 +70,7 @@
                         <div class="col-md-12">	      
                             <button type="submit" class="btn btn-primary" onclick="return validarSenha();">
                                 <i class="fa fa-check"></i> Alterar</button>
-                            <a href="<?php echo BASEURL;?>model/logout/funcoes.php" class="btn btn-default">
+                            <a href="<?php echo BASEURL;?>model/logout/funcoes.php?id=sair" class="btn btn-default">
                                 <i class="fa fa-close"></i> Cancelar</a>	    
                         </div>	  
                     </div>

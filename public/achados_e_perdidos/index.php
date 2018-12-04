@@ -1,18 +1,18 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
+<?php
+    require_once ACHADOS_E_PERDIDOS;
+    indexAchados_e_Perdidos();
+?>
+<?php
+    require_once SETOR;
+    indexSetor();
+?>
+<?php
+    require_once LOCAL;
+    indexLocal();
+?>
 <?php include(HEADER_TEMPLATE_PUBLIC); ?>
-<?php
-require_once ACHADOS_E_PERDIDOS;
-indexAchados_e_Perdidos();
-?>
-<?php
-require_once SETOR;
-indexSetor();
-?>
-<?php
-require_once LOCAL;
-indexLocal();
-?>
 
 <section class="content-header">		
     <div class="row">			
