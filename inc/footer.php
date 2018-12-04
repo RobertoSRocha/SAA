@@ -146,7 +146,10 @@
        var timeDiff = (data_prazo_devolucao.getTime() - data_atual.getTime());
        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
        if(diffDays <= 0){
-           alert("A data informada deve ser após a data atual");
+           alert("A data informada do prazo de devolução deve ser após a data atual");
+           return false;
+       }else if(diffDays > 7){
+           alert("O prazo de devolução não pode ultrapassar 7 dias");
            return false;
        }else{
             return true;
