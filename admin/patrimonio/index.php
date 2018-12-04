@@ -67,7 +67,7 @@
                                     			
                                     <td><?php echo $patrimonio['nome']; ?></td>			
                                     <td><?php echo $patrimonio['tombo']; ?></td>
-                                    <td><?php echo substr($patrimonio['especificacao'], 0, 30); 
+                                    <td><?php echo substr($patrimonio['especificacao'], 0, 30);
                                         if(strlen($patrimonio['especificacao']) > 50):?>
                                             <a href="view.php?id=<?php echo $patrimonio['id']; ?>">[...]</a>
                                         <?php endif;?>

@@ -7,8 +7,6 @@ verificaLoginAdmin();
 ?>
 <?php
 require_once PATRIMONIO;
-//indexPatrimonio();
-
 ?>
 <?php
 require_once LOCAL;
@@ -22,7 +20,7 @@ indexSetor();
 
 <?php
 require_once EMPRESTIMOS;
-filtro();
+$result = filtro();
 ?>
 
 
@@ -53,88 +51,87 @@ filtro();
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header text-center">
-                    <h3>Selecione os campos para a busca</h3>
+                    <h3>Preencha os campos para a busca</h3>
                     <hr/>
                 </div>
-
                 <!-- /.box-header -->
-                <div class="box-body">
+                <div class="container">
 
-                    <form method="get" action="consulta.php">
-                        <div class="form-group  ">
-
-                            <label for="nome"> Nome</label>
-
-                            <input name="nome" type="text"/>
-
+                    <form class="form-horizontal" method="get" action="consulta.php">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="nome"> Nome</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="nome" type="text"/>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label> Tombo </label>
-                            <input class="CaixaTombo" name="tombo" type="text"/>
-                        </div>
-
-                        <div class="form-group">
-                            <label> Local: </label>
-
-                            <select class="filtro" id="local" name="local">
-                                <option value=""></option>
-                                <?php if ($locais) : ?>
-                                    <?php foreach ($locais as $local) : ?>
-                                        <?php if ($local['id']) : ?>
-                                            <option value="<?php echo $local['id']; ?>"><?php echo $local['nome'];  ?></option>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-
-                                <?php endif; ?>
-                            </select>
+                            <label class="col-sm-2 control-label"> Tombo </label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="tombo" type="text"/>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label> Setor: </label>
-                            <select class="filtro" id="setor" name="setor">
-                                <option value=""></option>
-                                <?php if ($setores) : ?>
-                                    <?php foreach ($setores as $setor) : ?>
-                                        <?php if ($setor['id']): ?>
-                                            <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome']; ?></option>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </select>
+                            <label class="col-sm-2 control-label"> Setor: </label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="setor" name="setor">
+                                    <option value=""></option>
+                                    <?php if ($setores) : ?>
+                                        <?php foreach ($setores as $setor) : ?>
+                                            <?php if ($setor['id']): ?>
+                                                <option value="<?php echo $setor['id']; ?>"><?php echo $setor['nome'];?> - <?php echo (nome_setor_local($setor['local_id'])); ?></option>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
                         </div>
+                        <div class="form-group text-center">
 
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa fa-search"></i> Pesquisar
-                        </button>
+                            <button title="Pesquisa itens" type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i> Pesquisar
+                            </button>
+
+                            <a title="Limpar busca" class="btn btn-warning" href="consulta.php"><i
+                                        class="fa fa-close"></i> Limpar</a>
+
+                            <!--<a class="btn btn-default" href="<?php /*echo BASEURL; */ ?>index.php"><i
+                                        class="fa fa-close"></i> Cancelar</a>-->
+
+                        </div>
                     </form>
                 </div>
 
 
-                <div class="box text-center">
-                    <hr/>
-                    <h3>Listagem de itens encontrado</h3>
-                    <hr/>
-                </div>
-                <div class="box-body">
+                <?php if ($result): ?>
 
-                    <table id="example1" class="table table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <th title="Ordenar Tabela">Nome</th>
-                            <th title="Ordenar Tabela">Tombo</th>
-                            <th title="Ordenar Tabela">Especificação</th>
-                            <th title="Ordenar Tabela">Setor</th>
-                            <th title="Ordenar Tabela">Local</th>
-                            <th>Visualizar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php if ($itens_emprestimos) : ?>
+                    <div class="box-body">
+                        <hr/>
+
+                        <div class="box-body">
+
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th title="Ordenar Tabela">Nome</th>
+                                    <th title="Ordenar Tabela">Tombo</th>
+                                    <th title="Ordenar Tabela">Especificação</th>
+                                    <th title="Ordenar Tabela">Setor</th>
+                                    <th title="Ordenar Tabela">Local</th>
+                                    <th>Visualizar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php if ($itens_emprestimos) : ?>
                                 <?php foreach ($itens_emprestimos as $patrimonio) : ?>
                                     <tr>
                                         <td><?php echo $patrimonio['nome']; ?></td>
                                         <td><?php echo $patrimonio['tombo']; ?></td>
-                                        <td><?php echo $patrimonio['especificacao']; ?></td>
+                                        <td><?php echo substr($patrimonio['especificacao'], 0, 30);
+                                            if(strlen($patrimonio['especificacao']) > 50):?>
+                                                <a href="viewconsulta.php?id=<?php echo $patrimonio['id']; ?>">[...]</a>
+                                            <?php endif;?>
+                                        </td>
 
                                         <td>
                                             <?php if ($setores) : ?>
@@ -159,28 +156,30 @@ filtro();
                                                class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
                                         </td>
                                     </tr>
-                            <?php endforeach; ?>
+                                    <?php endforeach; ?>
 
 
-                        <?php else : ?>
-                            <tr>
-                                <td colspan="6">Nenhum registro encontrado.</td>
-                            </tr>
-                        <?php endif; ?>
-                        </tbody>
+                                <?php else : ?>
+                                    <tr>
+                                        <td colspan="6">Nenhum registro encontrado.</td>
+                                    </tr>
+                                <?php endif; ?>
+                                </tbody>
 
-                        <tfoot>
-                        <tr style="background: #F4F4F4">
-                            <th>FILTROS</th>
-                            <th></th>
-                            <th></th>
-                            <th title="Filtrar por categoria"></th>
-                            <th title="Filtrar por permissão"></th>
-                            <th></th>
-                        </tr>
-                        </tfoot>
-                    </table>
-                </div>
+                                <tfoot>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Tombo</th>
+                                    <th>Especificação</th>
+                                    <th>Setor</th>
+                                    <th>Local</th>
+                                    <th>Visualizar</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

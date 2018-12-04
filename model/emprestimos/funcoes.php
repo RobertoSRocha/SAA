@@ -128,20 +128,25 @@ function filtro()
 {
     global $itens_emprestimos;
 
+    //Verifica se foi passa algun parametro de pesquisa
+    $result = 0;
+
     $like = "%";
     $filtro = array();
     if(isset($_GET['nome'])){
         if (($_GET['nome'])) {
             $nome = $like . "" . $_GET['nome'] . "" . $like;
             $filtro[] = "nome LIKE '{$nome}'";
-            //echo $nome;
+
+            $result = 1;
         }
     }
     if(isset($_GET['tombo'])){
         if (($_GET['tombo'])) {
             $tombo = $_GET['tombo'];
             $filtro[] = "tombo='{$tombo}'";
-            // echo $tombo;
+
+            $result = 1;
         }
     }
 
@@ -150,7 +155,7 @@ function filtro()
             $local = $_GET['local'];
             $filtro[] = "local_id='{$local}'";
 
-            //echo $local;
+            $result = 1;
         }
     }*/
 
@@ -158,7 +163,8 @@ function filtro()
         if (($_GET['setor'])) {
             $setor = $_GET['setor'];
             $filtro[] = "setor_id='{$setor}'";
-            //echo $setor;
+
+            $result = 1;
         }
     }
 
@@ -166,5 +172,6 @@ function filtro()
         $itens_emprestimos = emprestimos_filtro('patrimonio', $filtro);
     }
 
+    return $result;
 
 }

@@ -633,15 +633,13 @@ function find_emprestimos_filtro($table = null, $filtro = null)
     $permissao = 1;
     try {
         if ($filtro != null) {
-            // $sql = "SELECT * FROM " . $table . " WHERE permissao = '" . $permissao . "'";
-            $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro);
+            // SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE local_id IN (SELECT id FROM locais))
+            $sql = "SELECT * FROM " . $table . " WHERE " . implode(' and ', $filtro) . " AND permissao = 1 ORDER BY nome ASC";
             $result = $database->query($sql);
 
             if ($result->num_rows > 0) {
                 $found = $result->fetch_all(MYSQLI_ASSOC);
             }
-            print_r($sql);
-
         }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
