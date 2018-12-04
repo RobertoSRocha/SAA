@@ -158,7 +158,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?php echo BASEURL; ?>operacional/emprestimos/consulta.php"><i class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
+                        <li><a href="<?php echo BASEURL; ?>operacional/emprestimos/index.php"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
                     </ul>
                 </li>
                 <!-- FORMUL�?RIOS-->
