@@ -24,7 +24,7 @@ $result = filtro();
 ?>
 
 
-<?php include(HEADER_TEMPLATE); ?>
+<?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">
     <div class="row">
