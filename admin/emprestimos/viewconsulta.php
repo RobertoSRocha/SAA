@@ -22,9 +22,11 @@ indexLocal();
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-bank"></i> Listagem de Patrimônios</a></li>
+                <li><a href="consulta.php"><i class="glyphicon glyphicon-search"></i>
+                    <small> Consultar itens emprestáveis</small></a>
+                </li>
                 <li><i class="glyphicon glyphicon-eye-open"></i>
-                    <small> Visualizar Patrimônio</small>
+                    <small> Visualizar Item</small>
                 </li>
 
             </ol>
