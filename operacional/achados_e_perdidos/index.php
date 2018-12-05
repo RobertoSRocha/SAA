@@ -105,7 +105,7 @@ indexLocal();
                             <?php if ($itens) : ?>
                                 <?php foreach ($itens as $item) : ?>
                                     <div class="col-sm-12 col-md-6">
-                                        <div class="box box-solid">
+                                        <div class="box box-solid box-default">
                                             <div class="box-body">
                                                 <div class="media">
                                                     <div class="media-left">
