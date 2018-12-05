@@ -75,9 +75,10 @@ $criptografada = md5($senha) ?>
                                 <option value="" ></option>
                                 <option value="ALUNO - GRADUAÇÃO">ALUNO - GRADUAÇÃO</option>
                                 <option value="ALUNO - RESIDENTE">ALUNO - RESIDENTE</option>
+                                <option value="BOLSISTA">BOLSISTA</option>
                                 <option value="PROFESSOR">PROFESSOR</option>
                                 <option value="SERVIDOR">SERVIDOR</option>
-                                <option value="BOLSISTA">BOLSISTA</option>
+                                <option value="USUÁRIO EXTERNO">USUÁRIO EXTERNO</option>
                             </select>
                         </div>
 
