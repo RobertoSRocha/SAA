@@ -18,7 +18,7 @@
     require_once PATRIMONIO;
     indexPatrimonio();
 ?>
-<?php include(HEADER_TEMPLATE); ?>
+<?php include(HEADER_TEMPLATE_OPERACIONAL); ?>
 
 <section class="content-header">		
     <div class="row">			
