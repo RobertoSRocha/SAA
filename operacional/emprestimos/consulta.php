@@ -55,25 +55,24 @@ $result = filtro();
                     <hr/>
                 </div>
                 <!-- /.box-header -->
-                <div class="container">
 
                     <form class="form-horizontal" method="get" action="consulta.php">
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="nome"> Nome</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input class="form-control" name="nome" type="text"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label"> Tombo </label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <input class="form-control" name="tombo" type="text"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label"> Setor: </label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-9">
                                 <select class="form-control" id="setor" name="setor">
                                     <option value=""></option>
                                     <?php if ($setores) : ?>
@@ -94,19 +93,16 @@ $result = filtro();
 
                             <a title="Limpar busca" class="btn btn-warning" href="consulta.php"><i
                                         class="fa fa-close"></i> Limpar</a>
+                            <hr/>
 
-                            <!--<a class="btn btn-default" href="<?php /*echo BASEURL; */ ?>index.php"><i
-                                        class="fa fa-close"></i> Cancelar</a>-->
 
                         </div>
                     </form>
-                </div>
 
 
                 <?php if ($result): ?>
 
                     <div class="box-body">
-                        <hr/>
 
                         <div class="box-body">
 
