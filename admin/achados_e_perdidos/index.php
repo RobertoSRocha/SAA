@@ -51,7 +51,7 @@
                     <h3>Preencha os campos para Filtrar</h3>
                     <hr/>
                 </div>
-                <div class="container">
+
 
                     <form method="get" class="form-horizontal">
 
@@ -100,7 +100,6 @@
                         </div>
 
                     </form>
-                </div>
 
 
                 <div class="box-body">
