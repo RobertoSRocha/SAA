@@ -164,8 +164,8 @@
                             <?php endif; ?>
                             <div id="actions" class="row">	    
                                 <div class="col-md-12">	      
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-save"></i> Salvar</button>
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="fa fa-repeat"></i> Devolver</button>
                                     <a href="index.php" class="btn btn-default"><i class="fa fa-close"></i> Cancelar</a>	    
                                 </div>	  
                             </div>
