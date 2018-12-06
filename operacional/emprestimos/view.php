@@ -98,7 +98,7 @@
                     <div id="actions" class="row">
                         <div class="col-md-12">
                             <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
-                                <a href="edit.php?id=<?php echo $item['id']; ?>" class="btn btn-primary">
+                                <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-primary">
                                     <i class="fa fa-repeat"></i> Devolver item</a>
                             <?php } ?>
                             <a href="index.php" class="btn btn-default">
