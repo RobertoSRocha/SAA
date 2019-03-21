@@ -4,9 +4,11 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
+
 <?php
     require_once EMPRESTIMOS;
     view_emprestimos($_GET['id']);
+
 ?>
 <?php
     require_once PATRIMONIO;
@@ -100,7 +102,15 @@
                             <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
                                 <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-primary">
                                     <i class="fa fa-repeat"></i> Devolver item</a>
+
                             <?php } ?>
+
+
+
+                             <form target="_blank" action="../../model/emprestimos/pdf.php" method="post"  class="btn btn-info">
+                                 <input type=submit value='Gerar PDF' class="fa fa-file-pdf-o" />
+                             </form>
+
                             <a href="index.php" class="btn btn-default">
                                 <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
                         </div>
