@@ -3,16 +3,11 @@ require_once('../../config.php');
 require_once EMPRESTIMOS;
 require_once PATRIMONIO;
 require_once USUARIO;
-require_once(DBAPI);
 
 
 indexPatrimonio();
 view_emprestimos($_GET['id']);
 
-
-/*indexPatrimonio();
-*/
-//pdf_emprestimos();
 
 if ($patrimonios) :
     foreach ($patrimonios as $patrimonio) :
@@ -28,8 +23,9 @@ if ($patrimonios) :
             //busca o usuario pelo seu id
             viewUsuario($item_emprestimos['user_solicitou']);
             $user_matricula = $usuario['matricula'];//matricula do usuario que solicitou o emmprestimo
+            $user_categoria = $usuario['categoria'];
         endif;
     endforeach;
 endif;
 
-pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou, $user_matricula);
+pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou, $user_matricula, $user_categoria);

@@ -7,7 +7,6 @@
 <?php
     require_once EMPRESTIMOS;
     add_emprestimos();
-    //$USER = FALSE;
 ?>
 <?php
     require_once USUARIO;

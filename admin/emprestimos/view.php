@@ -46,7 +46,7 @@
                 <div class="box-body">
                     <h3 class="text-center">Informações do item emprestado</h3>
                     <hr/>
-                    <?php if ($patrimonios) : ?>	
+                    <?php if ($patrimonios) : ?>
                         <?php foreach ($patrimonios as $patrimonio) : ?>
                             <?php if ($patrimonio['id'] == $item_emprestimos['patrimonio_id']) : ?> 
                                 <div class="form-group">
@@ -99,20 +99,21 @@
                     <?php endif; ?>
                     <div id="actions" class="row">
                         <div class="col-md-12">
+                            <!-- Envia o id para funcao PDF-->
+
+                            <form target="_blank" action="../../model/emprestimos/pdf.php?id=<?php echo $_GET['id']?>" method="post">
+
                             <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
                                 <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-primary">
                                     <i class="fa fa-repeat"></i> Devolver item</a>
 
                             <?php } ?>
 
-
-
-                             <form target="_blank" action="../../model/emprestimos/pdf.php" method="post"  class="btn btn-info">
-                                 <input type=submit value='Gerar PDF' class="fa fa-file-pdf-o" />
-                             </form>
+                                <button type="submit" class="btn btn-info">Gerar PDF</button>
 
                             <a href="index.php" class="btn btn-default">
                                 <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
+                    </form>
                         </div>
                     </div>
                 </div>
