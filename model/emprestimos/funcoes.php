@@ -50,21 +50,15 @@ class PDF extends FPDF
                 update_status('patrimonio', $patrimonio_id, 'indisponivel');
             }
 
-           /* //Gera o pdf dos emprestimos
-            pdf_emprestimos();*/
-
             header('location: index.php');
 
             exit();
-
-
-
-        }
+            }
     }
 //$nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou
 
 //Gerar o pdf dos emprestimos
-function pdf_emprestimos()
+function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou, $user_matricula)
 {
         $usuario = 0;
         $nome = 0;
@@ -79,7 +73,7 @@ function pdf_emprestimos()
         $pdf->SetFont('Arial', '', 14);
         $pdf->SetXY(30, 70);
         $pdf->SetMargins(15, 15, 15);
-        $pdf->MultiCell(0, 10, utf8_decode("Eu, $usuario, matrícula n° $matricula, $destinatario" .
+        $pdf->MultiCell(0, 10, utf8_decode("Eu, $user_solicitou, matrícula n° $matricula, $destinatario" .
             " Vinculado(a) a esta Universidade, na Escola Multicampi de Ciências Médicas, solicito empréstimo " .
             "de $patrimonio. Tenho ciência da responsabilidade em manter a integridade do(s) objeto(s) retirado(s) " .
             "nesta data, me comprometendo a o entregar nas mesmas condições de retirada. "), 'C');
@@ -90,7 +84,7 @@ function pdf_emprestimos()
         $pdf->Cell(0, 5, utf8_decode("$nome"), 0, 1, 'C');
 
         //Realiza o download do pdf
-        $pdf->Output('arquivo.pdf','D');
+        $pdf->Output();
 
 }
     
