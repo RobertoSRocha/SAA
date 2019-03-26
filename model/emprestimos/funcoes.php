@@ -9,7 +9,7 @@ class PDF extends FPDF
     function Header()
     {
         // Logo
-        $this->Image("../../dist/img/cabecalho1.png", 30, 10, 150);
+        $this->Image("../../dist/img/cabecalho1.png", 25, 23, 160);
         // Arial bold 15
         $this->SetFont('Arial', 'B', 15);
         $this->Ln(20);
@@ -65,16 +65,30 @@ function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_praz
 {
 
     // Instanciation of inherited class
-    $pdf = new PDF();
+    $pdf = new PDF('P', 'mm', 'A4');
     $pdf->AliasNbPages();
     $pdf->AddPage();
-    $pdf->SetFont('Arial', '', 14);
-    $pdf->SetXY(30, 70);
-    $pdf->SetMargins(15, 15, 30);
-    $pdf->MultiCell(0, 10, utf8_decode("Eu, $user_solicitou, matrícula n° $user_matricula, $user_categoria" .
+    $pdf->SetFont('Arial', '', 12);
+    $pdf->SetXY(25, 78);
+    $pdf->SetMargins(15, 15, 25);
+    $pdf->MultiCell(0, 8, utf8_decode("     Eu, $user_solicitou, matrícula n° $user_matricula, $user_categoria" .
         " Vinculado(a) a esta Universidade, na Escola Multicampi de Ciências Médicas, solicito empréstimo " .
         "de $nome_patri - $tombo_patri. Tenho ciência da responsabilidade em manter a integridade do(s) objeto(s) retirado(s) " .
         "nesta data, me comprometendo a o entregar nas mesmas condições de retirada. "), 'C');
+
+    $pdf->SetXY(145, 130);
+    $pdf->Cell(0, 0, utf8_decode("Caicó - $data_emprestimo"));
+
+    $pdf->SetXY(20 , 145);
+    $pdf->MultiCell(0, 8, utf8_decode("Saída: ____________________________"), 'C');
+
+    $pdf->SetXY(105 , 145);
+    $pdf->MultiCell(0, 8, utf8_decode("Entrega: _________________________"), 'C');
+
+    $pdf->SetXY(55, 155);
+    $pdf->MultiCell(0, 0, utf8_decode("Assinatura"));
+
+
     $pdf->SetXY(90, 250);
     $pdf->Cell(0, 0, utf8_decode("Caicó/RN - $data_emprestimo"));
     $pdf->SetXY(40, 260);
@@ -82,7 +96,7 @@ function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_praz
     $pdf->Cell(0, 5, utf8_decode("Responsável pelo recebimento do produto."), 0, 1, 'C');
 
     //Realiza o download do pdf
-    $pdf->Output( $nome_patri."-".$tombo_patri."-".$data_emprestimo.".pdf","I");
+    $pdf->Output($nome_patri . "-" . $tombo_patri . "-" . $data_emprestimo . ".pdf", "I");
 
 }
 
