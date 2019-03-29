@@ -4,19 +4,6 @@ require_once(DBAPI);
 
 require_once PDF;
 
-class PDF extends FPDF
-{
-    function Header()
-    {
-        // Logo
-        $this->Image("../../dist/img/cabecalho1.png", 25, 23, 160);
-        // Arial bold 15
-        $this->SetFont('Arial', 'B', 15);
-        $this->Ln(20);
-    }
-}
-
-
 /* guardar um conjunto de registros de usuario */
 $itens_emprestimos = null;
 /* guardará um único cliente, para os casos de inserção e atualização (CREATE e UPDATE) */
@@ -61,14 +48,24 @@ function add_emprestimos()
 //$nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou
 
 //Gerar o pdf dos emprestimos
+class PDF extends FPDF
+{
+    function Header()
+    {
+        // Logo
+        $this->Image("../../dist/img/cabecalho1.png", 25, 23, 160);
+        // Arial bold 15
+        $this->SetFont('Arial', 'B', 15);
+        $this->Ln(20);
+    }
+}
 function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou, $user_matricula, $user_categoria)
 {
-
     // Instanciation of inherited class
     $pdf = new PDF('P', 'mm', 'A4');
-    $pdf->AliasNbPages();
     $pdf->AddPage();
     $pdf->SetFont('Arial', '', 12);
+
     $pdf->SetXY(25, 78);
     $pdf->SetMargins(15, 15, 25);
     $pdf->MultiCell(0, 8, utf8_decode("     Eu, $user_solicitou, matrícula n° $user_matricula, $user_categoria" .
@@ -76,24 +73,25 @@ function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_praz
         "de $nome_patri - $tombo_patri. Tenho ciência da responsabilidade em manter a integridade do(s) objeto(s) retirado(s) " .
         "nesta data, me comprometendo a o entregar nas mesmas condições de retirada. "), 'C');
 
-    $pdf->SetXY(145, 130);
-    $pdf->Cell(0, 0, utf8_decode("Caicó - $data_emprestimo"));
+    $pdf->Cell(0, 20, utf8_decode("Caicó, $data_emprestimo"), 0, 2, 'R');
+    $pdf->Cell(180, 20, utf8_decode("Saída: ___________________________    Entrega: _________________________"), 0, 2, 'C');
+    $pdf->Cell(110, -10, utf8_decode("Assinatura"), 0, '0', 'C');
+    $pdf->Cell(65, -10, utf8_decode("Assinatura"), 0, '0', 'C');
 
-    $pdf->SetXY(20 , 145);
-    $pdf->MultiCell(0, 8, utf8_decode("Saída: ____________________________"), 'C');
+    $pdf->Cell(0, 15, utf8_decode("Data de entrega: _____/_____/_______"),0,1,'R');
+    $pdf->Cell(0, 25, "________________________________________", 'C',1,'C');
 
-    $pdf->SetXY(105 , 145);
-    $pdf->MultiCell(0, 8, utf8_decode("Entrega: _________________________"), 'C');
-
-    $pdf->SetXY(55, 155);
-    $pdf->MultiCell(0, 0, utf8_decode("Assinatura"));
+    $pdf->SetFont('Arial', 'B', 10);
+    $pdf->Cell(0, -15, "$user_realizou", 'C',1,'C');
 
 
-    $pdf->SetXY(90, 250);
-    $pdf->Cell(0, 0, utf8_decode("Caicó/RN - $data_emprestimo"));
-    $pdf->SetXY(40, 260);
-    $pdf->MultiCell(0, 8, "__________________________________________________", 'C');
-    $pdf->Cell(0, 5, utf8_decode("Responsável pelo recebimento do produto."), 0, 1, 'C');
+    $pdf->SetFont('Arial', '', 10);
+    $pdf->Cell(0, 25, utf8_decode("Responsável pela entrega do produto."), 'C', 2, 'C');
+
+    $pdf->SetFont('Arial', '', 12);
+    $pdf->Cell(0, 8, "________________________________________", 'C',1,'C');
+    $pdf->SetFont('Arial', '', 11);
+    $pdf->Cell(0, 3, utf8_decode("Responsável pelo recebimento do produto."), 0, 1, 'C');
 
     //Realiza o download do pdf
     $pdf->Output($nome_patri . "-" . $tombo_patri . "-" . $data_emprestimo . ".pdf", "I");
