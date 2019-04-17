@@ -39,13 +39,12 @@ function add_emprestimos()
             update_status('patrimonio', $patrimonio_id, 'indisponivel');
         }
 
+        pdf_emprestimos("", "", "", "", "", "", "", "");
         header('location: index.php');
 
         exit();
     }
 }
-
-//$nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou
 
 //Gerar o pdf dos emprestimos
 class PDF extends FPDF
@@ -59,6 +58,7 @@ class PDF extends FPDF
         $this->Ln(20);
     }
 }
+
 function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_prazo, $user_realizou, $user_solicitou, $user_matricula, $user_categoria)
 {
     // Instanciation of inherited class
@@ -78,18 +78,18 @@ function pdf_emprestimos($nome_patri, $tombo_patri, $data_emprestimo, $data_praz
     $pdf->Cell(110, -10, utf8_decode("Assinatura"), 0, '0', 'C');
     $pdf->Cell(65, -10, utf8_decode("Assinatura"), 0, '0', 'C');
 
-    $pdf->Cell(0, 15, utf8_decode("Data de entrega: _____/_____/_______"),0,1,'R');
-    $pdf->Cell(0, 25, "________________________________________", 'C',1,'C');
+    $pdf->Cell(0, 15, utf8_decode("Data de entrega: _____/_____/_______"), 0, 1, 'R');
+    $pdf->Cell(0, 25, "________________________________________", 'C', 1, 'C');
 
     $pdf->SetFont('Arial', 'B', 10);
-    $pdf->Cell(0, -15, "$user_realizou", 'C',1,'C');
+    $pdf->Cell(0, -15, "$user_realizou", 'C', 1, 'C');
 
 
     $pdf->SetFont('Arial', '', 10);
     $pdf->Cell(0, 25, utf8_decode("Responsável pela entrega do produto."), 'C', 2, 'C');
 
     $pdf->SetFont('Arial', '', 12);
-    $pdf->Cell(0, 8, "________________________________________", 'C',1,'C');
+    $pdf->Cell(0, 8, "________________________________________", 'C', 1, 'C');
     $pdf->SetFont('Arial', '', 11);
     $pdf->Cell(0, 3, utf8_decode("Responsável pelo recebimento do produto."), 0, 1, 'C');
 

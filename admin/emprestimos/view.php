@@ -1,21 +1,21 @@
 <?php require_once '../../config.php'; ?>
 <?php require_once DBAPI; ?>
 <?php
-    require_once LOGIN2;
-    verificaLoginAdmin();
+require_once LOGIN2;
+verificaLoginAdmin();
 ?>
 
 <?php
-    require_once EMPRESTIMOS;
-    view_emprestimos($_GET['id']);
+require_once EMPRESTIMOS;
+view_emprestimos($_GET['id']);
 
 ?>
 <?php
-    require_once PATRIMONIO;
-    indexPatrimonio();
+require_once PATRIMONIO;
+indexPatrimonio();
 ?>
 <?php
-    require_once USUARIO;
+require_once USUARIO;
 ?>
 <?php include(HEADER_TEMPLATE); ?>
 
@@ -24,7 +24,8 @@
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i> Listagem de Itens Emprestados</a></li>
+                <li><a href="index.php"><i class="glyphicon glyphicon-list-alt"></i> Listagem de Itens Emprestados</a>
+                </li>
                 <li><i class="glyphicon glyphicon-eye-open"></i>
                     <small> Visualizar Item Emprestado</small>
                 </li>
@@ -48,14 +49,14 @@
                     <hr/>
                     <?php if ($patrimonios) : ?>
                         <?php foreach ($patrimonios as $patrimonio) : ?>
-                            <?php if ($patrimonio['id'] == $item_emprestimos['patrimonio_id']) : ?> 
+                            <?php if ($patrimonio['id'] == $item_emprestimos['patrimonio_id']) : ?>
                                 <div class="form-group">
                                     <!--Verifica se a imagem está cadastrada-->
                                     <?php if ($patrimonio['img'] != null) { ?>
                                         <img src="<?php echo BASEURL; ?>imagens/patrimonio/<?php echo $patrimonio['img']; ?>"
                                              class="img-rounded center_img view_img" alt="Cinque Terre"/>
-                                         <?php } else { ?>
-                                        <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>" 
+                                    <?php } else { ?>
+                                        <img src="<?php echo BASEURL; ?>dist/img/semFoto.png?>"
                                              class="img-rounded center_img view_img" alt="Cinque Terre"/>
                                     <?php } ?>
                                 </div>
@@ -94,26 +95,28 @@
                                         <dd><?php echo index_nome_user($item_emprestimos['user_recebeu']); ?></dd>
                                     <?php } ?>
                                 </dl>
-                            <?php endif; ?>                            
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
                     <div id="actions" class="row">
                         <div class="col-md-12">
                             <!-- Envia o id para funcao PDF-->
 
-                            <form target="_blank" action="../../model/emprestimos/pdf.php?id=<?php echo $_GET['id']?>" method="post">
+                            <form target="_blank" action="../../model/emprestimos/pdf.php?id=<?php echo $_GET['id'] ?>"
+                                  method="post">
 
-                            <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
-                                <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>" class="btn btn-primary">
-                                    <i class="fa fa-repeat"></i> Devolver item</a>
+                                <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
+                                    <a href="devolucao.php?id=<?php echo $item_emprestimos['id']; ?>"
+                                       class="btn btn-primary">
+                                        <i class="fa fa-repeat"></i> Devolver item</a>
 
-                            <?php } ?>
+                                <?php } ?>
 
-                                <button type="submit" class="btn btn-info">Gerar PDF</button>
+                                <button type="submit" class="btn btn-info">Gerar Termo</button>
 
-                            <a href="index.php" class="btn btn-default">
-                                <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
-                    </form>
+                                <a href="index.php" class="btn btn-default">
+                                    <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
+                            </form>
                         </div>
                     </div>
                 </div>
