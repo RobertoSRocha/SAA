@@ -95,3 +95,7 @@
     if ( !defined('EMPRESTIMOS') )		
         define('EMPRESTIMOS', ABSPATH . 'model/emprestimos/funcoes.php');
 
+    /** caminho para as funções dos termos dos empréstimos **/
+    if ( !defined('EMPRESTIMOS_PDF') )
+        define('EMPRESTIMOS_PDF', BASEURL . 'model/emprestimos/pdf.php');
+

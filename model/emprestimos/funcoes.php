@@ -39,8 +39,7 @@ function add_emprestimos()
             update_status('patrimonio', $patrimonio_id, 'indisponivel');
         }
 
-        pdf_emprestimos("", "", "", "", "", "", "", "");
-        header('location: index.php');
+        header('location: '.EMPRESTIMOS_PDF.'?id='.$patrimonio_id);
 
         exit();
     }

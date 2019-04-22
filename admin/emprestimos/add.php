@@ -149,6 +149,8 @@
 
 <?php include(FOOTER_TEMPLATE); ?>
 
+
+//Recarrega a páginas após a realização do emprestimo
 <script>
     function submete() {
         setTimeout(function () {
