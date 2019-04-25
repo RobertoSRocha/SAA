@@ -39,7 +39,8 @@ function add_emprestimos()
             update_status('patrimonio', $patrimonio_id, 'indisponivel');
         }
 
-        header('location: '.EMPRESTIMOS_PDF.'?id='.$patrimonio_id);
+        $id_emprestimo = id_empretimo();
+        header('location: '.EMPRESTIMOS_PDF.'?id='.$id_emprestimo);
 
         exit();
     }
@@ -201,6 +202,12 @@ function filtro()
 
     return $result;
 
+}
+
+/** *  Pega o id do emprestimo através do id do patrimonio	 */
+function id_empretimo(){
+    $patrimonio_id = $_POST['patrimonio_id'];
+    return find_id_empretimo('emprestimos', $patrimonio_id);
 }
 
 ?>

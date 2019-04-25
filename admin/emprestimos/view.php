@@ -102,7 +102,7 @@ require_once USUARIO;
                         <div class="col-md-12">
                             <!-- Envia o id para funcao PDF-->
 
-                            <form target="_blank" action="../../model/emprestimos/pdf.php?id=<?php echo $_GET['id'] ?>"
+                            <form target="_blank" action="../../model/emprestimos/pdf.php?id=<?php echo $item_emprestimos['id']; ?>"
                                   method="post">
 
                                 <?php if ($item_emprestimos['status'] == 'emprestado') { ?>
@@ -112,7 +112,7 @@ require_once USUARIO;
 
                                 <?php } ?>
 
-                                <button type="submit" class="btn btn-info">Gerar Termo</button>
+                                <button type="submit" class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Termo de empréstimo</button>
 
                                 <a href="index.php" class="btn btn-default">
                                     <i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>

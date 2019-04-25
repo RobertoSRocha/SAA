@@ -707,3 +707,23 @@ function find_user_matricula($table = null, $matricula = null)
     close_database($database);
     return $found;
 }
+
+/*retorna o id do emprestimo*/
+function find_id_empretimo($table, $patrimonio_id)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($patrimonio_id) {
+            //$sql = "SELECT nome FROM " . $table . " WHERE id = " . $local_id;
+            //$result = $database->query($sql);
+            $result = mysqli_fetch_array($database->query("SELECT id FROM " . $table . " WHERE patrimonio_id = " . $patrimonio_id." and status = 'emprestado'"));
+            $found = $result[0];
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
