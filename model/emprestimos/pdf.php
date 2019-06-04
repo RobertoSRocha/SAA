@@ -16,6 +16,16 @@ if ($patrimonios) :
             $nome_patri = $patrimonio['nome']; //nome do patrimonio
             $tombo_patri =  $patrimonio['tombo'];// Tombo
             $data_emprestimo =  date('d/m/Y', strtotime($item_emprestimos['data_emprestimo']));//Data de imprestimo
+
+            $partes = explode("/", $data_emprestimo);
+            $dia = $partes[0];
+            $mes =(int)$partes[1];
+            $ano = $partes[2];
+
+            $meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+            $data_emprestimo = $dia." de ".$meses[$mes -1]." de ".$ano;
+
             $data_prazo = date('d/m/Y', strtotime($item_emprestimos['data_prazo_devolucao']));//prazo de devolucão
             $user_realizou = index_nome_user($item_emprestimos['user_realizou']);//usuario que realizou o imprestimo
             $user_solicitou = index_nome_user($item_emprestimos['user_solicitou']);//Usuario que solicitou
