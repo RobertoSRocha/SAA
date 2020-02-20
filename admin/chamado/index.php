@@ -1,0 +1,1 @@
+<?php  echo "L.A.B. é foda"; ?>

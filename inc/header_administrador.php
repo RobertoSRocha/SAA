@@ -147,6 +147,12 @@
                         <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
                     </a>
                 </li>
+                 <!-- CHAMADO EMCM -->
+                 <li>
+                    <a href="<?php echo BASEURL; ?>admin/chamado/index.php">
+                        <i class="glyphicon glyphicon-bullhorn"></i><span>Chamado</span>
+                    </a>
+                </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
                     <a href="#">
