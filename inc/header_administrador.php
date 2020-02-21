@@ -151,7 +151,7 @@
                  <li>
                     <a href="<?php echo BASEURL; ?>admin/chamado/index.php">
                         <i class="glyphicon glyphicon-bullhorn"></i><span>Chamado</span>
-                    </a>
+                    </a>                  
                 </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
