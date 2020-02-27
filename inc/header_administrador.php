@@ -148,10 +148,18 @@
                     </a>
                 </li>
                  <!-- CHAMADO EMCM -->
-                 <li>
-                    <a href="<?php echo BASEURL; ?>admin/chamado/index.php">
-                        <i class="glyphicon glyphicon-bullhorn"></i><span>Chamado</span>
-                    </a>                  
+                 <li class="treeview">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-bullhorn"></i>
+                        <span>Chamado</span>
+                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?php echo BASEURL; ?>admin/chamado/index.php"><i class="fa fa-circle-o"></i> Chamados em Aberto</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Histórico Chamado</a></li>
+                    </ul>
+
                 </li>
                 <!-- EMPRÉSTIMOS-->
                 <li class="treeview">
