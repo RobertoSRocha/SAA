@@ -11,13 +11,14 @@ form01();
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><i class="ion ion-android-document"></i>
+                <li><i class="glyphicon glyphicon-calendar"></i>
                     <small>Agenda</small>
                 </li>
             </ol>
         </div>
         <div class="breadcrumb text-right">
-            <a class="btn btn-default" href="<?php echo BASEURL; ?>index.php"><i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
+            <a class="btn btn-default" href="<?php echo BASEURL; ?>index.php"><i
+                        class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
         </div>
     </div>
 </section>
@@ -29,11 +30,13 @@ form01();
             <div class="box-body">
                 <!-- /.box-header -->
 
+                <a class="btn btn-info" target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                    <i class="glyphicon glyphicon-calendar"></i><span> Abrir agenda em nova aba</span>
+                </a>
+
                 <div class="box" style="height: 80%;">
                     <iframe src="http://emcm.ufrn.br/agenda/Web/view-schedule.php" width="100%" height="800"
-                            frameborder="0"
-                            sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
-                            allow="camera *; encrypted-media *;"></iframe>
+                            frameborder="0"></iframe>
                 </div>
 
 
