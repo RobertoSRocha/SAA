@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAA-EMCM</title>
     <!-- �?cone da aba do navegador -->
-    <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png" />
+    <link rel="icon" href="<?php echo BASEURL; ?>dist/img/icon.png"/>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -17,7 +17,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet"
+          href="<?php echo BASEURL; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -28,14 +29,16 @@
     <!-- jvectormap -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet"
+          href="<?php echo BASEURL; ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -54,7 +57,7 @@
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
-            
+
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li class="dropdown user user-menu">
@@ -64,8 +67,8 @@
                     </li>
                 </ul>
             </div>
-            
-            
+
+
         </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
@@ -73,7 +76,7 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <ul class="sidebar-menu" data-widget="tree">
-                
+
                 <li class="header">MENU DE NAVEGAÇÃO</li>
                 <!-- ACHADOS E PERDIDOS -->
                 <li>
@@ -83,7 +86,7 @@
                 </li>
                 <!-- AGENDA DA EMCM -->
                 <li>
-                    <a target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                    <a href="<?php echo BASEURL; ?>public/agenda/agenda.php">
                         <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
                     </a>
                 </li>
@@ -97,7 +100,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo BASEURL; ?>public/emprestimos/consulta.php"><i class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/emprestimos/consulta.php"><i
+                                        class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
                     </ul>
                 </li>
                 <!-- FORMUL�?RIOS-->
@@ -109,13 +113,15 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?php echo BASEURL; ?>public/formGraduacao/index.php"><i class="fa fa-circle-o"></i> Alunos Graduação</a></li>
-                        <li><a href="<?php echo BASEURL; ?>public/formResidencia/index.php"><i class="fa fa-circle-o"></i> Alunos Residência</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/formGraduacao/index.php"><i
+                                        class="fa fa-circle-o"></i> Alunos Graduação</a></li>
+                        <li><a href="<?php echo BASEURL; ?>public/formResidencia/index.php"><i
+                                        class="fa fa-circle-o"></i> Alunos Residência</a></li>
                     </ul>
                 </li>
             </ul>
         </section>
     </aside>
-    
+
     <!-- Div conteúdo central -->
     <div class="content-wrapper">
