@@ -143,7 +143,7 @@
                 </li>
                 <!-- AGENDA DA EMCM -->
                 <li>
-                    <a target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                    <a href="<?php echo BASEURL; ?>operacional/agenda/agenda.php">
                         <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
                     </a>
                 </li>
