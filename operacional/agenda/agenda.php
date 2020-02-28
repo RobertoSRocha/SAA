@@ -18,7 +18,8 @@ verificaLoginOperador();
             </ol>
         </div>
         <div class="breadcrumb text-right">
-            <a class="btn btn-default" href="<?php echo BASEURL; ?>index.php"><i class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
+            <a class="btn btn-default" href="<?php echo BASEURL; ?>index.php"><i
+                        class="glyphicon glyphicon-arrow-left"></i> Voltar</a>
         </div>
     </div>
 </section>
@@ -30,9 +31,11 @@ verificaLoginOperador();
             <div class="box-body">
                 <!-- /.box-header -->
 
-                <a class="btn btn-info" target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
-                    <i class="glyphicon glyphicon-calendar"></i><span> Abrir agenda em nova aba</span>
-                </a>
+                <div class="box-body text-center">
+                    <a class="btn btn-info" target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
+                        <i class="glyphicon glyphicon-calendar"></i><span> Abrir agenda em nova aba</span>
+                    </a>
+                </div>
 
                 <div class="box" style="height: 80%;">
                     <iframe src="http://emcm.ufrn.br/agenda/Web/view-schedule.php" width="100%" height="800"
@@ -49,7 +52,6 @@ verificaLoginOperador();
     </div>
     <!-- /.row -->
 </section>
-
 
 
 <?php include(FOOTER_TEMPLATE); ?>
