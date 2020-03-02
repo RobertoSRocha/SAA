@@ -82,6 +82,7 @@
                 padding-bottom: 2%;
                 padding-left: 3%;
                 padding-right: 3%;
+                height: 140px;
             }
 
 
