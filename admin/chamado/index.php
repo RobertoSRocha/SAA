@@ -46,7 +46,7 @@
     <div class="col-xs-12">
 
 
-        <div class="nav-tabs-custom" style="cursor: move;">
+        <div class="nav-tabs-custom" >
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-lefth ui-sortable-handle">
 
