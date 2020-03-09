@@ -56,14 +56,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="setor">Setor Solicitante</label>
-                            <input type="text" class="form-control" id="setor"   required="false" disabled="true">
+                            <label for="setor_id_user ">Setor Solicitante</label>
+                            <input type="text" class="form-control" id="setor_id_user"   required="false" disabled="true">
                             <input type="hidden" name="setor_id_user"  required="true">
                         </div>
 
                         <div class="form-group">
-                            <label for="setor_id">Setor Solicitado </label>
-                            <select class="form-control" id="setor_id" name="setor_id" required="">
+                            <label for="setor_id_pedido">Setor Solicitado </label>
+                            <select class="form-control" id="setor_id_pedido" name="setor_id_pedido" required="">
                                 <option value=""></option>
                                 <?php if ($setores) : ?>
                                 <?php foreach ($setores as $setor) : ?>

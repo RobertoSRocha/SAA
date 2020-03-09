@@ -729,8 +729,42 @@ function find_id_empretimo($table, $patrimonio_id)
 }
 
 /* Criar chamado */
-function chamado_cad(){
-    
-    return "d";
-    
+function add_chamado($user_id, $setor_id_user, $mensagem_chamado, $setor_id_pedido, $data_pedido, $image_nome,$setor_id_pedido){ 
+    $database = open_database();
+    $sql = "INSERT INTO `chamado`(`setor_id_user`, `user_id`, `data_pedido`, `mensagem_chamado`, `estado_chamado`, `prioridade`, `img`) 
+    VALUES (" . $setor_id_user . " ," . $user_id . "," . $data_pedido . ",'" . $mensagem_chamado . "',0,0,'" . $image_nome . "')";
+
+    try {
+        $database->query($sql);
+        if (($database->affected_rows) > 0) {         
+            $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+            $_SESSION['type'] = 'success';
+        } else {
+            $_SESSION['message'] = 'Registro já cadastrado no sistema';
+            $_SESSION['type'] = 'warning';
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+
+    if($_SESSION['type'] == 'success' ){
+        $database = open_database();
+        $sql = '';        
+        try {
+            $database->query($sql);
+            if (($database->affected_rows) > 0) {            
+                $_SESSION['message'] = 'Registro cadastrado com sucesso.';
+                $_SESSION['type'] = 'success';
+            } else {
+                $_SESSION['message'] = 'Registro já cadastrado no sistema';
+                $_SESSION['type'] = 'warning';
+            }
+        } catch (Exception $e) {
+            $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+            $_SESSION['type'] = 'danger';
+        }
+        close_database($database);
+    }
 }

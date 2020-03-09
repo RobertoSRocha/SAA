@@ -4,33 +4,40 @@
 
     /* Cadastrar o chamado ao sistema */
     if(isset($_POST['cadastrar_chamado']) ){
-        if (!empty($_POST['user_id']) && !empty($_POST['setor_id']) && !empty($_POST['mensagem-chamado'])) {
-         
-             $user_id = $_POST['user_id'];
-             $setor_id = $_POST['setor_id'];
-             $mensagem_camado = $_POST['mensagem_chamado'];
-             
-             date_default_timezone_set('America/Recife');
-             $data_pedido = date("Y/m/d H:i:s");
- 
-             $image_nome = add_Imagem_chamado();
+
+    $date = new DateTime();
+    $date->getTimestamp();
+
+
+        if (false && !empty($_POST['user_id']) && !empty($_POST['setor_id_user']) && !empty($_POST['mensagem_chamado']) && !empty($_POST['setor_id_pedido'])) {
+        
+            $user_id = $_POST['user_id'];
+            $setor_id_user = $_POST['setor_id_user'];
+            $mensagem_chamado = $_POST['mensagem_chamado'];
+            $setor_id_pedido = $_POST['setor_id_pedido'];
+            
+            date_default_timezone_set('America/Recife');
+            $data_pedido = date("Y/m/d H:i:s");
+
+            $image_nome = add_Imagem_chamado();
   
-             echo $image_nome;
+            echo $image_nome;
  
-                 
+            add_chamado($user_id, $setor_id_user, $mensagem_chamado, $setor_id_pedido, $data_pedido, $image_nome, $setor_id_pedido);
+
              /* Adicionar emprestimo no banco de dados */
         //     if (save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao)) {
              /* Se adicionou, edita o status do patrimônio */
         //         update_status('patrimonio', $patrimonio_id, 'indisponivel');
-       //      }
+        //      }
  
         //     $id_emprestimo = id_empretimo();
-        //     header('location: '.EMPRESTIMOS_PDF.'?id='.$id_emprestimo);
+            header('location: '.EMPRESTIMOS_PDF.'?id='.$id_emprestimo);
  
-         //    exit();
+            exit();
  
-         //    cadastrar();
-       //  }
+        //    cadastrar();
+        //  }
         }
      }
  
