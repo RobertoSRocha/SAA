@@ -37,7 +37,8 @@
             </ol>
         </div>
         <div class="breadcrumb text-right">
-            <a class="btn btn-primary" href="./novo-chamado.php">Criar Chamado</a>
+            <a class="btn btn-primary" href="./novo-chamado.php"><i class="fa fa-plus">
+                </i> &nbsp Criar Chamado </a>
         </div>
     </div>
 </section>
@@ -45,8 +46,7 @@
 <section class="content">
     <div class="col-xs-12">
 
-
-        <div class="nav-tabs-custom" >
+        <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-lefth ui-sortable-handle">
 
@@ -69,8 +69,8 @@
 
             </ul>
             <div class="tab-content no-padding">
-              
-            <div class="chart tab-pane" id="chamado_novos"
+
+                <div class="chart tab-pane" id="chamado_novos"
                     style="padding-top:25px; position: relative; height: 300px;">
                     <div class="row">
 
@@ -171,7 +171,6 @@
 
                     </div>
                 </div>
-
 
                 <div class="chart tab-pane active" id="chamado_aberto"
                     style="padding-top:25px; position: relative; height: 300px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
@@ -495,9 +494,6 @@
 
                     </div>
                 </div>
-
-               
-
 
             </div>
         </div>

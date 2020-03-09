@@ -727,3 +727,10 @@ function find_id_empretimo($table, $patrimonio_id)
     close_database($database);
     return $found;
 }
+
+/* Criar chamado */
+function chamado_cad(){
+    
+    return "d";
+    
+}
