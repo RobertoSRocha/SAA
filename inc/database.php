@@ -729,42 +729,51 @@ function find_id_empretimo($table, $patrimonio_id)
 }
 
 /* Criar chamado */
-function add_chamado($user_id, $setor_id_user, $mensagem_chamado, $setor_id_pedido, $data_pedido, $image_nome,$setor_id_pedido){ 
-    $database = open_database();
-    $sql = "INSERT INTO `chamado`(`setor_id_user`, `user_id`, `data_pedido`, `mensagem_chamado`, `estado_chamado`, `prioridade`, `img`) 
-    VALUES (" . $setor_id_user . " ," . $user_id . "," . $data_pedido . ",'" . $mensagem_chamado . "',0,0,'" . $image_nome . "')";
-
+function add_chamado($chamado_id,$user_id, $setor_id_user, $mensagem_chamado, $setor_id_pedido, $data_pedido, $image_nome){ 
+    $database = open_database();  
+    $sql = "INSERT INTO chamado(id, setor_id_user, user_id , data_pedido, mensagem_chamado, estado_chamado, prioridade, img) 
+    VALUES (". $chamado_id ."," . $setor_id_user . " ," . $user_id . ",'" . $data_pedido . "','" . $mensagem_chamado . "', " . 0 . ", " . 0 . ",'" . $image_nome . "');";
     try {
         $database->query($sql);
-        if (($database->affected_rows) > 0) {         
+        $verificar_cadastro_validado = $database->affected_rows;
+        if ($verificar_cadastro_validado  > 0) {         
             $_SESSION['message'] = 'Registro cadastrado com sucesso.';
             $_SESSION['type'] = 'success';
         } else {
+            $verificar_cadastro_validado = -1;
             $_SESSION['message'] = 'Registro já cadastrado no sistema';
             $_SESSION['type'] = 'warning';
         }
     } catch (Exception $e) {
+        $verificar_cadastro_validado = -1;
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
         $_SESSION['type'] = 'danger';
-    }
+    }    
     close_database($database);
 
-    if($_SESSION['type'] == 'success' ){
+    if($verificar_cadastro_validado > 0 ){
         $database = open_database();
-        $sql = '';        
+        $sql = "INSERT INTO `chamado_atr_setor`(`chamado_id`, `setor_id`, `premissao_chamado`) 
+        VALUES ( " . $chamado_id . "," . $setor_id_pedido . ", 1 );" ;
         try {
             $database->query($sql);
-            if (($database->affected_rows) > 0) {            
+            if (($database->affected_rows) > 0) {                
                 $_SESSION['message'] = 'Registro cadastrado com sucesso.';
                 $_SESSION['type'] = 'success';
             } else {
-                $_SESSION['message'] = 'Registro já cadastrado no sistema';
+                $verificar_cadastro_validado = 0;
+                $_SESSION['message'] = 'O registro foi cadastrado na tabela "chamado", mas não foi possivel cadastrar na tabela "chamado_atr_setor". </br>Entrar em contato com os adminstradores do sistema.';
                 $_SESSION['type'] = 'warning';
             }
         } catch (Exception $e) {
+            $verificar_cadastro_validado = 0;
             $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
             $_SESSION['type'] = 'danger';
         }
         close_database($database);
+    }
+
+    if($verificar_cadastro_validado == 0 ){        
+        remove('chamado', $chamado_id);
     }
 }
