@@ -53,7 +53,15 @@
             $setor = $_POST['setor'];
             //$patrimonio['modified'] = $setor['created'] = $today->format("Y-m-d H:i:s");
             save('setor', $setor);
-            header('location: index.php');
+            //header('location: index.php');
+        }
+
+        if (!empty($_POST['user_setor'])) {
+            //$today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
+            $setore = $_POST['user_setor'];
+            //$patrimonio['modified'] = $setor['created'] = $today->format("Y-m-d H:i:s");
+            print_r($setore);
+            //header('location: index.php');
         }
     }
     

@@ -261,6 +261,9 @@ function save($table = null, $data = null)
         $_SESSION['type'] = 'danger';
 
     }
+
+    printf ("New Record has id %d.\n", $database->insert_id);
+
     close_database($database);
 }
 
