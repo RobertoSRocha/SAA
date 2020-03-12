@@ -2,9 +2,20 @@
     require_once('../../config.php');
     require_once(DBAPI);
 
-
-
-    /* Cadastrar o chamado ao sistema */
+/*
+    **************************************Cadastrar o chamado ao sistema ***********************
+    * Essa função é realizada quando o usuario confirma o cadastramento de um novo chamado.    *
+    * Usa as variaveis aseguir para a realização da tarefa:                                    *
+    * > $_SESSION['id'] -> ID do usuario                                                       *
+    * > $_POST['setor_id_user'] -> Setor do usuario que esta realizando a soliciação           *
+    * > $_POST['setor_id_pedido'] -> Setor que esta sendo requisitado a solucionar o problema  *
+    * > $_POST['mensagem_chamado] -> Guarda o texto que especifiaca o problema                 *
+    * > $data_pedido -> data que foi ralizado o pedido                                         *
+    * > $chamado_id -> É o id da tabela chamado, pega o timestamp do servidor atual.           *
+    * > $_FILE['img'] -> É a imagem que o usuario deseje colocar se desejado, que pode ser     *
+    *                    dos tipo: JPG,JPEG,PNG.                                               *
+    ********************************************************************************************
+*/
     if(isset($_POST['cadastrar_chamado']) ){
 
         if (!empty($_POST['setor_id_user']) && !empty($_POST['mensagem_chamado']) && !empty($_POST['setor_id_pedido'])) {
@@ -26,8 +37,16 @@
  
             exit();
         }
-     }
-     function add_Imagem_chamado(){         
+    }
+
+/*
+    *********Tratamento da Imagem para o servidor**********
+    * Gera a localização da imagem no servidor            *
+    * Move a imagem para o servidor                       *
+    * Retornando o endereço onde a imagem estara alocada  *
+    *******************************************************
+*/
+    function add_Imagem_chamado(){         
          if (isset($_FILES['img']) ) {
             $extensao = strtolower(substr($_FILES['img']['name'], -4)); //pega a extensao do arquivo
             $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
@@ -37,9 +56,32 @@
          }
          else
              return 'null';  
-     }
+    }
 
-    /** *  Listagem de Setores	 */
+/* 
+    Listagem de todos Setores cadastrados no banco 
+*/
     function Setor_all() {        
         return find_all('setor');
     }
+
+
+/**
+ * Cria um vetor com todos os chamados que o usuario tem acesso a visuzilizar,
+ * sendo de terminado setor especificado.
+ */
+    function chamados_abertos(){
+        $itens_chamado_aberto = setor_user_select($_SESSION['id']);
+   
+        $itens_chamado_aberto = chamados_abertos_atr_setor($itens_chamado_aberto);
+
+        $itens_chamado_aberto = chamado_prioridade_select($itens_chamado_aberto);
+
+        return $itens_chamado_aberto;        
+        
+    }
+
+    function sertores_user(){
+        return setor_user_select($_SESSION['id']);     
+    }
+?>

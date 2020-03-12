@@ -4,13 +4,9 @@
     require_once LOGIN2;
     verificaLoginAdmin();
 ?>
-<?php
-    require_once ACHADOS_E_PERDIDOS;
-    indexAchados_e_Perdidos();
-?>
-<?php
-    require_once SETOR;
-    indexSetor();
+<?php 
+    require_once CHAMADO;
+  
 ?>
 <?php
     require_once LOCAL;
@@ -26,9 +22,9 @@
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><i class="fa fa-edit"></i>
+                <li><i class="glyphicon glyphicon-bullhorn"></i>
 
-                    <small> Listagem dos Formulários</small>
+                    <small> Chamados</small>
                 </li>
             </ol>
         </div>
@@ -76,7 +72,7 @@
                     <div class="tab-content no-padding">
 
                         <div class="chart tab-pane" id="chamado_novos"
-                            style="padding-top:25px; position: relative; height: 300px;">
+                            style="padding-top:25px; position: relative; padding-bottom: 25px;">
                             <div class="row">
 
                                 <div class=col-md-12>
@@ -178,16 +174,30 @@
                         </div>
 
                         <div class="chart tab-pane active" id="chamado_aberto"
-                            style="padding-top:25px; position: relative; height: 300px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                            style="padding-top:25px; position: relative; padding-bottom: 25px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 
                             <div class="row">
-
                                 <div class=col-md-12>
-
                                     <div class="col-md-3">
-
                                         <div class="chamado-box">
+                                            <?php $item_chamando_aberto = chamados_abertos();    
+                                           
 
+                                            foreach ($item_chamando_aberto as $chamado):
+                                                
+                                                echo '<br>ID chamado - - - - - - - - ' . $chamado["chamado_id"] . 
+                                                     '<br>Setor - - - - - - - - - - - - - -' . $chamado["setor_id"] . 
+                                                     '<br>Data - - - - - - - - - - - - - - ' . $chamado["data_pedido_chamado"] . 
+                                                     '<br>Prioridade chamado -  ' . $chamado["prioridade_chamado"]  . 
+                                                     '<br>Mensagem - - - - - - - - - ' . $chamado["mensagem"];
+
+                                            endforeach;
+
+                                        ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="chamado-box">
                                             <div class="chamado-box-head-blue">
                                                 <p class="chamado-box-user">Usuario Solicitante</p>
                                                 <p class="chamado-box-setor">Setor solicitante</p>
@@ -289,7 +299,7 @@
                         </div>
 
                         <div class="chart tab-pane" id="chamado_concluido"
-                            style="padding-top:25px; position: relative; height: 300px;">
+                            style="padding-top:25px; position: relative; padding-bottom: 25px; ">
                             <div class="row">
 
                                 <div class=col-md-12>
@@ -399,7 +409,7 @@
                         </div>
 
                         <div class="chart tab-pane" id="chamado_pedido"
-                            style="padding-top:25px; position: relative; height: 300px;">
+                            style="padding-top:25px; position: relative; padding-bottom: 25px;">
                             <div class="row">
 
                                 <div class=col-md-12>

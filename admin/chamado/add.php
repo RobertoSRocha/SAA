@@ -21,10 +21,8 @@
         <div class="col-sm-6 text-left">
             <ol class="breadcrumb">
                 <li><a href="<?php echo BASEURL; ?>index.php"><i class="fa fa-home"></i>Página Inicial</a></li>
-                <li><a href="index.php"><i class="fa fa-cube"></i> Listagem de Localidades</a></li>
-                <li><i class="glyphicon glyphicon-plus-sign"></i>
-                    <small> Adicionar Local</small>
-                </li>
+                <li><a href="index.php"><i class="glyphicon glyphicon-bullhorn"></i> Chamado</a></li>
+                <li><i class="glyphicon glyphicon-plus-sign"></i><small> Criar Chamado</small></li>
             </ol>
         </div>
         <div class="breadcrumb text-right">
