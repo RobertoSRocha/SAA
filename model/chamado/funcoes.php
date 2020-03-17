@@ -47,15 +47,15 @@
     *******************************************************
 */
     function add_Imagem_chamado(){         
-         if (isset($_FILES['img']) ) {
+         if (is_uploaded_file($_FILES['img']['tmp_name'])) {
             $extensao = strtolower(substr($_FILES['img']['name'], -4)); //pega a extensao do arquivo
             $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
             $diretorio = '../../imagens/chamado/'; //define o diretorio para onde enviaremos o arquivo  
             move_uploaded_file($_FILES['img']['tmp_name'], $diretorio.$novo_nome);          
-            return $diretorio.$novo_nome;
+            return $novo_nome;
          }
          else
-             return 'null';  
+             return null;  
     }
 
 /* 
@@ -73,7 +73,7 @@
     function chamados_abertos(){
         $itens_chamado_aberto = setor_user_select($_SESSION['id']);
    
-        $itens_chamado_aberto = chamados_abertos_atr_setor($itens_chamado_aberto);
+        $itens_chamado_aberto = chamados_abertos_atr_setor_aberto($itens_chamado_aberto);
 
         $itens_chamado_aberto = chamado_prioridade_select($itens_chamado_aberto);
 
@@ -84,4 +84,23 @@
     function sertores_user(){
         return setor_user_select($_SESSION['id']);     
     }
+
+
+/**  Chamados Criados a pouco tempo 
+ * 
+ *
+ *
+ * 
+ */
+    function chamados_novos(){
+
+        $itens_chamado_aberto = setor_user_select($_SESSION['id']);        
+   
+        $itens_chamado_aberto = chamados_abertos_atr_setor_novo($itens_chamado_aberto);
+
+        $itens_chamado_aberto = chamado_novo_select($itens_chamado_aberto);
+
+        return $itens_chamado_aberto;
+    }
+
 ?>

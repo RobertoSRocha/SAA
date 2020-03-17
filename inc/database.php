@@ -805,7 +805,7 @@ function setor_user_select($user_id){
     return $found;
 }
 
-function chamados_abertos_atr_setor ($itens){
+function chamados_abertos_atr_setor_aberto ($itens){
 
     $found = array();      
     foreach($itens as $item){               
@@ -828,6 +828,28 @@ function chamados_abertos_atr_setor ($itens){
     return $found;
 }
 
+function chamados_abertos_atr_setor_novo ($itens){
+
+    $found = array();      
+    foreach($itens as $item){               
+        $database = open_database();
+        try {
+            $sql = "SELECT DISTINCT(chamado_id) FROM chamado_atr_setor WHERE setor_id=" . $item['setor_id'] . " AND status=0";   
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) { 
+                while($row = $result->fetch_assoc()) {                
+                    array_push( $found, array(  "chamado_id" => $row["chamado_id"], 
+                                                "setor_id" => $item['setor_id']));
+                }
+            }
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->GetMessage();
+            $_SESSION['type'] = 'danger';
+        }
+        close_database($database);
+    }      
+    return $found;
+}
 
 function chamado_prioridade_select($itens){
 
@@ -841,6 +863,7 @@ function chamado_prioridade_select($itens){
                 while($row = $result->fetch_assoc()) {                
                     array_push( $found, array("chamado_id"=> $item['chamado_id'], 
                                               "setor_id" => $item["setor_id"],
+                                              "user_id" => $row['user_id'],
                                               "data_pedido_chamado" => $row["data_pedido"],
                                               "prioridade_chamado" => $row["prioridade"], 
                                               "mensagem" => $row['mensagem_chamado']));
@@ -855,3 +878,34 @@ function chamado_prioridade_select($itens){
     return $found;
 }
 
+function chamado_novo_select($itens){
+
+    $found = array();
+    $verificacao = false;  
+    foreach($itens as $item){               
+        $database = open_database();
+        try {
+            $sql = "SELECT * FROM chamado WHERE id=" . $item['chamado_id'] ." AND estado_chamado=0";   
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) { 
+                $verificacao = true;
+                while($row = $result->fetch_assoc()) {                
+                    array_push( $found, array("chamado_id"=> $item['chamado_id'], 
+                                              "setor_id" => $item["setor_id"],
+                                              "user_id" => $row['user_id'],
+                                              "data_pedido_chamado" => $row["data_pedido"],
+                                              "prioridade_chamado" => $row["prioridade"], 
+                                              "mensagem" => $row['mensagem_chamado']));
+                }     
+            }
+        } catch (Exception $e) {
+            $_SESSION['message'] = $e->GetMessage();
+            $_SESSION['type'] = 'danger';
+        }
+        close_database($database);
+    } 
+    if($verificacao)     
+        return $found;
+    else
+        return null;
+}
