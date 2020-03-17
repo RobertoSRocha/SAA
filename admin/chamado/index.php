@@ -170,8 +170,8 @@
                                     </div>
                                 </div>
 
-                            </div>
                         </div>
+                    </div>
 
                         <div class="chart tab-pane active" id="chamado_aberto"
                             style="padding-top:25px; position: relative; padding-bottom: 25px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
@@ -289,9 +289,6 @@
                                                     asdfasdfasdfasdfasasd
                                                     asdfasdfasdfasdfas
 
-                                                </p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
