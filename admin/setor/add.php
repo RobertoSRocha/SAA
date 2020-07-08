@@ -69,7 +69,6 @@
                             <label for="usuario_id">Usuário responsável </label>
                             <select class="form-control select2" id="usuario_id"
                                     name="user_setor['usuario_id'][]" multiple="multiple" required="">
-                                <option value="" ></option>
 
                                 <!--Verificar se o usuario é nivel 1 ou 2-->
                                 <?php if ($usuarios) : ?>

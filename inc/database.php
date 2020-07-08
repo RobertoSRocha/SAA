@@ -33,20 +33,19 @@ function find($table = null, $id = null)
     $found = null;
     try {
         if ($id) {
-            if($table == 'emprestimos'){
+            if ($table == 'emprestimos') {
                 $sql = "SELECT * FROM " . $table . " WHERE id = " . $id;
-            }else{
-                $sql = "SELECT * FROM " . $table . " WHERE id = " . $id. " ORDER BY nome ASC";
+            } else {
+                $sql = "SELECT * FROM " . $table . " WHERE id = " . $id . " ORDER BY nome ASC";
             }
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
             }
         } else {
-            if($table == 'emprestimos'){
+            if ($table == 'emprestimos') {
                 $sql = "SELECT * FROM " . $table;
-            }
-            else{
+            } else {
                 $sql = "SELECT * FROM " . $table . " ORDER BY nome ASC";
             }
             $result = $database->query($sql);
@@ -244,9 +243,8 @@ function save($table = null, $data = null)
     try {
         $database->query($sql);
         if (($database->affected_rows) > 0) {
-
             //move a tofo para pasta
-            if (isset($_FILES['img'])) {
+            if (is_uploaded_file($_FILES['img']['tmp_name'])) {
                 $diretorio = '../../imagens/'; //define o diretorio para onde enviaremos o arquivo
                 move_uploaded_file($_FILES['img']['tmp_name'], $diretorio . $table . '/' . $novo_nome); //efetua o upload
             }
@@ -261,8 +259,6 @@ function save($table = null, $data = null)
         $_SESSION['type'] = 'danger';
 
     }
-
-    printf ("New Record has id %d.\n", $database->insert_id);
 
     close_database($database);
 }
@@ -381,7 +377,7 @@ function update_status($table = null, $id = null, $status = null)
     try {
         $database->query($sql);
         if (($database->affected_rows) > 0) {
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
         $_SESSION['type'] = 'danger';
@@ -698,11 +694,11 @@ function find_user_matricula($table = null, $matricula = null)
                 $found = $matricula;
                 $_SESSION['message'] = 'Usuário informado encontrado!';
                 $_SESSION['type'] = 'success';
-            }else{
+            } else {
                 $_SESSION['message'] = 'Usuário informado não existe!';
                 $_SESSION['type'] = 'warning';
             }
-        } 
+        }
     } catch (Exception $e) {
         $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
@@ -720,7 +716,7 @@ function find_id_empretimo($table, $patrimonio_id)
         if ($patrimonio_id) {
             //$sql = "SELECT nome FROM " . $table . " WHERE id = " . $local_id;
             //$result = $database->query($sql);
-            $result = mysqli_fetch_array($database->query("SELECT id FROM " . $table . " WHERE patrimonio_id = " . $patrimonio_id." and status = 'emprestado'"));
+            $result = mysqli_fetch_array($database->query("SELECT id FROM " . $table . " WHERE patrimonio_id = " . $patrimonio_id . " and status = 'emprestado'"));
             $found = $result[0];
         }
     } catch (Exception $e) {
@@ -730,3 +726,32 @@ function find_id_empretimo($table, $patrimonio_id)
     close_database($database);
     return $found;
 }
+
+/*Retorna o ultimo id inserido na tabela*/
+function id_table($table)
+{
+
+    $database = open_database();
+    try {
+        if ($table != NULL) {
+            $sql = "SELECT id FROM (
+            SELECT id FROM ".$table." ORDER BY id DESC LIMIT 1) AS 
+                ".$table." ORDER BY id LIMIT 1";
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_assoc();
+                $_SESSION['message'] = 'true';
+                $_SESSION['type'] = 'success';
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+
+    return $found;
+
+
+}
+
