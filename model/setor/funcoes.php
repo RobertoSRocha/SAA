@@ -7,6 +7,14 @@ $setores = null;
 /* guardará um único cliente, para os casos de inserção e atualização (CREATE e UPDATE) */
 $setor = null;
 
+$user_setor = null;
+
+function index_user_setor($id_setor = null)
+{
+    global $user_setor;
+    $user_setor = find_all_user_setor('user_setor');
+}
+
 /** *  Listagem de Setores     */
 function indexSetor()
 {

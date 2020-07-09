@@ -735,8 +735,8 @@ function id_table($table)
     try {
         if ($table != NULL) {
             $sql = "SELECT id FROM (
-            SELECT id FROM ".$table." ORDER BY id DESC LIMIT 1) AS 
-                ".$table." ORDER BY id LIMIT 1";
+            SELECT id FROM " . $table . " ORDER BY id DESC LIMIT 1) AS 
+                " . $table . " ORDER BY id LIMIT 1";
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = $result->fetch_assoc();
@@ -755,3 +755,29 @@ function id_table($table)
 
 }
 
+/* Pesquisa Todos os Registros de uma Tabela */
+function find_all_user_setor($table)
+{
+    return find_user_setor($table);
+}
+
+/*Retorna valores de setor*/
+function find_user_setor($table = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        $sql = "SELECT * FROM " . $table;
+
+        $result = $database->query($sql);
+        if ($result->num_rows > 0) {
+            $found = $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}

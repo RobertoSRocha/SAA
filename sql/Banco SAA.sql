@@ -121,8 +121,7 @@ CREATE TABLE achados_e_perdidos
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE user_setor
-(
+CREATE TABLE user_setor(
 
     user_id  INT NOT NULL,
     setor_id INT NOT NULL,
