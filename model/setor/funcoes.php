@@ -62,10 +62,8 @@ function addSetor()
 {
     if ((!empty($_POST['setor'])) && (!empty($_POST['user_setor']))) {
         $setor = $_POST['setor'];
-        print_r($setor);
-        echo "-----------------";
+
         save('setor', $setor);
-        print_r($_SESSION['type'] == 'success');
 
         if ($_SESSION['type'] == 'success') {
 
@@ -75,8 +73,6 @@ function addSetor()
             $setor_id["'setor_id'"] = $setor['id'];
 
             $setore = $_POST['user_setor'];
-            echo "-----------------setor    --->";
-            print_r($setor_id);
 
             foreach ($setore as $setor):
                 foreach ($setor as $user):
@@ -84,12 +80,10 @@ function addSetor()
                     //uni o os vetores para inserir no banco
                     $user_setor = array_merge($user_id, $setor_id);
                     save('user_setor', $user_setor);
-                    print_r($user_setor);
 
                 endforeach;
             endforeach;
 
-            // print_r($setore);
             header('location: index.php');
         }
     }
@@ -103,12 +97,12 @@ function editSetor()
         $id = $_GET['id'];
         if (isset($_POST['setor'])) {
             $setor = $_POST['setor'];
-            //$customer['modified'] = $now->format("Y-m-d H:i:s");
             update('setor', $id, $setor);
             header('location: index.php');
         } else {
             global $setor;
             $setor = find('setor', $id);
+            print_r($setor);
         }
     } else {
         header('location: index.php');
