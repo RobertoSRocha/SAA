@@ -38,12 +38,10 @@ CREATE TABLE setor
     local_id   INT                NOT NULL,
     numero     VARCHAR(10)        NOT NULL,
     nome       VARCHAR(100)       NOT NULL,
-    usuario_id INT                NOT NULL,
     img        VARCHAR(255) DEFAULT NULL,
 
 
     PRIMARY KEY (id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario (id),
     FOREIGN KEY (local_id) REFERENCES locais (id)
 
 ) ENGINE = InnoDB;
