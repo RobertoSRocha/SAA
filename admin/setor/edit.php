@@ -64,32 +64,36 @@ index();
                         <div class="form-group">
                             <label for="usuario_id">Usuário responsável </label>
                             <select class="form-control select2" id="usuario_id"
-                                    name="user_setor['usuario_id'][]" multiple="multiple"  required="">
+                                    name="user_setor['usuario_id'][]" multiple="multiple" required="">
 
-                                <!--Usuario Cadastrado no Setor-->
-                                <?php if ($user_setor) : ?>
-                                    <?php foreach ($user_setor as $usuario) : ?>
-                                        <?php if ($usuario['setor_id'] == $setor['id']) { ?>
-                                            <?php foreach ($usuarios as $user) : ?>
-                                                <?php if ($user['id'] == $usuario['user_id']) : ?>
-                                                    <option value="<?php echo $usuario['user_id']; ?>"><?php echo $user['nome']; ?>
-                                                        - <?php echo $user['matricula']; ?></option>
-
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        <?php } endforeach; ?>
-                                <?php endif; ?>
 
                                 <!--Lista usuarios niveis 1 e 2-->
-                                <?php if ($usuarios) :
-                                    foreach ($usuarios as $usuario) :
-                                        if ($usuario['id'] != $setor['usuario_id']) {
-                                            if ($usuario['permissao'] == 1 || $usuario['permissao'] == 2) : ?>
-                                                <option value="<?php echo $usuario['id']; ?>"><?php echo $usuario['nome']; ?>
-                                                    - <?php echo $usuario['matricula']; ?></option>
+                                <?php if ($user_setor) :
+                                    foreach ($usuarios as $user) :
+                                        $aux = true;
+                                        foreach ($user_setor as $usuario) :
+                                            if (($user['id'] == $usuario['user_id']) &&
+                                                ($usuario['setor_id'] == $setor['id'])): ?>
+                                                <option selected="selected"
+                                                        value="<?php echo $usuario['user_id']; ?>">
+                                                    <?php echo $user['nome']; ?>
+                                                    - <?php echo $user['matricula']; ?></option>
+                                                <?php
+                                                $aux = false;
+                                                break;
+                                            endif;
+                                        endforeach;
+                                        if ($aux):
+                                            if ($user['permissao'] == 1 || $user['permissao'] == 2) : ?>
+                                                <option value="<?php echo $user['id']; ?>"><?php echo $user['nome']; ?>
+                                                    - <?php echo $user['matricula']; ?></option>
+
                                             <?php endif;
-                                        } endforeach;
+                                        endif;
+
+                                    endforeach;
                                 endif; ?>
+
 
                             </select>
                         </div>
@@ -148,4 +152,12 @@ index();
 
 <?php include(FOOTER_TEMPLATE); ?>
 
+<script src="<?php echo BASEURL; ?>bower_components/select2/dist/js/select2.full.min.js"></script>
 
+
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    })
+</script>

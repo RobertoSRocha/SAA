@@ -102,7 +102,6 @@ function editSetor()
         } else {
             global $setor;
             $setor = find('setor', $id);
-            print_r($setor);
         }
     } else {
         header('location: index.php');
