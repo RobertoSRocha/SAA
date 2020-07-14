@@ -160,19 +160,6 @@
                         <li><a href="<?php echo BASEURL; ?>admin/emprestimos/index.php"><i class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
                     </ul>
                 </li>
-                    <li class="header">MENU DE NAVEGAÇÃO</li>
-                    <!-- ACHADOS E PERDIDOS -->
-                    <li>
-                        <a href="<?php echo BASEURL; ?>admin/achados_e_perdidos/index.php">
-                            <i class="glyphicon glyphicon-search"></i><span>Achados e perdidos</span>
-                        </a>
-                    </li>
-                    <!-- AGENDA DA EMCM -->
-                    <li>
-                        <a target="_blank" href="http://emcm.ufrn.br/agenda/Web/view-schedule.php">
-                            <i class="glyphicon glyphicon-calendar"></i><span>Agenda</span>
-                        </a>
-                    </li>
                     <!-- CHAMADO EMCM -->
                     <li class="treeview">
                         <a href="#">
@@ -188,22 +175,6 @@
                         </ul>
 
                     </li>
-                    <!-- EMPRÉSTIMOS-->
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="glyphicon glyphicon-list-alt"></i>
-                            <span>Empréstimos</span>
-                            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="<?php echo BASEURL; ?>admin/emprestimos/consulta.php"><i
-                                        class="fa fa-circle-o"></i> Consultar itens emprestáveis</a></li>
-                            <li><a href="<?php echo BASEURL; ?>admin/emprestimos/index.php"><i
-                                        class="fa fa-circle-o"></i> Gerenciar Empréstimos</a></li>
-                        </ul>
-                    </li>
-
                 <!-- FORMUL�?RIOS-->
                 <li class="treeview">
                     <a href="#">
