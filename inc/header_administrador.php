@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/morris.js/morris.css">
     <!-- jvectormap -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/select2/dist/css/select2.min.css">
     <!-- Date Picker -->
     <link rel="stylesheet" href="<?php echo BASEURL; ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
