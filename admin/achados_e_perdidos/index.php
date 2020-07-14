@@ -98,9 +98,7 @@
                             <a title="Limpar busca" class="btn btn-warning" href="index.php"><i
                                         class="fa fa-close"></i> Limpar</a>
                         </div>
-
                     </form>
-
 
                 <div class="box-body">
                     <hr/>
