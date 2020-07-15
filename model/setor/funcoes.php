@@ -97,8 +97,29 @@ function editSetor()
         $id = $_GET['id'];
         if (isset($_POST['setor'])) {
             $setor = $_POST['setor'];
+            print_r($setor);
             update('setor', $id, $setor);
+
+
+            $seto = $id;
+
+            $setor_id["'setor_id'"] = $seto;
+            $setore = $_POST['user_setor'];
+            remove_user_setor('user_setor',$id);
+
+            foreach ($setore as $seto):
+                foreach ($seto as $user):
+                    $user_id["'user_id'"] = $user;
+                    //uni o os vetores para inserir no banco
+                    $user_setor = array_merge($user_id, $setor_id);
+                    //print_r($user_setor);
+                    save('user_setor', $user_setor);
+
+                endforeach;
+            endforeach;
+
             header('location: index.php');
+
         } else {
             global $setor;
             $setor = find('setor', $id);
@@ -117,6 +138,7 @@ function viewSetor($id = null)
 function deleteSetor($id = null)
 {
     global $setor;
+    remove_user_setor('user_setor',$id);
     $setor = remove('setor', $id);
     header('location: index.php');
 }
