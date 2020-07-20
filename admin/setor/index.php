@@ -8,7 +8,7 @@ verificaLoginAdmin();
 <?php
 require_once SETOR;
 indexSetor();
-index_user_setor();; ?>
+index_user_setor(); ?>
 
 <?php
 require_once LOCAL;

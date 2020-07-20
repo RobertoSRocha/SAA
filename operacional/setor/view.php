@@ -7,6 +7,8 @@
 <?php
     require_once SETOR;
     viewSetor($_GET['id']);
+    index_user_setor();
+
 ?>
 
 <?php
@@ -64,17 +66,26 @@
                             <dd><?php echo $setor['nome']; ?></dd>
                             <dt>Número:</dt>		
                             <dd><?php echo $setor['numero']; ?></dd>	
-                            <dt>usuário responsável:</dt>		
-                            <!-- Mostra o usuário responsável do setor -->
-                            <?php if ($usuarios) : ?>	
-                                <?php foreach ($usuarios as $usuario) : ?>
-                                    <?php if ($usuario['id'] == $setor['usuario_id']) : ?>	
-                                        <dd><?php echo $usuario['nome']; ?></dd>
-                                    <?php endif; ?>                            
-                                <?php endforeach; ?>	
-                            <?php else : ?>				
-                                <dd>Usuário não encontrado</dd>		
-                            <?php endif; ?>
+                            <dt>usuário responsável:</dt>
+
+                        <!-- Mostra o usuário responsável do setor -->
+                        <?php if ($user_setor) : ?>
+                            <?php foreach ($user_setor as $usuario) : ?>
+                                <?php if ($usuario['setor_id'] == $setor['id']) : ?>
+                                    <?php foreach ($usuarios as $user) : ?>
+                                        <?php if ($user['id'] == $usuario['user_id']) : ?>
+                                            <dd>
+                                                <?php echo $user['nome'] ; ?>
+                                            </dd>
+
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <td>Usuário não encontrado</td>
+                        <?php endif; ?>
+
                             <dt>Localização:</dt>
                             <!-- Mostra o local do setor -->
                             <?php if ($locais) : ?>	
