@@ -15,7 +15,7 @@
     
     /** *  Listagem de Patrimônios do setor do usuário logado	 */
     function index_operacional($id){
-        return find_operacional('patrimonio', 'setor', $id);
+        return find_operacional('patrimonio', 'user_setor', $id);
     }
 
     /** *  Cadastro de Patrimônios	 */
@@ -36,7 +36,7 @@
     }
     
     function verifica_exist_setor(){
-        if(!find_exist_setor_usuario('setor')){
+        if(!find_exist_setor_usuario('user_setor')){
             header("Location: index.php");
         }
     }

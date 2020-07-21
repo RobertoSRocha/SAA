@@ -99,6 +99,25 @@ function find_nome($table, $id)
     return $found;
 }
 
+/* Retonar o id_local do setor*/
+function setor_local_id($table, $id)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id) {
+
+            $result = mysqli_fetch_array($database->query("SELECT local_id FROM " . $table . " WHERE id = " . $id));
+            $found = $result[0];
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+    return $found;
+}
+
 function find_patrimonio_emprestimo($table, $id)
 {
     $database = open_database();
@@ -123,7 +142,7 @@ function find_operacional($table1 = null, $table2 = null, $id)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] . ")";
+            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE user_id = " . $_SESSION['id'] . ")";
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -167,7 +186,7 @@ function find_setor_operacional($table1 = null)
     $found = null;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT * FROM " . $table1 . " WHERE usuario_id = " . $_SESSION['id'] . " ORDER BY nome ASC";;
+            $sql = "SELECT * FROM " . $table1 . " WHERE user_id = " . $_SESSION['id'] ;
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -189,7 +208,7 @@ function find_exist_setor_usuario($table = null)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id FROM " . $table . " WHERE usuario_id = " . $_SESSION['id'];
+            $sql = "SELECT user_id FROM " . $table . " WHERE user_id = " . $_SESSION['id'];
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
                 $found = TRUE;

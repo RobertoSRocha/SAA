@@ -26,8 +26,19 @@ function indexSetor()
 function indexSetor_operacional()
 {
     global $setores;
-    $setores = find_setor_operacional('setor');
+    $setores = find_setor_operacional('user_setor');
 }
+
+/** *  Pega nome do setor através do id	 */
+function nome_setor($id){
+    return find_nome('setor', $id);
+}
+
+/** *  Pega nome do local do setor através do id	 */
+function local_id_setor($id){
+    return setor_local_id('setor', $id);
+}
+
 
 if (isset($_GET['search'])) {
     indexSetores();
