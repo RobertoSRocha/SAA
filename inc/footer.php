@@ -42,8 +42,7 @@
 
 <!-- AdminLTE App -->
 <script src="<?php echo BASEURL; ?>dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo BASEURL; ?>dist/js/pages/dashboard.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo BASEURL; ?>dist/js/demo.js"></script>
 
@@ -166,7 +165,7 @@
     }
 </script>
 
-<!-- 
+<!--
     1° código: executa a partir do clique
     2° código: executa somente na primeira vez
 -->
@@ -180,7 +179,7 @@
         $('.mesmo_usuario').show();
     }
     });
-    
+
     if ($('input[name="FlgPontua"]:checked').val() === "Sim") {
         $('.mesmo_usuario').hide();
         $('.outro_usuario').show();
