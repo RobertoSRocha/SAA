@@ -71,20 +71,23 @@ index();
                                 <?php if ($user_setor) :
                                     foreach ($usuarios as $user) :
                                         $aux = true;
-                                        foreach ($user_setor as $usuario) :
-                                            if (($user['id'] == $usuario['user_id']) &&
-                                                ($usuario['setor_id'] == $setor['id'])): ?>
-                                                <option selected="selected"
-                                                        value="<?php echo $usuario['user_id']; ?>">
-                                                    <?php echo $user['nome']; ?>
-                                                    - <?php echo $user['matricula']; ?></option>
-                                                <?php
-                                                $aux = false;
-                                                break;
-                                            endif;
-                                        endforeach;
-                                        if ($aux):
-                                            if ($user['permissao'] == 1 || $user['permissao'] == 2) : ?>
+
+
+                                        if ($user['permissao'] == 1 || $user['permissao'] == 2) :
+                                            foreach ($user_setor as $usuario) :
+
+                                                if (($user['id'] == $usuario['user_id']) &&
+                                                    ($usuario['setor_id'] == $setor['id'])): ?>
+                                                    <option selected="selected"
+                                                            value="<?php echo $usuario['user_id']; ?>">
+                                                        <?php echo $user['nome']; ?>
+                                                        - <?php echo $user['matricula']; ?></option>
+                                                    <?php
+                                                    $aux = false;
+                                                    break;
+                                                endif;
+                                            endforeach;
+                                            if ($aux):?>
                                                 <option value="<?php echo $user['id']; ?>"><?php echo $user['nome']; ?>
                                                     - <?php echo $user['matricula']; ?></option>
 
