@@ -33,6 +33,10 @@ function indexSetor_operacional()
 function nome_setor($id){
     return find_nome('setor', $id);
 }
+/** *  Pega nome do setor através do id	 */
+function nome_usuario_setor($id){
+    return find_nome('usuario', $id);
+}
 
 /** *  Pega nome do local do setor através do id	 */
 function local_id_setor($id){

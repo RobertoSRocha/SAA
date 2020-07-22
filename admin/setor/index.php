@@ -65,7 +65,8 @@ index();
                             </tr>
                             </thead>
                             <tbody>
-                            <?php if ($setores) : ?>
+                            <?php if ($setores) :?>
+
                                 <?php foreach ($setores as $setor) : ?>
                                     <tr>
                                         <td><?php echo $setor['nome']; ?></td>
@@ -85,15 +86,12 @@ index();
                                         <!-- Mostra o usuário responsável do setor -->
                                         <?php if ($user_setor) : ?>
                                             <td>
-                                                <?php foreach ($user_setor as $usuario) : ?>
-                                                    <?php if ($usuario['setor_id'] == $setor['id']) : ?>
-                                                        <?php foreach ($usuarios as $user) : ?>
-                                                            <?php if ($user['id'] == $usuario['user_id']) : ?>
+                                                <?php foreach ($user_setor as $usuario) :?>
 
-                                                                <?php echo $user['nome']; ?>
+                                                    <?php if ($usuario['setor_id'] == $setor['id']) :
+                                                        echo nome_usuario_setor($usuario['user_id']);
+                                                        ?>
 
-                                                            <?php endif; ?>
-                                                        <?php endforeach; ?>
                                                     <?php endif; ?>
                                                 <?php endforeach; ?>                                                        </td>
 
@@ -129,6 +127,7 @@ index();
                             </tr>
                             </tfoot>
                         </table>
+
                     </div>
                     <!-- /.box-body -->
                 </div>
