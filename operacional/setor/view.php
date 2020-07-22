@@ -72,15 +72,10 @@
                         <?php if ($user_setor) : ?>
                             <?php foreach ($user_setor as $usuario) : ?>
                                 <?php if ($usuario['setor_id'] == $setor['id']) : ?>
-                                    <?php foreach ($usuarios as $user) : ?>
-                                        <?php if ($user['id'] == $usuario['user_id']) : ?>
-                                            <dd>
-                                                <?php echo $user['nome'] ; ?>
-                                            </dd>
-
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                                    <dd>
+                                    <?php echo nome_usuario_setor($usuario['user_id']);?>
+                                    </dd>
+                               <?php  endif; ?>
                             <?php endforeach; ?>
                         <?php else : ?>
                             <td>Usuário não encontrado</td>

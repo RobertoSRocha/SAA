@@ -70,14 +70,12 @@ index();
                         <?php if ($user_setor) : ?>
                             <?php foreach ($user_setor as $usuario) : ?>
                                 <?php if ($usuario['setor_id'] == $setor['id']) : ?>
-                                    <?php foreach ($usuarios as $user) : ?>
-                                        <?php if ($user['id'] == $usuario['user_id']) : ?>
-                                            <dd>
-                                                <a href="<?php echo BASEURL; ?>admin/usuario/view.php?id=<?php echo $usuario['user_id']; ?>"> <?php echo $user['nome'] . " ,"; ?></a>
-                                            </dd>
 
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
+                                    <dd>
+                                        <a href="<?php echo BASEURL; ?>admin/usuario/view.php?id=<?php echo $usuario['user_id']; ?>"> <?php echo nome_usuario_setor($usuario['user_id']) . " ,"; ?></a>
+                                    </dd>
+
+
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else : ?>
