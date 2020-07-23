@@ -71,9 +71,8 @@ index();
                                 <?php if ($user_setor) :
                                     foreach ($usuarios as $user) :
                                         $aux = true;
-
-
                                         if ($user['permissao'] == 1 || $user['permissao'] == 2) :
+
                                             foreach ($user_setor as $usuario) :
 
                                                 if (($user['id'] == $usuario['user_id']) &&

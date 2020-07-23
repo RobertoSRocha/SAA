@@ -153,7 +153,7 @@ function viewSetor($id = null)
 function deleteSetor($id = null)
 {
     global $setor;
-    remove_user_setor('user_setor',$id);
+    deleta_user_setor('user_setor',$id);
     $setor = remove('setor', $id);
     header('location: index.php');
 }

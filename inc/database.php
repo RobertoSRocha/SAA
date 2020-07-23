@@ -781,38 +781,38 @@ function find_all_user_setor($table)
 }
 
 /** *  Atualiza um registro no BD   */
-function update_user_setor($table = null, $id_setor = 0, $id_user = null, $data = null)
+function deleta_user_setor($table = null, $id = null)
 {
     $database = open_database();
-    $items = null;
-
-    foreach ($data as $key => $value) {
-        $items .= trim($key, "'") . "='$value',";
-    }    // remove a ultima virgula
-
-
-    $items = rtrim($items, ',');
-    $sql = "UPDATE " . $table;
-    $sql .= " SET $items";
-    $sql .= " WHERE id_setor=" . $id_setor . ";";
-
-    echo $sql;
 
     try {
-        $database->query($sql);
-        //verifica se ouve alguma alteracão no banco
-        if (($database->affected_rows) > 0) {
-            $_SESSION['message'] = 'Registro atualizado com sucesso.';
-            $_SESSION['type'] = 'success';
-        } else {
-            $_SESSION['message'] = 'Não foi possível realizar essa operacão! Verifique se os dados editados estão corretos ou já estão cadastrados.';
-            $_SESSION['type'] = 'warning';
+        if ($id) {
+
+            $sql1 = "SELECT setor_id FROM patrimonio WHERE setor_id = ".$id;
+
+            $result1 = $database->query($sql1);
+            if ($result1->num_rows == 0) {
+
+                $sql = "DELETE FROM " . $table . " WHERE setor_id = " . $id;
+                $result = $database->query($sql);
+                if ($result = $database->query($sql)) {
+
+                    $_SESSION['message'] = "Registro Removido com Sucesso";
+                    $_SESSION['type'] = 'success';
+                } else {
+
+                    $_SESSION['message'] = "Viiixe! Não foi possivel realizar a operação. Verifique se esse registro está sendo referenciado em outro local";
+                    $_SESSION['type'] = 'danger';
+                }
+            }
         }
+
     } catch (Exception $e) {
-        $_SESSION['message'] = 'Nao foi possivel realizar a operacao.';
+        $_SESSION['message'] = $e->GetMessage();
         $_SESSION['type'] = 'danger';
     }
     close_database($database);
+
 }
 
 
@@ -826,7 +826,6 @@ function remove_user_setor($table = null, $id = null)
         if ($id) {
             $sql = "DELETE FROM " . $table . " WHERE setor_id = " . $id;
             $result = $database->query($sql);
-            print_r($sql);
             if ($result = $database->query($sql)) {
 
                 $_SESSION['message'] = "Registro Removido com Sucesso";
