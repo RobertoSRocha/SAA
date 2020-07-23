@@ -29,8 +29,10 @@
         }
     }
     
-    function verifica_editPatrimonio($id){
-        if(!find_edit_operacional('patrimonio', 'setor', $id)){
+    function verifica_editPatrimonio(){
+        $id = $_GET['id'];
+
+        if(!find_edit_operacional('patrimonio', 'user_setor', $id)){
             header("Location: " . BASEURL . "erros/erro.php");
         }
     }

@@ -112,7 +112,6 @@ function editSetor()
         $id = $_GET['id'];
         if (isset($_POST['setor'])) {
             $setor = $_POST['setor'];
-            print_r($setor);
             update('setor', $id, $setor);
 
 
@@ -127,7 +126,6 @@ function editSetor()
                     $user_id["'user_id'"] = $user;
                     //uni o os vetores para inserir no banco
                     $user_setor = array_merge($user_id, $setor_id);
-                    //print_r($user_setor);
                     save('user_setor', $user_setor);
 
                 endforeach;

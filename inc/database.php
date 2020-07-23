@@ -142,7 +142,7 @@ function find_operacional($table1 = null, $table2 = null, $id)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE user_id = " . $_SESSION['id'] . ")";
+            $sql = "SELECT id FROM " . $table1 . " WHERE setor_id = " . $id . " AND setor_id IN (SELECT setor_id FROM " . $table2 . " WHERE user_id = " . $_SESSION['id'] . ")";
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -164,7 +164,7 @@ function find_edit_operacional($table1 = null, $table2 = null, $id)
     $found = FALSE;
     try {
         if ($_SESSION['id'] != NULL) {
-            $sql = "SELECT id,setor_id FROM " . $table1 . " WHERE id = " . $id . " AND setor_id IN (SELECT id FROM " . $table2 . " WHERE usuario_id = " . $_SESSION['id'] . ")";
+            $sql = "SELECT id,setor_id FROM " . $table1 . " WHERE id = " . $id . " AND setor_id IN (SELECT setor_id FROM " . $table2 . " WHERE user_id = " . $_SESSION['id'] . ")";
             //SELECT * FROM `patrimonio` WHERE setor_id IN (SELECT id FROM setor WHERE usuario_id = 1);
             $result = $database->query($sql);
             if ($result->num_rows > 0) {
@@ -238,7 +238,6 @@ function save($table = null, $data = null)
 
     $columns = null;
     $values = null;
-    //print_r($data);		  
     foreach ($data as $key => $value) {
         $columns .= trim($key, "'") . ",";
         $values .= "'$value',";
