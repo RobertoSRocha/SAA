@@ -23,23 +23,30 @@ function index_emprestimos()
 
 function add_emprestimos()
 {
-    if (!empty($_POST['user_solicitou']) && !empty($_POST['patrimonio_id']) && !empty($_POST['data_prazo_devolucao']) && !empty($_POST['nome'])
+    if (!empty($_POST['user_solicitou']) && !empty($_POST['patrimonio']) && !empty($_POST['data_prazo_devolucao']) && !empty($_POST['nome'])
         && !empty($_POST['destinatario']) && !empty($_POST['matricula'])) {
 
-        $user_solicitou = @$_POST['user_solicitou'];
-        $patrimonio_id = @$_POST['patrimonio_id'];
-        $data_prazo_devolucao = @$_POST['data_prazo_devolucao'];
-        $nome = @$_POST['nome'];
-        $destinatario = @$_POST['destinatario'];
-        $matricula = @$_POST['matricula'];
+        $patrimonio = $_POST['patrimonio'];
 
-        /* Adicionar emprestimo no banco de dados */
-        if (save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao)) {
-            /* Se adicionou, edita o status do patrimônio */
-            update_status('patrimonio', $patrimonio_id, 'indisponivel');
-        }
+        foreach ($patrimonio as $id_patrimonio):
+            foreach ($id_patrimonio as $id_patri):
+                $user_solicitou = @$_POST['user_solicitou'];
+                $patrimonio_id = $id_patri;
+                $data_prazo_devolucao = @$_POST['data_prazo_devolucao'];
+                $nome = @$_POST['nome'];
+                $destinatario = @$_POST['destinatario'];
+                $matricula = @$_POST['matricula'];
 
-        $id_emprestimo = id_empretimo();
+                /* Adicionar emprestimo no banco de dados */
+                if (save_emp($user_solicitou, $patrimonio_id, 'emprestado', $data_prazo_devolucao)) {
+                    /* Se adicionou, edita o status do patrimônio */
+                    update_status('patrimonio', $patrimonio_id, 'indisponivel');
+                }
+            endforeach;
+        endforeach;
+
+
+        $id_emprestimo = id_empretimo($id_patri);
         header('location: '.EMPRESTIMOS_PDF.'?id='.$id_emprestimo);
 
         exit();
@@ -205,8 +212,7 @@ function filtro()
 }
 
 /** *  Pega o id do emprestimo através do id do patrimonio	 */
-function id_empretimo(){
-    $patrimonio_id = $_POST['patrimonio_id'];
+function id_empretimo($patrimonio_id){
     return find_id_empretimo('emprestimos', $patrimonio_id);
 }
 
