@@ -700,6 +700,34 @@ function find_emprestimos($table = null, $status = null)
     return $found;
 }
 
+function itens_emptrestimo($table = null, $id = null)
+{
+    $database = open_database();
+    $found = null;
+    try {
+        if ($id != null) {
+            $sql = "SELECT nome, tombo FROM " . $table . " WHERE id IN (SELECT patrimonio_id FROM emprestimos WHERE id =".$id." )";
+
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        } else {
+            $sql = "SELECT * FROM " . $table;
+            $result = $database->query($sql);
+            if ($result->num_rows > 0) {
+                $found = $result->fetch_all(MYSQLI_ASSOC);
+            }
+        }
+    } catch (Exception $e) {
+        $_SESSION['message'] = $e->GetMessage();
+        $_SESSION['type'] = 'danger';
+    }
+    close_database($database);
+
+    return $found;
+}
+
 function find_user_matricula($table = null, $matricula = null)
 {
     $database = open_database();
