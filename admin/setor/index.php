@@ -60,7 +60,7 @@ index();
                                 <th title="Ordenar Tabela">Nome</th>
                                 <th title="Ordenar Tabela">Número</th>
                                 <th title="Ordenar Tabela">Local pertencente</th>
-                                <th title="Ordenar Tabela">Usuário responsável</th>
+                                <th style="width:400px"title="Ordenar Tabela">Usuário responsável</th>
                                 <th>Ações</th>
                             </tr>
                             </thead>
@@ -119,11 +119,7 @@ index();
                             </tbody>
                             <tfoot>
                             <tr style="background: #F4F4F4">
-                                <th>FILTROS</th>
-                                <th></th>
-                                <th title="Filtrar local"></th>
-                                <th title="Filtrar usuário responsável"></th>
-                                <th></th>
+
                             </tr>
                             </tfoot>
                         </table>
