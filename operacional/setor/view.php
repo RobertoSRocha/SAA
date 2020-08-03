@@ -73,7 +73,7 @@
                             <?php foreach ($user_setor as $usuario) : ?>
                                 <?php if ($usuario['setor_id'] == $setor['id']) : ?>
                                     <dd>
-                                    <?php echo nome_usuario_setor($usuario['user_id']);?>
+                                    <?php echo nome_usuario_setor($usuario['user_id']). ", ";?>
                                     </dd>
                                <?php  endif; ?>
                             <?php endforeach; ?>

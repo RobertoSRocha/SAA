@@ -89,7 +89,7 @@ index();
                                                 <?php foreach ($user_setor as $usuario) :?>
 
                                                     <?php if ($usuario['setor_id'] == $setor['id']) :
-                                                        echo nome_usuario_setor($usuario['user_id']);
+                                                        echo nome_usuario_setor($usuario['user_id']).", ";
                                                         ?>
 
                                                     <?php endif; ?>
